@@ -1,0 +1,97 @@
+
+akari_scene.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dish_pink
+  rotate: false
+  xy: 1215, 566
+  size: 588, 279
+  orig: 588, 279
+  offset: 0, 0
+  index: -1
+dish_red
+  rotate: false
+  xy: 1215, 292
+  size: 588, 273
+  orig: 588, 273
+  offset: 0, 0
+  index: -1
+dish_shadow_00
+  rotate: false
+  xy: 1776, 1655
+  size: 245, 103
+  orig: 245, 103
+  offset: 0, 0
+  index: -1
+dish_yellow
+  rotate: false
+  xy: 625, 568
+  size: 588, 285
+  orig: 588, 285
+  offset: 0, 0
+  index: -1
+dishi_black
+  rotate: false
+  xy: 2, 150
+  size: 588, 273
+  orig: 588, 273
+  offset: 0, 0
+  index: -1
+dishi_green
+  rotate: false
+  xy: 625, 286
+  size: 588, 279
+  orig: 588, 279
+  offset: 0, 0
+  index: -1
+rail light _og
+  rotate: true
+  xy: 2, 424
+  size: 453, 623
+  orig: 535, 735
+  offset: 41, 56
+  index: -1
+rail_BG
+  rotate: false
+  xy: 1776, 1554
+  size: 245, 98
+  orig: 245, 98
+  offset: 0, 0
+  index: -1
+rail_base_00
+  rotate: 270
+  xy: 1463, 846
+  size: 1176, 311
+  orig: 1176, 311
+  offset: 0, 0
+  index: -1
+rail_base_01
+  rotate: false
+  xy: 592, 150
+  size: 1274, 134
+  orig: 1274, 134
+  offset: 0, 0
+  index: -1
+rail_base_02
+  rotate: false
+  xy: 2, 856
+  size: 1274, 326
+  orig: 1274, 326
+  offset: 0, 0
+  index: -1
+rail_og
+  rotate: false
+  xy: 1776, 1759
+  size: 245, 263
+  orig: 245, 263
+  offset: 0, 0
+  index: -1
+toplight
+  rotate: false
+  xy: 2, 1184
+  size: 1470, 839
+  orig: 1470, 839
+  offset: 0, 0
+  index: -1
