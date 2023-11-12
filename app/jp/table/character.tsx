@@ -15,4 +15,4 @@ const initialize = async () => {
   data.push(...characters);
 };
 
-runOnClient(initialize);
+runOnClient(async () => await initialize());
