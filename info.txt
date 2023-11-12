@@ -1,0 +1,34 @@
+Get character id from
+LocalizeCharProfileExcelTable (familynametw + personalnametw)
+Should be CharacterExcel, but err?
+
+then
+FavorSchedule
+for recollection lobby
+
+then events can be found in
+ScenarioScriptFavor2ExcelTable
+
+===========
+If we have CharacterExcel =>
+ID from live2d (DevName) localize into Name, then we can get id.
+
+Loop AcademyFavorScheduleExcelTable, match CharacterId and check if "RewardParcelType" contains MemoryLobby, get the id
+
+find the sequence in ScenarioScriptFavor2ExcelTable that matches the ScenarioScriptGroupId
+To find the subtitles, we need to check it in order that contains wa:.
+todo: find subtitle that matches Start_Idle_01 => (Find wa:, reverse back that contains st?) (case: mika ch__0069)
+
+Every event = 1 wa
+In that case, we need to map, wa
+instead of mapping, we use id from BGName ? since it's unique every voiceline
+
+todo: find bgmId?
+bgmId is just theme_{bgmId}
+update dump.cs from JP since we need updated field, and then generate the fbs
+
+========
+https://prod-clientpatch.bluearchiveyostar.com/r61_ayufxz7uopaacimkmpwl/TableBundles/TableCatalog.json
+url = "https://prod-clientpatch.bluearchiveyostar.com/r57_1_33_9gl0a9hwakll368rofhn_4/MediaResources/MediaCatalog.json"
+# url = "https://prod-clientpatch.bluearchiveyostar.com/r57_1_33_9gl0a9hwakll368rofhn_4/Android/bundleDownloadInfo.json"
+prod-xigncode.bluearchiveyostar.com/patchroot/live/4v1cpbkilB7tJP/List/61168/xrl/4v1cpbkilB7tJP_R.xrl
