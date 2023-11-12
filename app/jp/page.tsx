@@ -9,13 +9,13 @@ export default function Home() {
 
       <div className="flex lg:flex-row flex-col justify-center items-center grow">
         <Box
-          bg="data/jp/MediaResources/Uis/03_Scenario/01_Background/BG_CS_Arius_09.jpg"
+          bg="data/jp/MediaResources/UIs/03_Scenario/01_Background/BG_CS_Arius_09.jpg"
           label="Gallery"
           href="/jp/gallery"
         >
         </Box>
         <Box
-          bg="data/jp/MediaResources/Uis/03_Scenario/01_Background/BG_CS_PV3_54.jpg"
+          bg="data/jp/MediaResources/UIs/03_Scenario/01_Background/BG_CS_PV3_54.jpg"
           label="Live2D"
           href="/jp/live2d"
         >
