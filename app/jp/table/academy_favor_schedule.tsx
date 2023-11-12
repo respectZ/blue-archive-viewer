@@ -15,4 +15,4 @@ const initialize = async () => {
   data.push(...aca);
 };
 
-runOnClient(initialize);
+runOnClient(async () => await initialize());

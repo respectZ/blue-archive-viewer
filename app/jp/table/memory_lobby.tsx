@@ -13,4 +13,4 @@ const initialize = async () => {
   data.push(...memoryLobby);
 };
 
-runOnClient(initialize);
+runOnClient(async () => await initialize());
