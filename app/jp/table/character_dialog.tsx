@@ -1,5 +1,3 @@
-import { runOnClient } from "./util";
-
 interface CharacterDialog {
   CharacterId: number;
   GroupId: number;
@@ -12,10 +10,8 @@ interface CharacterDialog {
 
 export const data: CharacterDialog[] = [];
 
-const initialize = async () => {
+export const initialize = async () => {
   const baseUrl = window.location.origin;
   const characters = await fetch(`${baseUrl}/data/jp/TableBundles/Excel/CharacterDialogExcelTable.json`).then((res) => res.json()) as CharacterDialog[];
   data.push(...characters);
 };
-
-runOnClient(async () => await initialize());

@@ -5,6 +5,7 @@ import InputSelect from "@/app/component/input_select";
 import { createRef, useEffect, useRef } from "react";
 import { Live2DViewer } from "@/app/lib/live2d_viewer";
 import { fetchModels } from "./model";
+import * as Table from "../table";
 
 import * as events from "./events";
 import InputNumber from "@/app/component/input_number";
@@ -45,14 +46,22 @@ export default function Home() {
 
     live2d = new Live2DViewer(document.querySelector("canvas")!);
 
-    fetchModels(elements.jsonData!.href).then(async (models) => {
-      // Update models value by adding window.location.origin
-      for (const [key, value] of Object.entries(models)) {
-        models[key] = value.map((v) => window.location.origin + "/" + v);
-      }
-      events.ReloadModels(elements.modelSelect!, models);
-      events.LoadModel(elements, live2d);
-      events.EnableDragging(elements, live2d);
+    Table.initialize().then(() => {
+      fetchModels(elements.jsonData!.href).then(async (models) => {
+        document.getElementById("loading")!.classList.add("opacity-0");
+        document.getElementById("loading")!.classList.remove("opacity-100");
+        setTimeout(() => {
+          document.getElementById("loading")!.remove();
+        }, 1000);
+
+        // Update models value by adding window.location.origin
+        for (const [key, value] of Object.entries(models)) {
+          models[key] = value.map((v) => window.location.origin + "/" + v);
+        }
+        events.ReloadModels(elements.modelSelect!, models);
+        events.LoadModel(elements, live2d);
+        events.EnableDragging(elements, live2d);
+      });
     });
 
     window.addEventListener("resize", () => events.OnResize(elements, live2d));
@@ -60,6 +69,10 @@ export default function Home() {
 
   return (
     <main className="h-full w-full font-sans">
+      {/* Loading */}
+      <div className="w-screen h-screen fixed flex items-center justify-center z-50 bg-neutral-800 bg-opacity-80 transition-all duration-1000 opacity-100" id="loading">
+        <p className="text-2xl text-gray-100">Loading...</p>
+      </div>
       <a href="/data/jp/Android/info.json" className="hidden" id="jsonData" ref={jsonData}></a>
       {/* Settings button */}
       <div className="w-24 h-12 fixed">
@@ -268,7 +281,7 @@ export default function Home() {
       <div className="w-screen h-12 fixed bottom-0 flex justify-center items-center bg-neutral-800">
         <p className="text-gray-400">Live2D Viewer</p>
       </div>
-      <div className="w-auto h-auto fixed bottom-24 flex flex-col md:px-96 sm:px-2" ref={subtitle}>
+      <div className="sm:w-full md:w-auto h-auto fixed bottom-24 flex flex-col md:px-96" ref={subtitle}>
       </div>
     </main>
   );
