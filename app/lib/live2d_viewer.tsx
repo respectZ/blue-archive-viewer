@@ -43,55 +43,19 @@ export class Live2DViewer {
   private _loopAnimation: boolean = false;
 
   constructor(canvas: HTMLCanvasElement) {
-    const aspectRatio = 16 / 9; // 16:9 aspect ratio
-    const availableWidth = window.innerWidth; // You can also use window.innerHeight for a different reference.
-
-    // Calculate width and height
-    let width, height;
-
-    if (availableWidth / aspectRatio <= window.innerHeight) {
-      // Use the available width as the reference
-      width = availableWidth;
-      height = availableWidth / aspectRatio;
-    } else {
-      // Use the available height as the reference
-      height = window.innerHeight;
-      width = window.innerHeight * aspectRatio;
-    }
-
-    console.log(`Width: ${width}px, Height: ${height}px`);
-
-    canvas.width = width;
-    canvas.height = height;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
     this.app = new PIXI.Application({
-      width: width,
-      height: height,
+      width: window.innerWidth,
+      height: window.innerHeight,
       view: canvas,
     });
   }
 
   resizeCanvas(width: number, height: number, canvas: HTMLCanvasElement) {
-    const aspectRatio = 16 / 9; // 16:9 aspect ratio
-    const availableWidth = width; // You can also use window.innerHeight for a different reference.
-
-    // Calculate width and height
-    let width2, height2;
-
-    if (availableWidth / aspectRatio <= height) {
-      // Use the available width as the reference
-      width2 = availableWidth;
-      height2 = availableWidth / aspectRatio;
-    } else {
-      // Use the available height as the reference
-      height2 = height;
-      width2 = height * aspectRatio;
-    }
-
-    canvas.width = width2;
-    canvas.height = height2;
-
-    // this.app.renderer.resize(width2, height2);
+    canvas.width = width;
+    canvas.height = height;
     this.app.renderer.resize(width, height);
   }
 
@@ -194,17 +158,6 @@ export class Live2DViewer {
 
     spine.scale.set(scale);
 
-    // Center the spine, by calculating spnieData.width * scale.x, propotional to window.innerWidth
-    const x = this.app.view.width / 2;
-    const y = this.app.view.height;
-
-    console.log(`[Live2DViewer] ${name} scale: ${scale} offset: ${x},${y}`);
-    console.log(`window: ${window.innerWidth}x${window.innerHeight} spine: ${spine.spineData.width}x${spine.spineData.height}`);
-    console.log(`renderer: ${this.app.renderer.width}x${this.app.renderer.height}`);
-
-    spine.x = x;
-    spine.y = y;
-
     return spine;
   }
 
@@ -254,7 +207,7 @@ export class Live2DViewer {
       if (!(child instanceof Spine)) return;
       let scale = calculateFitScale(child.spineData.width, child.spineData.height, this.app.renderer.width, this.app.renderer.height);
 
-      scale = Math.ceil(scale * 10) / 10;
+      scale = Math.ceil(scale * 100) / 100;
 
       child.scale.set(scale);
       s = scale;
@@ -303,6 +256,26 @@ export class Live2DViewer {
       child.x = x2;
       child.y = y2;
     });
+  }
+
+  /**
+   * Center entire loaded assets.
+   * @returns {[number, number]} - [x, y]
+   */
+  center(): [number, number] {
+    const children = this.app.stage.children;
+    let [x, y] = [0, 0];
+    children.forEach((child) => {
+      if (!(child instanceof Spine)) return;
+      child.x = this.app.renderer.width / 2;
+      if (child.spineData.height * child.scale.y < this.app.renderer.height) {
+        child.y = this.app.renderer.height - child.spineData.height * child.scale.y * 1.25;
+      } else {
+        child.y = this.app.renderer.height;
+      }
+      [x, y] = [child.x, child.y];
+    });
+    return [x, y];
   }
 
   /**
