@@ -52,6 +52,7 @@ export default function Home() {
       }
       events.ReloadModels(elements.modelSelect!, models);
       events.LoadModel(elements, live2d);
+      events.EnableDragging(elements, live2d);
     });
 
     window.addEventListener("resize", () => events.OnResize(elements, live2d));
@@ -226,6 +227,8 @@ export default function Home() {
                 }}
               />
             </div>
+
+            <p className="mb-2">You can also move by dragging it.</p>
 
             <InputNumber
               id="offset-x"

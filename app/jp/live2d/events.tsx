@@ -231,3 +231,36 @@ const showSubtitles = (elements: Elements) => {
     subtitleElement.appendChild(p);
   }
 };
+
+let dragging = false;
+let [charX, charY] = [0, 0];
+let [mouseX, mouseY] = [0, 0];
+let [initX, initY] = [0, 0];
+export const EnableDragging = (elements: Elements, live2d: Live2DViewer) => {
+  const canvas = document.getElementById("canvas")! as HTMLCanvasElement;
+
+  canvas.onmousedown = (e) => {
+    dragging = true;
+    [charX, charY] = [-elements.offsetX!.valueAsNumber, -elements.offsetY!.valueAsNumber];
+    [initX, initY] = [e.clientX - charX, e.clientY - charY];
+  };
+
+  canvas.onmouseup = () => {
+    dragging = false;
+  };
+
+  canvas.onmouseout = () => {
+    dragging = false;
+  };
+
+  canvas.onmousemove = (e) => {
+    if (!dragging) return;
+
+    [mouseX, mouseY] = [e.clientX - charX, e.clientY - charY];
+    if (initX - mouseX != 0 || initY - mouseY != 0) {
+      elements.offsetX!.value = (-(charX + initX - mouseX)).toString();
+      elements.offsetY!.value = (-(charY + initY - mouseY)).toString();
+      OffsetChanged(elements, live2d);
+    }
+  };
+};
