@@ -1,0 +1,444 @@
+
+Wakamo_Scene_0.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+L_arm_01
+  rotate: true
+  xy: 382, 332
+  size: 233, 299
+  orig: 234, 300
+  offset: 0, 0
+  index: -1
+L_arm_04
+  rotate: false
+  xy: 758, 18
+  size: 55, 100
+  orig: 57, 100
+  offset: 0, 0
+  index: -1
+L_leg_01
+  rotate: false
+  xy: 2, 123
+  size: 148, 400
+  orig: 148, 400
+  offset: 0, 0
+  index: -1
+R_arm_01
+  rotate: false
+  xy: 116, 221
+  size: 145, 83
+  orig: 146, 85
+  offset: 0, 1
+  index: -1
+R_arm_02
+  rotate: false
+  xy: 528, 522
+  size: 103, 89
+  orig: 103, 90
+  offset: 0, 1
+  index: -1
+R_arm_03
+  rotate: false
+  xy: 572, 96
+  size: 149, 236
+  orig: 150, 238
+  offset: 0, 1
+  index: -1
+R_arm_04
+  rotate: false
+  xy: 58, 772
+  size: 30, 34
+  orig: 30, 34
+  offset: 0, 0
+  index: -1
+R_leg_01
+  rotate: 180
+  xy: 656, 376
+  size: 75, 429
+  orig: 75, 430
+  offset: 0, 1
+  index: -1
+Ribbon_01
+  rotate: false
+  xy: 587, 612
+  size: 60, 95
+  orig: 60, 95
+  offset: 0, 0
+  index: -1
+Ribbon_02
+  rotate: true
+  xy: 665, 366
+  size: 300, 153
+  orig: 300, 153
+  offset: 0, 0
+  index: -1
+Ribbon_03
+  rotate: true
+  xy: 706, 343
+  size: 275, 205
+  orig: 275, 205
+  offset: 0, 0
+  index: -1
+Skirt_01
+  rotate: false
+  xy: 304, 14
+  size: 100, 75
+  orig: 100, 77
+  offset: 0, 1
+  index: -1
+Skirt_02
+  rotate: false
+  xy: 687, 264
+  size: 104, 88
+  orig: 105, 88
+  offset: 0, 0
+  index: -1
+Skirt_03
+  rotate: false
+  xy: 54, 5
+  size: 43, 66
+  orig: 45, 74
+  offset: 0, 6
+  index: -1
+Skirt_04
+  rotate: false
+  xy: 2, 766
+  size: 55, 39
+  orig: 55, 41
+  offset: 0, 1
+  index: -1
+Skirt_05
+  rotate: false
+  xy: 600, 711
+  size: 64, 94
+  orig: 65, 94
+  offset: 0, 0
+  index: -1
+collar_01
+  rotate: false
+  xy: 814, 15
+  size: 90, 54
+  orig: 90, 55
+  offset: 0, 0
+  index: -1
+gun_01
+  rotate: 180
+  xy: 163, 84
+  size: 522, 300
+  orig: 522, 300
+  offset: 0, 0
+  index: -1
+gun_02
+  rotate: false
+  xy: 838, 24
+  size: 72, 90
+  orig: 78, 90
+  offset: 6, 0
+  index: -1
+hair_01_1
+  rotate: false
+  xy: 328, 268
+  size: 78, 110
+  orig: 80, 116
+  offset: 1, 4
+  index: -1
+hair_01_2
+  rotate: false
+  xy: 89, 779
+  size: 24, 26
+  orig: 25, 26
+  offset: 1, 0
+  index: -1
+hair_01_3
+  rotate: false
+  xy: 243, 360
+  size: 48, 32
+  orig: 50, 33
+  offset: 0, 0
+  index: -1
+hair_01_4
+  rotate: false
+  xy: 21, 755
+  size: 12, 12
+  orig: 15, 14
+  offset: 2, 2
+  index: -1
+hair_01_5
+  rotate: false
+  xy: 2, 346
+  size: 26, 22
+  orig: 30, 27
+  offset: 0, 5
+  index: -1
+hair_01_6
+  rotate: false
+  xy: 56, 453
+  size: 24, 26
+  orig: 25, 27
+  offset: 1, 0
+  index: -1
+hair_02
+  rotate: false
+  xy: 396, 6
+  size: 50, 68
+  orig: 51, 70
+  offset: 0, 1
+  index: -1
+hair_03_1
+  rotate: 270
+  xy: 92, 86
+  size: 211, 249
+  orig: 214, 250
+  offset: 1, 0
+  index: -1
+hair_03_2
+  rotate: true
+  xy: 595, 4
+  size: 233, 201
+  orig: 233, 225
+  offset: 0, 24
+  index: -1
+hair_04
+  rotate: false
+  xy: 244, 8
+  size: 55, 71
+  orig: 55, 72
+  offset: 0, 0
+  index: -1
+hair_05_1
+  rotate: true
+  xy: 309, 84
+  size: 185, 250
+  orig: 186, 250
+  offset: 1, 0
+  index: -1
+hair_05_2
+  rotate: true
+  xy: 109, 6
+  size: 127, 201
+  orig: 155, 250
+  offset: 25, 45
+  index: -1
+halo_01
+  rotate: true
+  xy: 393, 85
+  size: 179, 250
+  orig: 179, 250
+  offset: 0, 0
+  index: -1
+head_01
+  rotate: false
+  xy: 700, 9
+  size: 75, 105
+  orig: 75, 105
+  offset: 0, 0
+  index: -1
+mask_01
+  rotate: false
+  xy: 2, 187
+  size: 50, 156
+  orig: 50, 156
+  offset: 0, 0
+  index: -1
+mask_02
+  rotate: false
+  xy: 2, 728
+  size: 20, 50
+  orig: 22, 50
+  offset: 1, 0
+  index: -1
+mask_eye light
+  rotate: false
+  xy: 2, 369
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+tail_01
+  rotate: false
+  xy: 2, 526
+  size: 27, 22
+  orig: 30, 24
+  offset: 2, 1
+  index: -1
+tail_02
+  rotate: false
+  xy: 630, 579
+  size: 33, 80
+  orig: 35, 83
+  offset: 1, 1
+  index: -1
+tail_03
+  rotate: false
+  xy: 128, 159
+  size: 51, 62
+  orig: 51, 65
+  offset: 0, 0
+  index: -1
+tail_04
+  rotate: false
+  xy: 63, 298
+  size: 279, 155
+  orig: 280, 155
+  offset: 0, 0
+  index: -1
+tail_05
+  rotate: false
+  xy: 2, 145
+  size: 48, 59
+  orig: 49, 60
+  offset: 1, 1
+  index: -1
+tail_06
+  rotate: false
+  xy: 199, 150
+  size: 70, 53
+  orig: 70, 54
+  offset: 0, 0
+  index: -1
+tail_07
+  rotate: false
+  xy: 89, 308
+  size: 55, 43
+  orig: 55, 43
+  offset: 0, 0
+  index: -1
+tail_08
+  rotate: true
+  xy: 450, 28
+  size: 105, 144
+  orig: 106, 145
+  offset: 0, 1
+  index: -1
+toplight
+  rotate: false
+  xy: 2, 379
+  size: 600, 426
+  orig: 600, 426
+  offset: 0, 0
+  index: -1
+torso_01
+  rotate: false
+  xy: 2, 20
+  size: 105, 125
+  orig: 105, 125
+  offset: 0, 0
+  index: -1
+
+Wakamo_Scene_02.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BG0/front_ barricade_01
+  rotate: true
+  xy: 733, 4
+  size: 87, 127
+  orig: 107, 150
+  offset: 3, 22
+  index: -1
+BG0/front_ barricade_02
+  rotate: 270
+  xy: 567, 8
+  size: 156, 150
+  orig: 222, 150
+  offset: 66, 0
+  index: -1
+BG0/front_ barricade_03
+  rotate: false
+  xy: 2, 29
+  size: 231, 200
+  orig: 231, 200
+  offset: 0, 0
+  index: -1
+BG0/front_garbage
+  rotate: true
+  xy: 265, 7
+  size: 223, 300
+  orig: 223, 300
+  offset: 0, 0
+  index: -1
+BG0/front_mid_cone_01
+  rotate: 180
+  xy: 149, 5
+  size: 105, 125
+  orig: 105, 125
+  offset: 0, 0
+  index: -1
+BG0/front_mid_cone_02
+  rotate: true
+  xy: 234, 61
+  size: 168, 125
+  orig: 168, 125
+  offset: 0, 0
+  index: -1
+BG0/front_tire_01
+  rotate: 180
+  xy: 826, 80
+  size: 98, 150
+  orig: 180, 150
+  offset: 82, 0
+  index: -1
+BG0/front_tire_02
+  rotate: true
+  xy: 704, 79
+  size: 150, 125
+  orig: 150, 125
+  offset: 0, 0
+  index: -1
+
+Wakamo_Scene_03.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BG1/floor
+  rotate: 180
+  xy: 2, 4
+  size: 1000, 265
+  orig: 1000, 315
+  offset: 0, 0
+  index: -1
+BG1/middle_bus
+  rotate: false
+  xy: 2, 227
+  size: 897, 550
+  orig: 966, 550
+  offset: 0, 0
+  index: -1
+BG1/middle_car
+  rotate: true
+  xy: 835, 234
+  size: 306, 175
+  orig: 306, 175
+  offset: 0, 0
+  index: -1
+
+Wakamo_Scene_04.png
+size: 512,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BG2/back_brige
+  rotate: 270
+  xy: 57, 3
+  size: 365, 257
+  orig: 750, 1011
+  offset: 0, 63
+  index: -1
+BG2/back_brige1
+  rotate: 180
+  xy: 2, 159
+  size: 401, 535
+  orig: 750, 1011
+  offset: 349, 60
+  index: -1
+BG2/background
+  rotate: false
+  xy: 2, 693
+  size: 400, 300
+  orig: 400, 619
+  offset: 0, 79
+  index: -1

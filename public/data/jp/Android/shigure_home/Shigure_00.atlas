@@ -1,0 +1,349 @@
+
+Shigure_00.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Intro_01_BG_back_obje_01
+  rotate: 180
+  xy: 949, 203
+  size: 570, 268
+  orig: 734, 268
+  offset: 164, 0
+  index: -1
+Intro_01_BG_back_obje_02
+  rotate: true
+  xy: 1323, 473
+  size: 536, 540
+  orig: 550, 718
+  offset: 0, 178
+  index: -1
+Intro_01_BG_back_obje_03
+  rotate: true
+  xy: 1860, 788
+  size: 221, 147
+  orig: 300, 151
+  offset: 79, 0
+  index: -1
+Intro_01_BG_back_obje_04
+  rotate: false
+  xy: 2002, 753
+  size: 40, 257
+  orig: 40, 257
+  offset: 0, 0
+  index: -1
+Intro_01_E_red light_03
+  rotate: false
+  xy: 1527, 873
+  size: 50, 51
+  orig: 50, 51
+  offset: 0, 0
+  index: -1
+Intro_01_E_red light_06
+  rotate: false
+  xy: 870, 867
+  size: 50, 48
+  orig: 50, 48
+  offset: 0, 0
+  index: -1
+Intro_01_E_red light_10
+  rotate: false
+  xy: 1001, 985
+  size: 23, 23
+  orig: 23, 23
+  offset: 0, 0
+  index: -1
+Intro_01_E_red light_13
+  rotate: false
+  xy: 1885, 736
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+Intro_01_E_red light_14
+  rotate: false
+  xy: 1988, 701
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+Intro_01_E_star_01
+  rotate: false
+  xy: 1469, 926
+  size: 83, 83
+  orig: 83, 83
+  offset: 0, 0
+  index: -1
+Intro_01_E_tower light1_01
+  rotate: false
+  xy: 336, 247
+  size: 45, 239
+  orig: 45, 239
+  offset: 0, 0
+  index: -1
+Intro_01_E_tower light1_02
+  rotate: false
+  xy: 1863, 697
+  size: 56, 37
+  orig: 56, 37
+  offset: 0, 0
+  index: -1
+Intro_01_E_tower light1_03
+  rotate: false
+  xy: 1286, 936
+  size: 75, 72
+  orig: 75, 72
+  offset: 0, 0
+  index: -1
+Intro_01_E_tower light1_04
+  rotate: false
+  xy: 1554, 940
+  size: 27, 32
+  orig: 27, 32
+  offset: 0, 0
+  index: -1
+Intro_01_FX_buil light1
+  rotate: false
+  xy: 1370, 637
+  size: 76, 48
+  orig: 76, 48
+  offset: 0, 0
+  index: -1
+Intro_01_FX_buil light2
+  rotate: false
+  xy: 1554, 973
+  size: 25, 35
+  orig: 25, 35
+  offset: 0, 0
+  index: -1
+Intro_01_FX_buil light3
+  rotate: false
+  xy: 1236, 980
+  size: 47, 28
+  orig: 47, 28
+  offset: 0, 0
+  index: -1
+Intro_01_FX_buil light4
+  rotate: false
+  xy: 1470, 865
+  size: 55, 60
+  orig: 55, 60
+  offset: 0, 0
+  index: -1
+Intro_01_FX_buil light5
+  rotate: false
+  xy: 1324, 885
+  size: 39, 50
+  orig: 39, 50
+  offset: 0, 0
+  index: -1
+Intro_01_FX_buil light6
+  rotate: false
+  xy: 1864, 507
+  size: 182, 281
+  orig: 182, 281
+  offset: 0, 0
+  index: -1
+Intro_01_FX_buil light7
+  rotate: false
+  xy: 870, 917
+  size: 129, 92
+  orig: 129, 93
+  offset: 0, 0
+  index: -1
+Intro_01_FX_buil light8
+  rotate: false
+  xy: 694, 531
+  size: 177, 96
+  orig: 177, 97
+  offset: 0, 1
+  index: -1
+Intro_01_RED_light_01_0
+  rotate: false
+  xy: 1302, 918
+  size: 16, 17
+  orig: 16, 17
+  offset: 0, 0
+  index: -1
+Intro_01_RED_light_01_10
+  rotate: false
+  xy: 1581, 989
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+Intro_01_RED_light_01_2
+  rotate: false
+  xy: 1260, 962
+  size: 17, 17
+  orig: 17, 17
+  offset: 0, 0
+  index: -1
+Intro_01_RED_light_01_3
+  rotate: false
+  xy: 1214, 992
+  size: 17, 17
+  orig: 17, 17
+  offset: 0, 0
+  index: -1
+Intro_01_RED_light_01_4
+  rotate: false
+  xy: 932, 903
+  size: 16, 17
+  orig: 16, 17
+  offset: 0, 0
+  index: -1
+Intro_01_RED_light_01_5
+  rotate: false
+  xy: 1336, 867
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+Intro_01_RED_light_01_6
+  rotate: false
+  xy: 870, 989
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+Intro_01_RED_light_01_7
+  rotate: false
+  xy: 1025, 989
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+Intro_01_RED_light_01_8
+  rotate: false
+  xy: 1581, 980
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+Intro_01_RED_light_01_9
+  rotate: false
+  xy: 870, 979
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+Intro_01_RED_light_02
+  rotate: false
+  xy: 1025, 998
+  size: 10, 11
+  orig: 10, 11
+  offset: 0, 0
+  index: -1
+Intro_01_RED_light_02_0
+  rotate: false
+  xy: 1037, 999
+  size: 9, 10
+  orig: 9, 10
+  offset: 0, 0
+  index: -1
+Intro_01_RED_light_02_1
+  rotate: false
+  xy: 1200, 999
+  size: 9, 9
+  orig: 9, 9
+  offset: 0, 0
+  index: -1
+Intro_01_RED_light_02_5
+  rotate: false
+  xy: 1581, 999
+  size: 9, 9
+  orig: 9, 9
+  offset: 0, 0
+  index: -1
+Intro_01_RED_light_03
+  rotate: false
+  xy: 870, 998
+  size: 11, 11
+  orig: 11, 11
+  offset: 0, 0
+  index: -1
+Intro_01_bridge light_1
+  rotate: true
+  xy: 1363, 685
+  size: 324, 110
+  orig: 750, 210
+  offset: 289, 92
+  index: -1
+Intro_01_bridge object1-1
+  rotate: false
+  xy: 1520, 253
+  size: 38, 219
+  orig: 39, 219
+  offset: 0, 0
+  index: -1
+Intro_01_bridge object1-2
+  rotate: false
+  xy: 293, 258
+  size: 41, 223
+  orig: 41, 223
+  offset: 0, 0
+  index: -1
+Intro_01_bridge object2-1
+  rotate: false
+  xy: 1559, 307
+  size: 57, 164
+  orig: 57, 164
+  offset: 0, 0
+  index: -1
+Intro_01_bridge object2-2
+  rotate: false
+  xy: 233, 249
+  size: 71, 168
+  orig: 72, 168
+  offset: 0, 0
+  index: -1
+Intro_01_filter02
+  rotate: false
+  xy: 2, 414
+  size: 867, 595
+  orig: 950, 660
+  offset: 83, 54
+  index: -1
+Intro_01_filter03
+  rotate: 180
+  xy: 870, 474
+  size: 500, 535
+  orig: 500, 535
+  offset: 0, 0
+  index: -1
+Intro_01_front_bridge
+  rotate: false
+  xy: 1618, 284
+  size: 428, 191
+  orig: 804, 233
+  offset: 218, 35
+  index: -1
+Intro_01_sky_Blur
+  rotate: false
+  xy: 383, 226
+  size: 565, 274
+  orig: 600, 502
+  offset: 35, 213
+  index: -1
+Intro_01_steps
+  rotate: false
+  xy: 20, 6
+  size: 211, 419
+  orig: 1100, 480
+  offset: 889, 61
+  index: -1
+Intro_01_wall
+  rotate: 180
+  xy: 233, 3
+  size: 531, 222
+  orig: 600, 263
+  offset: 68, 39
+  index: -1
+train Sample
+  rotate: false
+  xy: 765, 71
+  size: 1281, 146
+  orig: 1281, 146
+  offset: 0, 0
+  index: -1

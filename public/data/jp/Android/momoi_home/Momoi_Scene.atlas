@@ -1,0 +1,167 @@
+
+Momoi_Scene.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BG_floor_circle
+  rotate: true
+  xy: 1137, 1319
+  size: 450, 71
+  orig: 450, 106
+  offset: 0, 0
+  index: -1
+BG_showroon
+  rotate: false
+  xy: 833, 853
+  size: 650, 355
+  orig: 650, 355
+  offset: 0, 0
+  index: -1
+BG_showroon_shadow
+  rotate: false
+  xy: 1350, 209
+  size: 400, 107
+  orig: 400, 153
+  offset: 0, 0
+  index: -1
+FX_Screen
+  rotate: false
+  xy: 2, 1169
+  size: 1134, 838
+  orig: 1250, 1015
+  offset: 116, 0
+  index: -1
+L_Cloth_01
+  rotate: false
+  xy: 1522, 1725
+  size: 402, 282
+  orig: 974, 458
+  offset: 521, 0
+  index: -1
+L_Leg2_01
+  rotate: 270
+  xy: 849, 351
+  size: 417, 796
+  orig: 417, 796
+  offset: 0, 0
+  index: -1
+L_Leg2_02
+  rotate: false
+  xy: 587, 867
+  size: 193, 238
+  orig: 306, 356
+  offset: 113, 0
+  index: -1
+L_Shoes_01
+  rotate: 270
+  xy: 392, 165
+  size: 398, 452
+  orig: 398, 457
+  offset: 0, 5
+  index: -1
+L_Shoes_04
+  rotate: false
+  xy: 594, 1071
+  size: 82, 82
+  orig: 82, 82
+  offset: 0, 0
+  index: -1
+L_Shoes_05
+  rotate: true
+  xy: 1193, 1157
+  size: 231, 212
+  orig: 231, 212
+  offset: 0, 0
+  index: -1
+R_Cloth_02
+  rotate: true
+  xy: 1137, 1202
+  size: 805, 560
+  orig: 970, 610
+  offset: 72, 0
+  index: -1
+R_Cloth_03
+  rotate: false
+  xy: 1184, 193
+  size: 626, 391
+  orig: 675, 547
+  offset: 49, 0
+  index: -1
+R_Leg2_01
+  rotate: 270
+  xy: 670, 434
+  size: 418, 797
+  orig: 418, 797
+  offset: 0, 0
+  index: -1
+R_Leg2_02
+  rotate: true
+  xy: 861, 633
+  size: 191, 235
+  orig: 356, 433
+  offset: 165, 0
+  index: -1
+R_Shoes_01
+  rotate: 270
+  xy: 2, 164
+  size: 399, 455
+  orig: 399, 458
+  offset: 0, 3
+  index: -1
+R_Shoes_04
+  rotate: false
+  xy: 728, 1086
+  size: 82, 83
+  orig: 82, 83
+  offset: 0, 0
+  index: -1
+R_Shoes_05
+  rotate: false
+  xy: 1461, 1106
+  size: 231, 213
+  orig: 231, 213
+  offset: 0, 0
+  index: -1
+bg_dak_00
+  rotate: true
+  xy: 1698, 1072
+  size: 798, 302
+  orig: 3713, 450
+  offset: 26, 80
+  index: -1
+bg_dak_01
+  rotate: 180
+  xy: 445, 564
+  size: 416, 302
+  orig: 3713, 450
+  offset: 807, 81
+  index: -1
+bg_dak_02
+  rotate: 180
+  xy: 2, 564
+  size: 444, 302
+  orig: 3713, 450
+  offset: 1206, 81
+  index: -1
+bg_dak_03
+  rotate: 180
+  xy: 1482, 769
+  size: 523, 303
+  orig: 3713, 450
+  offset: 1634, 81
+  index: -1
+bg_dak_04
+  rotate: false
+  xy: 2, 867
+  size: 593, 303
+  orig: 3713, 450
+  offset: 2139, 81
+  index: -1
+momoi_shadow_01
+  rotate: false
+  xy: 1279, 162
+  size: 450, 45
+  orig: 450, 45
+  offset: 0, 0
+  index: -1

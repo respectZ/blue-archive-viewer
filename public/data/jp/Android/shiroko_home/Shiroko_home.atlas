@@ -1,0 +1,327 @@
+
+Shiroko_home.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Back_body
+  rotate: true
+  xy: 528, 944
+  size: 448, 308
+  orig: 448, 308
+  offset: 0, 0
+  index: -1
+Back_head
+  rotate: false
+  xy: 2, 856
+  size: 524, 536
+  orig: 524, 536
+  offset: 0, 0
+  index: -1
+Body_ac
+  rotate: false
+  xy: 967, 1200
+  size: 30, 119
+  orig: 30, 119
+  offset: 0, 0
+  index: -1
+Body_re
+  rotate: false
+  xy: 1001, 1154
+  size: 719, 892
+  orig: 719, 892
+  offset: 0, 0
+  index: -1
+Eye_01_point
+  rotate: true
+  xy: 485, 735
+  size: 119, 41
+  orig: 119, 41
+  offset: 0, 0
+  index: -1
+Eye_back_W
+  rotate: true
+  xy: 657, 167
+  size: 155, 67
+  orig: 155, 67
+  offset: 0, 0
+  index: -1
+F_Hair_01
+  rotate: false
+  xy: 1461, 702
+  size: 270, 450
+  orig: 270, 450
+  offset: 0, 0
+  index: -1
+F_Hair_02
+  rotate: false
+  xy: 485, 28
+  size: 100, 294
+  orig: 100, 294
+  offset: 0, 0
+  index: -1
+F_Hair_Shadow
+  rotate: false
+  xy: 1859, 119
+  size: 125, 138
+  orig: 125, 138
+  offset: 0, 0
+  index: -1
+F_L_Hair_01
+  rotate: false
+  xy: 528, 324
+  size: 272, 618
+  orig: 272, 618
+  offset: 0, 0
+  index: -1
+F_M_Head
+  rotate: true
+  xy: 838, 671
+  size: 481, 621
+  orig: 481, 621
+  offset: 0, 0
+  index: -1
+F_M_Head_02
+  rotate: false
+  xy: 2, 233
+  size: 481, 621
+  orig: 481, 621
+  offset: 0, 0
+  index: -1
+F_R_Hair_01
+  rotate: false
+  xy: 1722, 1366
+  size: 240, 680
+  orig: 240, 680
+  offset: 0, 0
+  index: -1
+Hair_acc
+  rotate: true
+  xy: 1915, 739
+  size: 67, 77
+  orig: 67, 77
+  offset: 0, 0
+  index: -1
+Halo_1
+  rotate: true
+  xy: 1877, 808
+  size: 345, 138
+  orig: 345, 138
+  offset: 0, 0
+  index: -1
+Halo_1_fx
+  rotate: true
+  xy: 1461, 298
+  size: 402, 198
+  orig: 402, 198
+  offset: 0, 0
+  index: -1
+Halo_1_fx2
+  rotate: true
+  xy: 1661, 114
+  size: 345, 138
+  orig: 345, 138
+  offset: 0, 0
+  index: -1
+Halo_2
+  rotate: false
+  xy: 1859, 54
+  size: 158, 63
+  orig: 158, 63
+  offset: 0, 0
+  index: -1
+Halo_2_fx
+  rotate: true
+  xy: 838, 1173
+  size: 219, 127
+  orig: 219, 127
+  offset: 0, 0
+  index: -1
+Halo_2_fx2
+  rotate: true
+  xy: 587, 12
+  size: 158, 63
+  orig: 158, 63
+  offset: 0, 0
+  index: -1
+L_Ear
+  rotate: true
+  xy: 1801, 259
+  size: 200, 189
+  orig: 200, 189
+  offset: 0, 0
+  index: -1
+L_Lag
+  rotate: false
+  xy: 802, 331
+  size: 150, 338
+  orig: 150, 338
+  offset: 0, 0
+  index: -1
+L_eye
+  rotate: true
+  xy: 967, 1321
+  size: 32, 31
+  orig: 32, 31
+  offset: 0, 0
+  index: -1
+M_L_Hair_01
+  rotate: false
+  xy: 1801, 15
+  size: 56, 242
+  orig: 56, 242
+  offset: 0, 0
+  index: -1
+M_R_Hair_01
+  rotate: false
+  xy: 587, 172
+  size: 68, 150
+  orig: 68, 150
+  offset: 0, 0
+  index: -1
+Necktie
+  rotate: false
+  xy: 1964, 1378
+  size: 67, 294
+  orig: 67, 294
+  offset: 0, 0
+  index: -1
+R_Ear
+  rotate: false
+  xy: 1831, 501
+  size: 188, 219
+  orig: 188, 219
+  offset: 0, 0
+  index: -1
+R_Lag
+  rotate: true
+  xy: 1722, 1155
+  size: 209, 324
+  orig: 209, 324
+  offset: 0, 0
+  index: -1
+R_eye
+  rotate: false
+  xy: 967, 1355
+  size: 31, 37
+  orig: 31, 37
+  offset: 0, 0
+  index: -1
+Scarf
+  rotate: false
+  xy: 802, 213
+  size: 180, 116
+  orig: 180, 116
+  offset: 0, 0
+  index: -1
+Top_eyebrows
+  rotate: true
+  xy: 485, 587
+  size: 146, 35
+  orig: 146, 35
+  offset: 0, 0
+  index: -1
+Top_m_head
+  rotate: false
+  xy: 1661, 461
+  size: 168, 239
+  orig: 168, 239
+  offset: 0, 0
+  index: -1
+Weapon_01
+  rotate: false
+  xy: 2, 1394
+  size: 997, 652
+  orig: 997, 652
+  offset: 0, 0
+  index: -1
+eyebrows_00
+  rotate: false
+  xy: 1733, 722
+  size: 180, 69
+  orig: 180, 69
+  offset: 0, 0
+  index: -1
+eyebrows_01
+  rotate: true
+  xy: 1964, 1856
+  size: 190, 75
+  orig: 190, 75
+  offset: 0, 0
+  index: -1
+eyebrows_02
+  rotate: true
+  xy: 1733, 793
+  size: 360, 142
+  orig: 360, 142
+  offset: 0, 0
+  index: -1
+eyebrows_03
+  rotate: true
+  xy: 1964, 1674
+  size: 180, 70
+  orig: 180, 70
+  offset: 0, 0
+  index: -1
+mouth_00
+  rotate: true
+  xy: 993, 1181
+  size: 17, 6
+  orig: 17, 6
+  offset: 0, 0
+  index: -1
+mouth_01
+  rotate: true
+  xy: 985, 1159
+  size: 26, 6
+  orig: 26, 6
+  offset: 0, 0
+  index: -1
+mouth_A
+  rotate: false
+  xy: 838, 1154
+  size: 22, 17
+  orig: 22, 17
+  offset: 0, 0
+  index: -1
+mouth_A02
+  rotate: true
+  xy: 975, 1158
+  size: 27, 8
+  orig: 27, 8
+  offset: 0, 0
+  index: -1
+mouth_O
+  rotate: false
+  xy: 975, 1187
+  size: 10, 11
+  orig: 10, 11
+  offset: 0, 0
+  index: -1
+mouth_WM
+  rotate: true
+  xy: 993, 1161
+  size: 18, 3
+  orig: 18, 3
+  offset: 0, 0
+  index: -1
+mouth_WW
+  rotate: true
+  xy: 967, 1170
+  size: 28, 6
+  orig: 28, 6
+  offset: 0, 0
+  index: -1
+
+Shiroko_home2.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Background/backmap
+  rotate: false
+  xy: 2, 603
+  size: 2022, 1421
+  orig: 2022, 1421
+  offset: 0, 0
+  index: -1

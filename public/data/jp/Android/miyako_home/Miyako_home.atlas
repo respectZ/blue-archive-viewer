@@ -1,0 +1,866 @@
+
+Miyako_home.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+B_Belt_01
+  rotate: 180
+  xy: 1072, 230
+  size: 454, 299
+  orig: 454, 299
+  offset: 0, 0
+  index: -1
+B_Bluelight_01
+  rotate: 180
+  xy: 2, 634
+  size: 799, 705
+  orig: 799, 749
+  offset: 0, 0
+  index: -1
+B_L_Hair_01_0
+  rotate: false
+  xy: 680, 258
+  size: 237, 234
+  orig: 237, 234
+  offset: 0, 0
+  index: -1
+B_L_Hair_01_1
+  rotate: false
+  xy: 812, 261
+  size: 285, 222
+  orig: 285, 222
+  offset: 0, 0
+  index: -1
+B_L_Hair_01_2
+  rotate: false
+  xy: 1492, 943
+  size: 554, 602
+  orig: 554, 602
+  offset: 0, 0
+  index: -1
+B_L_Hair_02
+  rotate: false
+  xy: 1673, 864
+  size: 373, 415
+  orig: 373, 415
+  offset: 0, 0
+  index: -1
+B_L_Hair_03
+  rotate: false
+  xy: 205, 1411
+  size: 187, 483
+  orig: 191, 492
+  offset: 0, 9
+  index: -1
+B_L_Hair_04
+  rotate: true
+  xy: 803, 557
+  size: 164, 426
+  orig: 164, 426
+  offset: 0, 0
+  index: -1
+B_L_Hair_05
+  rotate: false
+  xy: 991, 998
+  size: 92, 144
+  orig: 93, 144
+  offset: 1, 0
+  index: -1
+Character_Shadow_01
+  rotate: false
+  xy: 1058, 995
+  size: 553, 204
+  orig: 564, 219
+  offset: 5, 0
+  index: -1
+Character_Shadow_02
+  rotate: true
+  xy: 1580, 1604
+  size: 443, 409
+  orig: 470, 454
+  offset: 27, 25
+  index: -1
+Character_Shadow_03
+  rotate: false
+  xy: 522, 473
+  size: 328, 197
+  orig: 376, 259
+  offset: 27, 37
+  index: -1
+F_Flush_01
+  rotate: false
+  xy: 1910, 975
+  size: 135, 74
+  orig: 135, 74
+  offset: 0, 0
+  index: -1
+F_Flush_02
+  rotate: false
+  xy: 230, 1202
+  size: 154, 67
+  orig: 154, 69
+  offset: 0, 2
+  index: -1
+F_Hair_01
+  rotate: false
+  xy: 1975, 1680
+  size: 71, 147
+  orig: 71, 147
+  offset: 0, 0
+  index: -1
+F_Hair_02
+  rotate: false
+  xy: 333, 1743
+  size: 66, 134
+  orig: 66, 134
+  offset: 0, 0
+  index: -1
+F_Hair_03
+  rotate: false
+  xy: 176, 1414
+  size: 53, 159
+  orig: 53, 159
+  offset: 0, 0
+  index: -1
+F_Hair_Shadow_01
+  rotate: false
+  xy: 320, 1657
+  size: 53, 91
+  orig: 53, 91
+  offset: 0, 0
+  index: -1
+F_Hair_Shadow_02
+  rotate: false
+  xy: 2032, 1976
+  size: 8, 71
+  orig: 8, 71
+  offset: 0, 0
+  index: -1
+F_Mouth_011
+  rotate: false
+  xy: 2, 1935
+  size: 14, 6
+  orig: 14, 6
+  offset: 0, 0
+  index: -1
+F_Mouth_021
+  rotate: false
+  xy: 1905, 2005
+  size: 13, 9
+  orig: 13, 9
+  offset: 0, 0
+  index: -1
+F_Mouth_031
+  rotate: false
+  xy: 177, 1960
+  size: 21, 10
+  orig: 21, 10
+  offset: 0, 0
+  index: -1
+F_Mouth_041
+  rotate: false
+  xy: 2016, 1942
+  size: 30, 17
+  orig: 31, 17
+  offset: 0, 0
+  index: -1
+F_Mouth_04_W1
+  rotate: false
+  xy: 1580, 1937
+  size: 7, 17
+  orig: 7, 17
+  offset: 0, 0
+  index: -1
+F_Mouth_051
+  rotate: false
+  xy: 73, 1993
+  size: 23, 16
+  orig: 23, 16
+  offset: 0, 0
+  index: -1
+F_Mouth_061
+  rotate: false
+  xy: 1782, 2042
+  size: 13, 4
+  orig: 13, 4
+  offset: 0, 0
+  index: -1
+F_Mouth_071
+  rotate: false
+  xy: 195, 1937
+  size: 38, 22
+  orig: 38, 22
+  offset: 0, 0
+  index: -1
+F_Mouth_08
+  rotate: false
+  xy: 1756, 2039
+  size: 24, 7
+  orig: 24, 7
+  offset: 0, 0
+  index: -1
+F_Nose_011
+  rotate: false
+  xy: 206, 1928
+  size: 7, 8
+  orig: 7, 8
+  offset: 0, 0
+  index: -1
+F_Nose_021
+  rotate: false
+  xy: 1580, 1955
+  size: 13, 15
+  orig: 13, 15
+  offset: 0, 0
+  index: -1
+Face_01
+  rotate: false
+  xy: 2, 1683
+  size: 235, 316
+  orig: 235, 316
+  offset: 0, 0
+  index: -1
+Halo_01
+  rotate: false
+  xy: 132, 1270
+  size: 244, 139
+  orig: 244, 139
+  offset: 0, 0
+  index: -1
+Halo_02
+  rotate: false
+  xy: 1174, 467
+  size: 173, 91
+  orig: 173, 91
+  offset: 0, 0
+  index: -1
+Halo_Light_01
+  rotate: false
+  xy: 1503, 671
+  size: 251, 147
+  orig: 251, 147
+  offset: 0, 0
+  index: -1
+Halo_Light_02
+  rotate: false
+  xy: 803, 1031
+  size: 180, 99
+  orig: 180, 99
+  offset: 0, 0
+  index: -1
+Hardlight
+  rotate: true
+  xy: 991, 1200
+  size: 846, 588
+  orig: 846, 588
+  offset: 0, 0
+  index: -1
+Helicopter_Gun_01
+  rotate: false
+  xy: 1919, 1260
+  size: 110, 50
+  orig: 110, 50
+  offset: 0, 0
+  index: -1
+Helicopter_Gun_02
+  rotate: true
+  xy: 803, 643
+  size: 165, 423
+  orig: 165, 423
+  offset: 0, 0
+  index: -1
+Helicopter_Gun_03
+  rotate: false
+  xy: 1431, 757
+  size: 588, 200
+  orig: 588, 214
+  offset: 0, 14
+  index: -1
+Helicopter_Gun_04
+  rotate: 270
+  xy: 1351, 416
+  size: 141, 256
+  orig: 141, 256
+  offset: 0, 0
+  index: -1
+Helicopter_inside_01
+  rotate: false
+  xy: 2, 1131
+  size: 987, 916
+  orig: 987, 916
+  offset: 0, 0
+  index: -1
+L_B_Eyebrows_01
+  rotate: false
+  xy: 1605, 2004
+  size: 13, 5
+  orig: 13, 5
+  offset: 0, 0
+  index: -1
+L_Belt_01
+  rotate: true
+  xy: 1593, 117
+  size: 497, 452
+  orig: 497, 452
+  offset: 0, 0
+  index: -1
+L_Eye_011
+  rotate: false
+  xy: 2, 1894
+  size: 28, 37
+  orig: 28, 39
+  offset: 0, 1
+  index: -1
+L_Eye_021
+  rotate: false
+  xy: 2, 2029
+  size: 9, 14
+  orig: 9, 14
+  offset: 0, 0
+  index: -1
+L_Eye_P_01
+  rotate: false
+  xy: 1949, 1934
+  size: 11, 10
+  orig: 11, 10
+  offset: 0, 0
+  index: -1
+L_Eye_P_02
+  rotate: false
+  xy: 2, 1957
+  size: 12, 13
+  orig: 12, 13
+  offset: 0, 0
+  index: -1
+L_Eye_White_01
+  rotate: false
+  xy: 1970, 1889
+  size: 61, 49
+  orig: 61, 49
+  offset: 0, 0
+  index: -1
+L_Eyebrows_01
+  rotate: false
+  xy: 127, 1436
+  size: 59, 34
+  orig: 59, 34
+  offset: 0, 0
+  index: -1
+L_Eyebrows_02
+  rotate: false
+  xy: 1580, 1580
+  size: 59, 28
+  orig: 59, 28
+  offset: 0, 0
+  index: -1
+L_Eyeclose_01
+  rotate: false
+  xy: 219, 1891
+  size: 67, 39
+  orig: 67, 39
+  offset: 0, 0
+  index: -1
+L_Eyeclose_02
+  rotate: false
+  xy: 1580, 2008
+  size: 66, 39
+  orig: 66, 42
+  offset: 0, 3
+  index: -1
+L_F_Flush_Line_011
+  rotate: false
+  xy: 2025, 1962
+  size: 18, 13
+  orig: 18, 13
+  offset: 0, 0
+  index: -1
+L_F_Flush_Line_02
+  rotate: false
+  xy: 1649, 2023
+  size: 55, 23
+  orig: 55, 23
+  offset: 0, 0
+  index: -1
+L_Face_Allclose_01
+  rotate: false
+  xy: 1580, 1791
+  size: 48, 45
+  orig: 48, 45
+  offset: 0, 0
+  index: -1
+L_Face_Harfclose_01
+  rotate: false
+  xy: 1839, 2034
+  size: 33, 12
+  orig: 33, 12
+  offset: 0, 0
+  index: -1
+L_Finger_01
+  rotate: false
+  xy: 170, 1643
+  size: 46, 68
+  orig: 46, 68
+  offset: 0, 0
+  index: -1
+L_Forearm_01
+  rotate: false
+  xy: 1697, 1044
+  size: 140, 178
+  orig: 140, 178
+  offset: 0, 0
+  index: -1
+L_Forearm_02
+  rotate: false
+  xy: 1983, 1833
+  size: 56, 54
+  orig: 56, 54
+  offset: 0, 0
+  index: -1
+L_Hair_01
+  rotate: true
+  xy: 443, 385
+  size: 162, 277
+  orig: 162, 277
+  offset: 0, 0
+  index: -1
+L_Hair_02
+  rotate: false
+  xy: 1808, 888
+  size: 103, 138
+  orig: 103, 138
+  offset: 0, 0
+  index: -1
+L_Hand_01
+  rotate: false
+  xy: 23, 1341
+  size: 107, 83
+  orig: 107, 83
+  offset: 0, 0
+  index: -1
+L_Headset_01
+  rotate: false
+  xy: 1885, 286
+  size: 160, 281
+  orig: 160, 281
+  offset: 0, 0
+  index: -1
+L_Knife_01
+  rotate: false
+  xy: 1621, 883
+  size: 101, 187
+  orig: 101, 187
+  offset: 0, 0
+  index: -1
+L_Leg_01
+  rotate: 270
+  xy: 1688, 584
+  size: 118, 357
+  orig: 118, 357
+  offset: 0, 0
+  index: -1
+L_Magazine_01
+  rotate: false
+  xy: 1580, 1607
+  size: 133, 123
+  orig: 133, 123
+  offset: 0, 0
+  index: -1
+L_Magazine_02
+  rotate: false
+  xy: 1588, 1209
+  size: 101, 147
+  orig: 101, 147
+  offset: 0, 0
+  index: -1
+L_Mike_01
+  rotate: false
+  xy: 1956, 1616
+  size: 55, 61
+  orig: 55, 61
+  offset: 0, 0
+  index: -1
+L_Phone_01
+  rotate: false
+  xy: 803, 811
+  size: 70, 131
+  orig: 70, 131
+  offset: 0, 0
+  index: -1
+L_Phone_light_01
+  rotate: true
+  xy: 1231, 560
+  size: 127, 219
+  orig: 127, 219
+  offset: 0, 0
+  index: -1
+L_Ribbon_01
+  rotate: false
+  xy: 1580, 1719
+  size: 78, 64
+  orig: 78, 90
+  offset: 0, 26
+  index: -1
+L_Ribbon_02
+  rotate: false
+  xy: 21, 1932
+  size: 51, 78
+  orig: 51, 78
+  offset: 0, 0
+  index: -1
+L_Ribbon_03
+  rotate: false
+  xy: 1669, 1588
+  size: 69, 56
+  orig: 69, 56
+  offset: 0, 0
+  index: -1
+L_Shoulder_01
+  rotate: false
+  xy: 1920, 1940
+  size: 110, 106
+  orig: 110, 106
+  offset: 0, 0
+  index: -1
+L_Skirt_01
+  rotate: true
+  xy: 1638, 466
+  size: 140, 236
+  orig: 140, 236
+  offset: 0, 0
+  index: -1
+L_T_Eyebrows_01
+  rotate: false
+  xy: 1709, 2026
+  size: 42, 7
+  orig: 42, 7
+  offset: 0, 0
+  index: -1
+L_T_Eyebrows_02
+  rotate: false
+  xy: 229, 1934
+  size: 45, 6
+  orig: 46, 7
+  offset: 0, 0
+  index: -1
+L_T_Eyebrows_03
+  rotate: false
+  xy: 1982, 2025
+  size: 46, 21
+  orig: 46, 21
+  offset: 0, 0
+  index: -1
+L_T_Hair_01
+  rotate: false
+  xy: 1581, 265
+  size: 326, 251
+  orig: 326, 251
+  offset: 0, 0
+  index: -1
+L_T_Hair_02
+  rotate: false
+  xy: 768, 285
+  size: 181, 195
+  orig: 181, 195
+  offset: 0, 0
+  index: -1
+L_T_Hair_03
+  rotate: false
+  xy: 2, 1972
+  size: 59, 63
+  orig: 59, 63
+  offset: 0, 0
+  index: -1
+L_Thigh_01
+  rotate: false
+  xy: 2, 1421
+  size: 182, 259
+  orig: 182, 259
+  offset: 0, 0
+  index: -1
+L_UpperArm_01
+  rotate: true
+  xy: 2, 501
+  size: 130, 249
+  orig: 130, 249
+  offset: 0, 0
+  index: -1
+R_B_Eyebrows_01
+  rotate: false
+  xy: 1862, 2029
+  size: 11, 5
+  orig: 11, 5
+  offset: 0, 0
+  index: -1
+R_Eye_011
+  rotate: false
+  xy: 1580, 1972
+  size: 23, 36
+  orig: 23, 36
+  offset: 0, 0
+  index: -1
+R_Eye_021
+  rotate: false
+  xy: 1915, 2023
+  size: 8, 12
+  orig: 8, 13
+  offset: 0, 0
+  index: -1
+R_Eye_P_01
+  rotate: false
+  xy: 2, 1942
+  size: 12, 12
+  orig: 12, 12
+  offset: 0, 0
+  index: -1
+R_Eye_P_02
+  rotate: false
+  xy: 2033, 1930
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+R_Eye_White_01
+  rotate: false
+  xy: 235, 1847
+  size: 34, 44
+  orig: 34, 44
+  offset: 0, 0
+  index: -1
+R_Eyebrows_01
+  rotate: false
+  xy: 172, 1617
+  size: 36, 33
+  orig: 36, 33
+  offset: 0, 0
+  index: -1
+R_Eyebrows_02
+  rotate: false
+  xy: 2009, 1604
+  size: 36, 28
+  orig: 36, 28
+  offset: 0, 0
+  index: -1
+R_Eyeclose_01
+  rotate: false
+  xy: 1875, 2013
+  size: 39, 34
+  orig: 43, 38
+  offset: 0, 4
+  index: -1
+R_Eyeclose_02
+  rotate: false
+  xy: 288, 1886
+  size: 38, 35
+  orig: 38, 38
+  offset: 0, 3
+  index: -1
+R_F_Flush_Line_011
+  rotate: false
+  xy: 1916, 2035
+  size: 14, 11
+  orig: 14, 11
+  offset: 0, 0
+  index: -1
+R_F_Flush_Line_02
+  rotate: false
+  xy: 1961, 1693
+  size: 26, 16
+  orig: 26, 16
+  offset: 0, 0
+  index: -1
+R_Face_Allclose_01
+  rotate: false
+  xy: 2, 1674
+  size: 32, 39
+  orig: 32, 39
+  offset: 0, 0
+  index: -1
+R_Face_Harfclose_01
+  rotate: false
+  xy: 1706, 2032
+  size: 47, 14
+  orig: 47, 14
+  offset: 0, 0
+  index: -1
+R_Forearm_01
+  rotate: true
+  xy: 1437, 470
+  size: 199, 210
+  orig: 199, 210
+  offset: 0, 0
+  index: -1
+R_Hair_01
+  rotate: false
+  xy: 379, 317
+  size: 88, 200
+  orig: 88, 200
+  offset: 0, 0
+  index: -1
+R_Hair_02
+  rotate: false
+  xy: 1614, 362
+  size: 72, 179
+  orig: 77, 179
+  offset: 5, 0
+  index: -1
+R_Hair_02_S
+  rotate: false
+  xy: 332, 1608
+  size: 26, 109
+  orig: 26, 109
+  offset: 0, 0
+  index: -1
+R_Headset_01
+  rotate: false
+  xy: 1233, 734
+  size: 67, 126
+  orig: 67, 126
+  offset: 0, 0
+  index: -1
+R_Leg_01
+  rotate: false
+  xy: 803, 782
+  size: 429, 237
+  orig: 429, 237
+  offset: 0, 0
+  index: -1
+R_Skirt_01
+  rotate: true
+  xy: 234, 438
+  size: 193, 201
+  orig: 193, 201
+  offset: 0, 0
+  index: -1
+R_T_Eyebrows_01
+  rotate: false
+  xy: 271, 1874
+  size: 22, 16
+  orig: 22, 16
+  offset: 0, 0
+  index: -1
+R_T_Eyebrows_02
+  rotate: false
+  xy: 2005, 2033
+  size: 22, 13
+  orig: 22, 13
+  offset: 0, 0
+  index: -1
+R_T_Eyebrows_03
+  rotate: false
+  xy: 328, 1898
+  size: 28, 9
+  orig: 28, 10
+  offset: 0, 1
+  index: -1
+R_UpperArm_01
+  rotate: true
+  xy: 701, 470
+  size: 171, 237
+  orig: 171, 237
+  offset: 0, 0
+  index: -1
+R_Weapon_01
+  rotate: false
+  xy: 991, 689
+  size: 510, 509
+  orig: 510, 509
+  offset: 0, 0
+  index: -1
+Skarf_01
+  rotate: false
+  xy: 280, 1422
+  size: 89, 70
+  orig: 89, 70
+  offset: 0, 0
+  index: -1
+Skarf_02
+  rotate: false
+  xy: 1958, 1647
+  size: 81, 41
+  orig: 81, 41
+  offset: 0, 0
+  index: -1
+Skarf_Shadow_01
+  rotate: false
+  xy: 53, 422
+  size: 175, 95
+  orig: 175, 95
+  offset: 0, 0
+  index: -1
+Torso_01
+  rotate: 180
+  xy: 881, 443
+  size: 192, 172
+  orig: 192, 172
+  offset: 0, 0
+  index: -1
+Torso_02
+  rotate: false
+  xy: 1580, 1359
+  size: 251, 243
+  orig: 251, 243
+  offset: 0, 0
+  index: -1
+Torso_03
+  rotate: true
+  xy: 1838, 1391
+  size: 221, 180
+  orig: 221, 180
+  offset: 0, 0
+  index: -1
+
+Miyako_home2.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+01/512
+  rotate: false
+  xy: 474, 787
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
+01/Background
+  rotate: false
+  xy: 2, 909
+  size: 926, 1043
+  orig: 926, 1043
+  offset: 0, 0
+  index: -1
+01/F_Cloud_01
+  rotate: true
+  xy: 1472, 542
+  size: 1410, 479
+  orig: 1410, 479
+  offset: 0, 0
+  index: -1
+01/F_Cloud_02
+  rotate: true
+  xy: 930, 542
+  size: 1410, 541
+  orig: 1410, 541
+  offset: 0, 0
+  index: -1
+01/Redlights_01
+  rotate: false
+  xy: 474, 690
+  size: 94, 95
+  orig: 94, 95
+  offset: 0, 0
+  index: -1
+01/Redlights_02
+  rotate: false
+  xy: 2, 565
+  size: 42, 42
+  orig: 42, 42
+  offset: 0, 0
+  index: -1
+01/steam_01
+  rotate: false
+  xy: 2, 609
+  size: 470, 298
+  orig: 470, 298
+  offset: 0, 0
+  index: -1
