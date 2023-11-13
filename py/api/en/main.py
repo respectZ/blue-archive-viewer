@@ -1,31 +1,53 @@
 import requests
 import re
 import os
+from lib.downloader import Downloader
+import UnityPy
+from PIL import ImageOps
 
 
-class BlueArchiveResourceEN:
-    def __init__(self, group: str, resource_path: str, resource_size: int, resource_hash: str, full_url="") -> None:
-        self.group = group
-        self.resource_path = resource_path
-        self.resource_size = resource_size
-        self.resource_hash = resource_hash
-        self.full_url = full_url
+class Resource:
+    def __init__(self, **kwargs):
+        self.group = kwargs["group"]
+        self.resource_path = kwargs["resource_path"]
+        self.resource_size = kwargs["resource_size"]
+        self.resource_hash = kwargs["resource_hash"]
+        self.base_url = kwargs["baseUrl"]
+        self.downloader = Downloader()
+        self.downloader.setOutPath("temp/")
 
-    def download(self, rootDir: str) -> None:
-        '''
-        Download resource to path.
-        '''
-        src = requests.get(self.full_url).content
-        path = rootDir + self.resource_path
-        # Create directory if not exists
-        if not os.path.exists(os.path.dirname(path)):
-            os.makedirs(os.path.dirname(path))
-        # Write file
-        with open(path, "wb") as f:
-            f.write(src)
+    def getDownloadUrl(self):
+        return f"{self.base_url}/{self.resource_path}"
+
+    def setOutPath(self, path):
+        self.out_path = path
+
+    def download(self):
+        self.downloader.download(self.getDownloadUrl())
+
+    def setKeepSubDir(self, keepSubDir):
+        self.downloader.setKeepSubDir(keepSubDir)
+
+    @staticmethod
+    def extractBundle(src: str, dest: str):
+        env = UnityPy.load(src)
+        os.makedirs(dest, exist_ok=True)
+        for obj in env.objects:
+            # Texture2D
+            if obj.type.name == "Texture2D":
+                data = obj.read()
+                img = data.image
+                img = ImageOps.flip(img)
+                p = os.path.join(dest, data.name + ".png")
+                img.save(p)
+            elif obj.type.name == "TextAsset":
+                data = obj.read()
+                p = os.path.join(dest, data.name)
+                with open(p, "wb") as f:
+                    f.write(bytes(data.script))
 
 
-class BlueArchiveAPIEN:
+class Api:
     def __init__(self) -> None:
         ps = "https://play.google.com/store/apps/details?id=com.nexon.bluearchive&hl=in&gl=US"
         url = "https://api-pub.nexon.com/patch/v1.1/version-check"
@@ -52,8 +74,11 @@ class BlueArchiveAPIEN:
         # Get resource url
         src = requests.post(url, json=body).json()
         self.resource_url = src["patch"]["resource_path"]
+        base_url = "/".join(src["patch"]["resource_path"].split("/")[:-1])
 
+        # Fetch resources
+        self.resources = []
 
-api = BlueArchiveAPIEN()
-
-print(api.resource_url)
+        r = requests.get(self.resource_url).json()
+        self.resources = [Resource(**x, baseUrl=base_url)
+                          for x in r["resources"]]
