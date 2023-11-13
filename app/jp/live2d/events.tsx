@@ -1,7 +1,7 @@
 "use client";
 
 import { Live2DViewer } from "@/app/lib/live2d_viewer";
-import { findCharIdFromDevName, localizeCharFromDevName } from "./character";
+import { localizeCharFromDevName } from "./character";
 import { getBGMByDevName } from "./bgm";
 import { getSubtitles } from "./subtitle";
 import { toast } from "./toast";

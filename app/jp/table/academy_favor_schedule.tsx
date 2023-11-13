@@ -1,5 +1,3 @@
-import { runOnClient } from "./util";
-
 interface AcademyFavorSchedule {
   Id: number;
   CharacterId: number;
@@ -9,10 +7,8 @@ interface AcademyFavorSchedule {
 
 export const data: AcademyFavorSchedule[] = [];
 
-const initialize = async () => {
+export const initialize = async () => {
   const baseUrl = window.location.origin;
   const aca = await fetch(`${baseUrl}/data/jp/TableBundles/Excel/AcademyFavorScheduleExcelTable.json`).then((res) => res.json()) as AcademyFavorSchedule[];
   data.push(...aca);
 };
-
-runOnClient(async () => await initialize());
