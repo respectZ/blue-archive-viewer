@@ -88,7 +88,7 @@ export default function Home() {
       </div>
 
       <div
-        className="md:w-96 sm:w-full h-screen bg-neutral-800 fixed pt-6 px-12 duration-300 left-0 z-10"
+        className="md:w-96 sm:w-full h-screen bg-neutral-800 fixed pt-6 px-12 duration-300 left-0 z-10 overflow-y-auto"
         id="setting"
         ref={settingPanel}
       >
