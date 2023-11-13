@@ -64,7 +64,16 @@ export const ReloadAnimations = (selectElement: HTMLSelectElement, v: string[]) 
  * @param selectElement - A select element.
  * @param v - A pair of model DevName and list of .skel files.
  */
-export const ReloadModels = (selectElement: HTMLSelectElement, v: Record<string, string[]>) => {
+export const ReloadModels = (selectElement: HTMLSelectElement, v: Record<string, string[]>, sort: boolean = true) => {
+  if (sort) {
+    // Compare by getLocalName(key)
+    const sorted = Object.entries(v).sort((a, b) => {
+      const [aLocalName, aDevName] = getLocalName(a[0]);
+      const [bLocalName, bDevName] = getLocalName(b[0]);
+      return aLocalName.localeCompare(bLocalName);
+    });
+    v = Object.fromEntries(sorted);
+  }
   selectElement.innerHTML = "";
   let flag = false;
   for (const [model, files] of Object.entries(v)) {

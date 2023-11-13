@@ -1,4 +1,4 @@
-import * as MemoryLobby from "../table/memory_lobby";
+import { MemoryLobby } from "@/app/lib/table";
 import { findCharIdFromDevName } from "./character";
 
 export const getBGM = (charId: number): number => {

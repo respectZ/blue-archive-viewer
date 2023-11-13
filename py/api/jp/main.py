@@ -44,17 +44,17 @@ class Bundle:
         self.isSplitDownload = isSplitDownload
         self.baseUrl = baseUrl
 
-        self.downlaoder = Downloader()
-        self.downlaoder.setOutPath("temp/")
+        self.downloader = Downloader()
+        self.downloader.setOutPath("temp/")
 
     def getDownloadUrl(self):
         return f"{self.baseUrl}/Android/{self.name}"
 
     def download(self):
-        self.downlaoder.download(self.getDownloadUrl())
+        self.downloader.download(self.getDownloadUrl())
 
     def setOutPath(self, path):
-        self.downlaoder.setOutPath(path)
+        self.downloader.setOutPath(path)
 
     @staticmethod
     def extract(src: str, dest: str):

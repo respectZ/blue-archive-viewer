@@ -74,7 +74,12 @@ def download_spinelobbies(api: BlueArchiveApiJP, out="jp/data/Andorid/"):
                         "public/", "")  # Remove public/
                     if dir_name not in r:
                         r[dir_name] = []
-                    r[dir_name].append(file)
+                    full_file = os.path.join(root, file)
+                    # Remove public/ from path
+                    full_file = full_file.replace("public/", "")
+                    full_file = full_file.replace("public\\", "")
+
+                    r[dir_name].append(full_file)
 
         with open(os.path.join(directory, "info.json"), "w") as f:
             f.write(json.dumps(r, indent=4))
