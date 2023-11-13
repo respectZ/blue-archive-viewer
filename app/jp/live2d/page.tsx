@@ -52,6 +52,7 @@ export default function Home() {
       }
       events.ReloadModels(elements.modelSelect!, models);
       events.LoadModel(elements, live2d);
+      events.EnableDragging(elements, live2d);
     });
 
     window.addEventListener("resize", () => events.OnResize(elements, live2d));
@@ -88,7 +89,7 @@ export default function Home() {
       </div>
 
       <div
-        className="md:w-96 sm:w-full h-screen bg-neutral-800 fixed pt-6 px-12 duration-300 left-0 z-10"
+        className="md:w-96 sm:w-full h-screen bg-neutral-800 fixed pt-6 px-12 duration-300 left-0 z-10 overflow-y-auto"
         id="setting"
         ref={settingPanel}
       >
@@ -226,6 +227,8 @@ export default function Home() {
                 }}
               />
             </div>
+
+            <p className="mb-2">You can also move by dragging it.</p>
 
             <InputNumber
               id="offset-x"

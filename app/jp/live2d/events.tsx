@@ -28,13 +28,13 @@ export interface Elements {
 }
 
 export const CloseSetting = (element: HTMLDivElement) => {
-  element.classList.add("-left-96");
+  element.classList.add("-left-full");
   element.classList.remove("left-0");
 };
 
 export const OpenSetting = (element: HTMLDivElement) => {
   element.classList.add("left-0");
-  element.classList.remove("-left-96");
+  element.classList.remove("-left-full");
 };
 
 export const PlayVoiceOnChanged = (v: boolean, live2d: Live2DViewer) => {
@@ -134,11 +134,11 @@ export const LoadModel = async (elements: Elements, live2d: Live2DViewer) => {
       if (char === undefined) continue;
 
       scale!.value = char.scale.x.toString();
-
-      offsetX!.value = char.x.toString();
-      offsetY!.value = char.y.toString();
     } else await live2d.addSpine(file, i.toString(), 0);
   }
+  const [x, y] = live2d.center();
+  offsetX!.value = x.toString();
+  offsetY!.value = y.toString();
   // Clear subtitles
   elements.subtitle!.innerHTML = "";
   ReloadAnimations(animationSelect!, animations);
@@ -163,10 +163,7 @@ export const OffsetChanged = (elements: Elements, live2d: Live2DViewer) => {
 };
 
 export const OffsetCenter = (elements: Elements, live2d: Live2DViewer) => {
-  const x = live2d.app.view.width / 2;
-  const y = window.innerHeight;
-
-  live2d.move(x, y);
+  const [x, y] = live2d.center();
 
   elements.offsetX!.value = x.toString();
   elements.offsetY!.value = y.toString();
@@ -233,4 +230,37 @@ const showSubtitles = (elements: Elements) => {
     p.classList.add("text-xl", "text-gray-200", "mb-2", "p-2", "bg-neutral-800", "bg-opacity-80");
     subtitleElement.appendChild(p);
   }
+};
+
+let dragging = false;
+let [charX, charY] = [0, 0];
+let [mouseX, mouseY] = [0, 0];
+let [initX, initY] = [0, 0];
+export const EnableDragging = (elements: Elements, live2d: Live2DViewer) => {
+  const canvas = document.getElementById("canvas")! as HTMLCanvasElement;
+
+  canvas.onmousedown = (e) => {
+    dragging = true;
+    [charX, charY] = [-elements.offsetX!.valueAsNumber, -elements.offsetY!.valueAsNumber];
+    [initX, initY] = [e.clientX - charX, e.clientY - charY];
+  };
+
+  canvas.onmouseup = () => {
+    dragging = false;
+  };
+
+  canvas.onmouseout = () => {
+    dragging = false;
+  };
+
+  canvas.onmousemove = (e) => {
+    if (!dragging) return;
+
+    [mouseX, mouseY] = [e.clientX - charX, e.clientY - charY];
+    if (initX - mouseX != 0 || initY - mouseY != 0) {
+      elements.offsetX!.value = (-(charX + initX - mouseX)).toString();
+      elements.offsetY!.value = (-(charY + initY - mouseY)).toString();
+      OffsetChanged(elements, live2d);
+    }
+  };
 };
