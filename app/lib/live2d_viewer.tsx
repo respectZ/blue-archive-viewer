@@ -282,7 +282,7 @@ export class Live2DViewer {
    * Play a char animation.
    * @param name
    */
-  playAnimation(name: string, options: { onComplete?: () => void; onPlay?: (percent: number) => void } = {}) {
+  playAnimation(name: string, options: { onComplete?: () => void } = {}) {
     if (!this.char) return;
 
     if (this.howl !== undefined) this.howl.stop();
