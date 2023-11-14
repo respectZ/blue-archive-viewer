@@ -11,6 +11,8 @@ import * as events from "./events";
 import InputNumber from "@/app/component/input_number";
 import Accordion from "@/app/component/accordion";
 import Button from "@/app/component/button";
+import Modal from "@/app/component/modal";
+import ProgressBar from "@/app/component/progress_bar";
 
 var elements: events.Elements = {};
 
@@ -33,6 +35,11 @@ export const Live2DPage: React.FC<HomeProps> = ({ region }) => {
   const offsetX = createRef<HTMLInputElement>();
   const offsetY = createRef<HTMLInputElement>();
   const audioBGM = createRef<HTMLAudioElement>();
+  const exportBitrate = createRef<HTMLInputElement>();
+  const exportFPS = createRef<HTMLInputElement>();
+  const modal = createRef<HTMLDivElement>();
+  const progressBar = createRef<HTMLDivElement>();
+  const modalClose = createRef<HTMLButtonElement>();
 
   useEffect(() => {
     if (settingPanel.current) elements.settingPanel = settingPanel.current;
@@ -47,6 +54,11 @@ export const Live2DPage: React.FC<HomeProps> = ({ region }) => {
     if (offsetY.current) elements.offsetY = offsetY.current;
     if (jsonData.current) elements.jsonData = jsonData.current;
     if (audioBGM.current) elements.audioBGM = audioBGM.current;
+    if (exportBitrate.current) elements.exportBitrate = exportBitrate.current;
+    if (exportFPS.current) elements.exportFPS = exportFPS.current;
+    if (modal.current) elements.modal = modal.current;
+    if (progressBar.current) elements.progressBar = progressBar.current;
+    if (modalClose.current) elements.modalClose = modalClose.current;
 
     live2d = new Live2DViewer(document.querySelector("canvas")!);
 
@@ -73,6 +85,22 @@ export const Live2DPage: React.FC<HomeProps> = ({ region }) => {
 
   return (
     <main className="h-full w-full font-sans">
+      {/* Modal */}
+      <Modal reference={modal} className="hidden">
+        <div className="flex flex-col w-full xl:w-96">
+          <p className="text-2xl mb-4">Exporting...</p>
+          <ProgressBar className="grow mb-4" height={2} percent={0} reference={progressBar}></ProgressBar>
+          <video controls className="mb-4"></video>
+          <Button
+            id="modal-close"
+            label="Close"
+            reference={modalClose}
+            onClick={() => {
+              modal.current!.classList.add("hidden");
+            }}
+          />
+        </div>
+      </Modal>
       {/* Loading */}
       <div className="w-screen h-screen fixed flex items-center justify-center z-50 bg-neutral-800 bg-opacity-80 transition-all duration-1000 opacity-100" id="loading">
         <p className="text-2xl text-gray-100">Loading...</p>
@@ -269,6 +297,36 @@ export const Live2DPage: React.FC<HomeProps> = ({ region }) => {
               min={-1080}
               max={1080}
               step={1}
+            />
+            <br />
+          </Accordion>
+          <br />
+          <Accordion title="Export">
+            <div className="flex flex-col">
+              <InputNumber
+                id="export-bitrate"
+                label="Bitrate (Mbps)"
+                min={5}
+                max={100}
+                step={1}
+                reference={exportBitrate}
+              />
+
+              <InputNumber
+                id="export-fps"
+                label="FPS "
+                defaultValue={30}
+                min={1}
+                max={60}
+                step={1}
+                reference={exportFPS}
+              />
+            </div>
+            <br />
+            <Button
+              id="export-button"
+              label="Go!"
+              onClick={async () => await events.ExportAs(elements, live2d)}
             />
           </Accordion>
         </div>

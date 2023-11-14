@@ -5,6 +5,10 @@ import { localizeCharFromDevName } from "./character";
 import { getBGMByDevName } from "./bgm";
 import { getSubtitles } from "./subtitle";
 import { toast } from "./toast";
+import { exporter } from "./exporter";
+import Modal from "@/app/component/modal";
+import ProgressBar from "@/app/component/progress_bar";
+import { createRoot } from "react-dom/client";
 
 const __ver__ = "r61_ayufxz7uopaacimkmpwl"; // version: 1.37
 
@@ -25,6 +29,13 @@ export interface Elements {
   offsetY?: HTMLInputElement;
 
   audioBGM?: HTMLAudioElement;
+
+  exportBitrate?: HTMLInputElement;
+  exportFPS?: HTMLInputElement;
+
+  modal?: HTMLDivElement;
+  progressBar?: HTMLDivElement;
+  modalClose?: HTMLButtonElement;
 }
 
 export const CloseSetting = (element: HTMLDivElement) => {
@@ -272,4 +283,30 @@ export const EnableDragging = (elements: Elements, live2d: Live2DViewer) => {
       OffsetChanged(elements, live2d);
     }
   };
+};
+
+export const ExportAs = async (elements: Elements, live2d: Live2DViewer) => {
+  const { exportBitrate, exportFPS, modal, progressBar, modalClose } = elements;
+
+  const bitrate = exportBitrate!.valueAsNumber;
+  const fps = exportFPS!.valueAsNumber;
+
+  const video = modal?.querySelector("video")!;
+  const title = modal?.querySelector("p")!;
+
+  title.innerText = "Exporting...";
+  modal?.classList.remove("hidden");
+  modalClose?.classList.add("hidden");
+  progressBar?.style.setProperty("width", "0%");
+  video.src = "";
+
+  const url = await exporter(elements, live2d, bitrate, fps, {
+    onPercentChange(percent) {
+      progressBar?.style.setProperty("width", `${percent}%`);
+    },
+  });
+
+  title.innerText = "Exported!";
+  modalClose?.classList.remove("hidden");
+  video.src = url;
 };

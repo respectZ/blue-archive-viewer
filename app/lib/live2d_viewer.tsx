@@ -282,7 +282,7 @@ export class Live2DViewer {
    * Play a char animation.
    * @param name
    */
-  playAnimation(name: string) {
+  playAnimation(name: string, options: { onComplete?: () => void; onPlay?: (percent: number) => void } = {}) {
     if (!this.char) return;
 
     if (this.howl !== undefined) this.howl.stop();
@@ -307,6 +307,19 @@ export class Live2DViewer {
     }
 
     this.char.state.setAnimation(0, name, this.loopAnimation);
+    this.char.state.addListener({ complete: options.onComplete });
+  }
+
+  /**
+   * Get an animation.
+   * @param name - Animation name
+   */
+  getAnimation(name: string) {
+    if (!this.char) return;
+
+    const animations = this.char.state.data.skeletonData.animations;
+    const animation = animations.find((a) => a.name === name);
+    return animation;
   }
 
   /**
