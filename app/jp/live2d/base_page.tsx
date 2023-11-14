@@ -106,7 +106,7 @@ export const Live2DPage: React.FC<HomeProps> = ({ region }) => {
       </div>
 
       <div
-        className="md:w-96 sm:w-full h-screen bg-neutral-800 fixed pt-6 px-12 duration-300 left-0 z-10 overflow-y-auto"
+        className="xl:w-96 w-full h-screen bg-neutral-800 pt-6 px-12 fixed duration-300 left-0 z-10 overflow-y-auto"
         id="setting"
         ref={settingPanel}
       >
@@ -285,7 +285,7 @@ export const Live2DPage: React.FC<HomeProps> = ({ region }) => {
       <div className="w-screen h-12 fixed bottom-0 flex justify-center items-center bg-neutral-800">
         <p className="text-gray-400">Live2D Viewer</p>
       </div>
-      <div className="sm:w-full md:w-auto h-auto fixed bottom-24 flex flex-col md:px-96" ref={subtitle}>
+      <div className="sm:w-full xl:w-auto h-auto fixed bottom-24 flex flex-col xl:px-96" ref={subtitle}>
       </div>
     </main>
   );
