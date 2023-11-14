@@ -2,11 +2,12 @@ export default function InputNumber(
   props: {
     id: string;
     label: string;
-    onChange: (value: number) => void;
+    onChange?: (value: number) => void;
     reference?: React.MutableRefObject<HTMLInputElement | null>;
     step?: number;
     max?: number;
     min?: number;
+    defaultValue?: number;
   },
 ) {
   return (
@@ -22,8 +23,9 @@ export default function InputNumber(
           id={props.id}
           onChange={(e) => {
             // Call onChange
-            props.onChange(e.target.valueAsNumber);
+            if (props.onChange) props.onChange(e.target.valueAsNumber);
           }}
+          defaultValue={props.defaultValue ? props.defaultValue : props.min ? props.min : 0}
           step={props.step ? props.step : 1}
           max={props.max ? props.max : 100}
           min={props.min ? props.min : 0}

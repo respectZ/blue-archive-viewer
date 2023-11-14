@@ -46,8 +46,10 @@ TODO
 - [ ] Script for fetching `TableBundles`
 - [x] EN Version
 - [ ] Support wallpaper engine
+- [ ] Export to gif/mp4
 
 ## Bugs
+- [ ] Sometimes the audio cases to play multiple times ??
 - [ ] I don't know why the ch0152 jp version is missing `CH0152_home4.png` (seems like `CH0152` has multiple bundle files, so we need to check again if the file is unique instead of skipping it.)
 - [ ] there's `Hanako_home.skel` inside `hare_home` ???
 
