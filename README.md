@@ -52,6 +52,7 @@ TODO
 - [ ] Sometimes the audio cases to play multiple times ??
 - [ ] I don't know why the ch0152 jp version is missing `CH0152_home4.png` (seems like `CH0152` has multiple bundle files, so we need to check again if the file is unique instead of skipping it.)
 - [ ] there's `Hanako_home.skel` inside `hare_home` ???
+- [ ] `CH0996_home.atlas` should be renamed into `CH_9996.atlas`
 
 ## Credits
 - [K0lb3 BA Asset Downloader](https://github.com/K0lb3/Blue-Archive---Asset-Downloader)
