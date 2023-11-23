@@ -28,7 +28,8 @@ bgmId is just theme_{bgmId}
 update dump.cs from JP since we need updated field, and then generate the fbs
 
 ========
-https://prod-clientpatch.bluearchiveyostar.com/r61_ayufxz7uopaacimkmpwl/TableBundles/TableCatalog.json
-url = "https://prod-clientpatch.bluearchiveyostar.com/r57_1_33_9gl0a9hwakll368rofhn_4/MediaResources/MediaCatalog.json"
-# url = "https://prod-clientpatch.bluearchiveyostar.com/r57_1_33_9gl0a9hwakll368rofhn_4/Android/bundleDownloadInfo.json"
+https://yostar-serverinfo.bluearchiveyostar.com/r62_18adige2364es3ybluha.json
+https://prod-clientpatch.bluearchiveyostar.com/r62_18adige2364es3ybluha_2/TableBundles/TableCatalog.json
+url = "https://prod-clientpatch.bluearchiveyostar.com/r62_18adige2364es3ybluha_2/MediaResources/MediaCatalog.json"
+# url = "https://prod-clientpatch.bluearchiveyostar.com/r62_18adige2364es3ybluha_2/Android/bundleDownloadInfo.json"
 prod-xigncode.bluearchiveyostar.com/patchroot/live/4v1cpbkilB7tJP/List/61168/xrl/4v1cpbkilB7tJP_R.xrl
