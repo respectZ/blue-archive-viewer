@@ -14,10 +14,11 @@ def download_cg(api: BlueArchiveApiJP, out="jp/data/MediaResources/"):
     # Filter resources that FileName ends with ".jpg"
     resources = [x for x in resources if x.fileName.endswith(".jpg")]
     for i, resource in enumerate(resources):
-        print(f"Downloading {resource.name}... ({i+1}/{len(resources)})")
         # Check if already exists
-        if os.path.exists(os.path.join(out, resource.fileName)):
+        if os.path.exists(os.path.join(out, resource.path)):
+            print(f"Skipping {resource.name}... ({i+1}/{len(resources)})")
             continue
+        print(f"Downloading {resource.name}... ({i+1}/{len(resources)})")
         resource.setOutPath(out)
         resource.setKeepSubDir(True)
         resource.download()
@@ -137,7 +138,8 @@ if __name__ == "__main__":
         download_all()
     else:
         if args.download_cg:
-            api.saveMediaCatalog(out="public/data/jp/MediaResources/")
+            api.saveMediaCatalog(
+                out="public/data/jp/MediaResources/")
             download_cg(api, out="public/data/jp/MediaResources/")
         if args.download_spine:
             download_spinelobbies(api, out="public/data/jp/Android/")

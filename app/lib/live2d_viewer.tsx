@@ -3,8 +3,14 @@ import "pixi-spine";
 import * as PIXI from "pixi.js";
 import { Spine } from "pixi-spine";
 import { Howl, Howler } from "howler";
+import { AddressablesCatalogUrlRoot } from "../jp/url";
 
-function calculateFitScale(srcWidth: number, srcHeight: number, maxWidth: number, maxHeight: number) {
+function calculateFitScale(
+  srcWidth: number,
+  srcHeight: number,
+  maxWidth: number,
+  maxHeight: number,
+) {
   const widthScale = maxWidth / srcWidth;
   const heightScale = maxHeight / srcHeight;
 
@@ -14,7 +20,12 @@ function calculateFitScale(srcWidth: number, srcHeight: number, maxWidth: number
   return fitScale;
 }
 
-function calculateFillScale(srcWidth: number, srcHeight: number, maxWidth: number, maxHeight: number) {
+function calculateFillScale(
+  srcWidth: number,
+  srcHeight: number,
+  maxWidth: number,
+  maxHeight: number,
+) {
   const widthScale = maxWidth / srcWidth;
   const heightScale = maxHeight / srcHeight;
 
@@ -39,7 +50,7 @@ export class Live2DViewer {
 
   playVoice: boolean = false;
   howl?: Howl;
-  baseURL: string = "https://prod-clientpatch.bluearchiveyostar.com/r61_ayufxz7uopaacimkmpwl"; // version: 1.37
+  baseURL: string = AddressablesCatalogUrlRoot;
   private _loopAnimation: boolean = false;
 
   constructor(canvas: HTMLCanvasElement) {
@@ -96,7 +107,8 @@ export class Live2DViewer {
           let fileName = data.stringValue + ".ogg";
           let characterId = fileName.split("_")[0];
 
-          let src = `${this.baseURL}/MediaResources/Audio/VOC_JP/JP_${characterId}/${fileName}`;
+          let src =
+            `${this.baseURL}/MediaResources/Audio/VOC_JP/JP_${characterId}/${fileName}`;
 
           // Try to fetch first, if not found, try title case characterId (error case: hinata_home, should be Hinata in fileName)
           // Also disable cors
@@ -104,10 +116,14 @@ export class Live2DViewer {
           if (!res.ok) {
             characterId = characterId[0].toUpperCase() + characterId.slice(1);
             fileName = fileName[0].toUpperCase() + fileName.slice(1);
-            src = `${this.baseURL}/MediaResources/Audio/VOC_JP/JP_${characterId}/${fileName}`;
+            src =
+              `${this.baseURL}/MediaResources/Audio/VOC_JP/JP_${characterId}/${fileName}`;
           }
 
-          this.howl = new Howl({ src: `${this.baseURL}/MediaResources/Audio/VOC_JP/JP_${characterId}/${fileName}` });
+          this.howl = new Howl({
+            src:
+              `${this.baseURL}/MediaResources/Audio/VOC_JP/JP_${characterId}/${fileName}`,
+          });
 
           if (this.howl.state() === "loaded") {
             this.howl.play();
@@ -152,7 +168,12 @@ export class Live2DViewer {
       this.app.stage.addChild(spine);
     }
 
-    let scale = calculateFillScale(spine.spineData.width, spine.spineData.height, this.app.renderer.width, this.app.renderer.height);
+    let scale = calculateFillScale(
+      spine.spineData.width,
+      spine.spineData.height,
+      this.app.renderer.width,
+      this.app.renderer.height,
+    );
 
     scale = Math.ceil(scale * 10) / 10;
 
@@ -188,7 +209,12 @@ export class Live2DViewer {
     let s = 0;
     this.app.stage.children.forEach((child) => {
       if (!(child instanceof Spine)) return;
-      let scale = calculateFillScale(child.spineData.width, child.spineData.height, this.app.renderer.width, this.app.renderer.height);
+      let scale = calculateFillScale(
+        child.spineData.width,
+        child.spineData.height,
+        this.app.renderer.width,
+        this.app.renderer.height,
+      );
 
       scale = Math.ceil(scale * 10) / 10;
 
@@ -205,7 +231,12 @@ export class Live2DViewer {
     let s = 0;
     this.app.stage.children.forEach((child) => {
       if (!(child instanceof Spine)) return;
-      let scale = calculateFitScale(child.spineData.width, child.spineData.height, this.app.renderer.width, this.app.renderer.height);
+      let scale = calculateFitScale(
+        child.spineData.width,
+        child.spineData.height,
+        this.app.renderer.width,
+        this.app.renderer.height,
+      );
 
       scale = Math.ceil(scale * 100) / 100;
 
@@ -269,7 +300,8 @@ export class Live2DViewer {
       if (!(child instanceof Spine)) return;
       child.x = this.app.renderer.width / 2;
       if (child.spineData.height * child.scale.y < this.app.renderer.height) {
-        child.y = this.app.renderer.height - child.spineData.height * child.scale.y * 1.25;
+        child.y = this.app.renderer.height -
+          child.spineData.height * child.scale.y * 1.25;
       } else {
         child.y = this.app.renderer.height;
       }

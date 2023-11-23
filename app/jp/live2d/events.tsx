@@ -8,9 +8,7 @@ import { toast } from "./toast";
 import { exporter } from "./exporter";
 import Modal from "@/app/component/modal";
 import ProgressBar from "@/app/component/progress_bar";
-import { createRoot } from "react-dom/client";
-
-const __ver__ = "r61_ayufxz7uopaacimkmpwl"; // version: 1.37
+import { AddressablesCatalogUrlRoot } from "@/app/jp/url";
 
 export interface Elements {
   jsonData?: HTMLAnchorElement;
@@ -57,7 +55,10 @@ export const PlayVoiceOnChanged = (v: boolean, live2d: Live2DViewer) => {
  * @param selectElement - A select element.
  * @param v - A list of animation names.
  */
-export const ReloadAnimations = (selectElement: HTMLSelectElement, v: string[]) => {
+export const ReloadAnimations = (
+  selectElement: HTMLSelectElement,
+  v: string[],
+) => {
   selectElement.innerHTML = "";
   for (const animation of v) {
     const option = document.createElement("option");
@@ -75,7 +76,11 @@ export const ReloadAnimations = (selectElement: HTMLSelectElement, v: string[]) 
  * @param selectElement - A select element.
  * @param v - A pair of model DevName and list of .skel files.
  */
-export const ReloadModels = (selectElement: HTMLSelectElement, v: Record<string, string[]>, sort: boolean = true) => {
+export const ReloadModels = (
+  selectElement: HTMLSelectElement,
+  v: Record<string, string[]>,
+  sort: boolean = true,
+) => {
   if (sort) {
     // Compare by getLocalName(key)
     const sorted = Object.entries(v).sort((a, b) => {
@@ -112,7 +117,9 @@ const getLocalName = (s: string) => {
     dev = `${devName}_default`;
     // Still not found
     if (k === `${devName}_default`) {
-      k = localizeCharFromDevName(`${devName.substring(0, devName.length - 1)}_default`);
+      k = localizeCharFromDevName(
+        `${devName.substring(0, devName.length - 1)}_default`,
+      );
       dev = `${devName.substring(0, devName.length - 1)}_default`;
       // Still not found
       if (k === `${devName.substring(0, devName.length - 1)}_default`) {
@@ -124,7 +131,10 @@ const getLocalName = (s: string) => {
   return [k, dev];
 };
 
-export const AnimationOnChanged = (elements: Elements, live2d: Live2DViewer) => {
+export const AnimationOnChanged = (
+  elements: Elements,
+  live2d: Live2DViewer,
+) => {
   const selectElement = elements.animationSelect!;
   const animation = selectElement.value;
 
@@ -200,8 +210,14 @@ export const ScaleFit = (elements: Elements, live2d: Live2DViewer) => {
 };
 
 export const OnResize = (elements: Elements, live2d: Live2DViewer) => {
-  console.log(`[Live2DViewer] Resize: ${window.innerWidth}x${window.innerHeight}`);
-  live2d.resizeCanvas(window.innerWidth, window.innerHeight, document.getElementById("canvas")! as HTMLCanvasElement);
+  console.log(
+    `[Live2DViewer] Resize: ${window.innerWidth}x${window.innerHeight}`,
+  );
+  live2d.resizeCanvas(
+    window.innerWidth,
+    window.innerHeight,
+    document.getElementById("canvas")! as HTMLCanvasElement,
+  );
   // Re-center
   OffsetCenter(elements, live2d);
 };
@@ -218,7 +234,8 @@ export const ReloadBGM = (elements: Elements) => {
     // Pad with 0
     const bgmIdStr = bgmId.toString().padStart(2, "0");
 
-    const bgmURL = `https://prod-clientpatch.bluearchiveyostar.com/${__ver__}/MediaResources/Audio/BGM/Theme_${bgmIdStr}.ogg`;
+    const bgmURL =
+      `${AddressablesCatalogUrlRoot}/MediaResources/Audio/BGM/Theme_${bgmIdStr}.ogg`;
     audio.src = bgmURL;
     audio.hidden = false;
     audio.play().catch((e) => {
@@ -237,7 +254,9 @@ const showSubtitles = (elements: Elements) => {
   // Get talkId and talkIndex
   const animationName = elements.animationSelect!.value;
 
-  const devName = elements.modelSelect!.selectedOptions[0].getAttribute("data-devname")!;
+  const devName = elements.modelSelect!.selectedOptions[0].getAttribute(
+    "data-devname",
+  )!;
   const subtitles = getSubtitles(animationName, { devName: devName });
 
   const subtitleElement = elements.subtitle!;
@@ -247,7 +266,14 @@ const showSubtitles = (elements: Elements) => {
   for (const subtitle of subtitles) {
     const p = document.createElement("p");
     p.innerText = subtitle;
-    p.classList.add("text-xl", "text-gray-200", "mb-2", "p-2", "bg-neutral-800", "bg-opacity-80");
+    p.classList.add(
+      "text-xl",
+      "text-gray-200",
+      "mb-2",
+      "p-2",
+      "bg-neutral-800",
+      "bg-opacity-80",
+    );
     subtitleElement.appendChild(p);
   }
 };
@@ -261,7 +287,10 @@ export const EnableDragging = (elements: Elements, live2d: Live2DViewer) => {
 
   canvas.onmousedown = (e) => {
     dragging = true;
-    [charX, charY] = [-elements.offsetX!.valueAsNumber, -elements.offsetY!.valueAsNumber];
+    [charX, charY] = [
+      -elements.offsetX!.valueAsNumber,
+      -elements.offsetY!.valueAsNumber,
+    ];
     [initX, initY] = [e.clientX - charX, e.clientY - charY];
   };
 

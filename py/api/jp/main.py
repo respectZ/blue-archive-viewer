@@ -6,7 +6,7 @@ from PIL import ImageOps
 import UnityPy
 
 
-URL = "https://yostar-serverinfo.bluearchiveyostar.com/r61_ayufxz7uopaacimkmpwl.json"
+URL = "https://yostar-serverinfo.bluearchiveyostar.com/r62_18adige2364es3ybluha.json"  # 1.38
 
 
 class MediaResource:
@@ -86,7 +86,7 @@ class Bundle:
 
 class Api:
     def __init__(self, url=URL):
-        self.URL = URL  # 1.37
+        self.URL = URL
 
     def getBundleInfo(self):
         '''
@@ -133,7 +133,7 @@ class Api:
         baseUrl = s["ConnectionGroups"][0]["OverrideConnectionGroups"][1]["AddressablesCatalogUrlRoot"]
         address = f"{baseUrl}/MediaResources/MediaCatalog.json"
 
-        data = requests.get(address).json()
+        data = requests.get(address).text
 
         with open(os.path.join(out, "MediaCatalog.json"), "w") as f:
             f.write(data)
