@@ -20,7 +20,7 @@ const Box: React.FC<BoxProps> = ({ bg, href, label, opacity }) => {
         }}
       >
         <div className="h-full w-full flex flex-col items-center justify-center">
-          <p className="text-4xl text-gray-100">{label ?? ""}</p>
+          <p className="text-xl xl:text-4xl text-gray-100">{label ?? ""}</p>
         </div>
       </div>
     </div>
