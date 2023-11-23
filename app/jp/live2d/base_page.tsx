@@ -80,7 +80,7 @@ export const Live2DPage: React.FC<HomeProps> = ({ region }) => {
       });
     });
 
-    window.addEventListener("resize", () => events.OnResize(elements, live2d));
+    window.addEventListener("resize", (e) => events.OnResize(e, elements, live2d));
   });
 
   return (

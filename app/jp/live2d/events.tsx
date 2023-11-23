@@ -10,6 +10,8 @@ import Modal from "@/app/component/modal";
 import ProgressBar from "@/app/component/progress_bar";
 import { AddressablesCatalogUrlRoot } from "@/app/jp/url";
 
+const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
 export interface Elements {
   jsonData?: HTMLAnchorElement;
   settingPanel?: HTMLDivElement;
@@ -209,7 +211,10 @@ export const ScaleFit = (elements: Elements, live2d: Live2DViewer) => {
   elements.scale!.value = s.toString();
 };
 
-export const OnResize = (elements: Elements, live2d: Live2DViewer) => {
+export const OnResize = (e: UIEvent, elements: Elements, live2d: Live2DViewer) => {
+  // Check if it's a mobile device
+  if (isMobile) return;
+
   console.log(
     `[Live2DViewer] Resize: ${window.innerWidth}x${window.innerHeight}`,
   );
@@ -234,8 +239,7 @@ export const ReloadBGM = (elements: Elements) => {
     // Pad with 0
     const bgmIdStr = bgmId.toString().padStart(2, "0");
 
-    const bgmURL =
-      `${AddressablesCatalogUrlRoot}/MediaResources/Audio/BGM/Theme_${bgmIdStr}.ogg`;
+    const bgmURL = `${AddressablesCatalogUrlRoot}/MediaResources/Audio/BGM/Theme_${bgmIdStr}.ogg`;
     audio.src = bgmURL;
     audio.hidden = false;
     audio.play().catch((e) => {
@@ -282,10 +286,21 @@ let dragging = false;
 let [charX, charY] = [0, 0];
 let [mouseX, mouseY] = [0, 0];
 let [initX, initY] = [0, 0];
+
+let pinchStartDistance = 0;
+let pinchZooming = false;
+
+const getDistance = (touch1: Touch, touch2: Touch) => {
+  const dx = touch1.clientX - touch2.clientX;
+  const dy = touch1.clientY - touch2.clientY;
+  return Math.sqrt(dx * dx + dy * dy);
+};
 export const EnableDragging = (elements: Elements, live2d: Live2DViewer) => {
   const canvas = document.getElementById("canvas")! as HTMLCanvasElement;
 
-  canvas.onmousedown = (e) => {
+  canvas.onpointerdown = (e) => {
+    if (pinchZooming) return;
+
     dragging = true;
     [charX, charY] = [
       -elements.offsetX!.valueAsNumber,
@@ -294,15 +309,16 @@ export const EnableDragging = (elements: Elements, live2d: Live2DViewer) => {
     [initX, initY] = [e.clientX - charX, e.clientY - charY];
   };
 
-  canvas.onmouseup = () => {
+  canvas.onpointerup = () => {
     dragging = false;
   };
 
-  canvas.onmouseout = () => {
+  canvas.onpointerout = () => {
     dragging = false;
   };
 
-  canvas.onmousemove = (e) => {
+  canvas.onpointermove = (e) => {
+    if (pinchZooming) return;
     if (!dragging) return;
 
     [mouseX, mouseY] = [e.clientX - charX, e.clientY - charY];
@@ -312,6 +328,50 @@ export const EnableDragging = (elements: Elements, live2d: Live2DViewer) => {
       OffsetChanged(elements, live2d);
     }
   };
+
+  // Pinch events
+  canvas.addEventListener("touchstart", (e) => {
+    if (e.touches.length === 2) {
+      pinchStartDistance = getDistance(e.touches[0], e.touches[1]);
+      pinchZooming = true;
+    }
+  });
+
+  canvas.addEventListener("touchend", () => {
+    pinchZooming = false;
+  });
+
+  canvas.addEventListener("touchmove", (e) => {
+    if (pinchZooming && e.touches.length === 2) {
+      const currentDistance = getDistance(e.touches[0], e.touches[1]);
+      const pinchDelta = currentDistance - pinchStartDistance;
+
+      // You can use pinchDelta to determine zooming in or out
+      // if (pinchDelta > 0) {
+      //   // Handle pinch zoom-in
+      //   const v = elements.scale!.valueAsNumber + pinchDelta / 50;
+      //   if (v > parseFloat(elements.scale!.max)) return;
+
+      //   elements.scale!.value = v.toString();
+      // } else {
+      //   // Handle pinch zoom-out
+      //   const v = elements.scale!.valueAsNumber + pinchDelta / 50;
+      //   if (v < parseFloat(elements.scale!.min)) return;
+
+      //   elements.scale!.value = v.toString();
+      // }
+      if (pinchDelta !== 0) {
+        const v = elements.scale!.valueAsNumber + pinchDelta / 2000;
+        if (v < parseFloat(elements.scale!.min)) return;
+        if (v > parseFloat(elements.scale!.max)) return;
+
+        elements.scale!.value = v.toString();
+        ScaleChanged(elements, live2d);
+      }
+
+      pinchStartDistance = currentDistance;
+    }
+  });
 };
 
 export const ExportAs = async (elements: Elements, live2d: Live2DViewer) => {
