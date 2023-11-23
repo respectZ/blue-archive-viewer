@@ -9,9 +9,6 @@ import { exporter } from "./exporter";
 import Modal from "@/app/component/modal";
 import ProgressBar from "@/app/component/progress_bar";
 import { AddressablesCatalogUrlRoot } from "@/app/jp/url";
-
-const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
 export interface Elements {
   jsonData?: HTMLAnchorElement;
   settingPanel?: HTMLDivElement;
@@ -213,6 +210,7 @@ export const ScaleFit = (elements: Elements, live2d: Live2DViewer) => {
 
 export const OnResize = (e: UIEvent, elements: Elements, live2d: Live2DViewer) => {
   // Check if it's a mobile device
+  const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   if (isMobile) return;
 
   console.log(
