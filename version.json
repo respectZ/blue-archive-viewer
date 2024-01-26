@@ -1,4 +1,10 @@
 {
-    "jp": "1.38.246192",
-    "en": "1.57.241922"
+    "jp": {
+        "version": "1.40.259750",
+        "url": "https://yostar-serverinfo.bluearchiveyostar.com/r64_4hwwigy8ojry9k25hduz.json"
+    },
+    "en": {
+        "version": "1.57.241922",
+        "url": ""
+    }
 }
