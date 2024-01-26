@@ -2,11 +2,12 @@ import requests
 import re
 import os
 from lib.downloader import Downloader
+from .updater import App
 from PIL import ImageOps
 import UnityPy
 
 
-URL = "https://yostar-serverinfo.bluearchiveyostar.com/r62_18adige2364es3ybluha.json"  # 1.38
+URL = "https://yostar-serverinfo.bluearchiveyostar.com/r64_4hwwigy8ojry9k25hduz.json"
 
 
 class MediaResource:
@@ -87,6 +88,13 @@ class Bundle:
 class Api:
     def __init__(self, url=URL):
         self.URL = URL
+
+    def updateURL(self):
+        app = App()
+        app.download_app()
+        app.extract_app()
+        app.extract_obb()
+        self.URL = app.get_gameconfig()
 
     def getBundleInfo(self):
         '''

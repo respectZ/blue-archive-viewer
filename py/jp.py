@@ -1,5 +1,6 @@
 from api.jp.main import Api as BlueArchiveApiJP
 from PIL import Image
+import requests
 import argparse
 import string
 import json
@@ -113,14 +114,54 @@ def download_spinelobbies(api: BlueArchiveApiJP, out="jp/data/Andorid/"):
                 validate_atlas(os.path.join(root, file))
 
 
-def download_all(api: BlueArchiveApiJP, out="jp/data/Android/"):
+def download_all(api: BlueArchiveApiJP, out="public/data/jp/"):
     '''
     Download spinelobbies and cg.
     '''
+    print("Updating server info data url...")
+    update_server_info_data_url(api)
+    print("Updating MediaCatalog.json...")
+    api.saveMediaCatalog(out=out)
     print("Downloading spinelobbies...")
     download_spinelobbies(api, out=out)
     print("Downloading cg...")
     download_cg(api, out=out)
+
+
+def update_server_info_data_url(api: BlueArchiveApiJP):
+    '''
+    Update URL from updater and save it to version.json and url.tsx.
+    '''
+    api.updateURL()
+    url = api.URL
+
+    data = {}
+
+    try:
+        with open("./version.json", "r") as f:
+            data = json.load(f)
+    except:
+        pass
+
+    data["jp"]["url"] = url
+
+    with open("./version.json", "w") as f:
+        f.write(json.dumps(data, indent=4))
+
+    # Update url.tsx
+        '''
+        export const URL = "https://yostar-serverinfo.bluearchiveyostar.com/r62_18adige2364es3ybluha.json"; // 1.38
+        export const AddressablesCatalogUrlRoot = "https://prod-clientpatch.bluearchiveyostar.com/r62_18adige2364es3ybluha_2";
+        '''
+    src = os.path.join("app", "jp", "url.tsx")
+    r = requests.get(url)
+    r = r.json()
+    AddressablesCatalogUrlRoot = r["ConnectionGroups"][0]["OverrideConnectionGroups"][1]["AddressablesCatalogUrlRoot"]
+
+    s = f'export const URL = "{url}";\nexport const AddressablesCatalogUrlRoot = "{AddressablesCatalogUrlRoot}";'
+
+    with open(src, "w") as f:
+        f.write(s)
 
 
 if __name__ == "__main__":
@@ -131,17 +172,21 @@ if __name__ == "__main__":
         "--download-cg", action="store_true", help="Download cg")
     arg_parser.add_argument(
         "--download-spine", action="store_true", help="Download spinelobbies")
+    arg_parser.add_argument(
+        "--update-url", action="store_true", help="Update URL from updater and save it to version.json and url.tsx")
     args = arg_parser.parse_args()
 
     api = BlueArchiveApiJP()
     if args.download:
-        download_all()
+        download_all(api)
     else:
         if args.download_cg:
             api.saveMediaCatalog(
                 out="public/data/jp/MediaResources/")
             download_cg(api, out="public/data/jp/MediaResources/")
-        if args.download_spine:
+        elif args.download_spine:
             download_spinelobbies(api, out="public/data/jp/Android/")
+        elif args.update_url:
+            update_server_info_data_url(api)
         else:
             arg_parser.print_help()

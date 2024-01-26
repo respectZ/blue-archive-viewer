@@ -63,6 +63,12 @@
     "ch0071_home": [
         "data/jp/Android/ch0071_home\\CH0071_home.skel"
     ],
+    "ch0077_home": [
+        "data/jp/Android/ch0077_home\\Ibuki_home.skel"
+    ],
+    "ch0079_home": [
+        "data/jp/Android/ch0079_home\\CH0079_home.skel"
+    ],
     "ch0081_home": [
         "data/jp/Android/ch0081_home\\CH0081_home.skel"
     ],
@@ -262,11 +268,26 @@
     "ch0218_home": [
         "data/jp/Android/ch0218_home\\CH0218_home.skel"
     ],
+    "ch0219_home": [
+        "data/jp/Android/ch0219_home\\CH0219_home.skel"
+    ],
     "ch0224_home": [
         "data/jp/Android/ch0224_home\\CH0224_home.skel"
     ],
     "ch0225_home": [
         "data/jp/Android/ch0225_home\\CH0225_home.skel"
+    ],
+    "ch0230_home": [
+        "data/jp/Android/ch0230_home\\CH0230_home.skel"
+    ],
+    "ch0231_home": [
+        "data/jp/Android/ch0231_home\\CH0231_home.skel"
+    ],
+    "ch0232_home": [
+        "data/jp/Android/ch0232_home\\CH0232_home.skel"
+    ],
+    "ch0233_home": [
+        "data/jp/Android/ch0233_home\\CH0233_home.skel"
     ],
     "ch9996_home": [
         "data/jp/Android/ch9996_home\\CH9996_home.skel"
@@ -303,6 +324,7 @@
         "data/jp/Android/hanako_home\\Hanako_home.skel"
     ],
     "hare_home": [
+        "data/jp/Android/hare_home\\Hanako_home.skel",
         "data/jp/Android/hare_home\\Hare_home.skel"
     ],
     "haruka_home": [
