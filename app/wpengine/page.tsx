@@ -1,9 +1,11 @@
 "use client";
 
+import { localizeCharFromDevName } from "@/app/jp/live2d/character";
 import { Live2DViewer } from "@/app/lib/live2d_wallpaper_engine";
-import { useEffect, useRef, useState } from "react";
-import * as Table from "@/app/lib/table";
-import { get_origin } from "@/app/lib/get_origin";
+import { createRef, useEffect, useRef, useState } from "react";
+import * as Table from "./table";
+import { getSubtitles } from "./subtitle";
+import { ITrackEntry } from "pixi-spine";
 
 let live2d: Live2DViewer;
 
@@ -19,8 +21,52 @@ async function fetchModels(file: string): Promise<Record<string, string[]>> {
   return remapped;
 }
 
+const getLocalName = (s: string) => {
+  // remove _home
+  const devName = s.replace("_home", "");
+
+  let dev = devName;
+  let k = localizeCharFromDevName(devName);
+  if (devName === k) {
+    k = localizeCharFromDevName(`${devName}_default`);
+    dev = `${devName}_default`;
+    // Still not found
+    if (k === `${devName}_default`) {
+      k = localizeCharFromDevName(
+        `${devName.substring(0, devName.length - 1)}_default`,
+      );
+      dev = `${devName.substring(0, devName.length - 1)}_default`;
+      // Still not found
+      if (k === `${devName.substring(0, devName.length - 1)}_default`) {
+        k = s;
+        dev = s;
+      }
+    }
+  }
+  return [k, dev];
+};
+
+function showSubtitles(subtitle: HTMLDivElement, animationName: string, devName: string) {
+  subtitle.innerHTML = "";
+  const subtitles = getSubtitles(animationName, { devName: devName });
+  for (const s of subtitles) {
+    const p = document.createElement("p");
+    p.innerText = s;
+    p.classList.add("text-xl", "text-gray-200", "mb-2", "p-2", "bg-neutral-800", "bg-opacity-80");
+    subtitle.appendChild(p);
+  }
+}
+
+enum Subtitle {
+  none = "none",
+  en = "en",
+  jp = "jp",
+}
+
 export default function Home() {
+  const subtitle = createRef<HTMLDivElement>();
   const [models, setModels] = useState<Record<string, string[]>>({});
+  const [l2dLoaded, setL2DLoaded] = useState(false);
 
   const [options, setOptions] = useState({
     selectedModel: "airi0_home",
@@ -29,9 +75,10 @@ export default function Home() {
     voiceVolume: 1,
     tapToTalk: false,
     maxFPS: 60,
+    subtitle: Subtitle.none,
   });
+  const optionsRef = useRef(options);
 
-  // You can update individual properties using setOptions
   const updateSelectedModel = (newModel: string) => {
     setOptions((prevOptions) => ({
       ...prevOptions,
@@ -74,6 +121,17 @@ export default function Home() {
     }));
   };
 
+  const updateSubtitle = (newSubtitle: Subtitle) => {
+    setOptions((prevOptions) => ({
+      ...prevOptions,
+      subtitle: newSubtitle,
+    }));
+  };
+
+  useEffect(() => {
+    optionsRef.current = options;
+  }, [options]);
+
   useEffect(() => {
     // @ts-ignore
     window.wallpaperPropertyListener = {
@@ -111,6 +169,10 @@ export default function Home() {
           updateScale(properties.scale.value);
           live2d.scale(properties.scale.value);
         }
+        if (properties.subtitle) {
+          updateSubtitle(properties.subtitle.value);
+        }
+        optionsRef.current = options;
       },
       applyGeneralProperties: async function (properties: Record<string, any>) {
         if (properties.fps) {
@@ -129,7 +191,6 @@ export default function Home() {
       const initialize = async () => {
         if (live2d !== undefined) return;
         live2d = new Live2DViewer(document.getElementById("canvas") as HTMLCanvasElement);
-        await Table.initialize("jp");
         const m = await fetchModels("./data/jp/Android/info.json");
         setModels(m);
       };
@@ -139,6 +200,7 @@ export default function Home() {
   }, [options.selectedModel]);
 
   useEffect(() => {
+    setL2DLoaded(false);
     (async () => {
       const reload = async () => {
         const model = models[options.selectedModel as string];
@@ -148,6 +210,7 @@ export default function Home() {
           if (i == 0) await live2d.loadModel(x);
           else await live2d.addSpine(x, i.toString(), 0);
         }
+        setL2DLoaded(true);
 
         live2d.center();
         live2d.start();
@@ -159,15 +222,71 @@ export default function Home() {
     })();
   }, [options.selectedModel, models]);
 
+  useEffect(() => {
+    if (!l2dLoaded) return;
+
+    const subtitleListener = {
+      start: start,
+      end: end,
+    };
+
+    function start() {
+      const animation = live2d.currentAnimation;
+      console.log(subtitle.current);
+      if (!animation) return;
+      if (!subtitle.current) return;
+      subtitle.current.innerHTML = "";
+      if (optionsRef.current.subtitle == Subtitle.none) return;
+      const [_, devName] = getLocalName(optionsRef.current.selectedModel);
+      console.log("showing subtitles");
+
+      subtitle.current.classList.remove("opacity-0");
+      subtitle.current.classList.add("opacity-100");
+      showSubtitles(subtitle.current, animation, devName);
+    }
+
+    function end() {
+      console.log("clearing subtitles");
+      if (!subtitle.current) return;
+      subtitle.current.classList.remove("opacity-100");
+      subtitle.current.classList.add("opacity-0");
+      setTimeout(() => {
+        if (!subtitle.current) return;
+        subtitle.current.innerHTML = "";
+      }, 300);
+    }
+
+    live2d.setListener(subtitleListener);
+  }, [subtitle, options.selectedModel, l2dLoaded]);
+
+  useEffect(() => {
+    if (options.subtitle == Subtitle.none) {
+      if (!subtitle.current) return;
+      subtitle.current.innerHTML = "";
+    } else {
+      Table.initialize(options.subtitle);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [options.subtitle]);
+
   return (
     <div className="w-full h-full flex items-center justify-center">
       <canvas
         id="canvas"
         onClick={() => {
-          if (options.tapToTalk) live2d.randomTalk();
+          if (!options.tapToTalk) return;
+          const animationName = live2d.randomTalk();
+          // if (!subtitle.current) return;
+          // subtitle.current.innerHTML = "";
+          // if (options.subtitle == Subtitle.none) return;
+          // if (!animationName) return;
+
+          // const [_, devName] = getLocalName(options.selectedModel);
+          // showSubtitles(subtitle.current, animationName, devName);
         }}
       >
       </canvas>
+      <div className="w-auto h-auto fixed bottom-24 flex flex-col transition-all duration-300 opacity-100" ref={subtitle}></div>
     </div>
   );
 }
