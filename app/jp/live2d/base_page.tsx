@@ -6,6 +6,7 @@ import { createRef, useEffect, useRef } from "react";
 import { Live2DViewer } from "@/app/lib/live2d_viewer";
 import { fetchModels } from "./model";
 import * as Table from "@/app/lib/table";
+import { get_origin } from "@/app/lib/get_origin";
 
 import * as events from "./events";
 import InputNumber from "@/app/component/input_number";
@@ -70,9 +71,10 @@ export const Live2DPage: React.FC<HomeProps> = ({ region }) => {
           document.getElementById("loading")!.remove();
         }, 1000);
 
-        // Update models value by adding window.location.origin
+        // Update models value by adding origin
+        const origin = get_origin();
         for (const [key, value] of Object.entries(models)) {
-          models[key] = value.map((v) => window.location.origin + "/" + v);
+          models[key] = value.map((v) => origin + "/" + v);
         }
         events.ReloadModels(elements.modelSelect!, models, region === "en"); // sort only for en
         events.LoadModel(elements, live2d);

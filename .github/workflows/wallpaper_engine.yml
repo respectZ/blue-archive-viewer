@@ -1,0 +1,36 @@
+name: Create Wallpaper Engine Release
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Build next.js app
+        run: |
+          npm install
+          npm run build
+      - name: Initialize wallpaper engine project
+        run: |
+          mkdir -p ./wallpaper_engine
+          mkdir -p ./wallpaper_engine/_next/static
+          cp ./app/icon.jpg ./wallpaper_engine
+          cp ./.next/server/app/wpengine.html ./wallpaper_engine/index.html
+          cp -r ./.next/server/app/wpengine ./wallpaper_engine
+          cp -r ./.next/static/* ./wallpaper_engine/_next/static
+          python ./py/wallpaper_engine.py
+          cp -r ./public/data ./wallpaper_engine
+      - name: Create archive
+        uses: vimtor/action-zip@v1.1
+        with:
+          files: wallpaper_engine/
+          dest: wallpaper_engine-${{ github.event.repository.name }}@${{ github.ref_name }}.zip
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            wallpaper_engine-${{ github.event.repository.name }}@${{ github.ref_name }}.zip

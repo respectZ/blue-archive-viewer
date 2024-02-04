@@ -1,4 +1,5 @@
 import { Region } from "./types";
+import { get_origin } from "@/app/lib/get_origin";
 
 interface AcademyFavorSchedule {
   Id: number;
@@ -10,7 +11,7 @@ interface AcademyFavorSchedule {
 export const data: AcademyFavorSchedule[] = [];
 
 export const initialize = async (subdir: string) => {
-  const baseUrl = window.location.origin;
+  const baseUrl = get_origin();
   const aca = await fetch(`${baseUrl}/data/${subdir}/TableBundles/Excel/AcademyFavorScheduleExcelTable.json`).then((res) => res.json()) as AcademyFavorSchedule[];
   data.push(...aca);
 };
