@@ -48,10 +48,57 @@ project = {
                 "text": "Tap to Talk",
                 "type": "bool",
                 "value": False
+            },
+            "subtitle": {
+                "order": 6,
+                "text": "Subtitle",
+                "type": "combo",
+                "value": "none",
+                "options": [
+                    {
+                        "label": "None",
+                        "value": "none"
+                    },
+                    {
+                        "label": "JP",
+                        "value": "jp"
+                    },
+                    {
+                        "label": "EN",
+                        "value": "en"
+                    }
+                ]
             }
         }
     }
 }
+
+'''
+const getLocalName = (s: string) => {
+  // remove _home
+  const devName = s.replace("_home", "");
+
+  let dev = devName;
+  let k = localizeCharFromDevName(devName);
+  if (devName === k) {
+    k = localizeCharFromDevName(`${devName}_default`);
+    dev = `${devName}_default`;
+    // Still not found
+    if (k === `${devName}_default`) {
+      k = localizeCharFromDevName(
+        `${devName.substring(0, devName.length - 1)}_default`,
+      );
+      dev = `${devName.substring(0, devName.length - 1)}_default`;
+      // Still not found
+      if (k === `${devName.substring(0, devName.length - 1)}_default`) {
+        k = s;
+        dev = s;
+      }
+    }
+  }
+  return [k, dev];
+};
+'''
 
 
 def resolve_path(src=""):
