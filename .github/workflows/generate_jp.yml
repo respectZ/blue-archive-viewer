@@ -1,0 +1,24 @@
+generate-table:
+  runs-on: windows-latest
+  steps:
+    - name: Check out repository code
+      uses: actions/checkout@v2
+    - name: Download latest app
+      run: |
+        Invoke-WebRequest -Uri "https://d.apkpure.net/b/XAPK/com.YostarJP.BlueArchive?version=latest" -OutFile "./temp/BlueArchive.apk"
+        Expand-Archive -Path "./temp/BlueArchive.apk" -DestinationPath "./temp/BlueArchive"
+        Expand-Archive -Path "./temp/BlueArchive/com.YostarJP.BlueArchive.apk" -DestinationPath "./temp/BlueArchive/com.YostarJP.BlueArchive/""
+    - name: Download Il2CppDumper
+      run: |
+        Invoke-WebRequest -Uri "https://github.com/Perfare/Il2CppDumper/releases/download/v6.7.40/Il2CppDumper-win-v6.7.40.zip" -OutFile "./temp/Il2CppDumper.zip"
+        Expand-Archive -Path "./temp/Il2CppDumper.zip" -DestinationPath "./temp/Il2CppDumper"
+    - name: Run Il2CppDumper
+      run: |
+        ./temp/Il2CppDumper/Il2CppDumper.exe "./temp/BlueArchive/com.YostarJP.BlueArchive/lib/arm64-v8a/libil2cpp.so" "./temp/BlueArchive/com.YostarJP.BlueArchive/assets/bin/Data/Managed/Metadata/global-metadata.dat"
+        mv ./temp/Il2CppDumper/dump.cs ./py/table_dumper/jp/dump.cs
+    - name: Download tables
+      run: |
+        Invoke-WebRequest -Uri ""
+    - name: Run TableDumper
+      run: |
+        python ./py/table_dumper/jp/main.py

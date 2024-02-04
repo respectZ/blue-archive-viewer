@@ -49,6 +49,7 @@ export class Live2DViewer {
   char?: Spine;
 
   playVoice: boolean = false;
+  voiceVolume: number = 1;
   howl?: Howl;
   baseURL: string = AddressablesCatalogUrlRoot;
   private _loopAnimation: boolean = false;
@@ -107,8 +108,7 @@ export class Live2DViewer {
           let fileName = data.stringValue + ".ogg";
           let characterId = fileName.split("_")[0];
 
-          let src =
-            `${this.baseURL}/MediaResources/Audio/VOC_JP/JP_${characterId}/${fileName}`;
+          let src = `${this.baseURL}/MediaResources/Audio/VOC_JP/JP_${characterId}/${fileName}`;
 
           // Try to fetch first, if not found, try title case characterId (error case: hinata_home, should be Hinata in fileName)
           // Also disable cors
@@ -116,13 +116,12 @@ export class Live2DViewer {
           if (!res.ok) {
             characterId = characterId[0].toUpperCase() + characterId.slice(1);
             fileName = fileName[0].toUpperCase() + fileName.slice(1);
-            src =
-              `${this.baseURL}/MediaResources/Audio/VOC_JP/JP_${characterId}/${fileName}`;
+            src = `${this.baseURL}/MediaResources/Audio/VOC_JP/JP_${characterId}/${fileName}`;
           }
 
           this.howl = new Howl({
-            src:
-              `${this.baseURL}/MediaResources/Audio/VOC_JP/JP_${characterId}/${fileName}`,
+            volume: this.voiceVolume,
+            src: `${this.baseURL}/MediaResources/Audio/VOC_JP/JP_${characterId}/${fileName}`,
           });
 
           if (this.howl.state() === "loaded") {
