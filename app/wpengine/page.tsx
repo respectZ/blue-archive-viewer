@@ -274,15 +274,9 @@ export default function Home() {
       <canvas
         id="canvas"
         onClick={() => {
+          if (live2d.currentAnimation) return;
           if (!options.tapToTalk) return;
-          const animationName = live2d.randomTalk();
-          // if (!subtitle.current) return;
-          // subtitle.current.innerHTML = "";
-          // if (options.subtitle == Subtitle.none) return;
-          // if (!animationName) return;
-
-          // const [_, devName] = getLocalName(options.selectedModel);
-          // showSubtitles(subtitle.current, animationName, devName);
+          live2d.randomTalk();
         }}
       >
       </canvas>

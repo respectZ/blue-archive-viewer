@@ -37,6 +37,16 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+# Wallpaper Engine
+Download at releases.
+
+TODO:
+- [ ] Fix subtitle calling multiple functions
+- [ ] Local audio
+- [ ] Wait for model finished before loading l2d
+- [ ] Remove optionsref?
+- [ ] Headpat for trigger talk
+
 ## TODO
 - [ ] Decode `ExcelDB.db` since they changed the `CharacterDialogExcelTable.json`
 - [ ] Create a workflow + script for updating `dump.cs` instead doing it manually
