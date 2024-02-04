@@ -19,37 +19,35 @@ project = {
                     # Add models here.
                 ]
             },
-            "fps": {
-                "order": 2,
-                "text": "Max FPS",
-                "type": "slider",
-                "value": 30,
-                "min": 1,
-                "max": 60
-            },
             "scale": {
-                "order": 3,
+                "order": 2,
                 "text": "Scale",
                 "type": "slider",
                 "min": 0.1,
-                "max": 20,
+                "max": 1.5,
                 "precision": 2,
                 "step": 0.1,
                 "value": 0.8
             },
             "play_voice": {
-                "order": 4,
+                "order": 3,
                 "text": "Play Voice",
                 "type": "bool",
                 "value": False
             },
             "voice_volume": {
-                "order": 5,
+                "order": 4,
                 "text": "Voice Volume",
                 "type": "slider",
                 "value": 100,
                 "min": 0,
                 "max": 100
+            },
+            "tap_to_talk": {
+                "order": 5,
+                "text": "Tap to Talk",
+                "type": "bool",
+                "value": False
             }
         }
     }
