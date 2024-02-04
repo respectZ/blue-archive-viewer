@@ -46,6 +46,7 @@ TODO:
 - [ ] Wait for model finished before loading l2d
 - [ ] Remove optionsref?
 - [ ] Headpat for trigger talk
+- [ ] Blend mix from idle to randomtalk
 
 ## TODO
 - [ ] Decode `ExcelDB.db` since they changed the `CharacterDialogExcelTable.json`

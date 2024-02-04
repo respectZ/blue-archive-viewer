@@ -273,7 +273,8 @@ export default function Home() {
     <div className="w-full h-full flex items-center justify-center">
       <canvas
         id="canvas"
-        onClick={() => {
+        onClick={(e) => {
+          console.log(e.clientX, e.clientY, e.target);
           if (live2d.currentAnimation) return;
           if (!options.tapToTalk) return;
           live2d.randomTalk();

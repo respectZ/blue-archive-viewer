@@ -1,3 +1,4 @@
+import * as PIXI from "pixi.js";
 import { IAnimationStateListener, ITrackEntry } from "pixi-spine";
 import * as l2d from "./live2d_viewer";
 
@@ -35,8 +36,8 @@ export class Live2DViewer extends l2d.Live2DViewer {
     if (entry.trackIndex !== 1 && entry.trackIndex !== 2) return;
 
     this.isIdle = true;
-    this.char.state.clearTrack(1);
-    this.char.state.clearTrack(2);
+    this.char.state.setEmptyAnimation(1, 0.2);
+    this.char.state.setEmptyAnimation(2, 0.2);
     this.char.state.removeListener(this.talkListener);
     this._currentAnimation = "";
   }
@@ -125,8 +126,18 @@ export class Live2DViewer extends l2d.Live2DViewer {
     await super.loadModel(src);
     this.scale(this._scale);
 
+    this.char!.stateData.defaultMix = 0.2;
+
     const bones: string[] = this.char!.state.data.skeletonData.bones.map((x) => x.name);
     console.log(bones);
-    // this.char!.
+    console.log(this.char!.state.data.skeletonData.findBone("Head")?.x, this.char!.state.data.skeletonData.findBone("Head")?.y);
+    this.char!.skeleton.data.events.forEach((x) => {
+      console.log(x.name);
+    });
+    const rect = new PIXI.Graphics();
+    rect.beginFill(0x000000);
+    rect.drawRect(132, 6.7, 100, 100);
+    this.app.stage.addChild(rect);
+    this.char!.hitArea = new PIXI.Rectangle(132, 6.7, 100, 100);
   }
 }
