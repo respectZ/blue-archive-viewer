@@ -37,12 +37,17 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Wallpaper Engine
+You can download it as wallpaper engine at [releases](https://github.com/respectZ/blue-archive-viewer/releases).
+
+For now, it includes all available models. At first, I was thinking to create a workflow that can select your own but I'm too lazy.
+
 ## TODO
 - [ ] Decode `ExcelDB.db` since they changed the `CharacterDialogExcelTable.json`
 - [ ] Create a workflow + script for updating `dump.cs` instead doing it manually
 - [ ] Script for fetching `TableBundles`
 - [x] EN Version
-- [ ] Support wallpaper engine
+- [X] [Support wallpaper engine](https://github.com/respectZ/blue-archive-viewer/releases)
 - [x] Export to gif/mp4
 - [ ] Automatically get JP URL (not sure about this)
 
