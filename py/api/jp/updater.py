@@ -16,7 +16,7 @@ def NewEncryptString(value: str, key: bytes) -> str:
 
 class App:
     def __init__(self) -> None:
-        self.URL = "https://d.apkpure.net/b/XAPK/com.YostarJP.BlueArchive?version=latest"
+        self.URL = "https://d.apkpure.com/b/XAPK/com.YostarJP.BlueArchive?version=latest"
 
     def download_app(self, dest=os.path.join("temp")):
         '''

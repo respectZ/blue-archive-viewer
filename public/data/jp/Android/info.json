@@ -105,6 +105,9 @@
     "ch0107_home": [
         "data/jp/Android/ch0107_home\\CH0107_home.skel"
     ],
+    "ch0110_home": [
+        "data/jp/Android/ch0110_home\\CH0110_home.skel"
+    ],
     "ch0113_home": [
         "data/jp/Android/ch0113_home\\CH0113_home.skel"
     ],
@@ -232,6 +235,9 @@
     "ch0195_home": [
         "data/jp/Android/ch0195_home\\CH0195_home.skel"
     ],
+    "ch0196_home": [
+        "data/jp/Android/ch0196_home\\CH0196_home.skel"
+    ],
     "ch0198_home": [
         "data/jp/Android/ch0198_home\\CH0198_home.skel"
     ],
@@ -271,6 +277,9 @@
     "ch0219_home": [
         "data/jp/Android/ch0219_home\\CH0219_home.skel"
     ],
+    "ch0220_home": [
+        "data/jp/Android/ch0220_home\\CH0220_home.skel"
+    ],
     "ch0224_home": [
         "data/jp/Android/ch0224_home\\CH0224_home.skel"
     ],
@@ -288,6 +297,21 @@
     ],
     "ch0233_home": [
         "data/jp/Android/ch0233_home\\CH0233_home.skel"
+    ],
+    "ch0239_home": [
+        "data/jp/Android/ch0239_home\\CH0239_home.skel"
+    ],
+    "ch0240_home": [
+        "data/jp/Android/ch0240_home\\CH0240_home.skel"
+    ],
+    "ch0250_home": [
+        "data/jp/Android/ch0250_home\\CH0250_home.skel"
+    ],
+    "ch0251_home": [
+        "data/jp/Android/ch0251_home\\CH0251_home.skel"
+    ],
+    "ch0255_home": [
+        "data/jp/Android/ch0255_home\\CH0255_home.skel"
     ],
     "ch9996_home": [
         "data/jp/Android/ch9996_home\\CH9996_home.skel"
@@ -357,6 +381,9 @@
     ],
     "hoshino_swimsuit_home": [
         "data/jp/Android/hoshino_swimsuit_home\\Hoshino_swimsuit_home.skel"
+    ],
+    "ibuki_home": [
+        "data/jp/Android/ibuki_home\\Ibuki_home.skel"
     ],
     "iori_home": [
         "data/jp/Android/iori_home\\Iori_home.skel"

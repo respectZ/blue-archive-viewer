@@ -37,32 +37,13 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Updating version
-
-<!-- TODO -->
-
-TODO `still manual`
-
-- Update `dump.cs`
-- Run table fetcher
-- Copy these files
-
-```
-AcademyFavorScheduleExcelTable.json
-CharacterDialogExcelTable.json
-CharacterExcelTable.json
-LocalizeCharProfileExcelTable.json
-```
-
-Update URL
-
 ## TODO
-
+- [ ] Decode `ExcelDB.db` since they changed the `CharacterDialogExcelTable.json`
 - [ ] Create a workflow + script for updating `dump.cs` instead doing it manually
 - [ ] Script for fetching `TableBundles`
 - [x] EN Version
 - [ ] Support wallpaper engine
-- [ ] Export to gif/mp4
+- [x] Export to gif/mp4
 - [ ] Automatically get JP URL (not sure about this)
 
 ## Bugs

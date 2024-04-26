@@ -181,10 +181,12 @@ if __name__ == "__main__":
         download_all(api)
     else:
         if args.download_cg:
+            api.updateUrlFromCache()
             api.saveMediaCatalog(
                 out="public/data/jp/MediaResources/")
             download_cg(api, out="public/data/jp/MediaResources/")
         elif args.download_spine:
+            api.updateUrlFromCache()
             download_spinelobbies(api, out="public/data/jp/Android/")
         elif args.update_url:
             update_server_info_data_url(api)

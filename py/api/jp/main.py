@@ -89,6 +89,16 @@ class Api:
     def __init__(self, url=URL):
         self.URL = URL
 
+    def updateUrlFromCache(self):
+        '''
+        Update URL from cached temp.
+        '''
+        app = App()
+        apkFile = os.path.join("temp", "BlueArchive.apk")
+        if not os.path.exists(apkFile):
+            return
+        self.URL = app.get_gameconfig()
+
     def updateURL(self):
         app = App()
         app.download_app()
