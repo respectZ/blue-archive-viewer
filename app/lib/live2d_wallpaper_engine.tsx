@@ -128,16 +128,16 @@ export class Live2DViewer extends l2d.Live2DViewer {
 
     this.char!.stateData.defaultMix = 0.2;
 
-    const bones: string[] = this.char!.state.data.skeletonData.bones.map((x) => x.name);
-    console.log(bones);
-    console.log(this.char!.state.data.skeletonData.findBone("Head")?.x, this.char!.state.data.skeletonData.findBone("Head")?.y);
-    this.char!.skeleton.data.events.forEach((x) => {
-      console.log(x.name);
-    });
-    const rect = new PIXI.Graphics();
-    rect.beginFill(0x000000);
-    rect.drawRect(132, 6.7, 100, 100);
-    this.app.stage.addChild(rect);
-    this.char!.hitArea = new PIXI.Rectangle(132, 6.7, 100, 100);
+    // const bones: string[] = this.char!.state.data.skeletonData.bones.map((x) => x.name);
+    // console.log(bones);
+    // console.log(this.char!.state.data.skeletonData.findBone("Head")?.x, this.char!.state.data.skeletonData.findBone("Head")?.y);
+    // this.char!.skeleton.data.events.forEach((x) => {
+    //   console.log(x.name);
+    // });
+    // const rect = new PIXI.Graphics();
+    // rect.beginFill(0x000000);
+    // rect.drawRect(132, 6.7, 100, 100);
+    // this.app.stage.addChild(rect);
+    // this.char!.hitArea = new PIXI.Rectangle(132, 6.7, 100, 100);
   }
 }
