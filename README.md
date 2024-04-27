@@ -38,9 +38,9 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Wallpaper Engine
-You can download it as wallpaper engine at [releases](https://github.com/respectZ/blue-archive-viewer/releases).
-
-For now, it includes all available models. At first, I was thinking to create a workflow that can select your own but I'm too lazy.
+There are two ways.
+- You can download that includes every character at [releases](https://github.com/respectZ/blue-archive-viewer/releases).
+- Or go to the [web](http://ba.svdex.moe/), navigate to the Live2D, and click the download as wallpaper engine button.
 
 ## TODO
 - [ ] Decode `ExcelDB.db` since they changed the `CharacterDialogExcelTable.json`
