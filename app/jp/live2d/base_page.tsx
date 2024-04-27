@@ -229,6 +229,16 @@ export const Live2DPage: React.FC<HomeProps> = ({ region }) => {
 
           <br />
 
+          <Button
+            id="download"
+            label="Download as Wallpaper Engine Web"
+            onClick={() => {
+              events.DownloadAsWallpaperEngine(elements);
+            }}
+          />
+
+          <br />
+
           <Accordion title="Extras">
             <p className="text-xl text-gray-200 mb-2">Scale</p>
 

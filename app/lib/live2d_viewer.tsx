@@ -132,6 +132,10 @@ export class Live2DViewer {
               this.howl!.play();
               char.state.timeScale = 1;
             });
+            this.howl.on("loaderror", () => {
+              console.error("Failed to load voice line.");
+              char.state.timeScale = 1;
+            });
           }
         },
       },

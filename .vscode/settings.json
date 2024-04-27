@@ -4,9 +4,11 @@
     "editor.defaultFormatter": "denoland.vscode-deno",
     "editor.tabSize": 2
   },
-  "deno.enable": false,
-  "liveServer.settings.multiRootWorkspaceName": "blue-archive",
-  "[json]": {
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "denoland.vscode-deno",
     "editor.tabSize": 2
-  }
+  },
+  "deno.enable": false,
+  "liveServer.settings.multiRootWorkspaceName": "blue-archive"
 }
