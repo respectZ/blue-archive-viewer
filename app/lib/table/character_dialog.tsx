@@ -1,4 +1,5 @@
 import { Region } from "./types";
+import { get_origin } from "@/app/lib/get_origin";
 
 interface CharacterDialog {
   CharacterId: number;
@@ -14,7 +15,7 @@ interface CharacterDialog {
 export const data: CharacterDialog[] = [];
 
 export const initialize = async (subdir: string) => {
-  const baseUrl = window.location.origin;
+  const baseUrl = get_origin();
   const characters = await fetch(`${baseUrl}/data/${subdir}/TableBundles/Excel/CharacterDialogExcelTable.json`).then((res) => res.json()) as CharacterDialog[];
   data.push(...characters);
 };

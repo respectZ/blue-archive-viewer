@@ -97,6 +97,7 @@ export const ReloadModels = (
     option.value = JSON.stringify(files);
     option.innerText = `${localName} (${model})`;
     option.setAttribute("data-devname", devName);
+    option.setAttribute("model", model);
     selectElement.appendChild(option);
     if (!flag) {
       option.selected = true;
@@ -144,6 +145,16 @@ export const AnimationOnChanged = (
 
   // Show subtitles
   showSubtitles(elements);
+};
+
+export const DownloadAsWallpaperEngine = async (elements: Elements) => {
+  const { modelSelect } = elements;
+  const characterId = modelSelect!.selectedOptions[0].getAttribute("model")!;
+  const url = `/api/download?id=${characterId}`;
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `ba_wpengine@${characterId}.zip`;
+  a.click();
 };
 
 export const LoadModel = async (elements: Elements, live2d: Live2DViewer) => {

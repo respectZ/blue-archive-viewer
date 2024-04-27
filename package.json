@@ -5,10 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "wpengine": "next build && python ./py/wallpaper_engine_public.py",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/adm-zip": "^0.5.5",
+    "adm-zip": "^0.5.12",
     "howler": "^2.2.4",
     "next": "14.0.1",
     "preline": "^1.9.0",
