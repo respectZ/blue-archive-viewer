@@ -37,3 +37,4 @@ next-env.d.ts
 
 __pycache__/
 temp/
+/public/model/

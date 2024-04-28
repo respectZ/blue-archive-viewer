@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "wpengine": "next build && python ./py/wallpaper_engine_public.py",
+    "prebuild": "ts-node ./scripts/runner.ts",
     "start": "next start",
     "lint": "next lint"
   },
@@ -16,7 +17,8 @@
     "next": "14.0.1",
     "preline": "^1.9.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@pixi/layers": "^2.1.0",

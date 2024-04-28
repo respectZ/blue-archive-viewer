@@ -150,9 +150,10 @@ export const AnimationOnChanged = (
 export const DownloadAsWallpaperEngine = async (elements: Elements) => {
   const { modelSelect } = elements;
   const characterId = modelSelect!.selectedOptions[0].getAttribute("model")!;
-  const url = `/api/download?id=${characterId}`;
+  const url = `/model/${characterId}.zip`;
   const a = document.createElement("a");
   a.href = url;
+  a.target = "_blank";
   a.download = `ba_wpengine@${characterId}.zip`;
   a.click();
 };
