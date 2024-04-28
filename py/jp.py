@@ -1,4 +1,5 @@
 from api.jp.main import Api as BlueArchiveApiJP
+from table_dumper.jp.generate_dialog_excel import create_character_dialog_excel_table
 from PIL import Image
 import requests
 import argparse
@@ -25,7 +26,7 @@ def download_cg(api: BlueArchiveApiJP, out="jp/data/MediaResources/"):
         resource.download()
 
 
-def download_spinelobbies(api: BlueArchiveApiJP, out="jp/data/Andorid/"):
+def download_spinelobbies(api: BlueArchiveApiJP, out="jp/data/Android/"):
     '''
     Download all spinelobbies bundles.
     '''
@@ -164,6 +165,29 @@ def update_server_info_data_url(api: BlueArchiveApiJP):
         f.write(s)
 
 
+def update_dialog_table(api: BlueArchiveApiJP, out="jp/data/TableBundles/Excel/"):
+    '''
+    Update dialog table.
+    '''
+    table_bundles = api.getTableBundles()
+    excel_dbs = [x for x in table_bundles if x.name == "ExcelDB.db"]
+    if len(excel_dbs) == 0:
+        print("ExcelDB.db not found!")
+        return
+    excel_db = excel_dbs[0]
+    excel_db.setOutPath(out)
+
+    print("Downloading ExcelDB.db...")
+    excel_db.download()
+
+    print("Creating CharacterDialogExcelTable...")
+    data = create_character_dialog_excel_table(
+        os.path.join(out, "ExcelDB.db"))
+
+    with open(os.path.join(out, "CharacterDialogExcelTable.json"), "w", encoding="utf-8") as f:
+        f.write(json.dumps(data, indent=4, ensure_ascii=False))
+
+
 if __name__ == "__main__":
     arg_parser = argparse.ArgumentParser()
     arg_parser.add_argument(
@@ -174,21 +198,33 @@ if __name__ == "__main__":
         "--download-spine", action="store_true", help="Download spinelobbies")
     arg_parser.add_argument(
         "--update-url", action="store_true", help="Update URL from updater and save it to version.json and url.tsx")
+    arg_parser.add_argument(
+        "--update-dialog", action="store_true", help="Update dialog table"
+    )
     args = arg_parser.parse_args()
 
     api = BlueArchiveApiJP()
     if args.download:
         download_all(api)
     else:
+        arg = False
+        if args.update_url:
+            arg = True
+            update_server_info_data_url(api)
         if args.download_cg:
+            arg = True
             api.updateUrlFromCache()
             api.saveMediaCatalog(
                 out="public/data/jp/MediaResources/")
             download_cg(api, out="public/data/jp/MediaResources/")
-        elif args.download_spine:
+        if args.download_spine:
+            arg = True
             api.updateUrlFromCache()
             download_spinelobbies(api, out="public/data/jp/Android/")
-        elif args.update_url:
-            update_server_info_data_url(api)
-        else:
+        if args.update_dialog:
+            arg = True
+            api.updateUrlFromCache()
+            update_dialog_table(api, out="public/data/jp/TableBundles/Excel/")
+
+        if not arg:
             arg_parser.print_help()

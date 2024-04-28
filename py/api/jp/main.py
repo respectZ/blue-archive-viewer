@@ -85,6 +85,33 @@ class Bundle:
                     f.write(bytes(data.script))
 
 
+class TableBundle:
+    def __init__(self, name: str, size: int, crc: int, isInbuild: bool, isChanged: bool, isPrologue: bool, isSplitDownload: bool, baseUrl: str):
+        self.name = name
+        self.size = size
+        self.crc = crc
+        self.isInbuild = isInbuild
+        self.isChanged = isChanged
+        self.isPrologue = isPrologue
+        self.isSplitDownload = isSplitDownload
+        self.baseUrl = baseUrl
+
+        self.downloader = Downloader()
+        self.downloader.setOutPath("temp/")
+
+    def getDownloadUrl(self):
+        return f"{self.baseUrl}/TableBundles/{self.name}"
+
+    def download(self):
+        self.downloader.download(self.getDownloadUrl())
+
+    def setOutPath(self, path):
+        self.downloader.setOutPath(path)
+
+    def setKeepSubDir(self, keepSubDir):
+        self.downloader.setKeepSubDir(keepSubDir)
+
+
 class Api:
     def __init__(self, url=URL):
         self.URL = URL
@@ -139,6 +166,26 @@ class Api:
         for k, v in tables.items():
             r.append(MediaResource(k, v["MediaType"], v["path"], v["FileName"],
                      v["Bytes"], v["Crc"], v["IsPrologue"], v["IsSplitDownload"], baseUrl))
+
+        return r
+
+    def getTableBundles(self) -> list[TableBundle]:
+        '''
+        Returns a list of TableBundle objects.
+        '''
+        s = requests.get(self.URL).json()
+
+        baseUrl = s["ConnectionGroups"][0]["OverrideConnectionGroups"][1]["AddressablesCatalogUrlRoot"]
+        address = f"{baseUrl}/TableBundles/TableCatalog.json"
+
+        data = requests.get(address).json()
+        r = []
+
+        tables = data["Table"]
+
+        for k, v in tables.items():
+            r.append(TableBundle(k, v["Size"], v["Crc"], v["isInbuild"],
+                                 v["isChanged"], v["IsPrologue"], v["IsSplitDownload"], baseUrl))
 
         return r
 

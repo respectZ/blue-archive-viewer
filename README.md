@@ -43,7 +43,6 @@ There are two ways.
 - Or go to the [web](http://ba.svdex.moe/), navigate to the Live2D, and click the download as wallpaper engine button.
 
 ## TODO
-- [ ] Decode `ExcelDB.db` since they changed the `CharacterDialogExcelTable.json`
 - [ ] Create a workflow + script for updating `dump.cs` instead doing it manually
 - [ ] Script for fetching `TableBundles`
 - [x] EN Version

@@ -76,4 +76,8 @@ class App:
             crypted_value, TableEncryptionService.CreateKey(
                 "ServerInfoDataUrl")
         )
+        # Remaining keys are:
+        # DefaultConnectionGroup: Prod-Audit
+        # SkipTutorial: false
+        # Language: Jp
         return value
