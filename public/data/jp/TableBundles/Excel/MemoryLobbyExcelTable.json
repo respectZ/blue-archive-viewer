@@ -2338,5 +2338,18 @@
         "BGMId": 215,
         "AudioClipJp": "",
         "AudioClipKr": ""
+    },
+    {
+        "Id": 10093,
+        "ProductionStep": "Release",
+        "LocalizeEtcId": 89988055,
+        "CharacterId": 10093,
+        "PrefabName": "LobbyKirara",
+        "MemoryLobbyCategory": "UILobbySpecial",
+        "SlotTextureName": "",
+        "RewardTextureName": "UIs/01_Common/08_Lobbyillust/Lobbyillust_Icon_Kirara_01",
+        "BGMId": 210,
+        "AudioClipJp": "",
+        "AudioClipKr": ""
     }
 ]

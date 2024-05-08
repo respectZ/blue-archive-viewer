@@ -1,2 +1,2 @@
-export const URL = "https://yostar-serverinfo.bluearchiveyostar.com/r67_jjjg51ngucokd90cuk4l.json";
-export const AddressablesCatalogUrlRoot = "https://prod-clientpatch.bluearchiveyostar.com/r67_jjjg51ngucokd90cuk4l_3";
+export const URL = "https://yostar-serverinfo.bluearchiveyostar.com/r67_44_aqkx117ul2fhphliimwt.json";
+export const AddressablesCatalogUrlRoot = "https://prod-clientpatch.bluearchiveyostar.com/r67_utfwo6vcvx7rhl017phc";

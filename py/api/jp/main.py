@@ -7,7 +7,9 @@ from PIL import ImageOps
 import UnityPy
 
 
-URL = "https://yostar-serverinfo.bluearchiveyostar.com/r64_4hwwigy8ojry9k25hduz.json"
+URL = "https://yostar-serverinfo.bluearchiveyostar.com/r67_jjjg51ngucokd90cuk4l.json"
+
+# TODO: Update tablebundles and mediaresources since they changed into .bytes instead of json response.
 
 
 class MediaResource:
@@ -130,7 +132,6 @@ class Api:
         app = App()
         app.download_app()
         app.extract_app()
-        app.extract_obb()
         self.URL = app.get_gameconfig()
 
     def getBundleInfo(self):

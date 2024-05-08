@@ -15578,5 +15578,88 @@
             60,
             1
         ]
+    },
+    {
+        "Id": 100932,
+        "CharacterId": 10093,
+        "ScheduleGroupId": 10093,
+        "OrderInGroup": 1,
+        "Location": "샬레",
+        "LocalizeScenarioId": 3782277926,
+        "FavorRank": 2,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1009302,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            20
+        ]
+    },
+    {
+        "Id": 100933,
+        "CharacterId": 10093,
+        "ScheduleGroupId": 10093,
+        "OrderInGroup": 2,
+        "Location": "샬레",
+        "LocalizeScenarioId": 3408135695,
+        "FavorRank": 3,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1009303,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            40
+        ]
+    },
+    {
+        "Id": 100935,
+        "CharacterId": 10093,
+        "ScheduleGroupId": 10093,
+        "OrderInGroup": 3,
+        "Location": "샬레",
+        "LocalizeScenarioId": 3959270548,
+        "FavorRank": 5,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1009305,
+        "RewardParcelType": [
+            "Currency",
+            "MemoryLobby"
+        ],
+        "RewardParcelId": [
+            3,
+            10093
+        ],
+        "RewardAmount": [
+            60,
+            1
+        ]
+    },
+    {
+        "Id": 100936,
+        "CharacterId": 10093,
+        "ScheduleGroupId": 10093,
+        "OrderInGroup": 4,
+        "Location": "샬레",
+        "LocalizeScenarioId": 235996998,
+        "FavorRank": 6,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1009306,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            80
+        ]
     }
 ]
