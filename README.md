@@ -1,5 +1,9 @@
 # Blue Archive Viewer
 
+TODO:
+
+- wip: rewrite python scripts into rust.
+
 This is not affiliated nor nothing to do with Yostar.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
@@ -38,22 +42,27 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Wallpaper Engine
+
 There are two ways.
+
 - You can download that includes every character at [releases](https://github.com/respectZ/blue-archive-viewer/releases).
 - Or go to the [web](http://ba.svdex.moe/), navigate to the Live2D, and click the download as wallpaper engine button.
 
 ## TODO
+
 - [ ] Create a workflow + script for updating `dump.cs` instead doing it manually
 - [ ] Script for fetching `TableBundles`
 - [x] EN Version
-- [X] [Support wallpaper engine](https://github.com/respectZ/blue-archive-viewer/releases)
+- [x] [Support wallpaper engine](https://github.com/respectZ/blue-archive-viewer/releases)
 - [x] Export to gif/mp4
 - [ ] Automatically get JP URL (not sure about this)
 
 ## Bugs
+
 - [ ] Sometimes the audio cases to play multiple times ?
 
 ## Some weird cases
+
 - [x] I don't know why the ch0152 jp version is missing `CH0152_home4.png` (seems like `CH0152` has multiple bundle files, so we need to check again if the file is unique instead of skipping it.)
 - [x] there's `Hanako_home.skel` inside `hare_home` ???
 - [x] `CH0996_home.atlas` should be renamed into `CH_9996.atlas`

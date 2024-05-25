@@ -1,0 +1,16 @@
+[package]
+name = "blue-archive"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.86"
+byteorder = "1.5.0"
+clap = { version = "4.5.4", features = ["derive"] }
+reqwest = "0.12.4"
+serde = { version = "1.0.202", features = ["derive"] }
+serde_json = "1.0.117"
+tokio = { version = "1.37.0", features = ["full"] }
+trauma = "2.2.4"

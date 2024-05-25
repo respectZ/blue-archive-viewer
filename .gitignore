@@ -39,3 +39,7 @@ __pycache__/
 temp/
 /public/model/
 venv/
+
+# Added by cargo
+
+/target
