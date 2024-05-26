@@ -34,9 +34,7 @@ pub struct OverrideConnectionGroup {
     addressables_catalog_url_root: String,
 }
 
-pub async fn get_addressable_catalog() -> Result<AddressableCatalog> {
-    // TODO: Update this
-    let url = "https://yostar-serverinfo.bluearchiveyostar.com/r68_45_10iazxytt13razwn7x9n.json";
+pub async fn get_addressable_catalog(url: &str) -> Result<AddressableCatalog> {
     // Request
     let resp = reqwest::get(url).await?;
     let body = resp.text().await?;
