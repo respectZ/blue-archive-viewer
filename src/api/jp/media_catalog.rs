@@ -5,7 +5,7 @@ use reqwest::Url;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::io::Cursor;
-use trauma::download::{Download, Summary};
+use trauma::download::Download;
 use trauma::downloader::DownloaderBuilder;
 
 #[derive(Serialize, Deserialize, Debug)]

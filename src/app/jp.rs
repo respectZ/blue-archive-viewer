@@ -1,20 +1,17 @@
+use crate::info;
+use crate::util::unityfs;
 use anyhow::{Context, Result};
 use reqwest::Url;
 use reqwest::{redirect, Client};
 use std::fs;
 use std::fs::File;
-use std::io::{self, Read, Write};
+use std::io::{self, Read};
 use std::path::PathBuf;
+use tokio::task;
 use trauma::download::Download;
 use trauma::downloader::DownloaderBuilder;
-
 use walkdir::WalkDir;
 use zip::ZipArchive;
-
-use crate::util::unityfs;
-
-use tokio::runtime::Runtime;
-use tokio::task;
 
 async fn compare_app_size() -> Result<bool> {
     let url = "https://api.qoo-app.com/v6/apps/com.YostarJP.BlueArchive/download";

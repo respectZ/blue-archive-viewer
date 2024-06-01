@@ -4,6 +4,16 @@ TODO:
 
 - wip: rewrite python scripts into rust.
 
+## JP
+
+- [x] Get JP App
+- [x] Read & parse GameMainConfig
+- [x] Get & parse catalogs
+- [ ] flatbuffers
+- [ ] update table
+- [ ] get live2d models
+- [ ] change logger
+
 This is not affiliated nor nothing to do with Yostar.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).

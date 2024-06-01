@@ -12,6 +12,7 @@ byteorder = "1.5.0"
 clap = { version = "4.5.4", features = ["derive"] }
 io_unity = "0.3.0"
 log = "0.4.21"
+paris = { version = "1.5.15", features = ["macros"] }
 pretty_env_logger = "0.5.0"
 rand_mt = "4.2.2"
 reqwest = "0.12.4"

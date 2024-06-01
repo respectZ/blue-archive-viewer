@@ -5,14 +5,12 @@ mod cg;
 mod mx;
 mod util;
 
-extern crate pretty_env_logger;
 #[macro_use]
-extern crate log;
+mod logger;
 
-use std::path::PathBuf;
-
-use api::jp::{game_main_config, AddressableCatalog};
+use api::jp::AddressableCatalog;
 use clap::{Parser, Subcommand};
+use std::path::PathBuf;
 
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
@@ -111,7 +109,7 @@ async fn main() {
         }
         _ => {
             info!("Using EN region");
-            en();
+            en(cli.action).await;
         }
     }
 }
@@ -147,6 +145,24 @@ async fn jp(catalog: AddressableCatalog, action: Action) {
     };
 }
 
-fn en() {
-    error!("EN region not supported yet");
+async fn en(action: Action) {
+    match action {
+        Action::Update { name } => match name {
+            Update::All => {
+                error!("TODO: Implement all")
+            }
+            Update::CG => {
+                cg::run_en().await.unwrap();
+            }
+            Update::Catalog => {
+                error!("TODO: Implement catalog")
+            }
+            Update::Live2D => {
+                error!("TODO: Implement live2d")
+            }
+            Update::Table => {
+                error!("TODO: Implement table")
+            }
+        },
+    };
 }
