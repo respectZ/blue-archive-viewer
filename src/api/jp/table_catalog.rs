@@ -25,6 +25,7 @@ pub struct TableCatalog {
     table: HashMap<String, Table>,
 
     #[serde(skip)]
+    #[allow(dead_code)]
     base_url: String,
 }
 
@@ -120,6 +121,7 @@ impl TableCatalog {
     pub async fn save(&self, path: PathBuf) -> Result<()> {
         save_json(path.join("TableBundles/TableCatalog.json"), self).await
     }
+    #[allow(dead_code)]
     pub async fn save_tables(&self, path: PathBuf, filter: impl Fn(&Table) -> bool) -> Result<()> {
         let root_dir = path.join("TableBundles");
         let downloader = DownloaderBuilder::new().directory(root_dir).build();

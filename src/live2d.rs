@@ -3,10 +3,10 @@ use crate::{
     error, info,
     util::{
         save_file, save_image, save_json,
-        unityfs::{self, decode_astc_rgb, decode_astc_rgb_5x5},
+        unityfs::{self, decode_astc_rgb},
     },
 };
-use anyhow::{Ok, Result};
+use anyhow::{anyhow, Ok, Result};
 use astc_decode::Footprint;
 use num_enum::FromPrimitive;
 use regex::Regex;
@@ -68,7 +68,12 @@ pub async fn run_jp(catalog: AddressableCatalog) -> Result<()> {
     });
 
     for handle in handles {
-        handle.await?.unwrap();
+        match handle.await {
+            Err(e) => {
+                error!("Error: {}", e);
+            }
+            _ => {}
+        }
     }
     validate_atlas().await?;
     info!("Updating info.json");
@@ -83,17 +88,19 @@ async fn extract_live2d(char_id: String, env: Env) -> Result<()> {
                 let s: Texture2D = obj.read().unwrap();
                 let format = TextureFormat::from(s.format as i32);
                 let footprint = match format {
-                    TextureFormat::ASTC_RGB_4x4 => Footprint::ASTC_4X4,
-                    TextureFormat::ASTC_RGB_5x5 => Footprint::ASTC_5X5,
-                    TextureFormat::ASTC_RGB_6x6 => Footprint::ASTC_6X6,
-                    TextureFormat::ASTC_RGB_8x8 => Footprint::ASTC_8X8,
-                    TextureFormat::ASTC_RGB_10x10 => Footprint::ASTC_10X10,
-                    TextureFormat::ASTC_RGB_12x12 => Footprint::ASTC_12X12,
+                    TextureFormat::ASTC_RGB_4x4 => Some(Footprint::ASTC_4X4),
+                    TextureFormat::ASTC_RGB_5x5 => Some(Footprint::ASTC_5X5),
+                    TextureFormat::ASTC_RGB_6x6 => Some(Footprint::ASTC_6X6),
+                    TextureFormat::ASTC_RGB_8x8 => Some(Footprint::ASTC_8X8),
+                    TextureFormat::ASTC_RGB_10x10 => Some(Footprint::ASTC_10X10),
+                    TextureFormat::ASTC_RGB_12x12 => Some(Footprint::ASTC_12X12),
                     _ => {
-                        error!("Unimplemented format: {:?}", s.format);
+                        error!("Unknown format: {:?}", format);
                         continue;
                     }
-                };
+                }
+                .unwrap();
+
                 let image = decode_astc_rgb(&s.data, s.width as u32, s.height as u32, footprint)?;
                 save_image(
                     PathBuf::from(format!(

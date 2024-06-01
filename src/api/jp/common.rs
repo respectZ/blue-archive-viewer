@@ -45,6 +45,8 @@ impl AddressableCatalog {
     pub fn get_addressable_catalog_url_root(&self) -> &String {
         &self.connection_groups[0].override_connection_groups[1].addressables_catalog_url_root
     }
+
+    #[allow(dead_code)]
     pub async fn save(&self, path: PathBuf) -> Result<()> {
         save_json(path, self).await
     }
