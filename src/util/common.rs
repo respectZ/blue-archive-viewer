@@ -1,4 +1,5 @@
 use anyhow::Result;
+use image::DynamicImage;
 use serde::Serialize;
 use std::path::PathBuf;
 use tokio::fs::{create_dir_all, File};
@@ -12,5 +13,24 @@ pub async fn save_json<T: Serialize>(path: PathBuf, data: &T) -> Result<()> {
     }
     let mut file = File::create(path).await?;
     file.write_all(json.as_bytes()).await?;
+    Ok(())
+}
+
+pub async fn save_image(path: PathBuf, image: DynamicImage) -> Result<()> {
+    // Create directory if not exists
+    if let Some(parent) = path.parent() {
+        create_dir_all(parent).await?;
+    }
+    image.save(path)?;
+    Ok(())
+}
+
+pub async fn save_file(path: PathBuf, data: &[u8]) -> Result<()> {
+    // Create directory if not exists
+    if let Some(parent) = path.parent() {
+        create_dir_all(parent).await?;
+    }
+    let mut file = File::create(path).await?;
+    file.write_all(data).await?;
     Ok(())
 }

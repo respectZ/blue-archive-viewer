@@ -2,6 +2,7 @@ mod api;
 mod app;
 mod catalog;
 mod cg;
+mod live2d;
 mod mx;
 mod util;
 
@@ -48,10 +49,6 @@ enum Update {
 #[tokio::main]
 async fn main() {
     let cli = Cli::parse();
-
-    pretty_env_logger::formatted_builder()
-        .filter_level(log::LevelFilter::Info)
-        .init();
 
     let region = cli.region;
 
@@ -127,6 +124,8 @@ async fn jp(catalog: AddressableCatalog, action: Action) {
                 catalog::run_jp(c2).await.unwrap();
 
                 // Live2D
+                live2d::run_jp(catalog).await.unwrap();
+
                 // Table
             }
             Update::CG => {
@@ -136,7 +135,7 @@ async fn jp(catalog: AddressableCatalog, action: Action) {
                 catalog::run_jp(catalog).await.unwrap();
             }
             Update::Live2D => {
-                error!("TODO: Implement live2d")
+                live2d::run_jp(catalog).await.unwrap();
             }
             Update::Table => {
                 error!("TODO: Implement table")

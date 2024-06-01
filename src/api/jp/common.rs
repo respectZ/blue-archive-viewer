@@ -1,9 +1,8 @@
-use std::path::PathBuf;
-
-use super::{media_catalog, table_catalog};
+use super::{bundle_catalog::BundleCatalog, media_catalog, table_catalog};
 use crate::util::save_json;
 use anyhow::Result;
 use serde::{Deserialize, Serialize};
+use std::path::PathBuf;
 
 #[derive(Serialize, Deserialize, Clone, Debug)]
 #[serde(rename_all = "PascalCase")]
@@ -70,5 +69,18 @@ impl AddressableCatalog {
         let table_catalog =
             table_catalog::deserialize(bytes.as_ref(), self.get_addressable_catalog_url_root())?;
         Ok(table_catalog)
+    }
+    pub async fn get_bundle_catalog(&self) -> Result<BundleCatalog> {
+        let url = format!(
+            "{}/Android/bundleDownloadInfo.json",
+            self.get_addressable_catalog_url_root()
+        );
+        let resp = reqwest::get(url).await?;
+        let body = resp.text().await?;
+        let bundle_catalog: BundleCatalog = BundleCatalog::new(
+            self.get_addressable_catalog_url_root().clone(),
+            body.clone(),
+        );
+        Ok(bundle_catalog)
     }
 }
