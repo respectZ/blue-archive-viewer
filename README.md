@@ -2,17 +2,7 @@
 
 TODO:
 
-- wip: rewrite python scripts into rust.
-
-## JP
-
-- [x] Get JP App
-- [x] Read & parse GameMainConfig
-- [x] Get & parse catalogs
-- [ ] flatbuffers
-- [ ] update table
-- [ ] get live2d models
-- [ ] change logger
+- [ ] Update EN data in rust.
 
 This is not affiliated nor nothing to do with Yostar.
 

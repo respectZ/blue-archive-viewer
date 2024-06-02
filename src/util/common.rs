@@ -16,6 +16,19 @@ pub async fn save_json<T: Serialize>(path: PathBuf, data: &T) -> Result<()> {
     Ok(())
 }
 
+pub async fn save_json_pretty<T: Serialize>(path: PathBuf, data: &T) -> Result<()> {
+    let formatter = serde_json::ser::PrettyFormatter::with_indent(b"    ");
+    let mut ser = serde_json::Serializer::with_formatter(Vec::new(), formatter);
+    data.serialize(&mut ser)?;
+    // Create directory if not exists
+    if let Some(parent) = path.parent() {
+        create_dir_all(parent).await?;
+    }
+    let mut file = File::create(path).await?;
+    file.write_all(&ser.into_inner()).await?;
+    Ok(())
+}
+
 pub async fn save_image(path: PathBuf, image: DynamicImage) -> Result<()> {
     // Create directory if not exists
     if let Some(parent) = path.parent() {

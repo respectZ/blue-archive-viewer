@@ -2,8 +2,10 @@ mod api;
 mod app;
 mod catalog;
 mod cg;
+mod flatbuffers;
 mod live2d;
 mod mx;
+mod table_dumper;
 mod util;
 
 #[macro_use]
@@ -12,6 +14,7 @@ mod logger;
 use api::jp::AddressableCatalog;
 use clap::{Parser, Subcommand};
 use std::path::PathBuf;
+use util::save_file;
 
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
@@ -102,6 +105,19 @@ async fn main() {
                     return;
                 }
             };
+
+            // Update url
+            info!("Updating URL");
+
+            let url_tsx_path = PathBuf::from("app/jp/url.tsx");
+            let url = game_main_config.server_info_data_url;
+            let addressable_catalog = catalog.get_addressable_catalog_url_root();
+            let data = format!(
+                "export const URL = \"{}\";\nexport const AddressablesCatalogUrlRoot = \"{}\";",
+                url, addressable_catalog
+            );
+            save_file(url_tsx_path, data.as_bytes()).await.unwrap();
+
             jp(catalog, cli.action).await;
         }
         _ => {
@@ -138,7 +154,7 @@ async fn jp(catalog: AddressableCatalog, action: Action) {
                 live2d::run_jp(catalog).await.unwrap();
             }
             Update::Table => {
-                error!("TODO: Implement table")
+                table_dumper::run_jp(catalog).await.unwrap();
             }
         },
     };

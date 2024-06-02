@@ -6,7 +6,7 @@ use std::{collections::HashMap, io::Cursor, path::PathBuf};
 use trauma::download::Download;
 use trauma::downloader::DownloaderBuilder;
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "PascalCase")]
 pub struct Table {
     pub name: String,
@@ -19,7 +19,7 @@ pub struct Table {
     pub includes: Vec<String>,
 }
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "PascalCase")]
 pub struct TableCatalog {
     table: HashMap<String, Table>,
@@ -120,6 +120,10 @@ impl TableCatalog {
     /// ```
     pub async fn save(&self, path: PathBuf) -> Result<()> {
         save_json(path.join("TableBundles/TableCatalog.json"), self).await
+    }
+    #[allow(dead_code)]
+    pub async fn get_tables(&self) -> Vec<&Table> {
+        self.table.values().collect()
     }
     #[allow(dead_code)]
     pub async fn save_tables(&self, path: PathBuf, filter: impl Fn(&Table) -> bool) -> Result<()> {
