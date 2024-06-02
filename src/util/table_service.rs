@@ -4,10 +4,7 @@ use base64::{engine::general_purpose, Engine};
 use rand_mt::Mt;
 use zip::ZipArchive;
 
-use crate::{
-    info,
-    mx::{core::service::xxhash_service::calculate_hash, data::table_encryption_service},
-};
+use crate::mx::{core::service::xxhash_service::calculate_hash, data::table_encryption_service};
 
 pub struct TableZipFile {
     archive: ZipArchive<Cursor<Vec<u8>>>,
@@ -33,6 +30,7 @@ impl TableZipFile {
         file.read_to_end(&mut buf).unwrap();
         buf
     }
+    #[allow(dead_code)]
     pub fn iter(&mut self) -> impl Iterator<Item = &str> {
         self.archive.file_names()
     }

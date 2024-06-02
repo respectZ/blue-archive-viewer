@@ -1,5 +1,4 @@
 use crate::info;
-use crate::util::unityfs;
 use anyhow::{Context, Result};
 use reqwest::Url;
 use reqwest::{redirect, Client};
@@ -7,7 +6,6 @@ use std::fs;
 use std::fs::File;
 use std::io::{self, Read};
 use std::path::PathBuf;
-use tokio::task;
 use trauma::download::Download;
 use trauma::downloader::DownloaderBuilder;
 use walkdir::WalkDir;
@@ -131,38 +129,4 @@ pub fn get_game_main_config() -> Result<Vec<u8>> {
         }
     }
     Err(anyhow::anyhow!("GameMainConfig not found"))
-}
-
-pub async fn read_asset_bundles() -> Result<()> {
-    let path = PathBuf::from("./temp/app/com.YostarJP.BlueArchive/assets/bin/Data/");
-    for entry in WalkDir::new(path) {
-        let entry = entry?;
-        if entry.file_type().is_file() {
-            // println!("{}", entry.path().display());
-            // if let Err(e) = task::spawn(async move {
-            //     if let Err(e) = unityfs::read_file(entry.path().to_owned()) {
-            //         // error!("{}", e);
-            //     } else {
-            //         info!("Finished reading asset bundles");
-            //     }
-            // })
-            // .await
-            // {
-            //     // error!("{}", e);
-            // }
-            // unityfs::read_serialized_file(entry.path().to_path_buf())?;
-            if let Err(e) = task::spawn(async move {
-                if let Err(e) = unityfs::read_serialized_file(entry.path().to_path_buf()) {
-                    // error!("{}", e);
-                } else {
-                    println!("{}", entry.path().display());
-                }
-            })
-            .await
-            {
-                // error!("{}", e);
-            }
-        }
-    }
-    Ok(())
 }

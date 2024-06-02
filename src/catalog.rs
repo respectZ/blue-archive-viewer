@@ -1,5 +1,5 @@
 use super::api::jp::AddressableCatalog;
-use crate::{error, info};
+use crate::info;
 use anyhow::Result;
 use std::path::PathBuf;
 use tokio::runtime::Handle;

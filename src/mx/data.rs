@@ -4,7 +4,6 @@ pub mod table_encryption_service {
     use base64::{engine::general_purpose, Engine};
     use byteorder::{ByteOrder, LittleEndian};
     use rand_mt::{Mt, Mt19937GenRand32};
-    use std::convert::TryInto;
 
     fn gen_int31(rng: &mut Mt19937GenRand32) -> u32 {
         rng.next_u32() >> 1
@@ -128,6 +127,7 @@ pub mod table_encryption_service {
         }
     }
 
+    #[allow(dead_code)]
     pub fn convert_ulong(value: u64, key: &[u8]) -> u64 {
         if value != 0 {
             xor_uint64(value, key)
@@ -144,6 +144,7 @@ pub mod table_encryption_service {
         }
     }
 
+    #[allow(dead_code)]
     pub fn convert_double(value: f64, key: &[u8]) -> f64 {
         if value != 0.0 {
             (convert_long(value as i64, key) as f64) * 0.00001

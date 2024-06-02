@@ -6,7 +6,7 @@ use crate::{
         unityfs::{self, decode_astc_rgb},
     },
 };
-use anyhow::{anyhow, Ok, Result};
+use anyhow::{Ok, Result};
 use astc_decode::Footprint;
 use num_enum::FromPrimitive;
 use regex::Regex;

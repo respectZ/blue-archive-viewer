@@ -13,7 +13,6 @@ byteorder = "1.5.0"
 clap = { version = "4.5.4", features = ["derive"] }
 flatbuffers = { version = "24.3.25", features = ["serialize"] }
 image = "0.25.1"
-io_unity = "0.3.0"
 log = "0.4.21"
 num_enum = "0.7.2"
 paris = { version = "1.5.15", features = ["macros"] }
