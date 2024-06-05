@@ -48,6 +48,11 @@ pub async fn download() -> Result<()> {
             return Ok(());
         }
         _ => {
+            // Remove old app
+            let path = PathBuf::from("./temp/app/com.YostarJP.BlueArchive.apk");
+            if path.exists() {
+                fs::remove_file(path).with_context(|| "Failed to remove old app")?;
+            }
             let url = "https://api.qoo-app.com/v6/apps/com.YostarJP.BlueArchive/download";
             let downloader = DownloaderBuilder::new()
                 .directory(PathBuf::from("./temp/app"))

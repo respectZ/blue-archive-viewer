@@ -275,6 +275,7 @@ dependencies = [
  "base64 0.22.1",
  "byteorder",
  "clap",
+ "crc32fast",
  "flatbuffers",
  "image 0.25.1",
  "log",

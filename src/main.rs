@@ -16,6 +16,21 @@ use clap::{Parser, Subcommand};
 use std::path::PathBuf;
 use util::save_file;
 
+struct Data {
+    pub public_path: &'static str,
+    pub temp_path: &'static str,
+}
+
+pub static JP_DATA: Data = Data {
+    public_path: "./public/data/jp/",
+    temp_path: "./temp/jp/",
+};
+
+pub static EN_DATA: Data = Data {
+    public_path: "./public/data/en/",
+    temp_path: "./temp/en/",
+};
+
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
 struct Cli {

@@ -54,7 +54,13 @@ pub async fn run_jp(catalog: AddressableCatalog) -> Result<()> {
             };
             // Check if folder exists
             let folder = out_dir.clone().join("Android").join(char_id);
-            !folder.exists()
+            match folder.exists() {
+                true => {
+                    let is_empty = folder.read_dir().unwrap().next().is_none();
+                    is_empty
+                }
+                false => true,
+            }
         })
         .await?;
 

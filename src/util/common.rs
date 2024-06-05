@@ -47,3 +47,20 @@ pub async fn save_file(path: PathBuf, data: &[u8]) -> Result<()> {
     file.write_all(data).await?;
     Ok(())
 }
+
+pub async fn compare_file(path: PathBuf, crc: u32) -> Result<bool> {
+    println!("Comparing {}...", path.display());
+    let file = match File::open(&path).await {
+        Ok(file) => file,
+        Err(_) => return Ok(false),
+    };
+    // Compare crc
+    let mut buf = Vec::new();
+    let mut reader = tokio::io::BufReader::new(file);
+    tokio::io::copy(&mut reader, &mut buf).await?;
+    let mut hasher = crc32fast::Hasher::new();
+    hasher.update(&buf);
+    let checksum = hasher.finalize();
+    println!("{}: {} == {}", path.display(), crc, checksum);
+    Ok(crc == checksum)
+}

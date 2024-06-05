@@ -1,4 +1,5 @@
 use crate::info;
+use crate::util::compare_file;
 use crate::{
     api::jp::{table_catalog::TableCatalog, AddressableCatalog},
     flatbuffers::{
@@ -15,6 +16,12 @@ use anyhow::Result;
 use sqlite::{self, State};
 use std::{fs, path::PathBuf};
 
+static PUBLIC_PATH: &str = "./public/data/jp/";
+static PUBLIC_EXCEL_PATH: &str = "./public/data/jp/TableBundles/Excel/";
+static PUBLIC_EXCEL_DB_PATH: &str = "./public/data/jp/TableBundles/ExcelDB.db";
+static TEMP_EXCEL_ZIP_PATH: &str = "./temp/jp/TableBundles/Excel.zip";
+static TEMP_PATH: &str = "./temp/jp/";
+
 pub async fn run_jp(catalog: AddressableCatalog) -> Result<()> {
     info!("Running table dumper");
 
@@ -24,7 +31,7 @@ pub async fn run_jp(catalog: AddressableCatalog) -> Result<()> {
     get_excel_zip(table_catalog.clone()).await?;
     extract_excel_zip().await?;
 
-    let excel_path = PathBuf::from("./public/data/jp/TableBundles/Excel/");
+    let excel_path = PathBuf::from(PUBLIC_EXCEL_PATH);
 
     info!("Dumping CharacterDialogExcelTable");
     let character_dialog_table = get_character_dialog_table()?;
@@ -53,8 +60,8 @@ pub async fn run_jp(catalog: AddressableCatalog) -> Result<()> {
     Ok(())
 }
 
-pub fn get_character_dialog_table() -> Result<Vec<Vec<u8>>> {
-    let conn = sqlite::open("./public/data/jp/TableBundles/ExcelDB.db")?;
+fn get_character_dialog_table() -> Result<Vec<Vec<u8>>> {
+    let conn = sqlite::open(PUBLIC_EXCEL_DB_PATH)?;
     let mut stmt = conn.prepare("SELECT Bytes FROM CharacterDialogDBSchema")?;
     let mut data = Vec::new();
     while let Ok(State::Row) = stmt.next() {
@@ -64,8 +71,8 @@ pub fn get_character_dialog_table() -> Result<Vec<Vec<u8>>> {
     Ok(data)
 }
 
-pub fn get_memory_lobby_excel_table() -> Result<Vec<Vec<u8>>> {
-    let conn = sqlite::open("./public/data/jp/TableBundles/ExcelDB.db")?;
+fn get_memory_lobby_excel_table() -> Result<Vec<Vec<u8>>> {
+    let conn = sqlite::open(PUBLIC_EXCEL_DB_PATH)?;
     let mut stmt = conn.prepare("SELECT Bytes FROM MemoryLobbyDBSchema")?;
     let mut data = Vec::new();
     while let Ok(State::Row) = stmt.next() {
@@ -76,26 +83,25 @@ pub fn get_memory_lobby_excel_table() -> Result<Vec<Vec<u8>>> {
 }
 
 async fn get_excel_db(table_catalog: TableCatalog) -> Result<()> {
-    let path = PathBuf::from("./public/data/jp/TableBundles/Excel/ExcelDB.db");
-    // Get metadata
-    let metadata = match fs::metadata(path.clone()) {
-        Ok(metadata) => metadata.len(),
-        Err(_) => 0,
-    };
-    // Compare excel db size
+    let path = PathBuf::from(PUBLIC_EXCEL_DB_PATH);
+    // Compare excel db crc
     let excel_db = table_catalog
         .get_tables()
         .await
         .into_iter()
         .find(|table| table.name == "ExcelDB.db")
         .unwrap();
-    if metadata == excel_db.size as u64 {
+
+    if compare_file(path, excel_db.crc as u32).await? {
         return Ok(());
     }
 
+    // Remove old ExcelDB.db
+    fs::remove_file(PathBuf::from(PUBLIC_EXCEL_DB_PATH))?;
+
     info!("Downloading ExcelDB.db");
     table_catalog
-        .save_tables(PathBuf::from("./public/data/jp/"), |table| {
+        .save_tables(PathBuf::from(PUBLIC_PATH), |table| {
             table.name == "ExcelDB.db"
         })
         .await?;
@@ -103,31 +109,30 @@ async fn get_excel_db(table_catalog: TableCatalog) -> Result<()> {
 }
 
 async fn get_excel_zip(table_catalog: TableCatalog) -> Result<()> {
-    let path = PathBuf::from("./temp/jp/");
-    let metadata = match fs::metadata(path.clone().join("TableBundles/Excel.zip")) {
-        Ok(metadata) => metadata.len(),
-        Err(_) => 0,
-    };
-    // Compare excel zip size
+    // Compare Excel.zip crc
     let excel_zip = table_catalog
         .get_tables()
         .await
         .into_iter()
         .find(|table| table.name == "Excel.zip")
         .unwrap();
-    if metadata == excel_zip.size as u64 {
+    if compare_file(PathBuf::from(TEMP_EXCEL_ZIP_PATH), excel_zip.crc as u32).await? {
         return Ok(());
     }
+
+    // Remove old Excel.zip
+    fs::remove_file(PathBuf::from(TEMP_EXCEL_ZIP_PATH))?;
+
     info!("Downloading Excel.zip");
     table_catalog
-        .save_tables(path.clone(), |table| table.name == "Excel.zip")
+        .save_tables(PathBuf::from(TEMP_PATH), |table| table.name == "Excel.zip")
         .await?;
     Ok(())
 }
 async fn extract_excel_zip() -> Result<()> {
     info!("Extracting Excel.zip");
-    let path = PathBuf::from("./temp/jp/TableBundles/Excel.zip");
-    let excel_path = PathBuf::from("./public/data/jp/TableBundles/Excel/");
+    let path = PathBuf::from(TEMP_EXCEL_ZIP_PATH);
+    let excel_path = PathBuf::from(PUBLIC_EXCEL_PATH);
     let buf = fs::read(path.clone())?;
     let filename = path
         .clone()
@@ -153,7 +158,6 @@ async fn extract_excel_zip() -> Result<()> {
     info!("Decrypting and dumping CharacterExcelTable");
     let data = zip.get_by_name("characterexceltable.bytes");
     let data = xor("CharacterExcelTable", &data);
-    save_file(excel_path.clone().join("CharacterExcelTable.bytes"), &data).await?;
     let mut character = flatbuffers::root::<CharacterExcelTable>(&data)?;
     save_file(
         excel_path.clone().join("CharacterExcelTable.json"),
