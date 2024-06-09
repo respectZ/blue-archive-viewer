@@ -1,5 +1,5 @@
 use super::api::jp::AddressableCatalog;
-use crate::{error, info};
+use crate::{api::en::catalog::Catalog, info};
 use anyhow::Result;
 use std::path::PathBuf;
 
@@ -15,7 +15,13 @@ pub async fn run_jp(catalog: AddressableCatalog) -> Result<()> {
     Ok(())
 }
 
-pub async fn run_en() -> Result<()> {
-    error!("TODO: Implement en");
+pub async fn run_en(catalog: Catalog) -> Result<()> {
+    info!("Downloading CGs");
+    catalog
+        .save_resource(PathBuf::from("./public/data/en"), |r| {
+            r.resource_path.ends_with(".jpg")
+        })
+        .await?;
+    info!("Finished downloading CGs");
     Ok(())
 }

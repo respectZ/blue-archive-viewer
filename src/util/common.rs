@@ -1,9 +1,9 @@
 use anyhow::Result;
 use image::DynamicImage;
 use serde::Serialize;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use tokio::fs::{create_dir_all, File};
-use tokio::io::AsyncWriteExt;
+use tokio::io::{AsyncReadExt, AsyncWriteExt};
 
 pub async fn save_json<T: Serialize>(path: PathBuf, data: &T) -> Result<()> {
     let json = serde_json::to_string_pretty(data)?;
@@ -48,7 +48,16 @@ pub async fn save_file(path: PathBuf, data: &[u8]) -> Result<()> {
     Ok(())
 }
 
-pub async fn compare_file(path: PathBuf, crc: u32) -> Result<bool> {
+pub async fn get_image_dimensions<P: AsRef<Path>>(path: P) -> Result<(u32, u32)> {
+    let file = std::fs::File::open(path)?;
+    let reader = std::io::BufReader::new(file);
+    let dimensions = image::io::Reader::new(reader)
+        .with_guessed_format()?
+        .into_dimensions()?;
+    Ok(dimensions)
+}
+
+pub async fn compare_crc(path: PathBuf, crc: u32) -> Result<bool> {
     println!("Comparing {}...", path.display());
     let file = match File::open(&path).await {
         Ok(file) => file,
@@ -63,4 +72,24 @@ pub async fn compare_file(path: PathBuf, crc: u32) -> Result<bool> {
     let checksum = hasher.finalize();
     println!("{}: {} == {}", path.display(), crc, checksum);
     Ok(crc == checksum)
+}
+
+async fn calculate_hash(path: &PathBuf) -> Result<String> {
+    let mut file = File::open(&path).await?;
+    let mut buffer = Vec::new();
+    file.read_to_end(&mut buffer).await?;
+    let digest = md5::compute(buffer);
+    let hash_hex = format!("{:x}", digest);
+    Ok(hash_hex)
+}
+
+pub async fn compare_hash(path: PathBuf, hash: String) -> Result<bool> {
+    // Check if path exists
+    if !path.exists() {
+        return Ok(false);
+    }
+    // Compare hash
+    let file_hash = calculate_hash(&path).await?;
+    println!("{}: {} == {}", path.display(), hash, file_hash);
+    Ok(hash == file_hash)
 }

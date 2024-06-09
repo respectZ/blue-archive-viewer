@@ -1,35 +1,21 @@
 use super::api::jp::AddressableCatalog;
 use crate::{
+    api::en::catalog::Catalog,
     error, info,
     util::{
-        save_file, save_image, save_json,
-        unityfs::{self, decode_astc_rgb},
+        get_image_dimensions, save_json,
+        unityfs::{self, extract_images, extract_live2d},
     },
 };
 use anyhow::{Ok, Result};
-use astc_decode::Footprint;
-use num_enum::FromPrimitive;
 use regex::Regex;
-use std::{collections::BTreeMap, path::PathBuf};
-use unity_rs::{
-    classes::{TextAsset, Texture2D},
-    Env,
+use std::{
+    collections::BTreeMap,
+    path::{Path, PathBuf},
 };
+use tokio::{fs::File, io::BufReader};
+use unity_rs::Env;
 use walkdir::WalkDir;
-
-#[allow(non_camel_case_types, non_upper_case_globals)]
-#[derive(Debug, Eq, PartialEq, FromPrimitive, Clone, Copy)]
-#[repr(i32)]
-enum TextureFormat {
-    #[num_enum(default)]
-    UnknownType = -1,
-    ASTC_RGB_4x4 = 48,
-    ASTC_RGB_5x5,
-    ASTC_RGB_6x6,
-    ASTC_RGB_8x8,
-    ASTC_RGB_10x10,
-    ASTC_RGB_12x12,
-}
 
 pub async fn run_jp(catalog: AddressableCatalog) -> Result<()> {
     // assets-_mx-spinelobbies-(.*?)-_
@@ -70,7 +56,7 @@ pub async fn run_jp(catalog: AddressableCatalog) -> Result<()> {
         info!("Extracting {}", filename);
         let char_id = regex.captures(filename).unwrap()[1].to_string();
         let env = unityfs::read_file(PathBuf::from("./temp/jp/Android").join(filename)).unwrap();
-        handles.push(tokio::spawn(extract_live2d(char_id, env)));
+        handles.push(tokio::spawn(jp_extract_assets(char_id.clone(), env)));
     });
 
     for handle in handles {
@@ -83,57 +69,25 @@ pub async fn run_jp(catalog: AddressableCatalog) -> Result<()> {
     }
     validate_atlas().await?;
     info!("Updating info.json");
-    update_info().await?;
+    jp_update_info().await?;
     Ok(())
 }
 
-async fn extract_live2d(char_id: String, env: Env) -> Result<()> {
-    for obj in env.objects() {
-        match obj.class() {
-            unity_rs::ClassID::Texture2D => {
-                let s: Texture2D = obj.read().unwrap();
-                let format = TextureFormat::from(s.format as i32);
-                let footprint = match format {
-                    TextureFormat::ASTC_RGB_4x4 => Some(Footprint::ASTC_4X4),
-                    TextureFormat::ASTC_RGB_5x5 => Some(Footprint::ASTC_5X5),
-                    TextureFormat::ASTC_RGB_6x6 => Some(Footprint::ASTC_6X6),
-                    TextureFormat::ASTC_RGB_8x8 => Some(Footprint::ASTC_8X8),
-                    TextureFormat::ASTC_RGB_10x10 => Some(Footprint::ASTC_10X10),
-                    TextureFormat::ASTC_RGB_12x12 => Some(Footprint::ASTC_12X12),
-                    _ => {
-                        error!("Unknown format: {:?}", format);
-                        continue;
-                    }
-                }
-                .unwrap();
-
-                let image = decode_astc_rgb(&s.data, s.width as u32, s.height as u32, footprint)?;
-                save_image(
-                    PathBuf::from(format!(
-                        "./public/data/jp/Android/{}/{}.png",
-                        char_id, s.name
-                    )),
-                    image,
-                )
-                .await
-                .unwrap();
-            }
-            unity_rs::ClassID::TextAsset => {
-                let s: TextAsset = obj.read().unwrap();
-                save_file(
-                    PathBuf::from(format!("./public/data/jp/Android/{}/{}", char_id, s.name)),
-                    &s.script,
-                )
-                .await
-                .unwrap();
-            }
-            _ => {}
-        }
-    }
+async fn jp_extract_assets(char_id: String, env: Env) -> Result<()> {
+    extract_images(
+        &env,
+        PathBuf::from(format!("./public/data/jp/Android/{}", char_id)),
+    )
+    .await?;
+    extract_live2d(
+        &env,
+        PathBuf::from(format!("./public/data/jp/Android/{}", char_id)),
+    )
+    .await?;
     Ok(())
 }
 
-async fn update_info() -> Result<()> {
+async fn jp_update_info() -> Result<()> {
     let dir = PathBuf::from("./public/data/jp/Android");
     let mut data: BTreeMap<String, Vec<String>> = BTreeMap::new();
     for entry in WalkDir::new(dir) {
@@ -172,6 +126,204 @@ async fn update_info() -> Result<()> {
 }
 
 async fn validate_atlas() -> Result<()> {
-    error!("TODO: Implement validate_atlas");
+    info!("Validating atlas");
+    let directories = vec![
+        PathBuf::from("./public/data/jp/Android"),
+        PathBuf::from("./public/data/en/GameData/Android"),
+    ];
+
+    let mut handles = vec![];
+
+    directories
+        .iter()
+        .flat_map(|dir| WalkDir::new(dir).into_iter().filter_map(|e| e.ok()))
+        .filter(|e| e.path().extension().unwrap_or_default() == "atlas")
+        .for_each(|entry| {
+            handles.push(tokio::spawn(async move {
+                info!("Checking {}", entry.path().display());
+                let file = std::fs::read_to_string(entry.path()).unwrap();
+                for i in 0..file.lines().count() {
+                    let line = file.lines().nth(i).unwrap();
+                    if !line.contains(".png") {
+                        continue;
+                    }
+                    let filepath = entry.path().parent().unwrap().join(line);
+                    if !filepath.exists() {
+                        error!("Missing file: {}", filepath.display());
+                        continue;
+                    }
+                    // Next line is size
+                    let size_text = file.lines().nth(i + 1).unwrap();
+                    let size: Vec<u32> = size_text
+                        .split(": ")
+                        .nth(1)
+                        .unwrap()
+                        .split(",")
+                        .map(|s| s.parse().unwrap())
+                        .collect();
+                    let dimensions = get_image_dimensions(&filepath).await.unwrap();
+                    if dimensions.0 != size[0] || dimensions.1 != size[1] {
+                        error!(
+                            "Size mismatch: {} ({}x{}) != {} ({}x{})",
+                            &filepath.display(),
+                            dimensions.0,
+                            dimensions.1,
+                            entry.path().display(),
+                            size[0],
+                            size[1]
+                        );
+                        // Resize
+                        info!("Resizing {}", filepath.display());
+                        let image = image::open(&filepath).unwrap();
+                        let resized = image.resize_exact(
+                            size[0],
+                            size[1],
+                            image::imageops::FilterType::Nearest,
+                        );
+                        resized.save(&filepath).unwrap();
+                    }
+                }
+            }))
+        });
+
+    for handle in handles {
+        match handle.await {
+            Err(e) => {
+                error!("Error: {}", e);
+            }
+            _ => {}
+        }
+    }
+
+    Ok(())
+}
+
+pub async fn run_en(catalog: Catalog) -> Result<()> {
+    info!("Running table dumper");
+    let regex = Regex::new(r"assets-_mx-spinelobbies-(.*?)-_")?;
+    let out_dir = PathBuf::from("./public/data/en");
+    info!("Downloading Live2D bundles");
+    let downloads = catalog
+        .save_resource(PathBuf::from("./temp/en/"), |r| {
+            let char_id = match regex.captures(&r.resource_path) {
+                Some(captures) => {
+                    // skip if it's "_mxcommon"
+                    if captures[1].to_string() == "_mxcommon" {
+                        return false;
+                    }
+                    captures[1].to_string()
+                }
+                None => return false,
+            };
+            // Check if folder exists
+            let folder = out_dir
+                .clone()
+                .join("GameData/Android")
+                .join(char_id.clone());
+            match folder.exists() {
+                true => {
+                    let is_empty = folder.read_dir().unwrap().next().is_none();
+                    is_empty
+                }
+                false => {
+                    // Check jp dir
+                    let folder = PathBuf::from("./public/data/jp/Android").join(char_id.clone());
+                    match folder.exists() {
+                        true => {
+                            let is_empty = folder.read_dir().unwrap().next().is_none();
+                            is_empty
+                        }
+                        false => true,
+                    }
+                }
+            }
+        })
+        .await?;
+
+    let mut handles = vec![];
+
+    downloads.iter().for_each(|filename| {
+        info!("Extracting {}", filename);
+        let char_id = regex.captures(filename).unwrap()[1].to_string();
+        let env = unityfs::read_file(PathBuf::from("./temp/en").join(filename)).unwrap();
+        handles.push(tokio::spawn(en_extract_assets(char_id.clone(), env)));
+    });
+
+    for handle in handles {
+        match handle.await {
+            Err(e) => {
+                error!("Error: {}", e);
+            }
+            _ => {}
+        }
+    }
+    validate_atlas().await?;
+    info!("Updating info.json");
+    en_update_info().await?;
+    Ok(())
+}
+
+async fn en_extract_assets(char_id: String, env: Env) -> Result<()> {
+    extract_images(
+        &env,
+        PathBuf::from(format!("./public/data/en/GameData/Android/{}", char_id)),
+    )
+    .await?;
+    extract_live2d(
+        &env,
+        PathBuf::from(format!("./public/data/en/GameData/Android/{}", char_id)),
+    )
+    .await?;
+    Ok(())
+}
+
+async fn en_update_info() -> Result<()> {
+    let dir = PathBuf::from("./public/data/en/GameData/Android");
+    let mut data = BTreeMap::new();
+    for entry in WalkDir::new(dir) {
+        let entry = entry.unwrap();
+        let filepath = entry.path();
+        if filepath.is_dir() {
+            continue;
+        }
+        if !filepath.to_str().unwrap().ends_with(".skel") {
+            continue;
+        }
+        // Char id is the folder name
+        let char_id = filepath
+            .parent()
+            .unwrap()
+            .file_name()
+            .unwrap()
+            .to_str()
+            .unwrap();
+        // Push to data
+        if !data.contains_key(char_id) {
+            data.insert(char_id.to_string(), vec![]);
+        }
+        // push the path
+        // Remove "./public/" from the filepath
+        data.get_mut(char_id).unwrap().push(
+            filepath
+                .to_str()
+                .unwrap()
+                .replace("./public/", "")
+                .replace("\\", "/"),
+        );
+    }
+    // Add from jp too
+    let jp_info: BTreeMap<String, Vec<String>> = serde_json::from_str(&std::fs::read_to_string(
+        "./public/data/jp/Android/info.json",
+    )?)?;
+    for (key, value) in jp_info {
+        if !data.contains_key(&key) {
+            data.insert(key, value);
+        }
+    }
+    save_json(
+        PathBuf::from("./public/data/en/GameData/Android/info.json"),
+        &data,
+    )
+    .await?;
     Ok(())
 }

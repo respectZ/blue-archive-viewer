@@ -15,11 +15,12 @@ crc32fast = "1.4.2"
 flatbuffers = { version = "24.3.25", features = ["serialize"] }
 image = "0.25.1"
 log = "0.4.21"
+md5 = "0.7.0"
 num_enum = "0.7.2"
 paris = { version = "1.5.15", features = ["macros"] }
 rand_mt = "4.2.2"
 regex = "1.10.4"
-reqwest = "0.12.4"
+reqwest = { version = "0.12.4", features = ["json"] }
 serde = { version = "1.0.202", features = ["derive"] }
 serde_json = "1.0.117"
 sqlite = { version = "0.36.0", features = ["bundled"] }

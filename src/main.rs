@@ -16,21 +16,6 @@ use clap::{Parser, Subcommand};
 use std::path::PathBuf;
 use util::save_file;
 
-struct Data {
-    pub public_path: &'static str,
-    pub temp_path: &'static str,
-}
-
-pub static JP_DATA: Data = Data {
-    public_path: "./public/data/jp/",
-    temp_path: "./temp/jp/",
-};
-
-pub static EN_DATA: Data = Data {
-    public_path: "./public/data/en/",
-    temp_path: "./temp/en/",
-};
-
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
 struct Cli {
@@ -169,29 +154,41 @@ async fn jp(catalog: AddressableCatalog, action: Action) {
                 live2d::run_jp(catalog).await.unwrap();
             }
             Update::Table => {
-                table_dumper::run_jp(catalog).await.unwrap();
+                table_dumper::jp::run(catalog).await.unwrap();
             }
         },
     };
 }
 
 async fn en(action: Action) {
+    info!("Requesting AddressableCatalog");
+    let addressable_catalog = api::en::common::get_addressable_catalog().await.unwrap();
+    info!("Version: {}", addressable_catalog.latest_build_version);
+    info!("Requesting Catalog");
+    let catalog = addressable_catalog.get_catalog().await.unwrap();
+    catalog
+        .save(PathBuf::from("public/data/en/"))
+        .await
+        .unwrap();
     match action {
         Action::Update { name } => match name {
             Update::All => {
-                error!("TODO: Implement all")
+                cg::run_en(catalog.clone()).await.unwrap();
+                catalog::run_en(catalog.clone()).await.unwrap();
+                table_dumper::en::run(catalog.clone()).await.unwrap();
+                live2d::run_en(catalog.clone()).await.unwrap();
             }
             Update::CG => {
-                cg::run_en().await.unwrap();
+                cg::run_en(catalog).await.unwrap();
             }
             Update::Catalog => {
-                error!("TODO: Implement catalog")
+                catalog::run_en(catalog).await.unwrap();
             }
             Update::Live2D => {
-                error!("TODO: Implement live2d")
+                live2d::run_en(catalog).await.unwrap();
             }
             Update::Table => {
-                error!("TODO: Implement table")
+                table_dumper::en::run(catalog).await.unwrap();
             }
         },
     };

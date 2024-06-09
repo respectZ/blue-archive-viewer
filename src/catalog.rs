@@ -1,5 +1,5 @@
 use super::api::jp::AddressableCatalog;
-use crate::info;
+use crate::{api::en::catalog::Catalog, info};
 use anyhow::Result;
 use std::path::PathBuf;
 use tokio::runtime::Handle;
@@ -28,5 +28,12 @@ pub async fn run_jp(catalog: AddressableCatalog) -> Result<()> {
         info!("[TableCatalog] Saved");
     });
     let _ = tokio::try_join!(task_1, task_2);
+    Ok(())
+}
+
+pub async fn run_en(catalog: Catalog) -> Result<()> {
+    info!("[Catalog] Saving");
+    catalog.save(PathBuf::from("./public/data/en")).await?;
+    info!("[Catalog] Saved");
     Ok(())
 }

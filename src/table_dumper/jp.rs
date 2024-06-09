@@ -1,5 +1,5 @@
 use crate::info;
-use crate::util::compare_file;
+use crate::util::compare_crc;
 use crate::{
     api::jp::{table_catalog::TableCatalog, AddressableCatalog},
     flatbuffers::{
@@ -22,7 +22,7 @@ static PUBLIC_EXCEL_DB_PATH: &str = "./public/data/jp/TableBundles/ExcelDB.db";
 static TEMP_EXCEL_ZIP_PATH: &str = "./temp/jp/TableBundles/Excel.zip";
 static TEMP_PATH: &str = "./temp/jp/";
 
-pub async fn run_jp(catalog: AddressableCatalog) -> Result<()> {
+pub async fn run(catalog: AddressableCatalog) -> Result<()> {
     info!("Running table dumper");
 
     let table_catalog = catalog.get_table_catalog().await?;
@@ -92,12 +92,14 @@ async fn get_excel_db(table_catalog: TableCatalog) -> Result<()> {
         .find(|table| table.name == "ExcelDB.db")
         .unwrap();
 
-    if compare_file(path, excel_db.crc as u32).await? {
+    if compare_crc(path, excel_db.crc as u32).await? {
         return Ok(());
     }
 
-    // Remove old ExcelDB.db
-    fs::remove_file(PathBuf::from(PUBLIC_EXCEL_DB_PATH))?;
+    // Remove old ExcelDB.db if exists
+    if PathBuf::from(PUBLIC_EXCEL_DB_PATH).exists() {
+        fs::remove_file(PathBuf::from(PUBLIC_EXCEL_DB_PATH))?;
+    }
 
     info!("Downloading ExcelDB.db");
     table_catalog
@@ -116,7 +118,7 @@ async fn get_excel_zip(table_catalog: TableCatalog) -> Result<()> {
         .into_iter()
         .find(|table| table.name == "Excel.zip")
         .unwrap();
-    if compare_file(PathBuf::from(TEMP_EXCEL_ZIP_PATH), excel_zip.crc as u32).await? {
+    if compare_crc(PathBuf::from(TEMP_EXCEL_ZIP_PATH), excel_zip.crc as u32).await? {
         return Ok(());
     }
 
