@@ -1,3 +1,5 @@
+use std::path::Path;
+
 use crate::util::save_json;
 use anyhow::Result;
 use reqwest::Url;
@@ -44,15 +46,15 @@ impl BundleCatalog {
         catalog._base_url = base_url;
         catalog
     }
-    pub async fn save(&self, path: std::path::PathBuf) -> Result<()> {
-        save_json(path.join("Android/bundleDownloadInfo.json"), self).await
+    pub async fn save<P: AsRef<Path>>(&self, path: P) -> Result<()> {
+        save_json(path.as_ref().join("Android/bundleDownloadInfo.json"), self).await
     }
-    pub async fn save_bundle(
+    pub async fn save_bundle<P: AsRef<Path>>(
         &self,
-        path: std::path::PathBuf,
+        path: P,
         filter: impl Fn(&Bundle) -> bool,
     ) -> Result<Vec<String>> {
-        let root_dir = path.join("Android");
+        let root_dir = path.as_ref().join("Android");
         let downloader = DownloaderBuilder::new().directory(root_dir).build();
         let downloads = self
             .bundle_files

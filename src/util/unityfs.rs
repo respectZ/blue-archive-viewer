@@ -2,10 +2,7 @@ use anyhow::{bail, Result};
 use astc_decode::{astc_decode, Footprint};
 use image::{DynamicImage, ImageBuffer};
 use num_enum::FromPrimitive;
-use std::{
-    fs::{self},
-    path::PathBuf,
-};
+use std::{fs, path::Path};
 use unity_rs::{classes::Texture2D, Env};
 
 use super::{save_file, save_image};
@@ -24,7 +21,7 @@ enum TextureFormat {
     ASTC_RGB_12x12,
 }
 
-pub fn read_file(path: PathBuf) -> Result<Env> {
+pub fn read_file<P: AsRef<Path>>(path: P) -> Result<Env> {
     // Open file into bytes
     let bytes = fs::read(path)?;
     // Convert to &[u8]
@@ -49,7 +46,7 @@ pub fn decode_astc_rgb(data: &[u8], w: u32, h: u32, footprint: Footprint) -> Res
     Ok(image)
 }
 
-pub async fn extract_images(env: &Env, path: PathBuf) -> Result<()> {
+pub async fn extract_images<P: AsRef<Path>>(env: &Env, path: P) -> Result<()> {
     for obj in env.objects() {
         match obj.class() {
             unity_rs::ClassID::Texture2D => {
@@ -68,7 +65,7 @@ pub async fn extract_images(env: &Env, path: PathBuf) -> Result<()> {
                 }
                 .unwrap();
                 let image = decode_astc_rgb(&s.data, s.width as u32, s.height as u32, footprint)?;
-                let path = path.join(format!("{}.png", s.name));
+                let path = path.as_ref().join(format!("{}.png", s.name));
                 save_image(path, image).await?;
             }
             _ => {}
@@ -77,12 +74,12 @@ pub async fn extract_images(env: &Env, path: PathBuf) -> Result<()> {
     Ok(())
 }
 
-pub async fn extract_live2d(env: &Env, path: PathBuf) -> Result<()> {
+pub async fn extract_live2d<P: AsRef<Path>>(env: &Env, path: P) -> Result<()> {
     for obj in env.objects() {
         match obj.class() {
             unity_rs::ClassID::TextAsset => {
                 let s: unity_rs::classes::TextAsset = obj.read().unwrap();
-                save_file(path.join(s.name), &s.script).await?;
+                save_file(path.as_ref().join(s.name), &s.script).await?;
             }
             _ => {}
         }

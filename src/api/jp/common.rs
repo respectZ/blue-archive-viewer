@@ -2,7 +2,7 @@ use super::{bundle_catalog::BundleCatalog, media_catalog, table_catalog};
 use crate::util::save_json;
 use anyhow::Result;
 use serde::{Deserialize, Serialize};
-use std::path::PathBuf;
+use std::path::Path;
 
 #[derive(Serialize, Deserialize, Clone, Debug)]
 #[serde(rename_all = "PascalCase")]
@@ -47,7 +47,7 @@ impl AddressableCatalog {
     }
 
     #[allow(dead_code)]
-    pub async fn save(&self, path: PathBuf) -> Result<()> {
+    pub async fn save<P: AsRef<Path>>(&self, path: P) -> Result<()> {
         save_json(path, self).await
     }
     pub async fn get_media_catalog(&self) -> Result<media_catalog::MediaCatalog> {

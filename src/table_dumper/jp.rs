@@ -22,13 +22,13 @@ static PUBLIC_EXCEL_DB_PATH: &str = "./public/data/jp/TableBundles/ExcelDB.db";
 static TEMP_EXCEL_ZIP_PATH: &str = "./temp/jp/TableBundles/Excel.zip";
 static TEMP_PATH: &str = "./temp/jp/";
 
-pub async fn run(catalog: AddressableCatalog) -> Result<()> {
+pub async fn run(catalog: &AddressableCatalog) -> Result<()> {
     info!("Running table dumper");
 
     let table_catalog = catalog.get_table_catalog().await?;
-    get_excel_db(table_catalog.clone()).await?;
+    get_excel_db(&table_catalog).await?;
 
-    get_excel_zip(table_catalog.clone()).await?;
+    get_excel_zip(&table_catalog).await?;
     extract_excel_zip().await?;
 
     let excel_path = PathBuf::from(PUBLIC_EXCEL_PATH);
@@ -82,7 +82,7 @@ fn get_memory_lobby_excel_table() -> Result<Vec<Vec<u8>>> {
     Ok(data)
 }
 
-async fn get_excel_db(table_catalog: TableCatalog) -> Result<()> {
+async fn get_excel_db(table_catalog: &TableCatalog) -> Result<()> {
     let path = PathBuf::from(PUBLIC_EXCEL_DB_PATH);
     // Compare excel db crc
     let excel_db = table_catalog
@@ -110,7 +110,7 @@ async fn get_excel_db(table_catalog: TableCatalog) -> Result<()> {
     Ok(())
 }
 
-async fn get_excel_zip(table_catalog: TableCatalog) -> Result<()> {
+async fn get_excel_zip(table_catalog: &TableCatalog) -> Result<()> {
     // Compare Excel.zip crc
     let excel_zip = table_catalog
         .get_tables()

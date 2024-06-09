@@ -12,8 +12,8 @@ pub struct TableZipFile {
 }
 
 impl TableZipFile {
-    pub fn new(buf: Vec<u8>, filename: String) -> Self {
-        let hash = calculate_hash(filename.as_bytes());
+    pub fn new<S: AsRef<str>>(buf: Vec<u8>, filename: S) -> Self {
+        let hash = calculate_hash(filename.as_ref().as_bytes());
         let mut rng = Mt::new(hash);
         let mut next_buf = [0u8; 15];
         table_encryption_service::next_bytes(&mut rng, &mut next_buf);
@@ -21,10 +21,10 @@ impl TableZipFile {
         let archive = ZipArchive::new(Cursor::new(buf)).unwrap();
         Self { archive, password }
     }
-    pub fn get_by_name(&mut self, name: &str) -> Vec<u8> {
+    pub fn get_by_name<S: AsRef<str>>(&mut self, name: S) -> Vec<u8> {
         let mut file = self
             .archive
-            .by_name_decrypt(name, self.password.as_bytes())
+            .by_name_decrypt(name.as_ref(), self.password.as_bytes())
             .unwrap();
         let mut buf = Vec::new();
         file.read_to_end(&mut buf).unwrap();

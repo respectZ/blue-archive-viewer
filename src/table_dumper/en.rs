@@ -20,45 +20,41 @@ static PUBLIC_EXCEL_PATH: &str = "./public/data/en/Preload/TableBundles/Excel/";
 static TEMP_EXCEL_ZIP_PATH: &str = "./temp/en/Preload/TableBundles/Excel.zip";
 static TEMP_PATH: &str = "./temp/en/";
 
-pub async fn run(catalog: Catalog) -> Result<()> {
+pub async fn run(catalog: &Catalog) -> Result<()> {
     info!("Running table dumper");
-    get_excel_zip(catalog.clone()).await?;
+    get_excel_zip(catalog).await?;
     extract_excel_zip().await?;
     Ok(())
 }
 
-async fn get_excel_zip(catalog: Catalog) -> Result<()> {
-    let ca = catalog.clone();
+async fn get_excel_zip(catalog: &Catalog) -> Result<()> {
+    let base_url = catalog.get_base_url();
     // Compare Excel.zip hash
     let excel_zip = catalog
         .resources
+        .clone()
         .into_iter()
         .find(|r| r.resource_path.ends_with("Excel.zip"))
         .unwrap();
-    if compare_hash(PathBuf::from(TEMP_EXCEL_ZIP_PATH), excel_zip.resource_hash).await? {
+    if compare_hash(TEMP_EXCEL_ZIP_PATH, &excel_zip.resource_hash).await? {
         return Ok(());
     }
 
     // Remove old Excel.zip if exists
     if PathBuf::from(TEMP_EXCEL_ZIP_PATH).exists() {
-        fs::remove_file(PathBuf::from(TEMP_EXCEL_ZIP_PATH))?;
+        fs::remove_file(TEMP_EXCEL_ZIP_PATH)?;
     }
 
     info!("Downloading Excel.zip");
-    ca.save_resource(PathBuf::from(TEMP_PATH), |r| {
-        r.resource_path.ends_with("Excel.zip")
-    })
-    .await?;
+    excel_zip.save(TEMP_PATH, base_url).await?;
     Ok(())
 }
 
 async fn extract_excel_zip() -> Result<()> {
     info!("Extracting Excel.zip");
-    let path = PathBuf::from(TEMP_EXCEL_ZIP_PATH);
     let excel_path = PathBuf::from(PUBLIC_EXCEL_PATH);
-    let buf = fs::read(path.clone())?;
-    let filename = path
-        .clone()
+    let buf = fs::read(TEMP_EXCEL_ZIP_PATH)?;
+    let filename = PathBuf::from(TEMP_EXCEL_ZIP_PATH)
         .file_name()
         .unwrap()
         .to_str()
@@ -71,9 +67,7 @@ async fn extract_excel_zip() -> Result<()> {
     let data = xor("AcademyFavorScheduleExcelTable", &data);
     let mut academy_favor = flatbuffers::root::<AcademyFavorScheduleExcelTable>(&data)?;
     save_file(
-        excel_path
-            .clone()
-            .join("AcademyFavorScheduleExcelTable.json"),
+        excel_path.join("AcademyFavorScheduleExcelTable.json"),
         academy_favor.decrypt_dump_json().as_bytes(),
     )
     .await?;
@@ -83,7 +77,7 @@ async fn extract_excel_zip() -> Result<()> {
     let data = xor("CharacterDialogExcelTable", &data);
     let mut character_dialog = flatbuffers::root::<CharacterDialogExcelTable>(&data)?;
     save_file(
-        excel_path.clone().join("CharacterDialogExcelTable.json"),
+        excel_path.join("CharacterDialogExcelTable.json"),
         character_dialog.decrypt_dump_json().as_bytes(),
     )
     .await?;
@@ -93,7 +87,7 @@ async fn extract_excel_zip() -> Result<()> {
     let data = xor("CharacterExcelTable", &data);
     let mut character = flatbuffers::root::<CharacterExcelTable>(&data)?;
     save_file(
-        excel_path.clone().join("CharacterExcelTable.json"),
+        excel_path.join("CharacterExcelTable.json"),
         character.decrypt_dump_json().as_bytes(),
     )
     .await?;
@@ -103,9 +97,7 @@ async fn extract_excel_zip() -> Result<()> {
     let data = xor("LocalizeCharProfileExcelTable", &data);
     let mut localize_char_profile = flatbuffers::root::<LocalizeCharProfileExcelTable>(&data)?;
     save_file(
-        excel_path
-            .clone()
-            .join("LocalizeCharProfileExcelTable.json"),
+        excel_path.join("LocalizeCharProfileExcelTable.json"),
         localize_char_profile.decrypt_dump_json().as_bytes(),
     )
     .await?;
@@ -115,7 +107,7 @@ async fn extract_excel_zip() -> Result<()> {
     let data = xor("MemoryLobbyExcelTable", &data);
     let mut memory_lobby = flatbuffers::root::<MemoryLobbyExcelTable>(&data)?;
     save_file(
-        excel_path.clone().join("MemoryLobbyExcelTable.json"),
+        excel_path.join("MemoryLobbyExcelTable.json"),
         memory_lobby.decrypt_dump_json().as_bytes(),
     )
     .await?;

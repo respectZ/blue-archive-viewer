@@ -2,7 +2,7 @@ use crate::util::save_json;
 use anyhow::Result;
 use reqwest::Url;
 use serde::{Deserialize, Serialize};
-use std::path::PathBuf;
+use std::path::Path;
 use trauma::{download::Download, downloader::DownloaderBuilder};
 
 #[derive(Serialize, Deserialize, Clone)]
@@ -63,15 +63,17 @@ impl Catalog {
         catalog.base_url = base_url;
         catalog
     }
-    pub async fn save(&self, path: PathBuf) -> Result<()> {
-        save_json(path.join("resource-data.json"), self).await
+    pub async fn save<P: AsRef<Path>>(&self, path: P) -> Result<()> {
+        save_json(path.as_ref().join("resource-data.json"), self).await
     }
-    pub async fn save_resource(
+    pub async fn save_resource<P: AsRef<Path>>(
         &self,
-        path: PathBuf,
+        path: P,
         filter: impl Fn(&Resource) -> bool,
     ) -> Result<Vec<String>> {
-        let downloader = DownloaderBuilder::new().directory(path).build();
+        let downloader = DownloaderBuilder::new()
+            .directory(path.as_ref().to_path_buf())
+            .build();
         let downloads = self
             .resources
             .iter()
@@ -84,5 +86,22 @@ impl Catalog {
         downloader.download(&downloads).await;
         let files = downloads.iter().map(|v| v.filename.clone()).collect();
         Ok(files)
+    }
+    pub fn get_base_url(&self) -> String {
+        self.base_url.clone()
+    }
+}
+
+impl Resource {
+    pub async fn save<P: AsRef<Path>>(&self, path: P, base_url: String) -> Result<()> {
+        let downloader = DownloaderBuilder::new()
+            .directory(path.as_ref().to_path_buf())
+            .build();
+        let download = Download {
+            url: Url::parse(format!("{}/{}", base_url, self.resource_path).as_str()).unwrap(),
+            filename: self.resource_path.clone(),
+        };
+        downloader.download(&[download]).await;
+        Ok(())
     }
 }

@@ -5,6 +5,7 @@ use reqwest::Url;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::io::Cursor;
+use std::path::Path;
 use trauma::download::Download;
 use trauma::downloader::DownloaderBuilder;
 
@@ -99,15 +100,15 @@ impl MediaCatalog {
     /// // ./test/MediaResources/MediaCatalog.json
     /// media_catalog.save(PathBuf::from("./test")).await.unwrap();
     /// ```
-    pub async fn save(&self, path: std::path::PathBuf) -> Result<()> {
-        save_json(path.join("MediaResources/MediaCatalog.json"), self).await
+    pub async fn save<P: AsRef<Path>>(&self, path: P) -> Result<()> {
+        save_json(path.as_ref().join("MediaResources/MediaCatalog.json"), self).await
     }
-    pub async fn save_media(
+    pub async fn save_media<P: AsRef<Path>>(
         &self,
-        path: std::path::PathBuf,
+        path: P,
         filter: impl Fn(&Media) -> bool,
     ) -> Result<()> {
-        let root_dir = path.join("MediaResources");
+        let root_dir = path.as_ref().join("MediaResources");
         let downloader = DownloaderBuilder::new().directory(root_dir).build();
         let downloads = self
             .table

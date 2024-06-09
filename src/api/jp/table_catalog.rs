@@ -2,7 +2,8 @@ use crate::util;
 use crate::util::save_json;
 use anyhow::{Context, Result};
 use serde::{Deserialize, Serialize};
-use std::{collections::HashMap, io::Cursor, path::PathBuf};
+use std::path::Path;
+use std::{collections::HashMap, io::Cursor};
 use trauma::download::Download;
 use trauma::downloader::DownloaderBuilder;
 
@@ -118,16 +119,20 @@ impl TableCatalog {
     /// // ./test/TableBundles/TableCatalog.json
     /// table_catalog.save(PathBuf::from("./test")).await.unwrap();
     /// ```
-    pub async fn save(&self, path: PathBuf) -> Result<()> {
-        save_json(path.join("TableBundles/TableCatalog.json"), self).await
+    pub async fn save<P: AsRef<Path>>(&self, path: P) -> Result<()> {
+        save_json(path.as_ref().join("TableBundles/TableCatalog.json"), self).await
     }
     #[allow(dead_code)]
     pub async fn get_tables(&self) -> Vec<&Table> {
         self.table.values().collect()
     }
     #[allow(dead_code)]
-    pub async fn save_tables(&self, path: PathBuf, filter: impl Fn(&Table) -> bool) -> Result<()> {
-        let root_dir = path.join("TableBundles");
+    pub async fn save_tables<P: AsRef<Path>>(
+        &self,
+        path: P,
+        filter: impl Fn(&Table) -> bool,
+    ) -> Result<()> {
+        let root_dir = path.as_ref().join("TableBundles");
         let downloader = DownloaderBuilder::new().directory(root_dir).build();
         let downloads = self
             .table

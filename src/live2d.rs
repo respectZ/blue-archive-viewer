@@ -9,15 +9,11 @@ use crate::{
 };
 use anyhow::{Ok, Result};
 use regex::Regex;
-use std::{
-    collections::BTreeMap,
-    path::{Path, PathBuf},
-};
-use tokio::{fs::File, io::BufReader};
+use std::{collections::BTreeMap, path::PathBuf};
 use unity_rs::Env;
 use walkdir::WalkDir;
 
-pub async fn run_jp(catalog: AddressableCatalog) -> Result<()> {
+pub async fn run_jp(catalog: &AddressableCatalog) -> Result<()> {
     // assets-_mx-spinelobbies-(.*?)-_
     let regex = Regex::new(r"assets-_mx-spinelobbies-(.*?)-_")?;
     let out_dir = PathBuf::from("./public/data/jp");
@@ -27,7 +23,7 @@ pub async fn run_jp(catalog: AddressableCatalog) -> Result<()> {
     bundle_catalog.save(out_dir.clone()).await?;
     info!("Downloading Live2D bundles");
     let downloaded = bundle_catalog
-        .save_bundle(PathBuf::from("./temp/jp/"), |bundle| {
+        .save_bundle("./temp/jp/", |bundle| {
             let char_id = match regex.captures(&bundle.name) {
                 Some(captures) => {
                     // skip if it's "_mxcommon"
@@ -39,7 +35,7 @@ pub async fn run_jp(catalog: AddressableCatalog) -> Result<()> {
                 None => return false,
             };
             // Check if folder exists
-            let folder = out_dir.clone().join("Android").join(char_id);
+            let folder = &out_dir.join("Android").join(&char_id);
             match folder.exists() {
                 true => {
                     let is_empty = folder.read_dir().unwrap().next().is_none();
@@ -73,15 +69,15 @@ pub async fn run_jp(catalog: AddressableCatalog) -> Result<()> {
     Ok(())
 }
 
-async fn jp_extract_assets(char_id: String, env: Env) -> Result<()> {
+async fn jp_extract_assets<S: AsRef<str>>(char_id: S, env: Env) -> Result<()> {
     extract_images(
         &env,
-        PathBuf::from(format!("./public/data/jp/Android/{}", char_id)),
+        format!("./public/data/jp/Android/{}", &char_id.as_ref()),
     )
     .await?;
     extract_live2d(
         &env,
-        PathBuf::from(format!("./public/data/jp/Android/{}", char_id)),
+        format!("./public/data/jp/Android/{}", &char_id.as_ref()),
     )
     .await?;
     Ok(())
@@ -121,15 +117,15 @@ async fn jp_update_info() -> Result<()> {
                 .replace("\\", "/"),
         );
     }
-    save_json(PathBuf::from("./public/data/jp/Android/info.json"), &data).await?;
+    save_json("./public/data/jp/Android/info.json", &data).await?;
     Ok(())
 }
 
 async fn validate_atlas() -> Result<()> {
     info!("Validating atlas");
     let directories = vec![
-        PathBuf::from("./public/data/jp/Android"),
-        PathBuf::from("./public/data/en/GameData/Android"),
+        "./public/data/jp/Android",
+        "./public/data/en/GameData/Android",
     ];
 
     let mut handles = vec![];
@@ -266,12 +262,12 @@ pub async fn run_en(catalog: Catalog) -> Result<()> {
 async fn en_extract_assets(char_id: String, env: Env) -> Result<()> {
     extract_images(
         &env,
-        PathBuf::from(format!("./public/data/en/GameData/Android/{}", char_id)),
+        format!("./public/data/en/GameData/Android/{}", char_id),
     )
     .await?;
     extract_live2d(
         &env,
-        PathBuf::from(format!("./public/data/en/GameData/Android/{}", char_id)),
+        format!("./public/data/en/GameData/Android/{}", char_id),
     )
     .await?;
     Ok(())

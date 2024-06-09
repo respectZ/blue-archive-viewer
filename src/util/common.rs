@@ -1,14 +1,14 @@
 use anyhow::Result;
 use image::DynamicImage;
 use serde::Serialize;
-use std::path::{Path, PathBuf};
+use std::path::Path;
 use tokio::fs::{create_dir_all, File};
 use tokio::io::{AsyncReadExt, AsyncWriteExt};
 
-pub async fn save_json<T: Serialize>(path: PathBuf, data: &T) -> Result<()> {
+pub async fn save_json<T: Serialize, P: AsRef<Path>>(path: P, data: &T) -> Result<()> {
     let json = serde_json::to_string_pretty(data)?;
     // Create directory if not exists
-    if let Some(parent) = path.parent() {
+    if let Some(parent) = path.as_ref().parent() {
         create_dir_all(parent).await?;
     }
     let mut file = File::create(path).await?;
@@ -16,12 +16,12 @@ pub async fn save_json<T: Serialize>(path: PathBuf, data: &T) -> Result<()> {
     Ok(())
 }
 
-pub async fn save_json_pretty<T: Serialize>(path: PathBuf, data: &T) -> Result<()> {
+pub async fn save_json_pretty<T: Serialize, P: AsRef<Path>>(path: P, data: &T) -> Result<()> {
     let formatter = serde_json::ser::PrettyFormatter::with_indent(b"    ");
     let mut ser = serde_json::Serializer::with_formatter(Vec::new(), formatter);
     data.serialize(&mut ser)?;
     // Create directory if not exists
-    if let Some(parent) = path.parent() {
+    if let Some(parent) = path.as_ref().parent() {
         create_dir_all(parent).await?;
     }
     let mut file = File::create(path).await?;
@@ -29,18 +29,18 @@ pub async fn save_json_pretty<T: Serialize>(path: PathBuf, data: &T) -> Result<(
     Ok(())
 }
 
-pub async fn save_image(path: PathBuf, image: DynamicImage) -> Result<()> {
+pub async fn save_image<P: AsRef<Path>>(path: P, image: DynamicImage) -> Result<()> {
     // Create directory if not exists
-    if let Some(parent) = path.parent() {
+    if let Some(parent) = path.as_ref().parent() {
         create_dir_all(parent).await?;
     }
     image.save(path)?;
     Ok(())
 }
 
-pub async fn save_file(path: PathBuf, data: &[u8]) -> Result<()> {
+pub async fn save_file<P: AsRef<Path>>(path: P, data: &[u8]) -> Result<()> {
     // Create directory if not exists
-    if let Some(parent) = path.parent() {
+    if let Some(parent) = path.as_ref().parent() {
         create_dir_all(parent).await?;
     }
     let mut file = File::create(path).await?;
@@ -57,8 +57,7 @@ pub async fn get_image_dimensions<P: AsRef<Path>>(path: P) -> Result<(u32, u32)>
     Ok(dimensions)
 }
 
-pub async fn compare_crc(path: PathBuf, crc: u32) -> Result<bool> {
-    println!("Comparing {}...", path.display());
+pub async fn compare_crc<P: AsRef<Path>>(path: P, crc: u32) -> Result<bool> {
     let file = match File::open(&path).await {
         Ok(file) => file,
         Err(_) => return Ok(false),
@@ -70,11 +69,10 @@ pub async fn compare_crc(path: PathBuf, crc: u32) -> Result<bool> {
     let mut hasher = crc32fast::Hasher::new();
     hasher.update(&buf);
     let checksum = hasher.finalize();
-    println!("{}: {} == {}", path.display(), crc, checksum);
     Ok(crc == checksum)
 }
 
-async fn calculate_hash(path: &PathBuf) -> Result<String> {
+async fn calculate_hash<P: AsRef<Path>>(path: P) -> Result<String> {
     let mut file = File::open(&path).await?;
     let mut buffer = Vec::new();
     file.read_to_end(&mut buffer).await?;
@@ -83,13 +81,12 @@ async fn calculate_hash(path: &PathBuf) -> Result<String> {
     Ok(hash_hex)
 }
 
-pub async fn compare_hash(path: PathBuf, hash: String) -> Result<bool> {
+pub async fn compare_hash<P: AsRef<Path>, S: AsRef<str>>(path: P, hash: S) -> Result<bool> {
     // Check if path exists
-    if !path.exists() {
+    if !path.as_ref().exists() {
         return Ok(false);
     }
     // Compare hash
     let file_hash = calculate_hash(&path).await?;
-    println!("{}: {} == {}", path.display(), hash, file_hash);
-    Ok(hash == file_hash)
+    Ok(hash.as_ref().to_string() == file_hash)
 }
