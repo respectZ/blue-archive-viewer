@@ -112,7 +112,12 @@ async fn jp(action: Action) {
                 return;
             }
         };
-
+    util::save_json(
+        PathBuf::from("public/data/jp/AddressableCatalog.json"),
+        &catalog,
+    )
+    .await
+    .unwrap();
     // Update url
     info!("Updating URL");
 
