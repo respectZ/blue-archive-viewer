@@ -96,7 +96,7 @@ async fn jp(action: Action) {
 
     // Save GameMainConfig
     info!("Saving GameMainConfig");
-    util::save_json(
+    save_json(
         PathBuf::from("public/data/jp/GameMainConfig.json"),
         &game_main_config,
     )
@@ -112,9 +112,16 @@ async fn jp(action: Action) {
                 return;
             }
         };
-    util::save_json(
+    save_json(
         PathBuf::from("public/data/jp/AddressableCatalog.json"),
         &catalog,
+    )
+    .await
+    .unwrap();
+    // Save version as txt
+    save_file(
+        PathBuf::from("public/data/jp/version.txt"),
+        catalog.get_version().as_bytes(),
     )
     .await
     .unwrap();
@@ -164,6 +171,13 @@ async fn en(action: Action) {
     .await
     .unwrap();
     info!("Version: {}", addressable_catalog.latest_build_version);
+    // Save version as txt
+    save_file(
+        "public/data/en/version.txt",
+        addressable_catalog.latest_build_version.as_bytes(),
+    )
+    .await
+    .unwrap();
     info!("Requesting Catalog");
     let catalog = addressable_catalog.get_catalog().await.unwrap();
     catalog.save("public/data/en/").await.unwrap();
