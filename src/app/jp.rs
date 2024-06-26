@@ -48,6 +48,7 @@ pub async fn download() -> Result<()> {
             return Ok(());
         }
         _ => {
+            info!("Downloading app");
             // Remove old app
             let path = PathBuf::from("./temp/app/com.YostarJP.BlueArchive.apk");
             if path.exists() {

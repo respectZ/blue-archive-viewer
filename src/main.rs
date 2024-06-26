@@ -13,7 +13,7 @@ mod logger;
 
 use clap::{Parser, Subcommand};
 use std::path::PathBuf;
-use util::save_file;
+use util::{save_file, save_json};
 
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
@@ -152,6 +152,12 @@ async fn jp(action: Action) {
 async fn en(action: Action) {
     info!("Requesting AddressableCatalog");
     let addressable_catalog = api::en::common::get_addressable_catalog().await.unwrap();
+    save_json(
+        "public/data/en/AddressableCatalog.json",
+        &addressable_catalog,
+    )
+    .await
+    .unwrap();
     info!("Version: {}", addressable_catalog.latest_build_version);
     info!("Requesting Catalog");
     let catalog = addressable_catalog.get_catalog().await.unwrap();
