@@ -29,7 +29,7 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: en
+          branch: en-${{ steps.extract_version.outputs.version }}
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
@@ -37,8 +37,8 @@ jobs:
           commit-message: "[EN] ${{ steps.extract_version.outputs.version }}"
           title: "[EN] ${{ steps.extract_version.outputs.version }}"
           body: "Automated PR"
-          branch: en
-          base: rust
+          branch: en-${{ steps.extract_version.outputs.version }}
+          base: master
           labels: en
           reviewers: "respectZ"
           assignees: "respectZ"
