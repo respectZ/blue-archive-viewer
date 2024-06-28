@@ -18,7 +18,7 @@ jobs:
           args: -- --region jp update all
       - name: Extract Version
         id: extract_version
-        run: echo "::set-output name=version::$(cat public/data/jp/version.txt)"
+        run: echo "version=$(cat public/data/jp/version.txt)" >> $GITHUB_OUTPUT
       - name: Create Commit
         run: |
           git add .
