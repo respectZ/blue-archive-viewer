@@ -1,3 +1,0 @@
-Pillow==10.1.0
-requests==2.26.0
-UnityPy==1.10.6

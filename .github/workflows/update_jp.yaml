@@ -1,4 +1,3 @@
----
 name: Update JP
 on:
   workflow_dispatch: null
@@ -9,20 +8,38 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-      - name: Installing requirements
-        run: |
-          pip install -r requirements.txt
-      - name: Fetching data
-        run: |
-          python ./py/jp/main.py --download-all
+      - name: Run Rust Action
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - uses: actions-rs/cargo@v1
+        with:
+          command: run
+          args: -- --region jp update all
+      - name: Extract Version
+        id: extract_version
+        run: echo "version=$(cat public/data/jp/version.txt)" >> $GITHUB_OUTPUT
       - name: Create Commit
         run: |
           git add .
           git config --global user.email "bot@github.com"
           git config --global user.name "Github Bot"
-          git commit -m "[Update] $(date +%Y-%m-%d-%H-%M-%S)"
+          git commit -m "[JP] ${{ steps.extract_version.outputs.version }}"
       - name: Push Changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: production
+          branch: jp-${{ steps.extract_version.outputs.version }}
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "[JP] ${{ steps.extract_version.outputs.version }}"
+          title: "[JP] ${{ steps.extract_version.outputs.version }}"
+          body: "Automated PR"
+          branch: jp-${{ steps.extract_version.outputs.version }}
+          base: main
+          labels: jp
+          reviewers: "respectZ"
+          assignees: "respectZ"
+          draft: false

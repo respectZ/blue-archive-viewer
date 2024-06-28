@@ -1,0 +1,45 @@
+name: Update EN
+on:
+  workflow_dispatch: null
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Run Rust Action
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - uses: actions-rs/cargo@v1
+        with:
+          command: run
+          args: -- --region en update all
+      - name: Extract Version
+        id: extract_version
+        run: echo "version=$(cat public/data/en/version.txt)" >> $GITHUB_OUTPUT
+      - name: Create Commit
+        run: |
+          git add .
+          git config --global user.email "bot@github.com"
+          git config --global user.name "Github Bot"
+          git commit -m "[EN] ${{ steps.extract_version.outputs.version }}"
+      - name: Push Changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: en-${{ steps.extract_version.outputs.version }}
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "[EN] ${{ steps.extract_version.outputs.version }}"
+          title: "[EN] ${{ steps.extract_version.outputs.version }}"
+          body: "Automated PR"
+          branch: en-${{ steps.extract_version.outputs.version }}
+          base: main
+          labels: en
+          reviewers: "respectZ"
+          assignees: "respectZ"
+          draft: false
