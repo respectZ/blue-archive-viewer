@@ -38,7 +38,7 @@ jobs:
           title: "[JP] ${{ steps.extract_version.outputs.version }}"
           body: "Automated PR"
           branch: jp-${{ steps.extract_version.outputs.version }}
-          base: master
+          base: main
           labels: jp
           reviewers: "respectZ"
           assignees: "respectZ"
