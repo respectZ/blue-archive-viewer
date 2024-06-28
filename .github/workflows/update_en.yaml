@@ -1,4 +1,4 @@
-name: Update JP
+name: Update EN
 on:
   workflow_dispatch: null
 
@@ -15,31 +15,31 @@ jobs:
       - uses: actions-rs/cargo@v1
         with:
           command: run
-          args: -- --region jp update all
+          args: -- --region en update all
       - name: Extract Version
         id: extract_version
-        run: echo "::set-output name=version::$(cat public/data/jp/version.txt)"
+        run: echo "::set-output name=version::$(cat public/data/en/version.txt)"
       - name: Create Commit
         run: |
           git add .
           git config --global user.email "bot@github.com"
           git config --global user.name "Github Bot"
-          git commit -m "[JP] ${{ steps.extract_version.outputs.version }}"
+          git commit -m "[EN] ${{ steps.extract_version.outputs.version }}"
       - name: Push Changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: jp
+          branch: en
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "[JP] ${{ steps.extract_version.outputs.version }}"
-          title: "[JP] ${{ steps.extract_version.outputs.version }}"
+          commit-message: "[EN] ${{ steps.extract_version.outputs.version }}"
+          title: "[EN] ${{ steps.extract_version.outputs.version }}"
           body: "Automated PR"
-          branch: jp
+          branch: en
           base: rust
-          labels: jp
+          labels: en
           reviewers: "respectZ"
           assignees: "respectZ"
           draft: false
