@@ -1,4 +1,4 @@
-use anyhow::Result;
+use anyhow::{anyhow, Result};
 use image::DynamicImage;
 use serde::Serialize;
 use std::path::Path;
@@ -60,7 +60,9 @@ pub async fn get_image_dimensions<P: AsRef<Path>>(path: P) -> Result<(u32, u32)>
 pub async fn compare_crc<P: AsRef<Path>>(path: P, crc: u32) -> Result<bool> {
     let file = match File::open(&path).await {
         Ok(file) => file,
-        Err(_) => return Ok(false),
+        Err(_) => {
+            return Err(anyhow!("File not found: {:?}", path.as_ref()));
+        }
     };
     // Compare crc
     let mut buf = Vec::new();
@@ -82,9 +84,11 @@ async fn calculate_hash<P: AsRef<Path>>(path: P) -> Result<String> {
 }
 
 pub async fn compare_hash<P: AsRef<Path>, S: AsRef<str>>(path: P, hash: S) -> Result<bool> {
-    // Check if path exists
-    if !path.as_ref().exists() {
-        return Ok(false);
+    match path.as_ref().exists() {
+        true => {}
+        false => {
+            return Err(anyhow!("File not found: {:?}", path.as_ref()));
+        }
     }
     // Compare hash
     let file_hash = calculate_hash(&path).await?;

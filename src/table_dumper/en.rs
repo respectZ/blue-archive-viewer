@@ -36,13 +36,12 @@ async fn get_excel_zip(catalog: &Catalog) -> Result<()> {
         .into_iter()
         .find(|r| r.resource_path.ends_with("Excel.zip"))
         .unwrap();
-    if compare_hash(TEMP_EXCEL_ZIP_PATH, &excel_zip.resource_hash).await? {
-        return Ok(());
-    }
-
-    // Remove old Excel.zip if exists
-    if PathBuf::from(TEMP_EXCEL_ZIP_PATH).exists() {
-        fs::remove_file(TEMP_EXCEL_ZIP_PATH)?;
+    match compare_hash(TEMP_EXCEL_ZIP_PATH, &excel_zip.resource_hash).await {
+        Ok(true) => return Ok(()),
+        Ok(false) => {
+            fs::remove_file(TEMP_EXCEL_ZIP_PATH)?;
+        }
+        _ => {}
     }
 
     info!("Downloading Excel.zip");

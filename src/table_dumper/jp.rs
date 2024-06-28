@@ -83,7 +83,6 @@ fn get_memory_lobby_excel_table() -> Result<Vec<Vec<u8>>> {
 }
 
 async fn get_excel_db(table_catalog: &TableCatalog) -> Result<()> {
-    let path = PathBuf::from(PUBLIC_EXCEL_DB_PATH);
     // Compare excel db crc
     let excel_db = table_catalog
         .get_tables()
@@ -92,13 +91,12 @@ async fn get_excel_db(table_catalog: &TableCatalog) -> Result<()> {
         .find(|table| table.name == "ExcelDB.db")
         .unwrap();
 
-    if compare_crc(path, excel_db.crc as u32).await? {
-        return Ok(());
-    }
-
-    // Remove old ExcelDB.db if exists
-    if PathBuf::from(PUBLIC_EXCEL_DB_PATH).exists() {
-        fs::remove_file(PathBuf::from(PUBLIC_EXCEL_DB_PATH))?;
+    match compare_crc(PUBLIC_EXCEL_DB_PATH, excel_db.crc as u32).await {
+        Ok(true) => return Ok(()),
+        Ok(false) => {
+            fs::remove_file(PUBLIC_EXCEL_DB_PATH)?;
+        }
+        _ => {}
     }
 
     info!("Downloading ExcelDB.db");
@@ -118,16 +116,18 @@ async fn get_excel_zip(table_catalog: &TableCatalog) -> Result<()> {
         .into_iter()
         .find(|table| table.name == "Excel.zip")
         .unwrap();
-    if compare_crc(PathBuf::from(TEMP_EXCEL_ZIP_PATH), excel_zip.crc as u32).await? {
-        return Ok(());
-    }
 
-    // Remove old Excel.zip
-    fs::remove_file(PathBuf::from(TEMP_EXCEL_ZIP_PATH))?;
+    match compare_crc(TEMP_EXCEL_ZIP_PATH, excel_zip.crc as u32).await {
+        Ok(true) => return Ok(()),
+        Ok(false) => {
+            fs::remove_file(TEMP_EXCEL_ZIP_PATH)?;
+        }
+        _ => {}
+    }
 
     info!("Downloading Excel.zip");
     table_catalog
-        .save_tables(PathBuf::from(TEMP_PATH), |table| table.name == "Excel.zip")
+        .save_tables(TEMP_PATH, |table| table.name == "Excel.zip")
         .await?;
     Ok(())
 }
