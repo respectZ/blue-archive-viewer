@@ -1,8 +1,6 @@
 # Blue Archive Viewer
 
-TODO:
-
-- [ ] Update EN data in rust.
+[Live Preview](http://ba.svdex.moe/jp/live2d)
 
 This is not affiliated nor nothing to do with Yostar.
 
@@ -14,23 +12,44 @@ Features:
 - CG Gallery
 - Live2D Viewer
 
-## Requirements
+The script to fetch the data is written using Rust.
 
-- Python 3.6+
-- Node 1.10.6+
+## Fetching Data
 
-Installing python requirements:
+You can run / build the Rust script.
 
-```bash
-pip install -r requirements.txt
+```
+Usage: blue-archive [OPTIONS] <COMMAND>
+
+Commands:
+  update
+  help    Print this message or the help of the given subcommand(s)
+
+Options:
+  -r, --region <REGION>  [default: jp] [possible values: jp, en]
+  -h, --help             Print help
+  -V, --version          Print version
 ```
 
-## Getting Started
+```
+Usage: blue-archive.exe update <COMMAND>
 
-First, fetch the needed data:
+Commands:
+  catalog
+  cg
+  table
+  live2-d
+  all
+  help     Print this message or the help of the given subcommand(s)
+
+Options:
+  -h, --help  Print help
+```
+
+Example:
 
 ```bash
-python run py/main.py
+blue-archive --region jp update all
 ```
 
 To start the webserver:
@@ -47,19 +66,6 @@ There are two ways.
 
 - You can download that includes every character at [releases](https://github.com/respectZ/blue-archive-viewer/releases).
 - Or go to the [web](http://ba.svdex.moe/), navigate to the Live2D, and click the download as wallpaper engine button.
-
-## TODO
-
-- [ ] Create a workflow + script for updating `dump.cs` instead doing it manually
-- [ ] Script for fetching `TableBundles`
-- [x] EN Version
-- [x] [Support wallpaper engine](https://github.com/respectZ/blue-archive-viewer/releases)
-- [x] Export to gif/mp4
-- [ ] Automatically get JP URL (not sure about this)
-
-## Bugs
-
-- [ ] Sometimes the audio cases to play multiple times ?
 
 ## Some weird cases
 
