@@ -78,6 +78,19 @@
         "AudioClipKr": ""
     },
     {
+        "Id": 1000501,
+        "ProductionStep": "Release",
+        "LocalizeEtcId": 2802209819,
+        "CharacterId": 10005,
+        "PrefabName": "LobbyHoshino_multi",
+        "MemoryLobbyCategory": "UILobbySpecial2",
+        "SlotTextureName": "",
+        "RewardTextureName": "UIs/01_Common/08_Lobbyillust/Lobbyillust_Icon_Hoshino_02",
+        "BGMId": 12,
+        "AudioClipJp": "",
+        "AudioClipKr": ""
+    },
+    {
         "Id": 10006,
         "ProductionStep": "Release",
         "LocalizeEtcId": 136683551,
@@ -139,6 +152,19 @@
         "SlotTextureName": "",
         "RewardTextureName": "UIs/01_Common/08_Lobbyillust/Lobbyillust_Icon_Shiroko_01",
         "BGMId": 9,
+        "AudioClipJp": "",
+        "AudioClipKr": ""
+    },
+    {
+        "Id": 1001001,
+        "ProductionStep": "Release",
+        "LocalizeEtcId": 285269954,
+        "CharacterId": 10010,
+        "PrefabName": "LobbyShiroko_multi",
+        "MemoryLobbyCategory": "UILobbySpecial2",
+        "SlotTextureName": "",
+        "RewardTextureName": "UIs/01_Common/08_Lobbyillust/Lobbyillust_Icon_Shiroko_02",
+        "BGMId": 12,
         "AudioClipJp": "",
         "AudioClipKr": ""
     },
@@ -286,6 +312,19 @@
         "AudioClipKr": ""
     },
     {
+        "Id": 1300401,
+        "ProductionStep": "Release",
+        "LocalizeEtcId": 567227632,
+        "CharacterId": 13004,
+        "PrefabName": "LobbyNonomi_multi",
+        "MemoryLobbyCategory": "UILobbySpecial2",
+        "SlotTextureName": "",
+        "RewardTextureName": "UIs/01_Common/08_Lobbyillust/Lobbyillust_Icon_Nonomi_02",
+        "BGMId": 12,
+        "AudioClipJp": "",
+        "AudioClipKr": ""
+    },
+    {
         "Id": 13005,
         "ProductionStep": "Release",
         "LocalizeEtcId": 4113505953,
@@ -334,6 +373,19 @@
         "SlotTextureName": "",
         "RewardTextureName": "UIs/01_Common/08_Lobbyillust/Lobbyillust_Icon_Serika_01",
         "BGMId": 46,
+        "AudioClipJp": "",
+        "AudioClipKr": ""
+    },
+    {
+        "Id": 1300801,
+        "ProductionStep": "Release",
+        "LocalizeEtcId": 952908112,
+        "CharacterId": 13008,
+        "PrefabName": "LobbySerika_multi",
+        "MemoryLobbyCategory": "UILobbySpecial2",
+        "SlotTextureName": "",
+        "RewardTextureName": "UIs/01_Common/08_Lobbyillust/Lobbyillust_Icon_Serika_02",
+        "BGMId": 12,
         "AudioClipJp": "",
         "AudioClipKr": ""
     },
@@ -503,6 +555,19 @@
         "SlotTextureName": "",
         "RewardTextureName": "UIs/01_Common/08_Lobbyillust/Lobbyillust_Icon_Ayane_01",
         "BGMId": 39,
+        "AudioClipJp": "",
+        "AudioClipKr": ""
+    },
+    {
+        "Id": 2300501,
+        "ProductionStep": "Release",
+        "LocalizeEtcId": 2102944448,
+        "CharacterId": 23005,
+        "PrefabName": "LobbyAyane_multi",
+        "MemoryLobbyCategory": "UILobbySpecial2",
+        "SlotTextureName": "",
+        "RewardTextureName": "UIs/01_Common/08_Lobbyillust/Lobbyillust_Icon_Ayane_02",
+        "BGMId": 12,
         "AudioClipJp": "",
         "AudioClipKr": ""
     },
@@ -2388,6 +2453,45 @@
         "SlotTextureName": "",
         "RewardTextureName": "UIs/01_Common/08_Lobbyillust/Lobbyillust_Icon_CH0189_01",
         "BGMId": 221,
+        "AudioClipJp": "",
+        "AudioClipKr": ""
+    },
+    {
+        "Id": 10096,
+        "ProductionStep": "Release",
+        "LocalizeEtcId": 2538812768,
+        "CharacterId": 10096,
+        "PrefabName": "LobbyCH0260",
+        "MemoryLobbyCategory": "UILobbySpecial",
+        "SlotTextureName": "",
+        "RewardTextureName": "UIs/01_Common/08_Lobbyillust/Lobbyillust_Icon_CH0260_01",
+        "BGMId": 216,
+        "AudioClipJp": "",
+        "AudioClipKr": ""
+    },
+    {
+        "Id": 20037,
+        "ProductionStep": "Release",
+        "LocalizeEtcId": 3626435950,
+        "CharacterId": 20037,
+        "PrefabName": "LobbyCH0261",
+        "MemoryLobbyCategory": "UILobbySpecial",
+        "SlotTextureName": "",
+        "RewardTextureName": "UIs/01_Common/08_Lobbyillust/Lobbyillust_Icon_CH0261_01",
+        "BGMId": 214,
+        "AudioClipJp": "",
+        "AudioClipKr": ""
+    },
+    {
+        "Id": 26012,
+        "ProductionStep": "Release",
+        "LocalizeEtcId": 1864271603,
+        "CharacterId": 26012,
+        "PrefabName": "LobbyCH0262",
+        "MemoryLobbyCategory": "UILobbySpecial",
+        "SlotTextureName": "",
+        "RewardTextureName": "UIs/01_Common/08_Lobbyillust/Lobbyillust_Icon_CH0262_01",
+        "BGMId": 220,
         "AudioClipJp": "",
         "AudioClipKr": ""
     }
