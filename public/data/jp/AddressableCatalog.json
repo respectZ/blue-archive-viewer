@@ -1,0 +1,26 @@
+{
+  "ConnectionGroups": [
+    {
+      "Name": "Prod-Audit",
+      "ManagementDataUrl": "https://prod-noticeindex.bluearchiveyostar.com/prod/index.json",
+      "IsProductionAddressables": true,
+      "ApiUrl": "https://prod-game.bluearchiveyostar.com:5000/api/",
+      "GatewayUrl": "https://prod-gateway.bluearchiveyostar.com:5100/api/",
+      "KibanaLogUrl": "https://prod-logcollector.bluearchiveyostar.com:5300",
+      "ProhibitedWordBlackListUri": "https://prod-notice.bluearchiveyostar.com/prod/ProhibitedWord/blacklist.csv",
+      "ProhibitedWordWhiteListUri": "https://prod-notice.bluearchiveyostar.com/prod/ProhibitedWord/whitelist.csv",
+      "CustomerServiceUrl": "https://bluearchive.jp/contact-1-hint",
+      "OverrideConnectionGroups": [
+        {
+          "Name": "1.0",
+          "AddressablesCatalogUrlRoot": "https://prod-clientpatch.bluearchiveyostar.com/m28_1_0_1_mashiro3"
+        },
+        {
+          "Name": "1.46",
+          "AddressablesCatalogUrlRoot": "https://prod-clientpatch.bluearchiveyostar.com/r69_bcr8jl3nnxigl1h0rojf"
+        }
+      ],
+      "BundleVersion": "J9Cqh6Ft62"
+    }
+  ]
+}
