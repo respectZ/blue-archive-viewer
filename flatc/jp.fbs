@@ -77,7 +77,8 @@ enum DialogCategory: int{
     UIAttendanceEvent16 = 66,
     UIEventTreasure = 67,
     UIMultiFloorRaid = 68,
-    UIEventMiniGameDreamMaker = 69
+    UIEventMiniGameDreamMaker = 69,
+    UIAttendanceEvent17 = 70
 }
 
 enum DialogCondition: int{
@@ -257,7 +258,8 @@ enum WeaponType: int{
     Binah = 16,
     MT = 17,
     Relic = 18,
-    FT = 19
+    FT = 19,
+    Akemi = 20
 }
 
 enum TacticRange: int{
@@ -364,7 +366,8 @@ enum Club: int{
     LaborParty = 45,
     KnowledgeLiberationFront = 46,
     Hyakkayouran = 47,
-    ShinySparkleSociety = 48
+    ShinySparkleSociety = 48,
+    AbydosStudentCouncil = 49
 }
 
 enum StatLevelUpType: int{

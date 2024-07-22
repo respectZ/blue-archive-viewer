@@ -114,10 +114,10 @@ impl flatbuffers::SimpleToVerifyInSlice for ProductionStep {}
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
 pub const ENUM_MIN_DIALOG_CATEGORY: i32 = 0;
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
-pub const ENUM_MAX_DIALOG_CATEGORY: i32 = 69;
+pub const ENUM_MAX_DIALOG_CATEGORY: i32 = 70;
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
 #[allow(non_camel_case_types)]
-pub const ENUM_VALUES_DIALOG_CATEGORY: [DialogCategory; 70] = [
+pub const ENUM_VALUES_DIALOG_CATEGORY: [DialogCategory; 71] = [
   DialogCategory::Cafe,
   DialogCategory::Echelon,
   DialogCategory::CharacterSSRNew,
@@ -188,6 +188,7 @@ pub const ENUM_VALUES_DIALOG_CATEGORY: [DialogCategory; 70] = [
   DialogCategory::UIEventTreasure,
   DialogCategory::UIMultiFloorRaid,
   DialogCategory::UIEventMiniGameDreamMaker,
+  DialogCategory::UIAttendanceEvent17,
 ];
 
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Default)]
@@ -265,9 +266,10 @@ impl DialogCategory {
   pub const UIEventTreasure: Self = Self(67);
   pub const UIMultiFloorRaid: Self = Self(68);
   pub const UIEventMiniGameDreamMaker: Self = Self(69);
+  pub const UIAttendanceEvent17: Self = Self(70);
 
   pub const ENUM_MIN: i32 = 0;
-  pub const ENUM_MAX: i32 = 69;
+  pub const ENUM_MAX: i32 = 70;
   pub const ENUM_VALUES: &'static [Self] = &[
     Self::Cafe,
     Self::Echelon,
@@ -339,6 +341,7 @@ impl DialogCategory {
     Self::UIEventTreasure,
     Self::UIMultiFloorRaid,
     Self::UIEventMiniGameDreamMaker,
+    Self::UIAttendanceEvent17,
   ];
   /// Returns the variant's name or "" if unknown.
   pub fn variant_name(self) -> Option<&'static str> {
@@ -413,6 +416,7 @@ impl DialogCategory {
       Self::UIEventTreasure => Some("UIEventTreasure"),
       Self::UIMultiFloorRaid => Some("UIMultiFloorRaid"),
       Self::UIEventMiniGameDreamMaker => Some("UIEventMiniGameDreamMaker"),
+      Self::UIAttendanceEvent17 => Some("UIAttendanceEvent17"),
       _ => None,
     }
   }
@@ -1419,10 +1423,10 @@ impl flatbuffers::SimpleToVerifyInSlice for TacticRole {}
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
 pub const ENUM_MIN_WEAPON_TYPE: i32 = 0;
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
-pub const ENUM_MAX_WEAPON_TYPE: i32 = 19;
+pub const ENUM_MAX_WEAPON_TYPE: i32 = 20;
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
 #[allow(non_camel_case_types)]
-pub const ENUM_VALUES_WEAPON_TYPE: [WeaponType; 20] = [
+pub const ENUM_VALUES_WEAPON_TYPE: [WeaponType; 21] = [
   WeaponType::None,
   WeaponType::SG,
   WeaponType::SMG,
@@ -1443,6 +1447,7 @@ pub const ENUM_VALUES_WEAPON_TYPE: [WeaponType; 20] = [
   WeaponType::MT,
   WeaponType::Relic,
   WeaponType::FT,
+  WeaponType::Akemi,
 ];
 
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Default)]
@@ -1470,9 +1475,10 @@ impl WeaponType {
   pub const MT: Self = Self(17);
   pub const Relic: Self = Self(18);
   pub const FT: Self = Self(19);
+  pub const Akemi: Self = Self(20);
 
   pub const ENUM_MIN: i32 = 0;
-  pub const ENUM_MAX: i32 = 19;
+  pub const ENUM_MAX: i32 = 20;
   pub const ENUM_VALUES: &'static [Self] = &[
     Self::None,
     Self::SG,
@@ -1494,6 +1500,7 @@ impl WeaponType {
     Self::MT,
     Self::Relic,
     Self::FT,
+    Self::Akemi,
   ];
   /// Returns the variant's name or "" if unknown.
   pub fn variant_name(self) -> Option<&'static str> {
@@ -1518,6 +1525,7 @@ impl WeaponType {
       Self::MT => Some("MT"),
       Self::Relic => Some("Relic"),
       Self::FT => Some("FT"),
+      Self::Akemi => Some("Akemi"),
       _ => None,
     }
   }
@@ -2121,10 +2129,10 @@ impl flatbuffers::SimpleToVerifyInSlice for School {}
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
 pub const ENUM_MIN_CLUB: i32 = 0;
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
-pub const ENUM_MAX_CLUB: i32 = 48;
+pub const ENUM_MAX_CLUB: i32 = 49;
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
 #[allow(non_camel_case_types)]
-pub const ENUM_VALUES_CLUB: [Club; 49] = [
+pub const ENUM_VALUES_CLUB: [Club; 50] = [
   Club::None,
   Club::Engineer,
   Club::CleanNClearing,
@@ -2174,6 +2182,7 @@ pub const ENUM_VALUES_CLUB: [Club; 49] = [
   Club::KnowledgeLiberationFront,
   Club::Hyakkayouran,
   Club::ShinySparkleSociety,
+  Club::AbydosStudentCouncil,
 ];
 
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Default)]
@@ -2230,9 +2239,10 @@ impl Club {
   pub const KnowledgeLiberationFront: Self = Self(46);
   pub const Hyakkayouran: Self = Self(47);
   pub const ShinySparkleSociety: Self = Self(48);
+  pub const AbydosStudentCouncil: Self = Self(49);
 
   pub const ENUM_MIN: i32 = 0;
-  pub const ENUM_MAX: i32 = 48;
+  pub const ENUM_MAX: i32 = 49;
   pub const ENUM_VALUES: &'static [Self] = &[
     Self::None,
     Self::Engineer,
@@ -2283,6 +2293,7 @@ impl Club {
     Self::KnowledgeLiberationFront,
     Self::Hyakkayouran,
     Self::ShinySparkleSociety,
+    Self::AbydosStudentCouncil,
   ];
   /// Returns the variant's name or "" if unknown.
   pub fn variant_name(self) -> Option<&'static str> {
@@ -2336,6 +2347,7 @@ impl Club {
       Self::KnowledgeLiberationFront => Some("KnowledgeLiberationFront"),
       Self::Hyakkayouran => Some("Hyakkayouran"),
       Self::ShinySparkleSociety => Some("ShinySparkleSociety"),
+      Self::AbydosStudentCouncil => Some("AbydosStudentCouncil"),
       _ => None,
     }
   }

@@ -20,7 +20,11 @@ macro_rules! impl_serialize_for_enum_with_variant_name {
             {
                 match self.variant_name() {
                     Some(variant_name) => variant_name.serialize(serializer),
-                    None => todo!(),
+                    None => {
+                        println!("Failed to get variant name for {:?}", self);
+                        // Return UNKNOWN
+                        "UNKNOWN".serialize(serializer)
+                    }
                 }
             }
         }
