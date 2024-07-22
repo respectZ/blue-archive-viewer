@@ -26,9 +26,17 @@ export function localizeCharFromDevName(s: string): string {
  * findCharIdFromDevName("azusa_default") // => 10019
  */
 export function findCharIdFromDevName(s: string): number {
-  const id = Character.data.find((v) => (v.DevName.toLowerCase() === s.toLowerCase() || v.ScenarioCharacter.toLowerCase() === s.toLowerCase()) && (v.IsPlayable || v.IsPlayableCharacter))?.Id;
+  let id = Character.data.find((v) => (v.DevName.toLowerCase() === s.toLowerCase() || v.ScenarioCharacter.toLowerCase() === s.toLowerCase()) && (v.IsPlayable || v.IsPlayableCharacter))?.Id;
   if (id) {
     return id;
+  }
+  // add _10 to_01 to the end of the DevName and try again
+  // eg: ch0258 -> ch0258_01
+  for(let i = 10; i >= 1; i--) {
+    id = Character.data.find((v) => (v.DevName.toLowerCase() === `${s}_${i.toString().padStart(2, "0")}`.toLowerCase() || v.ScenarioCharacter.toLowerCase() === `${s}_${i.toString().padStart(2, "0")}`.toLowerCase()) && (v.IsPlayable || v.IsPlayableCharacter))?.Id;
+    if (id) {
+      return id;
+    }
   }
   return -1;
 }
