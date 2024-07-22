@@ -77,3 +77,4 @@ There are two ways.
 ## Credits
 
 - [K0lb3 BA Asset Downloader](https://github.com/K0lb3/Blue-Archive---Asset-Downloader)
+- [apkeep](https://github.com/EFForg/apkeep)
