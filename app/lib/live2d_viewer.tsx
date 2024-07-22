@@ -88,8 +88,10 @@ export class Live2DViewer {
     this.char = char;
 
     // Play default animation
-    if (char.state.hasAnimation("Start_Idle_01")) {
-      this.playAnimation("Start_Idle_01");
+    // Ignore case
+    const startAnimation = this.getAnimations().find((a) => a.toLowerCase() === "start_idle_01");
+    if (startAnimation) {
+      this.playAnimation(startAnimation);
     } else {
       const animation = char.state.data.skeletonData.animations[0];
       this.playAnimation(animation.name);

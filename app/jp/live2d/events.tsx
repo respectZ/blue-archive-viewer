@@ -64,7 +64,7 @@ export const ReloadAnimations = (
     option.value = animation;
     option.innerText = animation;
     selectElement.appendChild(option);
-    if (option.innerText === "Start_Idle_01") {
+    if (option.innerText.toLowerCase() === "start_idle_01") {
       option.selected = true;
     }
   }
