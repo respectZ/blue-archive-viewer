@@ -85,7 +85,4 @@ impl AddressableCatalog {
         );
         Ok(bundle_catalog)
     }
-    pub fn get_version(&self) -> &str {
-        &self.connection_groups[0].override_connection_groups[1].name
-    }
 }

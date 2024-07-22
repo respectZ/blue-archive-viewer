@@ -2,6 +2,7 @@ mod api;
 mod app;
 mod catalog;
 mod cg;
+mod consts;
 mod flatbuffers;
 mod live2d;
 mod mx;
@@ -115,13 +116,6 @@ async fn jp(action: Action) {
     save_json(
         PathBuf::from("public/data/jp/AddressableCatalog.json"),
         &catalog,
-    )
-    .await
-    .unwrap();
-    // Save version as txt
-    save_file(
-        PathBuf::from("public/data/jp/version.txt"),
-        catalog.get_version().as_bytes(),
     )
     .await
     .unwrap();
