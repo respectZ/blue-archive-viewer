@@ -2572,5 +2572,31 @@
         "BGMId": 237,
         "AudioClipJp": "",
         "AudioClipKr": ""
+    },
+    {
+        "Id": 10103,
+        "ProductionStep": "Release",
+        "LocalizeEtcId": 3106060182,
+        "CharacterId": 10103,
+        "PrefabName": "LobbyCH0270",
+        "MemoryLobbyCategory": "UILobbySpecial",
+        "SlotTextureName": "",
+        "RewardTextureName": "UIs/01_Common/08_Lobbyillust/Lobbyillust_Icon_CH0270_01",
+        "BGMId": 222,
+        "AudioClipJp": "",
+        "AudioClipKr": ""
+    },
+    {
+        "Id": 20038,
+        "ProductionStep": "Release",
+        "LocalizeEtcId": 2464519277,
+        "CharacterId": 20038,
+        "PrefabName": "LobbyCH0271",
+        "MemoryLobbyCategory": "UILobbySpecial",
+        "SlotTextureName": "",
+        "RewardTextureName": "UIs/01_Common/08_Lobbyillust/Lobbyillust_Icon_CH0271_01",
+        "BGMId": 192,
+        "AudioClipJp": "",
+        "AudioClipKr": ""
     }
 ]
