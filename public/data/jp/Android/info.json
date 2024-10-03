@@ -9,9 +9,9 @@
     "data/jp/Android/akane_home/Akane_home.skel"
   ],
   "akari_home": [
+    "data/jp/Android/akari_home/akari_scene.skel",
     "data/jp/Android/akari_home/akari_home.skel",
-    "data/jp/Android/akari_home/akari_bg.skel",
-    "data/jp/Android/akari_home/akari_scene.skel"
+    "data/jp/Android/akari_home/akari_bg.skel"
   ],
   "ako_home": [
     "data/jp/Android/ako_home/Ako_home.skel"
@@ -20,8 +20,8 @@
     "data/jp/Android/aris_home/Aris_home.skel"
   ],
   "aru_home": [
-    "data/jp/Android/aru_home/Aru_scene.skel",
-    "data/jp/Android/aru_home/Aru_home.skel"
+    "data/jp/Android/aru_home/Aru_home.skel",
+    "data/jp/Android/aru_home/Aru_scene.skel"
   ],
   "aru_newyear_home": [
     "data/jp/Android/aru_newyear_home/Aru_newyear_home.skel"
@@ -129,6 +129,9 @@
   "ch0138_home": [
     "data/jp/Android/ch0138_home/CH0138_home.skel"
   ],
+  "ch0139_home": [
+    "data/jp/Android/ch0139_home/CH0139_home.skel"
+  ],
   "ch0141_home": [
     "data/jp/Android/ch0141_home/CH0141_home.skel"
   ],
@@ -202,8 +205,8 @@
     "data/jp/Android/ch0183_home/CH0183_home.skel"
   ],
   "ch0184_home": [
-    "data/jp/Android/ch0184_home/CH0184_00.skel",
-    "data/jp/Android/ch0184_home/CH0184_home.skel"
+    "data/jp/Android/ch0184_home/CH0184_home.skel",
+    "data/jp/Android/ch0184_home/CH0184_00.skel"
   ],
   "ch0185_home": [
     "data/jp/Android/ch0185_home/CH0185_home.skel"
@@ -469,6 +472,9 @@
   "kotori_home": [
     "data/jp/Android/kotori_home/Kotori_home.skel"
   ],
+  "lobbyserika_multi": [
+    "data/jp/Android/lobbyserika_multi/LobbySerika_multi.skel"
+  ],
   "lobbyshiroko_multi": [
     "data/jp/Android/lobbyshiroko_multi/LobbyShiroko_multi.skel"
   ],
@@ -506,8 +512,8 @@
     "data/jp/Android/momiji_home/momiji_home.skel"
   ],
   "momoi_home": [
-    "data/jp/Android/momoi_home/Momoi_home.skel",
-    "data/jp/Android/momoi_home/Momoi_Scene.skel"
+    "data/jp/Android/momoi_home/Momoi_Scene.skel",
+    "data/jp/Android/momoi_home/Momoi_home.skel"
   ],
   "mutsuki_home": [
     "data/jp/Android/mutsuki_home/Mutsuki_home.skel"
@@ -529,6 +535,9 @@
   ],
   "pina_home": [
     "data/jp/Android/pina_home/Pina_home.skel"
+  ],
+  "reizyo_home": [
+    "data/jp/Android/reizyo_home/reizyo_home.skel"
   ],
   "sakurako_home": [
     "data/jp/Android/sakurako_home/Sakurako_home.skel"
@@ -552,9 +561,9 @@
     "data/jp/Android/serina_home/serina_home.skel"
   ],
   "shigure_home": [
-    "data/jp/Android/shigure_home/Shigure_00.skel",
     "data/jp/Android/shigure_home/Shigure_home.skel",
-    "data/jp/Android/shigure_home/Shigure_01.skel"
+    "data/jp/Android/shigure_home/Shigure_01.skel",
+    "data/jp/Android/shigure_home/Shigure_00.skel"
   ],
   "shimiko_home": [
     "data/jp/Android/shimiko_home/Shimiko_home.skel"

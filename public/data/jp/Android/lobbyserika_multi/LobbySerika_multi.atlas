@@ -1,0 +1,551 @@
+
+LobbySerika_multi.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Arm_L
+  rotate: false
+  xy: 1773, 1174
+  size: 203, 222
+  orig: 210, 228
+  offset: 3, 3
+  index: -1
+Arm_R
+  rotate: true
+  xy: 1006, 535
+  size: 422, 520
+  orig: 428, 526
+  offset: 3, 3
+  index: -1
+BG
+  rotate: false
+  xy: 2, 752
+  size: 865, 642
+  orig: 865, 642
+  offset: 0, 0
+  index: -1
+Bag
+  rotate: true
+  xy: 869, 808
+  size: 587, 547
+  orig: 709, 563
+  offset: 119, 3
+  index: -1
+Bag_Strap
+  rotate: false
+  xy: 825, 274
+  size: 170, 354
+  orig: 177, 369
+  offset: 3, 11
+  index: -1
+Body
+  rotate: false
+  xy: 1366, 879
+  size: 435, 517
+  orig: 485, 523
+  offset: 2, 2
+  index: -1
+Card
+  rotate: false
+  xy: 869, 777
+  size: 42, 174
+  orig: 52, 185
+  offset: 7, 5
+  index: -1
+Clock
+  rotate: false
+  xy: 1801, 1201
+  size: 42, 61
+  orig: 48, 66
+  offset: 3, 3
+  index: -1
+Ear
+  rotate: false
+  xy: 1950, 1286
+  size: 83, 109
+  orig: 88, 116
+  offset: 3, 3
+  index: -1
+EyeBall_L
+  rotate: false
+  xy: 1993, 1214
+  size: 54, 73
+  orig: 61, 80
+  offset: 3, 3
+  index: -1
+EyeBall_R
+  rotate: false
+  xy: 1407, 940
+  size: 101, 73
+  orig: 109, 81
+  offset: 4, 4
+  index: -1
+EyeBrow_L_01
+  rotate: false
+  xy: 1267, 808
+  size: 62, 89
+  orig: 69, 96
+  offset: 3, 3
+  index: -1
+EyeBrow_L_02
+  rotate: false
+  xy: 1339, 1339
+  size: 56, 29
+  orig: 62, 36
+  offset: 4, 3
+  index: -1
+EyeBrow_L_Close
+  rotate: false
+  xy: 1900, 1369
+  size: 58, 27
+  orig: 63, 34
+  offset: 2, 4
+  index: -1
+EyeBrow_L_T_01
+  rotate: false
+  xy: 1090, 1374
+  size: 37, 22
+  orig: 44, 29
+  offset: 3, 4
+  index: -1
+EyeBrow_R_01
+  rotate: false
+  xy: 1807, 447
+  size: 107, 86
+  orig: 114, 92
+  offset: 4, 3
+  index: -1
+EyeBrow_R_02
+  rotate: false
+  xy: 1265, 799
+  size: 86, 24
+  orig: 92, 30
+  offset: 3, 3
+  index: -1
+EyeBrow_R_Close
+  rotate: false
+  xy: 1131, 1360
+  size: 111, 36
+  orig: 112, 41
+  offset: 0, 2
+  index: -1
+EyeBrow_R_T_01
+  rotate: false
+  xy: 1527, 778
+  size: 82, 30
+  orig: 86, 36
+  offset: 2, 3
+  index: -1
+EyeCover_L
+  rotate: false
+  xy: 1417, 1146
+  size: 54, 73
+  orig: 61, 80
+  offset: 4, 4
+  index: -1
+EyeCover_R
+  rotate: false
+  xy: 1798, 1141
+  size: 103, 76
+  orig: 109, 81
+  offset: 3, 3
+  index: -1
+Eye_01_L
+  rotate: false
+  xy: 1307, 1338
+  size: 31, 57
+  orig: 39, 66
+  offset: 4, 5
+  index: -1
+Eye_01_R
+  rotate: false
+  xy: 1430, 1084
+  size: 53, 62
+  orig: 59, 70
+  offset: 3, 4
+  index: -1
+Eye_02_L
+  rotate: false
+  xy: 916, 1367
+  size: 9, 29
+  orig: 17, 38
+  offset: 4, 4
+  index: -1
+Eye_02_R
+  rotate: false
+  xy: 1744, 1362
+  size: 10, 34
+  orig: 18, 41
+  offset: 4, 3
+  index: -1
+Eye_03_L
+  rotate: false
+  xy: 1069, 1383
+  size: 14, 12
+  orig: 21, 19
+  offset: 4, 4
+  index: -1
+Eye_03_R
+  rotate: false
+  xy: 1052, 1383
+  size: 16, 13
+  orig: 23, 19
+  offset: 3, 3
+  index: -1
+Face
+  rotate: false
+  xy: 1446, 388
+  size: 285, 394
+  orig: 291, 402
+  offset: 4, 4
+  index: -1
+Face_Shadow_01
+  rotate: false
+  xy: 869, 1196
+  size: 38, 86
+  orig: 45, 94
+  offset: 4, 3
+  index: -1
+Face_Shadow_02
+  rotate: false
+  xy: 1425, 1017
+  size: 49, 80
+  orig: 56, 85
+  offset: 4, 3
+  index: -1
+Face_Shadow_03
+  rotate: false
+  xy: 703, 418
+  size: 121, 199
+  orig: 133, 219
+  offset: 1, 19
+  index: -1
+Face_Shadow_04
+  rotate: false
+  xy: 1357, 1357
+  size: 12, 39
+  orig: 38, 75
+  offset: 13, 19
+  index: -1
+Face_Shadow_05
+  rotate: false
+  xy: 1022, 836
+  size: 85, 81
+  orig: 90, 86
+  offset: 3, 1
+  index: -1
+Hair_01
+  rotate: false
+  xy: 577, 495
+  size: 164, 256
+  orig: 171, 263
+  offset: 3, 3
+  index: -1
+Hair_01_Cover
+  rotate: false
+  xy: 1243, 1358
+  size: 37, 36
+  orig: 37, 36
+  offset: 0, 0
+  index: -1
+Hair_02
+  rotate: false
+  xy: 1741, 329
+  size: 99, 240
+  orig: 107, 243
+  offset: 4, 0
+  index: -1
+Hair_02_1
+  rotate: false
+  xy: 997, 612
+  size: 40, 137
+  orig: 46, 141
+  offset: 4, 1
+  index: -1
+Hair_03
+  rotate: false
+  xy: 436, 355
+  size: 239, 396
+  orig: 264, 402
+  offset: 3, 3
+  index: -1
+Hair_03_Cover
+  rotate: false
+  xy: 1794, 1081
+  size: 34, 61
+  orig: 34, 61
+  offset: 0, 0
+  index: -1
+Hair_03_Ear_Shadow
+  rotate: false
+  xy: 766, 672
+  size: 114, 79
+  orig: 120, 85
+  offset: 3, 3
+  index: -1
+Hair_04
+  rotate: false
+  xy: 1869, 324
+  size: 177, 373
+  orig: 219, 379
+  offset: 18, 3
+  index: -1
+Hair_04_1
+  rotate: false
+  xy: 375, 655
+  size: 54, 97
+  orig: 62, 103
+  offset: 4, 3
+  index: -1
+Hair_04_2
+  rotate: false
+  xy: 1962, 688
+  size: 85, 140
+  orig: 89, 145
+  offset: 1, 3
+  index: -1
+Hair_04_3
+  rotate: false
+  xy: 1857, 475
+  size: 89, 192
+  orig: 101, 201
+  offset: 9, 2
+  index: -1
+Hair_Neck_02
+  rotate: false
+  xy: 1563, 796
+  size: 88, 37
+  orig: 96, 51
+  offset: 4, 4
+  index: -1
+Halo_01
+  rotate: false
+  xy: 1720, 560
+  size: 201, 136
+  orig: 202, 139
+  offset: 1, 2
+  index: -1
+Halo_02
+  rotate: false
+  xy: 2, 450
+  size: 497, 300
+  orig: 497, 300
+  offset: 0, 0
+  index: -1
+Hand
+  rotate: false
+  xy: 1710, 866
+  size: 120, 179
+  orig: 126, 187
+  offset: 3, 5
+  index: -1
+Head_Back
+  rotate: 270
+  xy: 1613, 688
+  size: 435, 433
+  orig: 439, 438
+  offset: 1, 2
+  index: -1
+Kemo_Ear_L_01
+  rotate: false
+  xy: 247, 619
+  size: 171, 132
+  orig: 176, 186
+  offset: 3, 51
+  index: -1
+Kemo_Ear_L_02
+  rotate: false
+  xy: 1944, 1082
+  size: 102, 123
+  orig: 107, 127
+  offset: 3, 2
+  index: -1
+Kemo_Ear_L_03
+  rotate: false
+  xy: 1032, 284
+  size: 148, 211
+  orig: 165, 229
+  offset: 11, 4
+  index: -1
+Kemo_Ear_R_01
+  rotate: false
+  xy: 2, 376
+  size: 190, 259
+  orig: 193, 264
+  offset: 0, 2
+  index: -1
+Kemo_Ear_R_02
+  rotate: false
+  xy: 738, 595
+  size: 95, 155
+  orig: 102, 162
+  offset: 4, 3
+  index: -1
+Kemo_Ear_R_03
+  rotate: false
+  xy: 2, 325
+  size: 115, 216
+  orig: 121, 223
+  offset: 3, 2
+  index: -1
+Mouth
+  rotate: false
+  xy: 1337, 1363
+  size: 23, 32
+  orig: 27, 35
+  offset: 2, 1
+  index: -1
+Neck
+  rotate: false
+  xy: 1320, 460
+  size: 145, 169
+  orig: 152, 177
+  offset: 3, 4
+  index: -1
+Neck_Hair
+  rotate: false
+  xy: 1892, 1128
+  size: 45, 54
+  orig: 51, 59
+  offset: 3, 3
+  index: -1
+Nose
+  rotate: false
+  xy: 1129, 1384
+  size: 11, 12
+  orig: 14, 18
+  offset: 1, 3
+  index: -1
+Ribbon_01
+  rotate: false
+  xy: 1756, 1373
+  size: 10, 23
+  orig: 19, 30
+  offset: 4, 2
+  index: -1
+Ribbon_02
+  rotate: false
+  xy: 1527, 805
+  size: 98, 112
+  orig: 103, 122
+  offset: 3, 7
+  index: -1
+Ribbon_03
+  rotate: false
+  xy: 869, 1261
+  size: 48, 134
+  orig: 57, 145
+  offset: 4, 3
+  index: -1
+Ribbon_04
+  rotate: false
+  xy: 129, 345
+  size: 276, 174
+  orig: 282, 189
+  offset: 3, 4
+  index: -1
+Ribbon_05
+  rotate: false
+  xy: 117, 283
+  size: 275, 152
+  orig: 282, 164
+  offset: 3, 4
+  index: -1
+Ribbon_06
+  rotate: false
+  xy: 1281, 1348
+  size: 21, 46
+  orig: 28, 53
+  offset: 3, 3
+  index: -1
+Shoulder_L
+  rotate: false
+  xy: 851, 706
+  size: 114, 187
+  orig: 121, 199
+  offset: 3, 10
+  index: -1
+Side_Hair_L
+  rotate: false
+  xy: 1399, 141
+  size: 401, 356
+  orig: 404, 360
+  offset: 0, 3
+  index: -1
+Side_Hair_R_01
+  rotate: false
+  xy: 776, 3
+  size: 716, 438
+  orig: 722, 443
+  offset: 4, 3
+  index: -1
+Side_Hair_R_01_1
+  rotate: false
+  xy: 1891, 1119
+  size: 55, 39
+  orig: 61, 45
+  offset: 3, 3
+  index: -1
+Side_Hair_R_02
+  rotate: false
+  xy: 996, 7
+  size: 711, 505
+  orig: 727, 551
+  offset: 4, 13
+  index: -1
+Side_Hair_R_03
+  rotate: 270
+  xy: 391, 133
+  size: 770, 877
+  orig: 779, 882
+  offset: 4, 2
+  index: -1
+Side_Hair_R_04
+  rotate: false
+  xy: 949, 63
+  size: 752, 612
+  orig: 758, 617
+  offset: 3, 3
+  index: -1
+
+LobbySerika_multi2.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+00/Halo_001
+  rotate: 270
+  xy: 1253, 1219
+  size: 490, 293
+  orig: 490, 293
+  offset: 0, 0
+  index: -1
+00/Halo_001_W
+  rotate: false
+  xy: 1031, 366
+  size: 491, 294
+  orig: 491, 294
+  offset: 0, 0
+  index: -1
+00/Serika
+  rotate: false
+  xy: 2, 666
+  size: 1400, 1128
+  orig: 1400, 1128
+  offset: 0, 0
+  index: -1
+00/Serika_W
+  rotate: 180
+  xy: 2, 364
+  size: 1120, 903
+  orig: 1120, 903
+  offset: 0, 0
+  index: -1
+00/sl
+  rotate: true
+  xy: 2, 3
+  size: 359, 1283
+  orig: 359, 1283
+  offset: 0, 0
+  index: -1

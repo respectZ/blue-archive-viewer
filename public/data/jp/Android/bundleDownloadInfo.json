@@ -43,10 +43,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "academy-_mxload-2024-08-02_assets_all_1524023213.bundle",
-      "Size": 169472,
+      "Name": "academy-_mxload-2024-08-02_assets_all_1583274953.bundle",
+      "Size": 169493,
       "IsPrologue": false,
-      "Crc": 1524023213,
+      "Crc": 1583274953,
       "IsSplitDownload": false
     },
     {
@@ -260,10 +260,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "assets-_mx-academy-location_haruhabara-_mxdependency-2024-08-02_assets_all_2578484501.bundle",
-      "Size": 112509,
+      "Name": "assets-_mx-academy-location_haruhabara-_mxdependency-2024-08-02_assets_all_2278670339.bundle",
+      "Size": 112524,
       "IsPrologue": false,
-      "Crc": 2578484501,
+      "Crc": 2278670339,
       "IsSplitDownload": false
     },
     {
@@ -449,10 +449,17 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "assets-_mx-cafe-misc-_mxdependency-2024-08-02_assets_all_755000791.bundle",
-      "Size": 1151107,
+      "Name": "assets-_mx-cafe-misc-_mxdependency-2024-08-02_assets_all_1984389641.bundle",
+      "Size": 1149671,
       "IsPrologue": false,
-      "Crc": 755000791,
+      "Crc": 1984389641,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "assets-_mx-cafe-misc-_mxdependency-2024-08-30_assets_all_392552109.bundle",
+      "Size": 522238,
+      "IsPrologue": false,
+      "Crc": 392552109,
       "IsSplitDownload": false
     },
     {
@@ -911,6 +918,20 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "assets-_mx-characters-ch0139-_mxdependency-2024-08-30_assets_all_4188076744.bundle",
+      "Size": 10423772,
+      "IsPrologue": false,
+      "Crc": 4188076744,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "assets-_mx-characters-ch0139-_mxdependency-2024-09-08_assets_all_1626085170.bundle",
+      "Size": 236630,
+      "IsPrologue": false,
+      "Crc": 1626085170,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "assets-_mx-characters-ch0141-_mxdependency_assets_all_1694535551.bundle",
       "Size": 5148825,
       "IsPrologue": false,
@@ -1100,10 +1121,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "assets-_mx-characters-ch0182-_mxdependency_assets_all_4144260576.bundle",
-      "Size": 8385260,
+      "Name": "assets-_mx-characters-ch0182-_mxdependency_assets_all_2725689840.bundle",
+      "Size": 8384984,
       "IsPrologue": false,
-      "Crc": 4144260576,
+      "Crc": 2725689840,
       "IsSplitDownload": false
     },
     {
@@ -1268,10 +1289,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "assets-_mx-characters-ch0209-_mxdependency_assets_all_3493187231.bundle",
-      "Size": 11479154,
+      "Name": "assets-_mx-characters-ch0209-_mxdependency_assets_all_3784655429.bundle",
+      "Size": 11479156,
       "IsPrologue": false,
-      "Crc": 3493187231,
+      "Crc": 3784655429,
       "IsSplitDownload": false
     },
     {
@@ -1989,6 +2010,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "assets-_mx-characters-mari_original-_mxdependency-2024-08-30_assets_all_2752755019.bundle",
+      "Size": 57096,
+      "IsPrologue": false,
+      "Crc": 2752755019,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "assets-_mx-characters-mari_original-_mxdependency_assets_all_1361954405.bundle",
       "Size": 1456928,
       "IsPrologue": false,
@@ -2098,6 +2126,20 @@
       "Size": 4711710,
       "IsPrologue": false,
       "Crc": 181778108,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "assets-_mx-characters-reizyo_original-_mxdependency-2024-08-30_assets_all_3454840494.bundle",
+      "Size": 7611702,
+      "IsPrologue": false,
+      "Crc": 3454840494,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "assets-_mx-characters-reizyo_original-_mxdependency-2024-09-08_assets_all_1732806486.bundle",
+      "Size": 178923,
+      "IsPrologue": false,
+      "Crc": 1732806486,
       "IsSplitDownload": false
     },
     {
@@ -2322,6 +2364,13 @@
       "Size": 2964,
       "IsPrologue": false,
       "Crc": 1537417785,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "assets-_mx-characters-_mxcommon-_mxdependency-2024-09-10_assets_all_3706148431.bundle",
+      "Size": 29006,
+      "IsPrologue": false,
+      "Crc": 3706148431,
       "IsSplitDownload": false
     },
     {
@@ -2892,6 +2941,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "assets-_mx-etceffects-scenariofx-ui_fx_bg_mist_l-_mxdependency-2024-08-30_assets_all_2668295088.bundle",
+      "Size": 11186,
+      "IsPrologue": false,
+      "Crc": 2668295088,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "assets-_mx-etceffects-scenariofx-ui_fx_bg_scatterfire-_mxdependency-2024-05-30_assets_all_796479359.bundle",
       "Size": 3814,
       "IsPrologue": false,
@@ -2938,6 +2994,13 @@
       "Size": 41008,
       "IsPrologue": false,
       "Crc": 3671161876,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "assets-_mx-etceffects-scenariofx-ui_fx_bg_wave_f-_mxdependency-2024-08-30_assets_all_1432410598.bundle",
+      "Size": 4764,
+      "IsPrologue": false,
+      "Crc": 1432410598,
       "IsSplitDownload": false
     },
     {
@@ -3120,6 +3183,13 @@
       "Size": 39640,
       "IsPrologue": false,
       "Crc": 904681651,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "assets-_mx-etceffects-uifx-uieventtreasureshop_840_fx-_mxdependency-2024-08-30_assets_all_2068332269.bundle",
+      "Size": 72899,
+      "IsPrologue": false,
+      "Crc": 2068332269,
       "IsSplitDownload": false
     },
     {
@@ -3333,10 +3403,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "assets-_mx-field-misc-_mxdependency-2024-01-05_assets_all_3218312351.bundle",
-      "Size": 2103,
+      "Name": "assets-_mx-field-misc-_mxdependency-2024-01-05_assets_all_3971006556.bundle",
+      "Size": 2122,
       "IsPrologue": false,
-      "Crc": 3218312351,
+      "Crc": 3971006556,
       "IsSplitDownload": false
     },
     {
@@ -3788,6 +3858,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "assets-_mx-npcs-ch0213_enemy-_mxdependency-2024-08-30_assets_all_2106208944.bundle",
+      "Size": 6636538,
+      "IsPrologue": false,
+      "Crc": 2106208944,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "assets-_mx-npcs-ch0244_enemy-_mxdependency-2024-05-30_assets_all_794649615.bundle",
       "Size": 5533831,
       "IsPrologue": false,
@@ -4166,10 +4243,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "assets-_mx-npcs-en0006_original-_mxdependency_assets_all_3974610073.bundle",
-      "Size": 33295400,
+      "Name": "assets-_mx-npcs-en0006_original-_mxdependency_assets_all_938920884.bundle",
+      "Size": 33295628,
       "IsPrologue": false,
-      "Crc": 3974610073,
+      "Crc": 938920884,
       "IsSplitDownload": false
     },
     {
@@ -9353,10 +9430,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "assets-_mx-scenes-battle-trainroof-_mxdependency-2024-04-02_assets_all_780883552.bundle",
-      "Size": 2979031,
+      "Name": "assets-_mx-scenes-battle-trainroof-_mxdependency-2024-04-02_assets_all_3520249168.bundle",
+      "Size": 2979472,
       "IsPrologue": false,
-      "Crc": 780883552,
+      "Crc": 3520249168,
       "IsSplitDownload": false
     },
     {
@@ -9948,6 +10025,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "assets-_mx-scenes-skillcut-reizyo-_mxdependency-2024-08-30_assets_all_1399197897.bundle",
+      "Size": 1539311,
+      "IsPrologue": false,
+      "Crc": 1399197897,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "assets-_mx-scenes-skillcut-sakurako-_mxdependency-2023-01-31_assets_all_971662776.bundle",
       "Size": 1141319,
       "IsPrologue": false,
@@ -10316,6 +10400,13 @@
       "Size": 355773,
       "IsPrologue": false,
       "Crc": 2875926658,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "assets-_mx-spinebackground-ui_set-_mxdependency-2024-09-06_assets_all_380256344.bundle",
+      "Size": 328167,
+      "IsPrologue": false,
+      "Crc": 380256344,
       "IsSplitDownload": false
     },
     {
@@ -13532,6 +13623,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "assets-_mx-spinecharacters-np0216_spr-_mxdependency-2024-08-30_assets_all_2868154280.bundle",
+      "Size": 305780,
+      "IsPrologue": false,
+      "Crc": 2868154280,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "assets-_mx-spinecharacters-np0230_spr-_mxdependency-2024-07-04_assets_all_3481401580.bundle",
       "Size": 321346,
       "IsPrologue": false,
@@ -13550,6 +13648,13 @@
       "Size": 668961,
       "IsPrologue": false,
       "Crc": 1183478244,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "assets-_mx-spinecharacters-np0233_spr-_mxdependency-2024-08-30_assets_all_1345441819.bundle",
+      "Size": 377366,
+      "IsPrologue": false,
+      "Crc": 1345441819,
       "IsSplitDownload": false
     },
     {
@@ -14155,10 +14260,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "assets-_mx-spinelobbies-ch0100_home-_mxdependency-2022-05-12_assets_all_3863330699.bundle",
-      "Size": 2354581,
+      "Name": "assets-_mx-spinelobbies-ch0100_home-_mxdependency-2022-05-12_assets_all_3305909116.bundle",
+      "Size": 2320774,
       "IsPrologue": false,
-      "Crc": 3863330699,
+      "Crc": 3305909116,
       "IsSplitDownload": false
     },
     {
@@ -14232,10 +14337,17 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "assets-_mx-spinelobbies-ch0141_home-_mxdependency-2022-05-12_assets_all_2075499777.bundle",
-      "Size": 3283215,
+      "Name": "assets-_mx-spinelobbies-ch0139_home-_mxdependency-2024-08-30_assets_all_3632667854.bundle",
+      "Size": 3078538,
       "IsPrologue": false,
-      "Crc": 2075499777,
+      "Crc": 3632667854,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "assets-_mx-spinelobbies-ch0141_home-_mxdependency-2022-05-12_assets_all_3439509900.bundle",
+      "Size": 3253203,
+      "IsPrologue": false,
+      "Crc": 3439509900,
       "IsSplitDownload": false
     },
     {
@@ -15079,6 +15191,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "assets-_mx-spinelobbies-lobbyserika_multi-_mxdependency-2024-08-26_assets_all_60326728.bundle",
+      "Size": 1663064,
+      "IsPrologue": false,
+      "Crc": 60326728,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "assets-_mx-spinelobbies-lobbyshiroko_multi-_mxdependency-2024-08-02_assets_all_452880289.bundle",
       "Size": 1852885,
       "IsPrologue": false,
@@ -15223,6 +15342,13 @@
       "Size": 3010,
       "IsPrologue": false,
       "Crc": 110412126,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "assets-_mx-spinelobbies-reizyo_home-_mxdependency-2024-08-30_assets_all_2971062521.bundle",
+      "Size": 3230227,
+      "IsPrologue": false,
+      "Crc": 2971062521,
       "IsSplitDownload": false
     },
     {
@@ -15751,10 +15877,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "assets-_mx-uis-atlas-_mxdependency-2022-12-06_assets_all_1858900197.bundle",
-      "Size": 479483,
+      "Name": "assets-_mx-uis-atlas-_mxdependency-2022-12-06_assets_all_1815410369.bundle",
+      "Size": 489588,
       "IsPrologue": false,
-      "Crc": 1858900197,
+      "Crc": 1815410369,
       "IsSplitDownload": false
     },
     {
@@ -16066,10 +16192,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "assets-_mx-uis-_mxcommon-_mxdependency-2024-03-03_assets_all_3791866100.bundle",
-      "Size": 12752,
+      "Name": "assets-_mx-uis-_mxcommon-_mxdependency-2024-03-03_assets_all_2660704157.bundle",
+      "Size": 12799,
       "IsPrologue": false,
-      "Crc": 3791866100,
+      "Crc": 2660704157,
       "IsSplitDownload": false
     },
     {
@@ -16133,6 +16259,20 @@
       "Size": 8733,
       "IsPrologue": false,
       "Crc": 3008465848,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "assets-_mx-uis-_mxcommon-_mxdependency-2024-08-30_assets_all_1934050012.bundle",
+      "Size": 11135,
+      "IsPrologue": false,
+      "Crc": 1934050012,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "assets-_mx-uis-_mxcommon-_mxdependency-2024-09-04_assets_all_2940473676.bundle",
+      "Size": 2956,
+      "IsPrologue": false,
+      "Crc": 2940473676,
       "IsSplitDownload": false
     },
     {
@@ -16633,6 +16773,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "audio-sfx_ui-_mxload-2024-09-04_assets_all_676073566.bundle",
+      "Size": 45283,
+      "IsPrologue": false,
+      "Crc": 676073566,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "balltank_millenium_vulcan_appear-_mxload-2024-05-30_assets_all_1095723558.bundle",
       "Size": 5647,
       "IsPrologue": false,
@@ -17029,6 +17176,13 @@
       "Size": 438198,
       "IsPrologue": false,
       "Crc": 1465069985,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "cafe-characteranimation-ch0139-_mxload-2024-08-30_assets_all_1609776643.bundle",
+      "Size": 8737574,
+      "IsPrologue": false,
+      "Crc": 1609776643,
       "IsSplitDownload": false
     },
     {
@@ -17788,6 +17942,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "cafe-characteranimation-reizyo_original-_mxload-2024-08-30_assets_all_3682478347.bundle",
+      "Size": 2032591,
+      "IsPrologue": false,
+      "Crc": 3682478347,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "cafe-characteranimation-sakurako_original-_mxload-2023-01-31_assets_all_1806421138.bundle",
       "Size": 371805,
       "IsPrologue": false,
@@ -18089,10 +18250,17 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "cafe-_mxload-2024-08-02_assets_all_4214280227.bundle",
-      "Size": 40276,
+      "Name": "cafe-_mxload-2024-08-02_assets_all_2433799999.bundle",
+      "Size": 40345,
       "IsPrologue": false,
-      "Crc": 4214280227,
+      "Crc": 2433799999,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "cafe-_mxload-2024-08-30_assets_all_2142449472.bundle",
+      "Size": 5357,
+      "IsPrologue": false,
+      "Crc": 2142449472,
       "IsSplitDownload": false
     },
     {
@@ -18317,6 +18485,48 @@
       "Size": 12797,
       "IsPrologue": false,
       "Crc": 4083532551,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "ch0139_cutin-_mxload-2024-08-30_assets_all_3155457990.bundle",
+      "Size": 18252,
+      "IsPrologue": false,
+      "Crc": 3155457990,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "ch0139_cutin_dragon-_mxload-2024-08-30_assets_all_214110011.bundle",
+      "Size": 5285,
+      "IsPrologue": false,
+      "Crc": 214110011,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "ch0139_ex-_mxload-2024-08-30_assets_all_2516710447.bundle",
+      "Size": 5265,
+      "IsPrologue": false,
+      "Crc": 2516710447,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "ch0139_ex1_appear-_mxload-2024-08-30_assets_all_2617580696.bundle",
+      "Size": 11578,
+      "IsPrologue": false,
+      "Crc": 2617580696,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "ch0139_ex1_dragon-_mxload-2024-08-30_assets_all_1231711164.bundle",
+      "Size": 11974,
+      "IsPrologue": false,
+      "Crc": 1231711164,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "ch0139_public-_mxload-2024-08-30_assets_all_3724186715.bundle",
+      "Size": 3938,
+      "IsPrologue": false,
+      "Crc": 3724186715,
       "IsSplitDownload": false
     },
     {
@@ -18824,6 +19034,20 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "ch0213_enemy_ex1-_mxload-2024-08-30_assets_all_1444547950.bundle",
+      "Size": 5396,
+      "IsPrologue": false,
+      "Crc": 1444547950,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "ch0213_enemy_ex2-_mxload-2024-08-30_assets_all_803474697.bundle",
+      "Size": 10129,
+      "IsPrologue": false,
+      "Crc": 803474697,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "ch0214_ex01_cutin_cutinprop_flag-_mxload-2024-05-30_assets_all_2291781677.bundle",
       "Size": 9729,
       "IsPrologue": false,
@@ -19293,10 +19517,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "ch0270_ex1_cutin-_mxload-2024-08-02_assets_all_4155668768.bundle",
+      "Name": "ch0270_ex1_cutin-_mxload-2024-08-02_assets_all_1031104179.bundle",
       "Size": 23863,
       "IsPrologue": false,
-      "Crc": 4155668768,
+      "Crc": 1031104179,
       "IsSplitDownload": false
     },
     {
@@ -19524,10 +19748,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "character-atsuko_original-_mxload-2024-05-30_assets_all_800249525.bundle",
-      "Size": 73745,
+      "Name": "character-atsuko_original-_mxload-2024-05-30_assets_all_1486384164.bundle",
+      "Size": 73746,
       "IsPrologue": false,
-      "Crc": 800249525,
+      "Crc": 1486384164,
       "IsSplitDownload": false
     },
     {
@@ -19545,6 +19769,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "character-attendant_highlander_hg-_mxload-2024-08-30_assets_all_2742861976.bundle",
+      "Size": 15244,
+      "IsPrologue": false,
+      "Crc": 2742861976,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "character-attendant_highlander_mg-_mxload-2024-05-30_assets_all_1507068106.bundle",
       "Size": 22048,
       "IsPrologue": false,
@@ -19552,10 +19783,24 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "character-attendant_highlander_mg-_mxload-2024-08-30_assets_all_2490320543.bundle",
+      "Size": 15653,
+      "IsPrologue": false,
+      "Crc": 2490320543,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "character-attendant_highlander_sg-_mxload-2024-05-30_assets_all_1370155883.bundle",
       "Size": 16412,
       "IsPrologue": false,
       "Crc": 1370155883,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "character-attendant_highlander_sg-_mxload-2024-08-30_assets_all_168644385.bundle",
+      "Size": 13745,
+      "IsPrologue": false,
+      "Crc": 168644385,
       "IsSplitDownload": false
     },
     {
@@ -19818,10 +20063,17 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "character-ch0064-_mxload-2024-05-30_assets_all_4246371178.bundle",
-      "Size": 89202,
+      "Name": "character-ch0064-_mxload-2024-05-30_assets_all_1422674151.bundle",
+      "Size": 89311,
       "IsPrologue": false,
-      "Crc": 4246371178,
+      "Crc": 1422674151,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "character-ch0064-_mxload-2024-08-30_assets_all_1751148133.bundle",
+      "Size": 6979,
+      "IsPrologue": false,
+      "Crc": 1751148133,
       "IsSplitDownload": false
     },
     {
@@ -19888,10 +20140,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "character-ch0092-_mxload-2024-05-30_assets_all_2580181912.bundle",
-      "Size": 97067,
+      "Name": "character-ch0092-_mxload-2024-05-30_assets_all_95660519.bundle",
+      "Size": 97232,
       "IsPrologue": false,
-      "Crc": 2580181912,
+      "Crc": 95660519,
       "IsSplitDownload": false
     },
     {
@@ -20007,6 +20259,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "character-ch0139-_mxload-2024-08-30_assets_all_785776479.bundle",
+      "Size": 48631,
+      "IsPrologue": false,
+      "Crc": 785776479,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "character-ch0141-_mxload-2024-05-30_assets_all_1495147008.bundle",
       "Size": 131530,
       "IsPrologue": false,
@@ -20077,10 +20336,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "character-ch0164-_mxload-2024-05-30_assets_all_3366484033.bundle",
-      "Size": 70944,
+      "Name": "character-ch0164-_mxload-2024-05-30_assets_all_1442550345.bundle",
+      "Size": 70929,
       "IsPrologue": false,
-      "Crc": 3366484033,
+      "Crc": 1442550345,
       "IsSplitDownload": false
     },
     {
@@ -20371,6 +20630,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "character-ch0213_enemy-_mxload-2024-08-30_assets_all_3566251814.bundle",
+      "Size": 31006,
+      "IsPrologue": false,
+      "Crc": 3566251814,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "character-ch0214-_mxload-2024-05-30_assets_all_3326583899.bundle",
       "Size": 111257,
       "IsPrologue": false,
@@ -20508,6 +20774,13 @@
       "Size": 26482,
       "IsPrologue": false,
       "Crc": 1579898596,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "character-ch0244_enemy-_mxload-2024-08-30_assets_all_8477834.bundle",
+      "Size": 19936,
+      "IsPrologue": false,
+      "Crc": 8477834,
       "IsSplitDownload": false
     },
     {
@@ -20658,10 +20931,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "character-ch0270-_mxload-2024-08-02_assets_all_4038673544.bundle",
-      "Size": 71260,
+      "Name": "character-ch0270-_mxload-2024-08-02_assets_all_2065124747.bundle",
+      "Size": 71261,
       "IsPrologue": false,
-      "Crc": 4038673544,
+      "Crc": 2065124747,
       "IsSplitDownload": false
     },
     {
@@ -21176,17 +21449,17 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "character-en0006_original-_mxload-2024-05-30_assets_all_3061001902.bundle",
+      "Name": "character-en0006_original-_mxload-2024-05-30_assets_all_2082211797.bundle",
       "Size": 90950,
       "IsPrologue": false,
-      "Crc": 3061001902,
+      "Crc": 2082211797,
       "IsSplitDownload": false
     },
     {
-      "Name": "character-en0006_original_insane-_mxload-2024-05-30_assets_all_1064735795.bundle",
-      "Size": 53088,
+      "Name": "character-en0006_original_insane-_mxload-2024-05-30_assets_all_2829826320.bundle",
+      "Size": 53091,
       "IsPrologue": false,
-      "Crc": 1064735795,
+      "Crc": 2829826320,
       "IsSplitDownload": false
     },
     {
@@ -21323,10 +21596,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "character-ghosttales_katashiro-_mxload-2024-05-30_assets_all_2968505119.bundle",
-      "Size": 71143,
+      "Name": "character-ghosttales_katashiro-_mxload-2024-05-30_assets_all_4126252890.bundle",
+      "Size": 70501,
       "IsPrologue": false,
-      "Crc": 2968505119,
+      "Crc": 4126252890,
       "IsSplitDownload": false
     },
     {
@@ -21638,10 +21911,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "character-hihumi_original_decoy-_mxload-2024-05-30_assets_all_3775360182.bundle",
-      "Size": 9516,
+      "Name": "character-hihumi_original_decoy-_mxload-2024-05-30_assets_all_1304307512.bundle",
+      "Size": 9592,
       "IsPrologue": false,
-      "Crc": 3775360182,
+      "Crc": 1304307512,
       "IsSplitDownload": false
     },
     {
@@ -21708,10 +21981,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "character-hod_indoor-_mxload-2024-05-30_assets_all_1710445931.bundle",
-      "Size": 36030,
+      "Name": "character-hod_indoor-_mxload-2024-05-30_assets_all_1997597210.bundle",
+      "Size": 35974,
       "IsPrologue": false,
-      "Crc": 1710445931,
+      "Crc": 1997597210,
       "IsSplitDownload": false
     },
     {
@@ -21722,10 +21995,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "character-hod_original-_mxload-2024-05-30_assets_all_1939211683.bundle",
-      "Size": 26246,
+      "Name": "character-hod_original-_mxload-2024-05-30_assets_all_8193261.bundle",
+      "Size": 26242,
       "IsPrologue": false,
-      "Crc": 1939211683,
+      "Crc": 8193261,
       "IsSplitDownload": false
     },
     {
@@ -22559,6 +22832,13 @@
       "Size": 28256,
       "IsPrologue": false,
       "Crc": 1078235859,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "character-reizyo_original-_mxload-2024-08-30_assets_all_2931316327.bundle",
+      "Size": 125820,
+      "IsPrologue": false,
+      "Crc": 2931316327,
       "IsSplitDownload": false
     },
     {
@@ -23815,6 +24095,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "character-twinsturret_highlander_mg-_mxload-2024-08-30_assets_all_2668057730.bundle",
+      "Size": 31356,
+      "IsPrologue": false,
+      "Crc": 2668057730,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "character-unnamedguardian_back-_mxload-2024-05-30_assets_all_1047473280.bundle",
       "Size": 20343,
       "IsPrologue": false,
@@ -24459,10 +24746,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "effect-ui-bgfx-_mxload-2022-05-12_assets_all_3156981924.bundle",
-      "Size": 103424,
+      "Name": "effect-ui-bgfx-_mxload-2022-05-12_assets_all_2805573277.bundle",
+      "Size": 92893,
       "IsPrologue": false,
-      "Crc": 3156981924,
+      "Crc": 2805573277,
       "IsSplitDownload": false
     },
     {
@@ -24932,6 +25219,13 @@
       "Size": 73383,
       "IsPrologue": false,
       "Crc": 2688300765,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "effect-_mxload-2024-08-30_assets_all_704742954.bundle",
+      "Size": 142215,
+      "IsPrologue": false,
+      "Crc": 704742954,
       "IsSplitDownload": false
     },
     {
@@ -26881,227 +27175,227 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-defense-artlevel-artlevelprefab-_mxload-2024-08-21_assets_all_3678507545.bundle",
+      "Name": "minigame-defense-artlevel-artlevelprefab-_mxload-2024-09-24_assets_all_285775723.bundle",
       "Size": 621808,
       "IsPrologue": false,
-      "Crc": 3678507545,
+      "Crc": 285775723,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-defense-_mxload-2024-08-21_assets_all_3993596213.bundle",
-      "Size": 36334,
+      "Name": "minigame-defense-_mxload-2024-09-24_assets_all_1141565484.bundle",
+      "Size": 36337,
       "IsPrologue": false,
-      "Crc": 3993596213,
+      "Crc": 1141565484,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-dicerace-background-_mxload-2024-08-21_assets_all_1008152969.bundle",
+      "Name": "minigame-dicerace-background-_mxload-2024-09-24_assets_all_2224224823.bundle",
       "Size": 223664,
       "IsPrologue": false,
-      "Crc": 1008152969,
+      "Crc": 2224224823,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-dicerace-dice-_mxload-2024-08-21_assets_all_2159724304.bundle",
+      "Name": "minigame-dicerace-dice-_mxload-2024-09-24_assets_all_2156514253.bundle",
       "Size": 3094,
       "IsPrologue": false,
-      "Crc": 2159724304,
+      "Crc": 2156514253,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-dicerace-tile-_mxload-2024-08-21_assets_all_1574135224.bundle",
-      "Size": 13341,
+      "Name": "minigame-dicerace-tile-_mxload-2024-09-24_assets_all_3871189061.bundle",
+      "Size": 13340,
       "IsPrologue": false,
-      "Crc": 1574135224,
+      "Crc": 3871189061,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-dicerace-_mxload-2024-08-21_assets_all_1808872830.bundle",
+      "Name": "minigame-dicerace-_mxload-2024-09-24_assets_all_3601635859.bundle",
       "Size": 289069,
       "IsPrologue": false,
-      "Crc": 1808872830,
+      "Crc": 3601635859,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-dreammaker-artlevel-_mxload-2024-08-21_scenes_all_1594099782.bundle",
+      "Name": "minigame-dreammaker-artlevel-_mxload-2024-09-24_scenes_all_262904707.bundle",
       "Size": 151826,
       "IsPrologue": false,
-      "Crc": 1594099782,
+      "Crc": 262904707,
       "IsSplitDownload": true
     },
     {
-      "Name": "minigame-dreammaker-_mxload-2024-08-21_assets_all_3203011346.bundle",
+      "Name": "minigame-dreammaker-_mxload-2024-09-24_assets_all_1165314724.bundle",
       "Size": 189984,
       "IsPrologue": false,
-      "Crc": 3203011346,
+      "Crc": 1165314724,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-rhythm-artlevel-_mxload-2024-08-21_scenes_all_263088585.bundle",
+      "Name": "minigame-rhythm-artlevel-_mxload-2024-09-24_scenes_all_890693582.bundle",
       "Size": 162657,
       "IsPrologue": false,
-      "Crc": 263088585,
+      "Crc": 890693582,
       "IsSplitDownload": true
     },
     {
-      "Name": "minigame-rhythm-preset-_mxload-2024-08-21_assets_all_2505767371.bundle",
-      "Size": 2805,
+      "Name": "minigame-rhythm-preset-_mxload-2024-09-24_assets_all_2207337845.bundle",
+      "Size": 2809,
       "IsPrologue": false,
-      "Crc": 2505767371,
+      "Crc": 2207337845,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-rhythm-soundeffect-_mxload-2024-08-21_assets_all_92549802.bundle",
+      "Name": "minigame-rhythm-soundeffect-_mxload-2024-09-24_assets_all_3888324529.bundle",
       "Size": 267507,
       "IsPrologue": false,
-      "Crc": 92549802,
+      "Crc": 3888324529,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-rhythm-uiprefab-_mxload-2024-08-21_assets_all_2534844495.bundle",
-      "Size": 8734,
+      "Name": "minigame-rhythm-uiprefab-_mxload-2024-09-24_assets_all_2760040572.bundle",
+      "Size": 8738,
       "IsPrologue": false,
-      "Crc": 2534844495,
+      "Crc": 2760040572,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-rhythm-_mxload-2024-08-21_assets_all_3473859233.bundle",
-      "Size": 270853,
+      "Name": "minigame-rhythm-_mxload-2024-09-24_assets_all_2067337796.bundle",
+      "Size": 270857,
       "IsPrologue": false,
-      "Crc": 3473859233,
+      "Crc": 2067337796,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-shooting-area-_mxload-2024-08-21_assets_all_1591417463.bundle",
-      "Size": 2554,
+      "Name": "minigame-shooting-area-_mxload-2024-09-24_assets_all_1944255263.bundle",
+      "Size": 2558,
       "IsPrologue": false,
-      "Crc": 1591417463,
+      "Crc": 1944255263,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-shooting-artlevel-mb_03_oldmansion_p01_d-_mxload-2024-08-21_assets_all_1052776027.bundle",
+      "Name": "minigame-shooting-artlevel-mb_03_oldmansion_p01_d-_mxload-2024-09-24_assets_all_419045478.bundle",
       "Size": 239778,
       "IsPrologue": false,
-      "Crc": 1052776027,
+      "Crc": 419045478,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-shooting-artlevel-mgs_stage_test01-_mxload-2024-08-21_assets_all_909361298.bundle",
-      "Size": 16868192,
+      "Name": "minigame-shooting-artlevel-mgs_stage_test01-_mxload-2024-09-24_assets_all_2106479348.bundle",
+      "Size": 16868196,
       "IsPrologue": false,
-      "Crc": 909361298,
+      "Crc": 2106479348,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-shooting-artlevel-_mxload-2024-08-21_assets_all_716498860.bundle",
+      "Name": "minigame-shooting-artlevel-_mxload-2024-09-24_assets_all_4049329093.bundle",
       "Size": 1452,
       "IsPrologue": false,
-      "Crc": 716498860,
+      "Crc": 4049329093,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-shooting-artlevel-_mxload-2024-08-21_scenes_all_533724923.bundle",
-      "Size": 416644,
+      "Name": "minigame-shooting-artlevel-_mxload-2024-09-24_scenes_all_1455571494.bundle",
+      "Size": 416643,
       "IsPrologue": false,
-      "Crc": 533724923,
+      "Crc": 1455571494,
       "IsSplitDownload": true
     },
     {
-      "Name": "minigame-shooting-geas-_mxload-2024-08-21_assets_all_420475416.bundle",
-      "Size": 3972,
+      "Name": "minigame-shooting-geas-_mxload-2024-09-24_assets_all_3585332147.bundle",
+      "Size": 3976,
       "IsPrologue": false,
-      "Crc": 420475416,
+      "Crc": 3585332147,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-shooting-logiceffect-_mxload-2024-08-21_assets_all_1587793928.bundle",
-      "Size": 4126,
+      "Name": "minigame-shooting-logiceffect-_mxload-2024-09-24_assets_all_2056241460.bundle",
+      "Size": 4130,
       "IsPrologue": false,
-      "Crc": 1587793928,
+      "Crc": 2056241460,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-shooting-obstacle-_mxload-2024-08-21_assets_all_878564328.bundle",
-      "Size": 47698,
+      "Name": "minigame-shooting-obstacle-_mxload-2024-09-24_assets_all_3891352747.bundle",
+      "Size": 47702,
       "IsPrologue": false,
-      "Crc": 878564328,
+      "Crc": 3891352747,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-shooting-skilldata-_mxload-2024-08-21_assets_all_1239900317.bundle",
-      "Size": 8196,
+      "Name": "minigame-shooting-skilldata-_mxload-2024-09-24_assets_all_1227530155.bundle",
+      "Size": 8200,
       "IsPrologue": false,
-      "Crc": 1239900317,
+      "Crc": 1227530155,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-tbg-character-animation-_mxload-2024-08-21_assets_all_1184115527.bundle",
+      "Name": "minigame-tbg-character-animation-_mxload-2024-09-24_assets_all_747359394.bundle",
       "Size": 2981392,
       "IsPrologue": false,
-      "Crc": 1184115527,
+      "Crc": 747359394,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-tbg-character-animator-_mxload-2024-08-21_assets_all_843351835.bundle",
+      "Name": "minigame-tbg-character-animator-_mxload-2024-09-24_assets_all_3741192586.bundle",
       "Size": 8622,
       "IsPrologue": false,
-      "Crc": 843351835,
+      "Crc": 3741192586,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-tbg-character-_mxload-2024-08-21_assets_all_2191146147.bundle",
-      "Size": 214041,
+      "Name": "minigame-tbg-character-_mxload-2024-09-24_assets_all_3139162023.bundle",
+      "Size": 214045,
       "IsPrologue": false,
-      "Crc": 2191146147,
+      "Crc": 3139162023,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-tbg-dice-_mxload-2024-08-21_assets_all_1713312000.bundle",
+      "Name": "minigame-tbg-dice-_mxload-2024-09-24_assets_all_3021951855.bundle",
       "Size": 3200,
       "IsPrologue": false,
-      "Crc": 1713312000,
+      "Crc": 3021951855,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-tbg-etc-_mxload-2024-08-21_assets_all_2587664216.bundle",
+      "Name": "minigame-tbg-etc-_mxload-2024-09-24_assets_all_1063336759.bundle",
       "Size": 67818,
       "IsPrologue": false,
-      "Crc": 2587664216,
+      "Crc": 1063336759,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-tbg-object-_mxload-2024-08-21_assets_all_402291233.bundle",
+      "Name": "minigame-tbg-object-_mxload-2024-09-24_assets_all_689773858.bundle",
       "Size": 49465,
       "IsPrologue": false,
-      "Crc": 402291233,
+      "Crc": 689773858,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-tbg-spawndata-_mxload-2024-08-21_assets_all_1991790587.bundle",
+      "Name": "minigame-tbg-spawndata-_mxload-2024-09-24_assets_all_758648668.bundle",
       "Size": 4213,
       "IsPrologue": false,
-      "Crc": 1991790587,
+      "Crc": 758648668,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-tbg-tile-movable-_mxload-2024-08-21_assets_all_603509421.bundle",
-      "Size": 4926,
+      "Name": "minigame-tbg-tile-movable-_mxload-2024-09-24_assets_all_3847864610.bundle",
+      "Size": 4925,
       "IsPrologue": false,
-      "Crc": 603509421,
+      "Crc": 3847864610,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-tbg-tile-unmovable-_mxload-2024-08-21_assets_all_1814369745.bundle",
+      "Name": "minigame-tbg-tile-unmovable-_mxload-2024-09-24_assets_all_1125882389.bundle",
       "Size": 38196,
       "IsPrologue": false,
-      "Crc": 1814369745,
+      "Crc": 1125882389,
       "IsSplitDownload": false
     },
     {
-      "Name": "minigame-tbg-_mxload-2024-08-21_assets_all_815866013.bundle",
+      "Name": "minigame-tbg-_mxload-2024-09-24_assets_all_2362123274.bundle",
       "Size": 2987,
       "IsPrologue": false,
-      "Crc": 815866013,
+      "Crc": 2362123274,
       "IsSplitDownload": false
     },
     {
@@ -27679,6 +27973,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "projectile-_mxload-2024-08-30_assets_all_232507824.bundle",
+      "Size": 35753,
+      "IsPrologue": false,
+      "Crc": 232507824,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "prologdepengroup-assets-ngui-resources-materials-_mxprolog-2022-05-12_assets_all_160397545.bundle",
       "Size": 2767,
       "IsPrologue": true,
@@ -27742,10 +28043,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "prologdepengroup-assets-_mx-addressableasset-ui-_mxprolog-2022-05-12_assets_all_3772317695.bundle",
-      "Size": 272152,
+      "Name": "prologdepengroup-assets-_mx-addressableasset-ui-_mxprolog-2022-05-12_assets_all_4182577977.bundle",
+      "Size": 261775,
       "IsPrologue": true,
-      "Crc": 3772317695,
+      "Crc": 4182577977,
       "IsSplitDownload": false
     },
     {
@@ -27763,10 +28064,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "prologdepengroup-assets-_mx-addressableasset-ui-_mxprolog-2024-03-03_assets_all_2658650470.bundle",
-      "Size": 54145,
+      "Name": "prologdepengroup-assets-_mx-addressableasset-ui-_mxprolog-2024-03-03_assets_all_3378383120.bundle",
+      "Size": 54706,
       "IsPrologue": true,
-      "Crc": 2658650470,
+      "Crc": 3378383120,
       "IsSplitDownload": false
     },
     {
@@ -27882,10 +28183,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "prologdepengroup-assets-_mx-characters-_mxcommon-_mxprolog-2024-01-05_assets_all_3644081663.bundle",
-      "Size": 372391,
+      "Name": "prologdepengroup-assets-_mx-characters-_mxcommon-_mxprolog-2024-01-05_assets_all_3643466565.bundle",
+      "Size": 345851,
       "IsPrologue": true,
-      "Crc": 3644081663,
+      "Crc": 3643466565,
       "IsSplitDownload": false
     },
     {
@@ -28400,10 +28701,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "prologdepengroup-assets-_mx-uis-atlas-_mxprolog-2022-05-12_assets_all_3358665900.bundle",
-      "Size": 1500244,
+      "Name": "prologdepengroup-assets-_mx-uis-atlas-_mxprolog-2022-05-12_assets_all_387834221.bundle",
+      "Size": 1508894,
       "IsPrologue": true,
-      "Crc": 3358665900,
+      "Crc": 387834221,
       "IsSplitDownload": false
     },
     {
@@ -28799,6 +29100,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "prologgroup-assets-_mx-addressableasset-audio-sfx_common-_mxprolog-2024-09-08_assets_all_1570288437.bundle",
+      "Size": 258235,
+      "IsPrologue": true,
+      "Crc": 1570288437,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "prologgroup-assets-_mx-addressableasset-audio-sfx_common_buff-_mxprolog-2022-05-12_assets_all_2255865113.bundle",
       "Size": 180079,
       "IsPrologue": true,
@@ -28918,10 +29226,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "prologgroup-assets-_mx-addressableasset-ui-_mxprolog-2022-05-12_assets_all_91173162.bundle",
-      "Size": 1696374,
+      "Name": "prologgroup-assets-_mx-addressableasset-ui-_mxprolog-2022-05-12_assets_all_1580893376.bundle",
+      "Size": 1685893,
       "IsPrologue": true,
-      "Crc": 91173162,
+      "Crc": 1580893376,
       "IsSplitDownload": false
     },
     {
@@ -29310,6 +29618,48 @@
       "IsSplitDownload": true
     },
     {
+      "Name": "reizyo_original_ex1-_mxload-2024-08-30_assets_all_2540352339.bundle",
+      "Size": 7944,
+      "IsPrologue": false,
+      "Crc": 2540352339,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "reizyo_original_ex1_cutin-_mxload-2024-08-30_assets_all_2719533143.bundle",
+      "Size": 13571,
+      "IsPrologue": false,
+      "Crc": 2719533143,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "reizyo_original_new_ex1-_mxload-2024-08-30_assets_all_3152661110.bundle",
+      "Size": 12105,
+      "IsPrologue": false,
+      "Crc": 3152661110,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "reizyo_original_new_ex1_cutin-_mxload-2024-08-30_assets_all_1786961835.bundle",
+      "Size": 19170,
+      "IsPrologue": false,
+      "Crc": 1786961835,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "reizyo_original_new_public1-_mxload-2024-08-30_assets_all_734708551.bundle",
+      "Size": 6706,
+      "IsPrologue": false,
+      "Crc": 734708551,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "reizyo_original_public1-_mxload-2024-08-30_assets_all_852359824.bundle",
+      "Size": 5524,
+      "IsPrologue": false,
+      "Crc": 852359824,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "saya_original_ex1_destroy-_mxload-2024-05-30_assets_all_2148793509.bundle",
       "Size": 4223,
       "IsPrologue": false,
@@ -29639,10 +29989,10 @@
       "IsSplitDownload": true
     },
     {
-      "Name": "sb_01_hyakkiyakomoviestreet_p01_d_mxload-2022-05-12_scenes_all_504319499.bundle",
-      "Size": 85383,
+      "Name": "sb_01_hyakkiyakomoviestreet_p01_d_mxload-2022-05-12_scenes_all_957485797.bundle",
+      "Size": 89489,
       "IsPrologue": false,
-      "Crc": 504319499,
+      "Crc": 957485797,
       "IsSplitDownload": true
     },
     {
@@ -30570,24 +30920,31 @@
       "IsSplitDownload": true
     },
     {
-      "Name": "sb_02_trainroof_p01_d_mxload-2024-04-02_scenes_all_922580272.bundle",
-      "Size": 72923,
+      "Name": "sb_02_trainroof_p01_d_mxload-2024-04-02_scenes_all_1956295376.bundle",
+      "Size": 73235,
       "IsPrologue": false,
-      "Crc": 922580272,
+      "Crc": 1956295376,
       "IsSplitDownload": true
     },
     {
-      "Name": "sb_02_trainroof_p01_d_nosidetrain_mxload-2024-05-30_scenes_all_3096031443.bundle",
-      "Size": 69525,
+      "Name": "sb_02_trainroof_p01_d_nosidetrain_mxload-2024-05-30_scenes_all_4045347889.bundle",
+      "Size": 69861,
       "IsPrologue": false,
-      "Crc": 3096031443,
+      "Crc": 4045347889,
       "IsSplitDownload": true
     },
     {
-      "Name": "sb_02_trainroof_p01_n_mxload-2024-04-02_scenes_all_2832535686.bundle",
-      "Size": 173643,
+      "Name": "sb_02_trainroof_p01_n_mxload-2024-04-02_scenes_all_2409051121.bundle",
+      "Size": 75705,
       "IsPrologue": false,
-      "Crc": 2832535686,
+      "Crc": 2409051121,
+      "IsSplitDownload": true
+    },
+    {
+      "Name": "sb_02_trainroof_p01_n_nosidetrain_mxload-2024-08-30_scenes_all_4063394599.bundle",
+      "Size": 68628,
+      "IsPrologue": false,
+      "Crc": 4063394599,
       "IsSplitDownload": true
     },
     {
@@ -31676,17 +32033,17 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "timeline-_mxload-2022-05-12_assets_all_1802601049.bundle",
-      "Size": 1865408,
+      "Name": "timeline-_mxload-2022-05-12_assets_all_3762601682.bundle",
+      "Size": 1865337,
       "IsPrologue": false,
-      "Crc": 1802601049,
+      "Crc": 3762601682,
       "IsSplitDownload": false
     },
     {
-      "Name": "timeline-_mxload-2022-06-13_assets_all_3149293664.bundle",
-      "Size": 227200,
+      "Name": "timeline-_mxload-2022-06-13_assets_all_2433958745.bundle",
+      "Size": 227194,
       "IsPrologue": false,
-      "Crc": 3149293664,
+      "Crc": 2433958745,
       "IsSplitDownload": false
     },
     {
@@ -31711,10 +32068,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "timeline-_mxload-2022-12-06_assets_all_1018739724.bundle",
-      "Size": 146696,
+      "Name": "timeline-_mxload-2022-12-06_assets_all_1343051681.bundle",
+      "Size": 146675,
       "IsPrologue": false,
-      "Crc": 1018739724,
+      "Crc": 1343051681,
       "IsSplitDownload": false
     },
     {
@@ -31753,17 +32110,17 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "timeline-_mxload-2023-07-14_assets_all_3242418277.bundle",
-      "Size": 113612,
+      "Name": "timeline-_mxload-2023-07-14_assets_all_2062474932.bundle",
+      "Size": 113510,
       "IsPrologue": false,
-      "Crc": 3242418277,
+      "Crc": 2062474932,
       "IsSplitDownload": false
     },
     {
-      "Name": "timeline-_mxload-2023-08-03_assets_all_3829414080.bundle",
-      "Size": 280444,
+      "Name": "timeline-_mxload-2023-08-03_assets_all_1425319860.bundle",
+      "Size": 280269,
       "IsPrologue": false,
-      "Crc": 3829414080,
+      "Crc": 1425319860,
       "IsSplitDownload": false
     },
     {
@@ -31781,10 +32138,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "timeline-_mxload-2023-11-28_assets_all_551031011.bundle",
-      "Size": 89484,
+      "Name": "timeline-_mxload-2023-11-28_assets_all_213864207.bundle",
+      "Size": 89470,
       "IsPrologue": false,
-      "Crc": 551031011,
+      "Crc": 213864207,
       "IsSplitDownload": false
     },
     {
@@ -31823,6 +32180,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "timeline-_mxload-2024-08-30_assets_all_4130272718.bundle",
+      "Size": 24651,
+      "IsPrologue": false,
+      "Crc": 4130272718,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "timeline_armoredcar_wakamo_mg_op-_mxload-2024-05-30_assets_all_142744442.bundle",
       "Size": 12986,
       "IsPrologue": false,
@@ -31848,6 +32212,13 @@
       "Size": 6212,
       "IsPrologue": false,
       "Crc": 241433233,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "timeline_ch0213_enemy_op-_mxload-2024-08-30_assets_all_2626853939.bundle",
+      "Size": 11121,
+      "IsPrologue": false,
+      "Crc": 2626853939,
       "IsSplitDownload": false
     },
     {
@@ -32516,10 +32887,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "ui-uiacademy-_mxload-2022-05-12_assets_all_3579589322.bundle",
-      "Size": 50116,
+      "Name": "ui-uiacademy-_mxload-2022-05-12_assets_all_3502190110.bundle",
+      "Size": 50581,
       "IsPrologue": false,
-      "Crc": 3579589322,
+      "Crc": 3502190110,
       "IsSplitDownload": false
     },
     {
@@ -32530,10 +32901,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "ui-uiassetobject-_mxload-2022-05-12_assets_all_4120139364.bundle",
-      "Size": 1570977,
+      "Name": "ui-uiassetobject-_mxload-2022-05-12_assets_all_666792234.bundle",
+      "Size": 1588619,
       "IsPrologue": false,
-      "Crc": 4120139364,
+      "Crc": 666792234,
       "IsSplitDownload": false
     },
     {
@@ -32586,10 +32957,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "ui-uiassetobject-_mxload-2023-04-12_assets_all_2559362713.bundle",
-      "Size": 158817,
+      "Name": "ui-uiassetobject-_mxload-2023-04-12_assets_all_1511477343.bundle",
+      "Size": 162191,
       "IsPrologue": false,
-      "Crc": 2559362713,
+      "Crc": 1511477343,
       "IsSplitDownload": false
     },
     {
@@ -32649,10 +33020,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "ui-uiassetobject-_mxload-2024-03-03_assets_all_694242599.bundle",
-      "Size": 165568,
+      "Name": "ui-uiassetobject-_mxload-2024-03-03_assets_all_4134058767.bundle",
+      "Size": 170144,
       "IsPrologue": false,
-      "Crc": 694242599,
+      "Crc": 4134058767,
       "IsSplitDownload": false
     },
     {
@@ -32670,10 +33041,17 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "ui-uiassetobject-_mxload-2024-07-04_assets_all_4060035314.bundle",
-      "Size": 607149,
+      "Name": "ui-uiassetobject-_mxload-2024-07-04_assets_all_1185210535.bundle",
+      "Size": 612487,
       "IsPrologue": false,
-      "Crc": 4060035314,
+      "Crc": 1185210535,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "ui-uiassetobject-_mxload-2024-08-30_assets_all_451543300.bundle",
+      "Size": 35900,
+      "IsPrologue": false,
+      "Crc": 451543300,
       "IsSplitDownload": false
     },
     {
@@ -32856,6 +33234,13 @@
       "Size": 5022,
       "IsPrologue": false,
       "Crc": 4045291075,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "ui-uiinformation-_mxload-2024-09-05_assets_all_720066463.bundle",
+      "Size": 5602,
+      "IsPrologue": false,
+      "Crc": 720066463,
       "IsSplitDownload": false
     },
     {
@@ -33118,6 +33503,20 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "ui-uilobbyelement-_mxload-2024-08-26_assets_all_719788487.bundle",
+      "Size": 75077,
+      "IsPrologue": false,
+      "Crc": 719788487,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "ui-uilobbyelement-_mxload-2024-08-30_assets_all_2330311356.bundle",
+      "Size": 172900,
+      "IsPrologue": false,
+      "Crc": 2330311356,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "ui-uiwork-_mxload-2023-02-27_assets_all_2590981275.bundle",
       "Size": 175039,
       "IsPrologue": false,
@@ -33125,24 +33524,24 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "ui-_mxload-2022-05-12_assets_all_2262805927.bundle",
-      "Size": 32762895,
+      "Name": "ui-_mxload-2022-05-12_assets_all_2259360046.bundle",
+      "Size": 33086056,
       "IsPrologue": false,
-      "Crc": 2262805927,
+      "Crc": 2259360046,
       "IsSplitDownload": false
     },
     {
-      "Name": "ui-_mxload-2022-06-13_assets_all_1517843245.bundle",
-      "Size": 5105468,
+      "Name": "ui-_mxload-2022-06-13_assets_all_4120631893.bundle",
+      "Size": 5139028,
       "IsPrologue": false,
-      "Crc": 1517843245,
+      "Crc": 4120631893,
       "IsSplitDownload": false
     },
     {
-      "Name": "ui-_mxload-2022-07-12_assets_all_2477933380.bundle",
-      "Size": 3311404,
+      "Name": "ui-_mxload-2022-07-12_assets_all_1687441579.bundle",
+      "Size": 3358686,
       "IsPrologue": false,
-      "Crc": 2477933380,
+      "Crc": 1687441579,
       "IsSplitDownload": false
     },
     {
@@ -33153,17 +33552,17 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "ui-_mxload-2022-09-14_assets_all_3963026737.bundle",
-      "Size": 3224209,
+      "Name": "ui-_mxload-2022-09-14_assets_all_3533864916.bundle",
+      "Size": 3679675,
       "IsPrologue": false,
-      "Crc": 3963026737,
+      "Crc": 3533864916,
       "IsSplitDownload": false
     },
     {
-      "Name": "ui-_mxload-2022-12-06_assets_all_4141253969.bundle",
-      "Size": 1540484,
+      "Name": "ui-_mxload-2022-12-06_assets_all_4173378228.bundle",
+      "Size": 1567054,
       "IsPrologue": false,
-      "Crc": 4141253969,
+      "Crc": 4173378228,
       "IsSplitDownload": false
     },
     {
@@ -33174,10 +33573,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "ui-_mxload-2023-02-27_assets_all_2856727926.bundle",
-      "Size": 475762,
+      "Name": "ui-_mxload-2023-02-27_assets_all_3682175966.bundle",
+      "Size": 482798,
       "IsPrologue": false,
-      "Crc": 2856727926,
+      "Crc": 3682175966,
       "IsSplitDownload": false
     },
     {
@@ -33188,17 +33587,17 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "ui-_mxload-2023-04-06_assets_all_1439928396.bundle",
-      "Size": 13015,
+      "Name": "ui-_mxload-2023-04-06_assets_all_3458245389.bundle",
+      "Size": 13128,
       "IsPrologue": false,
-      "Crc": 1439928396,
+      "Crc": 3458245389,
       "IsSplitDownload": false
     },
     {
-      "Name": "ui-_mxload-2023-04-12_assets_all_150101921.bundle",
-      "Size": 2124688,
+      "Name": "ui-_mxload-2023-04-12_assets_all_632014574.bundle",
+      "Size": 2158567,
       "IsPrologue": false,
-      "Crc": 150101921,
+      "Crc": 632014574,
       "IsSplitDownload": false
     },
     {
@@ -33209,17 +33608,17 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "ui-_mxload-2023-06-16_assets_all_2955833120.bundle",
-      "Size": 1130366,
+      "Name": "ui-_mxload-2023-06-16_assets_all_2331943430.bundle",
+      "Size": 1130336,
       "IsPrologue": false,
-      "Crc": 2955833120,
+      "Crc": 2331943430,
       "IsSplitDownload": false
     },
     {
-      "Name": "ui-_mxload-2023-07-14_assets_all_754841291.bundle",
-      "Size": 1511806,
+      "Name": "ui-_mxload-2023-07-14_assets_all_2104197340.bundle",
+      "Size": 1513789,
       "IsPrologue": false,
-      "Crc": 754841291,
+      "Crc": 2104197340,
       "IsSplitDownload": false
     },
     {
@@ -33265,31 +33664,31 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "ui-_mxload-2024-01-05_assets_all_3483593589.bundle",
-      "Size": 2831039,
+      "Name": "ui-_mxload-2024-01-05_assets_all_3521922250.bundle",
+      "Size": 2870704,
       "IsPrologue": false,
-      "Crc": 3483593589,
+      "Crc": 3521922250,
       "IsSplitDownload": false
     },
     {
-      "Name": "ui-_mxload-2024-03-03_assets_all_1355876421.bundle",
-      "Size": 3825084,
+      "Name": "ui-_mxload-2024-03-03_assets_all_1200894626.bundle",
+      "Size": 3849960,
       "IsPrologue": false,
-      "Crc": 1355876421,
+      "Crc": 1200894626,
       "IsSplitDownload": false
     },
     {
-      "Name": "ui-_mxload-2024-04-02_assets_all_1205096996.bundle",
-      "Size": 56493,
+      "Name": "ui-_mxload-2024-04-02_assets_all_549601068.bundle",
+      "Size": 58278,
       "IsPrologue": false,
-      "Crc": 1205096996,
+      "Crc": 549601068,
       "IsSplitDownload": false
     },
     {
-      "Name": "ui-_mxload-2024-04-04_assets_all_3499305557.bundle",
-      "Size": 1749243,
+      "Name": "ui-_mxload-2024-04-04_assets_all_89748167.bundle",
+      "Size": 1787353,
       "IsPrologue": false,
-      "Crc": 3499305557,
+      "Crc": 89748167,
       "IsSplitDownload": false
     },
     {
@@ -33300,10 +33699,17 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "ui-_mxload-2024-07-04_assets_all_929714392.bundle",
-      "Size": 3544457,
+      "Name": "ui-_mxload-2024-07-04_assets_all_3125627721.bundle",
+      "Size": 3605166,
       "IsPrologue": false,
-      "Crc": 929714392,
+      "Crc": 3125627721,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "ui-_mxload-2024-08-30_assets_all_3439471782.bundle",
+      "Size": 266202,
+      "IsPrologue": false,
+      "Crc": 3439471782,
       "IsSplitDownload": false
     },
     {
@@ -33538,6 +33944,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "uis-00_images-banner-_mxload-2024-08-30_assets_all_3358279748.bundle",
+      "Size": 175175,
+      "IsPrologue": false,
+      "Crc": 3358279748,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "uis-00_images-bg-_mxload-2022-05-12_assets_all_1639438647.bundle",
       "Size": 1306792,
       "IsPrologue": false,
@@ -33629,10 +34042,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "uis-00_images-bigbtn-_mxload-2024-08-08_assets_all_3928934304.bundle",
+      "Name": "uis-00_images-bigbtn-_mxload-2024-08-08_assets_all_3307448840.bundle",
       "Size": 102281,
       "IsPrologue": false,
-      "Crc": 3928934304,
+      "Crc": 3307448840,
       "IsSplitDownload": false
     },
     {
@@ -33930,10 +34343,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "uis-01_common-01_character-_mxload-2023-01-16_assets_all_1004741980.bundle",
-      "Size": 325989,
+      "Name": "uis-01_common-01_character-_mxload-2023-01-16_assets_all_2473811559.bundle",
+      "Size": 325946,
       "IsPrologue": false,
-      "Crc": 1004741980,
+      "Crc": 2473811559,
       "IsSplitDownload": false
     },
     {
@@ -33958,10 +34371,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "uis-01_common-01_character-_mxload-2023-05-16_assets_all_3325008752.bundle",
-      "Size": 39926,
+      "Name": "uis-01_common-01_character-_mxload-2023-05-16_assets_all_1772786114.bundle",
+      "Size": 39255,
       "IsPrologue": false,
-      "Crc": 3325008752,
+      "Crc": 1772786114,
       "IsSplitDownload": false
     },
     {
@@ -34095,6 +34508,13 @@
       "Size": 165758,
       "IsPrologue": false,
       "Crc": 1455675891,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "uis-01_common-01_character-_mxload-2024-08-30_assets_all_1717485688.bundle",
+      "Size": 47332,
+      "IsPrologue": false,
+      "Crc": 1717485688,
       "IsSplitDownload": false
     },
     {
@@ -34413,6 +34833,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "uis-01_common-03_nonequipment-_mxload-2024-08-30_assets_all_3834338844.bundle",
+      "Size": 90654,
+      "IsPrologue": false,
+      "Crc": 3834338844,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "uis-01_common-04_weapon-_mxload-2022-05-12_assets_all_3020271329.bundle",
       "Size": 1901513,
       "IsPrologue": false,
@@ -34585,6 +35012,13 @@
       "Size": 42831,
       "IsPrologue": false,
       "Crc": 3954426490,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "uis-01_common-04_weapon-_mxload-2024-08-30_assets_all_231860928.bundle",
+      "Size": 47258,
+      "IsPrologue": false,
+      "Crc": 231860928,
       "IsSplitDownload": false
     },
     {
@@ -34851,6 +35285,20 @@
       "Size": 28894,
       "IsPrologue": false,
       "Crc": 1941300372,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "uis-01_common-08_lobbyillust-_mxload-2024-08-26_assets_all_28120852.bundle",
+      "Size": 29856,
+      "IsPrologue": false,
+      "Crc": 28120852,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "uis-01_common-08_lobbyillust-_mxload-2024-08-30_assets_all_432048535.bundle",
+      "Size": 78423,
+      "IsPrologue": false,
+      "Crc": 432048535,
       "IsSplitDownload": false
     },
     {
@@ -35197,6 +35645,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "uis-01_common-14_charactercollect-_mxload-2024-08-30_assets_all_316619854.bundle",
+      "Size": 138128,
+      "IsPrologue": false,
+      "Crc": 316619854,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "uis-01_common-16_cafeitem-photo_moviecg-_mxload-2022-05-12_assets_all_1577792897.bundle",
       "Size": 324445,
       "IsPrologue": false,
@@ -35495,6 +35950,13 @@
       "Size": 34080,
       "IsPrologue": false,
       "Crc": 3279462437,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "uis-01_common-16_cafeitem-_mxload-2024-08-30_assets_all_853008559.bundle",
+      "Size": 13141,
+      "IsPrologue": false,
+      "Crc": 853008559,
       "IsSplitDownload": false
     },
     {
@@ -35803,6 +36265,13 @@
       "Size": 67186,
       "IsPrologue": false,
       "Crc": 2599864442,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "uis-01_common-21_enemyinfo-_mxload-2024-08-30_assets_all_599033704.bundle",
+      "Size": 119888,
+      "IsPrologue": false,
+      "Crc": 599033704,
       "IsSplitDownload": false
     },
     {
@@ -36289,6 +36758,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "uis-01_common-27_eventcontent-enter_parcel-_mxload-2024-08-30_assets_all_2815404379.bundle",
+      "Size": 166457,
+      "IsPrologue": false,
+      "Crc": 2815404379,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "uis-01_common-27_eventcontent-eventnotice-_mxload-2022-05-12_assets_all_44202793.bundle",
       "Size": 51287,
       "IsPrologue": false,
@@ -36468,6 +36944,13 @@
       "Size": 2154968,
       "IsPrologue": false,
       "Crc": 1501658749,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "uis-01_common-27_eventcontent-main_bgimage-_mxload-2024-08-30_assets_all_1884959525.bundle",
+      "Size": 670896,
+      "IsPrologue": false,
+      "Crc": 1884959525,
       "IsSplitDownload": false
     },
     {
@@ -36758,6 +37241,20 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "uis-01_common-27_eventcontent-playguide-_mxload-2024-09-01_assets_all_966669293.bundle",
+      "Size": 2695214,
+      "IsPrologue": false,
+      "Crc": 966669293,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "uis-01_common-27_eventcontent-treasure-840-_mxload-2024-08-30_assets_all_3848028999.bundle",
+      "Size": 1390402,
+      "IsPrologue": false,
+      "Crc": 3848028999,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "uis-01_common-27_eventcontent-treasure-_mxload-2024-04-02_assets_all_158990136.bundle",
       "Size": 1334722,
       "IsPrologue": false,
@@ -36765,10 +37262,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "uis-01_common-28_information-_mxload-2022-05-12_assets_all_1440563286.bundle",
-      "Size": 53644080,
+      "Name": "uis-01_common-28_information-_mxload-2022-05-12_assets_all_2241752065.bundle",
+      "Size": 53643969,
       "IsPrologue": false,
-      "Crc": 1440563286,
+      "Crc": 2241752065,
       "IsSplitDownload": false
     },
     {
@@ -36891,10 +37388,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "uis-01_common-28_information-_mxload-2024-04-02_assets_all_3545997582.bundle",
-      "Size": 3700944,
+      "Name": "uis-01_common-28_information-_mxload-2024-04-02_assets_all_2128853239.bundle",
+      "Size": 2045585,
       "IsPrologue": false,
-      "Crc": 3545997582,
+      "Crc": 2128853239,
       "IsSplitDownload": false
     },
     {
@@ -36930,6 +37427,13 @@
       "Size": 741108,
       "IsPrologue": false,
       "Crc": 2616754784,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "uis-01_common-28_information-_mxload-2024-09-05_assets_all_1661725779.bundle",
+      "Size": 3700885,
+      "IsPrologue": false,
+      "Crc": 1661725779,
       "IsSplitDownload": false
     },
     {
@@ -37206,6 +37710,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "uis-01_common-35_timeattack-_mxload-2024-08-30_assets_all_2408807017.bundle",
+      "Size": 5965,
+      "IsPrologue": false,
+      "Crc": 2408807017,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "uis-01_common-36_specialoperation-portrait-_mxload-2022-05-12_assets_all_3028259576.bundle",
       "Size": 37131,
       "IsPrologue": false,
@@ -37381,6 +37892,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "uis-01_common-40_gear-_mxload-2024-08-30_assets_all_2746076259.bundle",
+      "Size": 53707,
+      "IsPrologue": false,
+      "Crc": 2746076259,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "uis-01_common-41_dicerace-_mxload-2022-12-06_assets_all_4247977611.bundle",
       "Size": 1348979,
       "IsPrologue": false,
@@ -37441,6 +37959,13 @@
       "Size": 5915,
       "IsPrologue": false,
       "Crc": 2749425750,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "uis-01_common-42_eliminateraid-raidbossspine-_mxload-2024-09-06_assets_all_2588653699.bundle",
+      "Size": 5897,
+      "IsPrologue": false,
+      "Crc": 2588653699,
       "IsSplitDownload": false
     },
     {
@@ -37633,6 +38158,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "uis-01_common-43_emblem-_mxload-2024-08-30_assets_all_4135195818.bundle",
+      "Size": 38000,
+      "IsPrologue": false,
+      "Crc": 4135195818,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "uis-01_common-44_stickergroup-_mxload-2023-10-08_assets_all_2721795008.bundle",
       "Size": 4682260,
       "IsPrologue": false,
@@ -37661,10 +38193,17 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "uis-01_common-46_multifloorraid-resources-_mxload-2024-03-03_assets_all_1043345767.bundle",
-      "Size": 2150819,
+      "Name": "uis-01_common-45_field-_mxload-2024-08-30_assets_all_936368060.bundle",
+      "Size": 5014,
       "IsPrologue": false,
-      "Crc": 1043345767,
+      "Crc": 936368060,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "uis-01_common-46_multifloorraid-resources-_mxload-2024-03-03_assets_all_414474203.bundle",
+      "Size": 2138496,
+      "IsPrologue": false,
+      "Crc": 414474203,
       "IsSplitDownload": false
     },
     {
@@ -37945,6 +38484,13 @@
       "Size": 35121,
       "IsPrologue": false,
       "Crc": 3804701702,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "uis-02_tactics-01_character-_mxload-2024-08-30_assets_all_751961598.bundle",
+      "Size": 37706,
+      "IsPrologue": false,
+      "Crc": 751961598,
       "IsSplitDownload": false
     },
     {
@@ -38256,6 +38802,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "uis-02_tactics-04_bufficon-_mxload-2024-08-30_assets_all_2466927726.bundle",
+      "Size": 6818,
+      "IsPrologue": false,
+      "Crc": 2466927726,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "uis-02_tactics-05_campaignboss-_mxload-2022-05-12_assets_all_2561796603.bundle",
       "Size": 865889,
       "IsPrologue": false,
@@ -38470,6 +39023,13 @@
       "Size": 13218,
       "IsPrologue": false,
       "Crc": 1554797109,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "uis-02_tactics-05_campaignboss-_mxload-2024-08-30_assets_all_88533827.bundle",
+      "Size": 34934,
+      "IsPrologue": false,
+      "Crc": 88533827,
       "IsSplitDownload": false
     },
     {
@@ -38928,17 +39488,24 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "uis-03_scenario-01_background-_mxload-2024-08-02_assets_all_1427444066.bundle",
-      "Size": 99770,
+      "Name": "uis-03_scenario-01_background-_mxload-2024-08-02_assets_all_2219473562.bundle",
+      "Size": 100881,
       "IsPrologue": false,
-      "Crc": 1427444066,
+      "Crc": 2219473562,
       "IsSplitDownload": false
     },
     {
-      "Name": "uis-03_scenario-01_background-_mxload-2024-08-08_assets_all_427463429.bundle",
-      "Size": 69313,
+      "Name": "uis-03_scenario-01_background-_mxload-2024-08-08_assets_all_2881172939.bundle",
+      "Size": 67121,
       "IsPrologue": false,
-      "Crc": 427463429,
+      "Crc": 2881172939,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "uis-03_scenario-01_background-_mxload-2024-08-30_assets_all_1671918277.bundle",
+      "Size": 161967,
+      "IsPrologue": false,
+      "Crc": 1671918277,
       "IsSplitDownload": false
     },
     {
@@ -39159,6 +39726,13 @@
       "IsSplitDownload": false
     },
     {
+      "Name": "uis-03_scenario-02_character-_mxload-2024-08-30_assets_all_1287174326.bundle",
+      "Size": 6879,
+      "IsPrologue": false,
+      "Crc": 1287174326,
+      "IsSplitDownload": false
+    },
+    {
       "Name": "uis-03_scenario-03_emoticon-sprite-_mxload-2022-05-12_assets_all_555522561.bundle",
       "Size": 80618,
       "IsPrologue": false,
@@ -39296,6 +39870,13 @@
       "Size": 426217,
       "IsPrologue": false,
       "Crc": 4156853515,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "uis-03_scenario-05_mode-_mxload-2024-08-30_assets_all_4198114415.bundle",
+      "Size": 404876,
+      "IsPrologue": false,
+      "Crc": 4198114415,
       "IsSplitDownload": false
     },
     {
@@ -39439,10 +40020,10 @@
       "IsSplitDownload": false
     },
     {
-      "Name": "uis-03_scenario-06_event-_mxload-2024-05-30_assets_all_3639817929.bundle",
-      "Size": 356018,
+      "Name": "uis-03_scenario-06_event-_mxload-2024-05-30_assets_all_3783771516.bundle",
+      "Size": 356146,
       "IsPrologue": false,
-      "Crc": 3639817929,
+      "Crc": 3783771516,
       "IsSplitDownload": false
     },
     {
@@ -39457,6 +40038,13 @@
       "Size": 419067,
       "IsPrologue": false,
       "Crc": 3855194153,
+      "IsSplitDownload": false
+    },
+    {
+      "Name": "uis-03_scenario-06_event-_mxload-2024-08-30_assets_all_3702070973.bundle",
+      "Size": 403196,
+      "IsPrologue": false,
+      "Crc": 3702070973,
       "IsSplitDownload": false
     },
     {
