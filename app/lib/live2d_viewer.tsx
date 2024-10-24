@@ -1,15 +1,16 @@
 import "pixi-spine";
 
+import { Spine } from "@esotericsoftware/spine-pixi";
+import { Howl } from "howler";
+import { Spine as PixiSpine } from "pixi-spine";
 import * as PIXI from "pixi.js";
-import { Spine } from "pixi-spine";
-import { Howl, Howler } from "howler";
 import { AddressablesCatalogUrlRoot } from "../jp/url";
 
 function calculateFitScale(
   srcWidth: number,
   srcHeight: number,
   maxWidth: number,
-  maxHeight: number,
+  maxHeight: number
 ) {
   const widthScale = maxWidth / srcWidth;
   const heightScale = maxHeight / srcHeight;
@@ -24,12 +25,10 @@ function calculateFillScale(
   srcWidth: number,
   srcHeight: number,
   maxWidth: number,
-  maxHeight: number,
+  maxHeight: number
 ) {
   const widthScale = maxWidth / srcWidth;
   const heightScale = maxHeight / srcHeight;
-
-  console.log(`widthScale: ${widthScale} heightScale: ${heightScale}`);
 
   // Use the larger of the two scales to ensure the canvas is completely filled by the image
   const fitScale = Math.max(widthScale, heightScale);
@@ -46,7 +45,7 @@ interface EventData {
 
 export class Live2DViewer {
   app: PIXI.Application;
-  char?: Spine;
+  char?: Spine | PixiSpine;
 
   playVoice: boolean = false;
   voiceVolume: number = 1;
@@ -89,7 +88,9 @@ export class Live2DViewer {
 
     // Play default animation
     // Ignore case
-    const startAnimation = this.getAnimations().find((a) => a.toLowerCase() === "start_idle_01");
+    const startAnimation = this.getAnimations().find(
+      (a) => a.toLowerCase() === "start_idle_01"
+    );
     if (startAnimation) {
       this.playAnimation(startAnimation);
     } else {
@@ -97,51 +98,49 @@ export class Live2DViewer {
       this.playAnimation(animation.name);
     }
 
-    char.state.addListener(
-      {
-        event: async (entry, event) => {
-          if (!this.playVoice) return;
-          if (event.data.name !== "Talk") return;
+    char.state.addListener({
+      event: async (entry, event) => {
+        if (!this.playVoice) return;
+        if (event.data.name !== "Talk") return;
 
-          if (this.howl !== undefined) this.howl.stop();
+        if (this.howl !== undefined) this.howl.stop();
 
-          const data = event as any as EventData;
+        const data = event as any as EventData;
 
-          let fileName = data.stringValue + ".ogg";
-          let characterId = fileName.split("_")[0];
+        let fileName = data.stringValue + ".ogg";
+        let characterId = fileName.split("_")[0];
 
-          let src = `${this.baseURL}/MediaResources/Audio/VOC_JP/JP_${characterId}/${fileName}`;
+        let src = `${this.baseURL}/MediaResources/Audio/VOC_JP/JP_${characterId}/${fileName}`;
 
-          // Try to fetch first, if not found, try title case characterId (error case: hinata_home, should be Hinata in fileName)
-          // Also disable cors
-          const res = await fetch(src, { mode: "no-cors" });
-          if (!res.ok) {
-            characterId = characterId[0].toUpperCase() + characterId.slice(1);
-            fileName = fileName[0].toUpperCase() + fileName.slice(1);
-            src = `${this.baseURL}/MediaResources/Audio/VOC_JP/JP_${characterId}/${fileName}`;
-          }
+        // Try to fetch first, if not found, try title case characterId (error case: hinata_home, should be Hinata in fileName)
+        // Also disable cors
+        const res = await fetch(src, { mode: "no-cors" });
+        if (!res.ok) {
+          characterId = characterId[0].toUpperCase() + characterId.slice(1);
+          fileName = fileName[0].toUpperCase() + fileName.slice(1);
+          src = `${this.baseURL}/MediaResources/Audio/VOC_JP/JP_${characterId}/${fileName}`;
+        }
 
-          this.howl = new Howl({
-            volume: this.voiceVolume,
-            src: `${this.baseURL}/MediaResources/Audio/VOC_JP/JP_${characterId}/${fileName}`,
+        this.howl = new Howl({
+          volume: this.voiceVolume,
+          src: `${this.baseURL}/MediaResources/Audio/VOC_JP/JP_${characterId}/${fileName}`,
+        });
+
+        if (this.howl.state() === "loaded") {
+          this.howl.play();
+        } else {
+          char.state.timeScale = 0;
+          this.howl.on("load", () => {
+            this.howl!.play();
+            char.state.timeScale = 1;
           });
-
-          if (this.howl.state() === "loaded") {
-            this.howl.play();
-          } else {
-            char.state.timeScale = 0;
-            this.howl.on("load", () => {
-              this.howl!.play();
-              char.state.timeScale = 1;
-            });
-            this.howl.on("loaderror", () => {
-              console.error("Failed to load voice line.");
-              char.state.timeScale = 1;
-            });
-          }
-        },
+          this.howl.on("loaderror", () => {
+            console.error("Failed to load voice line.");
+            char.state.timeScale = 1;
+          });
+        }
       },
-    );
+    });
   }
 
   /**
@@ -157,14 +156,57 @@ export class Live2DViewer {
    * @param {string} src - Path to .skel file
    * @param {string} name - A unique name
    * @param {number} index - Index to insert at
-   * @returns {Promise<Spine>}
+   * @returns {Promise<Spine | PixiSpine>}
    * @example
    * const live2d = new Live2DViewer(...);
    * live2d.addSpine("data/akari_home/akari_bg.skel", "bg", 0);
    */
-  async addSpine(src: string, name: string, index?: number): Promise<Spine> {
-    const data = await PIXI.Assets.load(src);
-    const spine = new Spine(data.spineData);
+  async addSpine(
+    src: string,
+    name: string,
+    index?: number
+  ): Promise<Spine | PixiSpine> {
+    const filename = src.split("/").pop()!.split(".").slice(0, -1).join(".");
+    const skelKey = `${filename}Skel`;
+    const atlasKey = `${filename}Atlas`;
+
+    let spine: Spine | PixiSpine;
+
+    const oldSkelParser = PIXI.Assets.loader.parsers.find(
+      (p) => p.test && p.test("a.skel")
+    )!;
+    const oldAtlasParser = PIXI.Assets.loader.parsers.find(
+      (p) => p.test && p.test("a.atlas")
+    )!;
+
+    try {
+      PIXI.Assets.loader.parsers = PIXI.Assets.loader.parsers.filter(
+        (p) => p !== oldSkelParser && p !== oldAtlasParser
+      );
+
+      PIXI.Assets.add({
+        alias: skelKey,
+        src,
+      });
+      PIXI.Assets.add({
+        alias: atlasKey,
+        src: src.replace(".skel", ".atlas"),
+      });
+      await PIXI.Assets.load([skelKey, atlasKey]);
+      spine = Spine.from(skelKey, atlasKey);
+
+      PIXI.Assets.loader.reset();
+      PIXI.Assets.loader.parsers.unshift(oldSkelParser, oldAtlasParser);
+    } catch (_) {
+      console.log("spine version < 4.2");
+
+      PIXI.Assets.loader.reset();
+      PIXI.Assets.loader.parsers.unshift(oldSkelParser, oldAtlasParser);
+
+      PIXI.Assets.unload(skelKey);
+      const data = await PIXI.Assets.load(src);
+      spine = new PixiSpine(data.spineData);
+    }
     spine.name = name;
 
     if (index !== undefined) {
@@ -173,11 +215,16 @@ export class Live2DViewer {
       this.app.stage.addChild(spine);
     }
 
+    const width =
+      (spine instanceof PixiSpine ? spine.spineData.width : spine.width) || 0;
+    const height =
+      (spine instanceof PixiSpine ? spine.spineData.height : spine.height) || 0;
+
     let scale = calculateFillScale(
-      spine.spineData.width,
-      spine.spineData.height,
+      width,
+      height,
       this.app.renderer.width,
-      this.app.renderer.height,
+      this.app.renderer.height
     );
 
     scale = Math.ceil(scale * 10) / 10;
@@ -195,10 +242,10 @@ export class Live2DViewer {
   resize(width?: number, height?: number) {
     const children = this.app.stage.children;
     children.forEach((child) => {
-      if (!(child instanceof Spine)) return;
+      if (!(child instanceof Spine || child instanceof PixiSpine)) return;
 
-      let scaleX = width ? (width / child.spineData.width) : (child.scale.x);
-      let scaleY = height ? (height / child.spineData.height) : (child.scale.y);
+      let scaleX = width ? child.width / width : child.scale.x;
+      let scaleY = height ? child.height / height : child.scale.y;
 
       scaleX = Math.round(scaleX * 10) / 10;
       scaleY = Math.round(scaleY * 10) / 10;
@@ -213,12 +260,13 @@ export class Live2DViewer {
   fillScale(): number {
     let s = 0;
     this.app.stage.children.forEach((child) => {
-      if (!(child instanceof Spine)) return;
+      if (!(child instanceof Spine || child instanceof PixiSpine)) return;
+
       let scale = calculateFillScale(
-        child.spineData.width,
-        child.spineData.height,
+        child.width,
+        child.height,
         this.app.renderer.width,
-        this.app.renderer.height,
+        this.app.renderer.height
       );
 
       scale = Math.ceil(scale * 10) / 10;
@@ -235,12 +283,13 @@ export class Live2DViewer {
   fitScale() {
     let s = 0;
     this.app.stage.children.forEach((child) => {
-      if (!(child instanceof Spine)) return;
+      if (!(child instanceof Spine || child instanceof PixiSpine)) return;
+
       let scale = calculateFitScale(
-        child.spineData.width,
-        child.spineData.height,
+        child.width,
+        child.height,
         this.app.renderer.width,
-        this.app.renderer.height,
+        this.app.renderer.height
       );
 
       scale = Math.ceil(scale * 100) / 100;
@@ -263,8 +312,6 @@ export class Live2DViewer {
   scale(scale?: number) {
     const children = this.app.stage.children;
     children.forEach((child) => {
-      if (!(child instanceof Spine)) return;
-
       let scaleX = scale ?? child.scale.x;
       let scaleY = scale ?? child.scale.y;
 
@@ -302,11 +349,12 @@ export class Live2DViewer {
     const children = this.app.stage.children;
     let [x, y] = [0, 0];
     children.forEach((child) => {
-      if (!(child instanceof Spine)) return;
+      if (!(child instanceof Spine || child instanceof PixiSpine)) return;
+
       child.x = this.app.renderer.width / 2;
-      if (child.spineData.height * child.scale.y < this.app.renderer.height) {
-        child.y = this.app.renderer.height -
-          child.spineData.height * child.scale.y * 1.25;
+      if (child.height * child.scale.y < this.app.renderer.height) {
+        child.y =
+          this.app.renderer.height - child.height * child.scale.y * 1.25;
       } else {
         child.y = this.app.renderer.height;
       }
@@ -327,7 +375,7 @@ export class Live2DViewer {
     // If last animation name is M, play M (mouth/music?) + A (action?)
     if (name.endsWith("_M")) {
       const action = name.slice(0, -2) + "_A";
-      if (this.char.state.hasAnimation(action)) {
+      if (this.hasAnimation(action)) {
         this.char.state.setAnimation(2, action, this.loopAnimation);
       }
     } else {
@@ -336,7 +384,7 @@ export class Live2DViewer {
 
     // If other than idle, play idle
     if (!name.includes("Idle")) {
-      if (this.char.state.hasAnimation("Idle_01")) {
+      if (this.hasAnimation("Idle_01")) {
         this.char.state.setAnimation(1, "Idle_01", true);
       }
     } else {
@@ -345,6 +393,14 @@ export class Live2DViewer {
 
     this.char.state.setAnimation(0, name, this.loopAnimation);
     this.char.state.addListener({ complete: options.onComplete });
+  }
+
+  hasAnimation(name: string): boolean {
+    if (!this.char) return false;
+
+    const animations = this.char.state.data.skeletonData.animations;
+    const animation = animations.find((a) => a.name === name);
+    return !!animation;
   }
 
   /**
@@ -381,6 +437,6 @@ export class Live2DViewer {
     if (this.howl !== undefined) this.howl.stop();
 
     this._loopAnimation = v;
-    this.char.state.tracks[0].loop = v;
+    this.char.state.tracks[0]!.loop = v;
   }
 }
