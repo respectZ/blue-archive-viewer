@@ -1,12 +1,12 @@
 {
   "[typescriptreact]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "denoland.vscode-deno",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
   },
   "[typescript]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "denoland.vscode-deno",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
   },
   "editor.rulers": [
