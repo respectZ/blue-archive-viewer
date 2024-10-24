@@ -1,5 +1,9 @@
-import * as PIXI from "pixi.js";
-import { IAnimationStateListener, ITrackEntry } from "pixi-spine";
+import { AnimationStateListener, Spine } from "@esotericsoftware/spine-pixi";
+import {
+  IAnimationStateListener,
+  ITrackEntry,
+  Spine as PixiSpine,
+} from "pixi-spine";
 import * as l2d from "./live2d_viewer";
 
 export class Live2DViewer extends l2d.Live2DViewer {
@@ -27,7 +31,12 @@ export class Live2DViewer extends l2d.Live2DViewer {
     this.playAnimation("Idle_01");
     this.loopAnimation = true;
     this.isIdle = true;
-    this.char.state.removeListener(this.startListener);
+    if (this.char instanceof PixiSpine)
+      this.char.state.removeListener(this.startListener);
+    if (this.char instanceof Spine)
+      this.char.state.removeListener(
+        this.startListener as AnimationStateListener
+      );
     this._currentAnimation = "";
   }
 
@@ -38,7 +47,12 @@ export class Live2DViewer extends l2d.Live2DViewer {
     this.isIdle = true;
     this.char.state.setEmptyAnimation(1, 0.2);
     this.char.state.setEmptyAnimation(2, 0.2);
-    this.char.state.removeListener(this.talkListener);
+    if (this.char instanceof PixiSpine)
+      this.char.state.removeListener(this.talkListener);
+    if (this.char instanceof Spine)
+      this.char.state.removeListener(
+        this.talkListener as AnimationStateListener
+      );
     this._currentAnimation = "";
   }
 
@@ -48,14 +62,20 @@ export class Live2DViewer extends l2d.Live2DViewer {
    */
   setListener(listener: IAnimationStateListener) {
     this.listener = listener;
-    this.char!.state.addListener(this.listener);
+    if (this.char instanceof PixiSpine)
+      this.char.state.addListener(this.listener);
+    if (this.char instanceof Spine)
+      this.char.state.addListener(this.listener as AnimationStateListener);
   }
 
   /**
    * Clear the end listener for the animation.
    */
   clearListener() {
-    this.char!.state.removeListener(this.listener);
+    if (this.char instanceof PixiSpine)
+      this.char.state.removeListener(this.listener);
+    if (this.char instanceof Spine)
+      this.char.state.removeListener(this.listener as AnimationStateListener);
     this.listener = {
       end: (entry) => {},
       start: (entry) => {},
@@ -69,7 +89,10 @@ export class Live2DViewer extends l2d.Live2DViewer {
     this._currentAnimation = "Start_Idle_01";
     this.playAnimation("Start_Idle_01");
 
-    this.char.state.addListener(this.startListener);
+    if (this.char instanceof PixiSpine)
+      this.char.state.addListener(this.startListener);
+    if (this.char instanceof Spine)
+      this.char.state.addListener(this.startListener as AnimationStateListener);
   }
 
   idle() {
@@ -90,7 +113,9 @@ export class Live2DViewer extends l2d.Live2DViewer {
     if (this.howl !== undefined) this.howl.stop();
     if (!this.isIdle) return;
 
-    const animations = this.getAnimations().filter((x) => x.startsWith("Talk_") && x.endsWith("_M"));
+    const animations = this.getAnimations().filter(
+      (x) => x.startsWith("Talk_") && x.endsWith("_M")
+    );
     if (animations.length === 0) return;
     const random = Math.floor(Math.random() * animations.length);
     const animation = animations[random];
@@ -99,7 +124,7 @@ export class Live2DViewer extends l2d.Live2DViewer {
     // If last animation name is M, play M (mouth/music?) + A (action?)
     if (animation.endsWith("_M")) {
       const action = animation.slice(0, -2) + "_A";
-      if (this.char.state.hasAnimation(action)) {
+      if (this.hasAnimation(action)) {
         this.char.state.setAnimation(2, action, false);
       }
     } else {
@@ -108,7 +133,10 @@ export class Live2DViewer extends l2d.Live2DViewer {
 
     this.isIdle = false;
     this.char.state.setAnimation(1, animation, false);
-    this.char.state.addListener(this.talkListener);
+    if (this.char instanceof PixiSpine)
+      this.char.state.addListener(this.talkListener);
+    if (this.char instanceof Spine)
+      this.char.state.addListener(this.talkListener as AnimationStateListener);
 
     return animation;
   }
@@ -126,7 +154,11 @@ export class Live2DViewer extends l2d.Live2DViewer {
     await super.loadModel(src);
     this.scale(this._scale);
 
-    this.char!.stateData.defaultMix = 0.2;
+    if (this.char instanceof Spine) {
+      this.char.state.data.defaultMix = 0.2;
+    } else if (this.char instanceof PixiSpine) {
+      this.char.stateData.defaultMix = 0.2;
+    }
 
     // const bones: string[] = this.char!.state.data.skeletonData.bones.map((x) => x.name);
     // console.log(bones);
