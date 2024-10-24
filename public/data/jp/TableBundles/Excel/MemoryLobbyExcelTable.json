@@ -2624,5 +2624,44 @@
         "BGMId": 135,
         "AudioClipJp": "",
         "AudioClipKr": ""
+    },
+    {
+        "Id": 10105,
+        "ProductionStep": "Release",
+        "LocalizeEtcId": 599522793,
+        "CharacterId": 10105,
+        "PrefabName": "LobbyCH0273",
+        "MemoryLobbyCategory": "UILobbySpecial",
+        "SlotTextureName": "",
+        "RewardTextureName": "UIs/01_Common/08_Lobbyillust/Lobbyillust_Icon_CH0273_01",
+        "BGMId": 234,
+        "AudioClipJp": "",
+        "AudioClipKr": ""
+    },
+    {
+        "Id": 10106,
+        "ProductionStep": "Release",
+        "LocalizeEtcId": 351227056,
+        "CharacterId": 10106,
+        "PrefabName": "LobbyCH0274",
+        "MemoryLobbyCategory": "UILobbySpecial",
+        "SlotTextureName": "",
+        "RewardTextureName": "UIs/01_Common/08_Lobbyillust/Lobbyillust_Icon_CH0274_01",
+        "BGMId": 226,
+        "AudioClipJp": "",
+        "AudioClipKr": ""
+    },
+    {
+        "Id": 16016,
+        "ProductionStep": "Release",
+        "LocalizeEtcId": 980683610,
+        "CharacterId": 16016,
+        "PrefabName": "LobbyCH0275",
+        "MemoryLobbyCategory": "UILobbySpecial",
+        "SlotTextureName": "",
+        "RewardTextureName": "UIs/01_Common/08_Lobbyillust/Lobbyillust_Icon_CH0275_01",
+        "BGMId": 221,
+        "AudioClipJp": "",
+        "AudioClipKr": ""
     }
 ]
