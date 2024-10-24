@@ -287,10 +287,10 @@ impl flatbuffers::SimpleToVerifyInSlice for ProductionStep {}
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
 pub const ENUM_MIN_DIALOG_CATEGORY: i32 = 0;
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
-pub const ENUM_MAX_DIALOG_CATEGORY: i32 = 65;
+pub const ENUM_MAX_DIALOG_CATEGORY: i32 = 69;
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
 #[allow(non_camel_case_types)]
-pub const ENUM_VALUES_DIALOG_CATEGORY: [DialogCategory; 66] = [
+pub const ENUM_VALUES_DIALOG_CATEGORY: [DialogCategory; 70] = [
   DialogCategory::Cafe,
   DialogCategory::Echelon,
   DialogCategory::CharacterSSRNew,
@@ -357,6 +357,10 @@ pub const ENUM_VALUES_DIALOG_CATEGORY: [DialogCategory; 66] = [
   DialogCategory::GlobalAttendance05,
   DialogCategory::UIAttendanceEvent15,
   DialogCategory::UILobbySpecial2,
+  DialogCategory::UIAttendanceEvent16,
+  DialogCategory::UIEventTreasure,
+  DialogCategory::UIMultiFloorRaid,
+  DialogCategory::UIEventMiniGameDreamMaker,
 ];
 
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Default)]
@@ -430,9 +434,13 @@ impl DialogCategory {
   pub const GlobalAttendance05: Self = Self(63);
   pub const UIAttendanceEvent15: Self = Self(64);
   pub const UILobbySpecial2: Self = Self(65);
+  pub const UIAttendanceEvent16: Self = Self(66);
+  pub const UIEventTreasure: Self = Self(67);
+  pub const UIMultiFloorRaid: Self = Self(68);
+  pub const UIEventMiniGameDreamMaker: Self = Self(69);
 
   pub const ENUM_MIN: i32 = 0;
-  pub const ENUM_MAX: i32 = 65;
+  pub const ENUM_MAX: i32 = 69;
   pub const ENUM_VALUES: &'static [Self] = &[
     Self::Cafe,
     Self::Echelon,
@@ -500,6 +508,10 @@ impl DialogCategory {
     Self::GlobalAttendance05,
     Self::UIAttendanceEvent15,
     Self::UILobbySpecial2,
+    Self::UIAttendanceEvent16,
+    Self::UIEventTreasure,
+    Self::UIMultiFloorRaid,
+    Self::UIEventMiniGameDreamMaker,
   ];
   /// Returns the variant's name or "" if unknown.
   pub fn variant_name(self) -> Option<&'static str> {
@@ -570,6 +582,10 @@ impl DialogCategory {
       Self::GlobalAttendance05 => Some("GlobalAttendance05"),
       Self::UIAttendanceEvent15 => Some("UIAttendanceEvent15"),
       Self::UILobbySpecial2 => Some("UILobbySpecial2"),
+      Self::UIAttendanceEvent16 => Some("UIAttendanceEvent16"),
+      Self::UIEventTreasure => Some("UIEventTreasure"),
+      Self::UIMultiFloorRaid => Some("UIMultiFloorRaid"),
+      Self::UIEventMiniGameDreamMaker => Some("UIEventMiniGameDreamMaker"),
       _ => None,
     }
   }
@@ -628,10 +644,10 @@ impl flatbuffers::SimpleToVerifyInSlice for DialogCategory {}
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
 pub const ENUM_MIN_DIALOG_CONDITION: i32 = 0;
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
-pub const ENUM_MAX_DIALOG_CONDITION: i32 = 20;
+pub const ENUM_MAX_DIALOG_CONDITION: i32 = 28;
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
 #[allow(non_camel_case_types)]
-pub const ENUM_VALUES_DIALOG_CONDITION: [DialogCondition; 21] = [
+pub const ENUM_VALUES_DIALOG_CONDITION: [DialogCondition; 29] = [
   DialogCondition::Idle,
   DialogCondition::Enter,
   DialogCondition::Exit,
@@ -653,6 +669,14 @@ pub const ENUM_VALUES_DIALOG_CONDITION: [DialogCondition; 21] = [
   DialogCondition::StoryOpen,
   DialogCondition::CollectionOpen,
   DialogCondition::BoxGachaFinish,
+  DialogCondition::FindTreasure,
+  DialogCondition::GetTreasure,
+  DialogCondition::RoundRenewal,
+  DialogCondition::MiniGameDreamMakerEnough01,
+  DialogCondition::MiniGameDreamMakerEnough02,
+  DialogCondition::MiniGameDreamMakerEnough03,
+  DialogCondition::MiniGameDreamMakerEnough04,
+  DialogCondition::MiniGameDreamMakerDefault,
 ];
 
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Default)]
@@ -681,9 +705,17 @@ impl DialogCondition {
   pub const StoryOpen: Self = Self(18);
   pub const CollectionOpen: Self = Self(19);
   pub const BoxGachaFinish: Self = Self(20);
+  pub const FindTreasure: Self = Self(21);
+  pub const GetTreasure: Self = Self(22);
+  pub const RoundRenewal: Self = Self(23);
+  pub const MiniGameDreamMakerEnough01: Self = Self(24);
+  pub const MiniGameDreamMakerEnough02: Self = Self(25);
+  pub const MiniGameDreamMakerEnough03: Self = Self(26);
+  pub const MiniGameDreamMakerEnough04: Self = Self(27);
+  pub const MiniGameDreamMakerDefault: Self = Self(28);
 
   pub const ENUM_MIN: i32 = 0;
-  pub const ENUM_MAX: i32 = 20;
+  pub const ENUM_MAX: i32 = 28;
   pub const ENUM_VALUES: &'static [Self] = &[
     Self::Idle,
     Self::Enter,
@@ -706,6 +738,14 @@ impl DialogCondition {
     Self::StoryOpen,
     Self::CollectionOpen,
     Self::BoxGachaFinish,
+    Self::FindTreasure,
+    Self::GetTreasure,
+    Self::RoundRenewal,
+    Self::MiniGameDreamMakerEnough01,
+    Self::MiniGameDreamMakerEnough02,
+    Self::MiniGameDreamMakerEnough03,
+    Self::MiniGameDreamMakerEnough04,
+    Self::MiniGameDreamMakerDefault,
   ];
   /// Returns the variant's name or "" if unknown.
   pub fn variant_name(self) -> Option<&'static str> {
@@ -731,6 +771,14 @@ impl DialogCondition {
       Self::StoryOpen => Some("StoryOpen"),
       Self::CollectionOpen => Some("CollectionOpen"),
       Self::BoxGachaFinish => Some("BoxGachaFinish"),
+      Self::FindTreasure => Some("FindTreasure"),
+      Self::GetTreasure => Some("GetTreasure"),
+      Self::RoundRenewal => Some("RoundRenewal"),
+      Self::MiniGameDreamMakerEnough01 => Some("MiniGameDreamMakerEnough01"),
+      Self::MiniGameDreamMakerEnough02 => Some("MiniGameDreamMakerEnough02"),
+      Self::MiniGameDreamMakerEnough03 => Some("MiniGameDreamMakerEnough03"),
+      Self::MiniGameDreamMakerEnough04 => Some("MiniGameDreamMakerEnough04"),
+      Self::MiniGameDreamMakerDefault => Some("MiniGameDreamMakerDefault"),
       _ => None,
     }
   }
@@ -15359,22 +15407,23 @@ impl<'a> CharacterDialogExcel<'a> {
   pub const VT_DIALOG_TYPE: flatbuffers::VOffsetT = 24;
   pub const VT_ACTION_NAME: flatbuffers::VOffsetT = 26;
   pub const VT_DURATION: flatbuffers::VOffsetT = 28;
-  pub const VT_ANIMATION_NAME: flatbuffers::VOffsetT = 30;
-  pub const VT_LOCALIZE_KR: flatbuffers::VOffsetT = 32;
-  pub const VT_LOCALIZE_JP: flatbuffers::VOffsetT = 34;
-  pub const VT_LOCALIZE_TH: flatbuffers::VOffsetT = 36;
-  pub const VT_LOCALIZE_TW: flatbuffers::VOffsetT = 38;
-  pub const VT_LOCALIZE_EN: flatbuffers::VOffsetT = 40;
-  pub const VT_VOICE_ID: flatbuffers::VOffsetT = 42;
-  pub const VT_APPLY_POSITION: flatbuffers::VOffsetT = 44;
-  pub const VT_POS_X: flatbuffers::VOffsetT = 46;
-  pub const VT_POS_Y: flatbuffers::VOffsetT = 48;
-  pub const VT_COLLECTION_VISIBLE: flatbuffers::VOffsetT = 50;
-  pub const VT_CV_COLLECTION_TYPE: flatbuffers::VOffsetT = 52;
-  pub const VT_UNLOCK_FAVOR_RANK: flatbuffers::VOffsetT = 54;
-  pub const VT_UNLOCK_EQUIP_WEAPON: flatbuffers::VOffsetT = 56;
-  pub const VT_LOCALIZE_CV_GROUP: flatbuffers::VOffsetT = 58;
-  pub const VT_TEEN_MODE: flatbuffers::VOffsetT = 60;
+  pub const VT_DURATION_KR: flatbuffers::VOffsetT = 30;
+  pub const VT_ANIMATION_NAME: flatbuffers::VOffsetT = 32;
+  pub const VT_LOCALIZE_KR: flatbuffers::VOffsetT = 34;
+  pub const VT_LOCALIZE_JP: flatbuffers::VOffsetT = 36;
+  pub const VT_LOCALIZE_TH: flatbuffers::VOffsetT = 38;
+  pub const VT_LOCALIZE_TW: flatbuffers::VOffsetT = 40;
+  pub const VT_LOCALIZE_EN: flatbuffers::VOffsetT = 42;
+  pub const VT_VOICE_ID: flatbuffers::VOffsetT = 44;
+  pub const VT_APPLY_POSITION: flatbuffers::VOffsetT = 46;
+  pub const VT_POS_X: flatbuffers::VOffsetT = 48;
+  pub const VT_POS_Y: flatbuffers::VOffsetT = 50;
+  pub const VT_COLLECTION_VISIBLE: flatbuffers::VOffsetT = 52;
+  pub const VT_CV_COLLECTION_TYPE: flatbuffers::VOffsetT = 54;
+  pub const VT_UNLOCK_FAVOR_RANK: flatbuffers::VOffsetT = 56;
+  pub const VT_UNLOCK_EQUIP_WEAPON: flatbuffers::VOffsetT = 58;
+  pub const VT_LOCALIZE_CV_GROUP: flatbuffers::VOffsetT = 60;
+  pub const VT_TEEN_MODE: flatbuffers::VOffsetT = 62;
 
   #[inline]
   pub unsafe fn init_from_table(table: flatbuffers::Table<'a>) -> Self {
@@ -15387,6 +15436,7 @@ impl<'a> CharacterDialogExcel<'a> {
   ) -> flatbuffers::WIPOffset<CharacterDialogExcel<'bldr>> {
     let mut builder = CharacterDialogExcelBuilder::new(_fbb);
     builder.add_unlock_favor_rank(args.unlock_favor_rank);
+    builder.add_duration_kr(args.duration_kr);
     builder.add_duration(args.duration);
     builder.add_group_id(args.group_id);
     builder.add_display_order(args.display_order);
@@ -15509,6 +15559,13 @@ impl<'a> CharacterDialogExcel<'a> {
     // Created from valid Table for this object
     // which contains a valid value in this slot
     unsafe { self._tab.get::<i64>(CharacterDialogExcel::VT_DURATION, Some(0)).unwrap()}
+  }
+  #[inline]
+  pub fn duration_kr(&self) -> i64 {
+    // Safety:
+    // Created from valid Table for this object
+    // which contains a valid value in this slot
+    unsafe { self._tab.get::<i64>(CharacterDialogExcel::VT_DURATION_KR, Some(0)).unwrap()}
   }
   #[inline]
   pub fn animation_name(&self) -> Option<&'a str> {
@@ -15644,6 +15701,7 @@ impl flatbuffers::Verifiable for CharacterDialogExcel<'_> {
      .visit_field::<DialogType>("dialog_type", Self::VT_DIALOG_TYPE, false)?
      .visit_field::<flatbuffers::ForwardsUOffset<&str>>("action_name", Self::VT_ACTION_NAME, false)?
      .visit_field::<i64>("duration", Self::VT_DURATION, false)?
+     .visit_field::<i64>("duration_kr", Self::VT_DURATION_KR, false)?
      .visit_field::<flatbuffers::ForwardsUOffset<&str>>("animation_name", Self::VT_ANIMATION_NAME, false)?
      .visit_field::<flatbuffers::ForwardsUOffset<&str>>("localize_kr", Self::VT_LOCALIZE_KR, false)?
      .visit_field::<flatbuffers::ForwardsUOffset<&str>>("localize_jp", Self::VT_LOCALIZE_JP, false)?
@@ -15678,6 +15736,7 @@ pub struct CharacterDialogExcelArgs<'a> {
     pub dialog_type: DialogType,
     pub action_name: Option<flatbuffers::WIPOffset<&'a str>>,
     pub duration: i64,
+    pub duration_kr: i64,
     pub animation_name: Option<flatbuffers::WIPOffset<&'a str>>,
     pub localize_kr: Option<flatbuffers::WIPOffset<&'a str>>,
     pub localize_jp: Option<flatbuffers::WIPOffset<&'a str>>,
@@ -15712,6 +15771,7 @@ impl<'a> Default for CharacterDialogExcelArgs<'a> {
       dialog_type: DialogType::Talk,
       action_name: None,
       duration: 0,
+      duration_kr: 0,
       animation_name: None,
       localize_kr: None,
       localize_jp: None,
@@ -15788,6 +15848,10 @@ impl<'a: 'b, 'b, A: flatbuffers::Allocator + 'a> CharacterDialogExcelBuilder<'a,
   #[inline]
   pub fn add_duration(&mut self, duration: i64) {
     self.fbb_.push_slot::<i64>(CharacterDialogExcel::VT_DURATION, duration, 0);
+  }
+  #[inline]
+  pub fn add_duration_kr(&mut self, duration_kr: i64) {
+    self.fbb_.push_slot::<i64>(CharacterDialogExcel::VT_DURATION_KR, duration_kr, 0);
   }
   #[inline]
   pub fn add_animation_name(&mut self, animation_name: flatbuffers::WIPOffset<&'b  str>) {
@@ -15884,6 +15948,7 @@ impl core::fmt::Debug for CharacterDialogExcel<'_> {
       ds.field("dialog_type", &self.dialog_type());
       ds.field("action_name", &self.action_name());
       ds.field("duration", &self.duration());
+      ds.field("duration_kr", &self.duration_kr());
       ds.field("animation_name", &self.animation_name());
       ds.field("localize_kr", &self.localize_kr());
       ds.field("localize_jp", &self.localize_jp());
@@ -16049,35 +16114,37 @@ impl<'a> CharacterExcel<'a> {
   pub const VT_PERSONALITY_ID: flatbuffers::VOffsetT = 64;
   pub const VT_CHARACTER_AI_ID: flatbuffers::VOffsetT = 66;
   pub const VT_EXTERNAL_BT_ID: flatbuffers::VOffsetT = 68;
-  pub const VT_SCENARIO_CHARACTER: flatbuffers::VOffsetT = 70;
-  pub const VT_SPAWN_TEMPLATE_ID: flatbuffers::VOffsetT = 72;
-  pub const VT_FAVOR_LEVELUP_TYPE: flatbuffers::VOffsetT = 74;
-  pub const VT_EQUIPMENT_SLOT: flatbuffers::VOffsetT = 76;
-  pub const VT_WEAPON_LOCALIZE_ID: flatbuffers::VOffsetT = 78;
-  pub const VT_DISPLAY_ENEMY_INFO: flatbuffers::VOffsetT = 80;
-  pub const VT_BODY_RADIUS: flatbuffers::VOffsetT = 82;
-  pub const VT_RANDOM_EFFECT_RADIUS: flatbuffers::VOffsetT = 84;
-  pub const VT_HP_BAR_HIDE: flatbuffers::VOffsetT = 86;
-  pub const VT_HP_BAR_HEIGHT: flatbuffers::VOffsetT = 88;
-  pub const VT_HIGHLIGHT_FLOATER_HEIGHT: flatbuffers::VOffsetT = 90;
-  pub const VT_EMOJI_OFFSET_X: flatbuffers::VOffsetT = 92;
-  pub const VT_EMOJI_OFFSET_Y: flatbuffers::VOffsetT = 94;
-  pub const VT_MOVE_START_FRAME: flatbuffers::VOffsetT = 96;
-  pub const VT_MOVE_END_FRAME: flatbuffers::VOffsetT = 98;
-  pub const VT_JUMP_MOTION_FRAME: flatbuffers::VOffsetT = 100;
-  pub const VT_APPEAR_FRAME: flatbuffers::VOffsetT = 102;
-  pub const VT_CAN_MOVE: flatbuffers::VOffsetT = 104;
-  pub const VT_CAN_FIX: flatbuffers::VOffsetT = 106;
-  pub const VT_CAN_CROWD_CONTROL: flatbuffers::VOffsetT = 108;
-  pub const VT_CAN_BATTLE_ITEM_MOVE: flatbuffers::VOffsetT = 110;
-  pub const VT_IS_AIR_UNIT: flatbuffers::VOffsetT = 112;
-  pub const VT_AIR_UNIT_HEIGHT: flatbuffers::VOffsetT = 114;
-  pub const VT_TAGS: flatbuffers::VOffsetT = 116;
-  pub const VT_SECRET_STONE_ITEM_ID: flatbuffers::VOffsetT = 118;
-  pub const VT_SECRET_STONE_ITEM_AMOUNT: flatbuffers::VOffsetT = 120;
-  pub const VT_CHARACTER_PIECE_ITEM_ID: flatbuffers::VOffsetT = 122;
-  pub const VT_CHARACTER_PIECE_ITEM_AMOUNT: flatbuffers::VOffsetT = 124;
-  pub const VT_COMBINE_RECIPE_ID: flatbuffers::VOffsetT = 126;
+  pub const VT_MAIN_COMBAT_STYLE_ID: flatbuffers::VOffsetT = 70;
+  pub const VT_COMBAT_STYLE_INDEX: flatbuffers::VOffsetT = 72;
+  pub const VT_SCENARIO_CHARACTER: flatbuffers::VOffsetT = 74;
+  pub const VT_SPAWN_TEMPLATE_ID: flatbuffers::VOffsetT = 76;
+  pub const VT_FAVOR_LEVELUP_TYPE: flatbuffers::VOffsetT = 78;
+  pub const VT_EQUIPMENT_SLOT: flatbuffers::VOffsetT = 80;
+  pub const VT_WEAPON_LOCALIZE_ID: flatbuffers::VOffsetT = 82;
+  pub const VT_DISPLAY_ENEMY_INFO: flatbuffers::VOffsetT = 84;
+  pub const VT_BODY_RADIUS: flatbuffers::VOffsetT = 86;
+  pub const VT_RANDOM_EFFECT_RADIUS: flatbuffers::VOffsetT = 88;
+  pub const VT_HP_BAR_HIDE: flatbuffers::VOffsetT = 90;
+  pub const VT_HP_BAR_HEIGHT: flatbuffers::VOffsetT = 92;
+  pub const VT_HIGHLIGHT_FLOATER_HEIGHT: flatbuffers::VOffsetT = 94;
+  pub const VT_EMOJI_OFFSET_X: flatbuffers::VOffsetT = 96;
+  pub const VT_EMOJI_OFFSET_Y: flatbuffers::VOffsetT = 98;
+  pub const VT_MOVE_START_FRAME: flatbuffers::VOffsetT = 100;
+  pub const VT_MOVE_END_FRAME: flatbuffers::VOffsetT = 102;
+  pub const VT_JUMP_MOTION_FRAME: flatbuffers::VOffsetT = 104;
+  pub const VT_APPEAR_FRAME: flatbuffers::VOffsetT = 106;
+  pub const VT_CAN_MOVE: flatbuffers::VOffsetT = 108;
+  pub const VT_CAN_FIX: flatbuffers::VOffsetT = 110;
+  pub const VT_CAN_CROWD_CONTROL: flatbuffers::VOffsetT = 112;
+  pub const VT_CAN_BATTLE_ITEM_MOVE: flatbuffers::VOffsetT = 114;
+  pub const VT_IS_AIR_UNIT: flatbuffers::VOffsetT = 116;
+  pub const VT_AIR_UNIT_HEIGHT: flatbuffers::VOffsetT = 118;
+  pub const VT_TAGS: flatbuffers::VOffsetT = 120;
+  pub const VT_SECRET_STONE_ITEM_ID: flatbuffers::VOffsetT = 122;
+  pub const VT_SECRET_STONE_ITEM_AMOUNT: flatbuffers::VOffsetT = 124;
+  pub const VT_CHARACTER_PIECE_ITEM_ID: flatbuffers::VOffsetT = 126;
+  pub const VT_CHARACTER_PIECE_ITEM_AMOUNT: flatbuffers::VOffsetT = 128;
+  pub const VT_COMBINE_RECIPE_ID: flatbuffers::VOffsetT = 130;
 
   #[inline]
   pub unsafe fn init_from_table(table: flatbuffers::Table<'a>) -> Self {
@@ -16095,6 +16162,7 @@ impl<'a> CharacterExcel<'a> {
     builder.add_air_unit_height(args.air_unit_height);
     builder.add_random_effect_radius(args.random_effect_radius);
     builder.add_body_radius(args.body_radius);
+    builder.add_main_combat_style_id(args.main_combat_style_id);
     builder.add_external_bt_id(args.external_bt_id);
     builder.add_character_ai_id(args.character_ai_id);
     builder.add_personality_id(args.personality_id);
@@ -16116,6 +16184,7 @@ impl<'a> CharacterExcel<'a> {
     builder.add_favor_levelup_type(args.favor_levelup_type);
     builder.add_spawn_template_id(args.spawn_template_id);
     if let Some(x) = args.scenario_character { builder.add_scenario_character(x); }
+    builder.add_combat_style_index(args.combat_style_index);
     builder.add_squad_type(args.squad_type);
     builder.add_stat_level_up_type(args.stat_level_up_type);
     builder.add_max_star_grade(args.max_star_grade);
@@ -16387,6 +16456,20 @@ impl<'a> CharacterExcel<'a> {
     unsafe { self._tab.get::<i64>(CharacterExcel::VT_EXTERNAL_BT_ID, Some(0)).unwrap()}
   }
   #[inline]
+  pub fn main_combat_style_id(&self) -> i64 {
+    // Safety:
+    // Created from valid Table for this object
+    // which contains a valid value in this slot
+    unsafe { self._tab.get::<i64>(CharacterExcel::VT_MAIN_COMBAT_STYLE_ID, Some(0)).unwrap()}
+  }
+  #[inline]
+  pub fn combat_style_index(&self) -> i32 {
+    // Safety:
+    // Created from valid Table for this object
+    // which contains a valid value in this slot
+    unsafe { self._tab.get::<i32>(CharacterExcel::VT_COMBAT_STYLE_INDEX, Some(0)).unwrap()}
+  }
+  #[inline]
   pub fn scenario_character(&self) -> Option<&'a str> {
     // Safety:
     // Created from valid Table for this object
@@ -16631,6 +16714,8 @@ impl flatbuffers::Verifiable for CharacterExcel<'_> {
      .visit_field::<i64>("personality_id", Self::VT_PERSONALITY_ID, false)?
      .visit_field::<i64>("character_ai_id", Self::VT_CHARACTER_AI_ID, false)?
      .visit_field::<i64>("external_bt_id", Self::VT_EXTERNAL_BT_ID, false)?
+     .visit_field::<i64>("main_combat_style_id", Self::VT_MAIN_COMBAT_STYLE_ID, false)?
+     .visit_field::<i32>("combat_style_index", Self::VT_COMBAT_STYLE_INDEX, false)?
      .visit_field::<flatbuffers::ForwardsUOffset<&str>>("scenario_character", Self::VT_SCENARIO_CHARACTER, false)?
      .visit_field::<u32>("spawn_template_id", Self::VT_SPAWN_TEMPLATE_ID, false)?
      .visit_field::<i32>("favor_levelup_type", Self::VT_FAVOR_LEVELUP_TYPE, false)?
@@ -16698,6 +16783,8 @@ pub struct CharacterExcelArgs<'a> {
     pub personality_id: i64,
     pub character_ai_id: i64,
     pub external_bt_id: i64,
+    pub main_combat_style_id: i64,
+    pub combat_style_index: i32,
     pub scenario_character: Option<flatbuffers::WIPOffset<&'a str>>,
     pub spawn_template_id: u32,
     pub favor_levelup_type: i32,
@@ -16765,6 +16852,8 @@ impl<'a> Default for CharacterExcelArgs<'a> {
       personality_id: 0,
       character_ai_id: 0,
       external_bt_id: 0,
+      main_combat_style_id: 0,
+      combat_style_index: 0,
       scenario_character: None,
       spawn_template_id: 0,
       favor_levelup_type: 0,
@@ -16936,6 +17025,14 @@ impl<'a: 'b, 'b, A: flatbuffers::Allocator + 'a> CharacterExcelBuilder<'a, 'b, A
     self.fbb_.push_slot::<i64>(CharacterExcel::VT_EXTERNAL_BT_ID, external_bt_id, 0);
   }
   #[inline]
+  pub fn add_main_combat_style_id(&mut self, main_combat_style_id: i64) {
+    self.fbb_.push_slot::<i64>(CharacterExcel::VT_MAIN_COMBAT_STYLE_ID, main_combat_style_id, 0);
+  }
+  #[inline]
+  pub fn add_combat_style_index(&mut self, combat_style_index: i32) {
+    self.fbb_.push_slot::<i32>(CharacterExcel::VT_COMBAT_STYLE_INDEX, combat_style_index, 0);
+  }
+  #[inline]
   pub fn add_scenario_character(&mut self, scenario_character: flatbuffers::WIPOffset<&'b  str>) {
     self.fbb_.push_slot_always::<flatbuffers::WIPOffset<_>>(CharacterExcel::VT_SCENARIO_CHARACTER, scenario_character);
   }
@@ -17102,6 +17199,8 @@ impl core::fmt::Debug for CharacterExcel<'_> {
       ds.field("personality_id", &self.personality_id());
       ds.field("character_ai_id", &self.character_ai_id());
       ds.field("external_bt_id", &self.external_bt_id());
+      ds.field("main_combat_style_id", &self.main_combat_style_id());
+      ds.field("combat_style_index", &self.combat_style_index());
       ds.field("scenario_character", &self.scenario_character());
       ds.field("spawn_template_id", &self.spawn_template_id());
       ds.field("favor_levelup_type", &self.favor_levelup_type());
@@ -17314,31 +17413,35 @@ impl<'a> LocalizeCharProfileExcel<'a> {
   pub const VT_CHARACTER_VOICE_TH: flatbuffers::VOffsetT = 132;
   pub const VT_CHARACTER_VOICE_TW: flatbuffers::VOffsetT = 134;
   pub const VT_CHARACTER_VOICE_EN: flatbuffers::VOffsetT = 136;
-  pub const VT_HOBBY_KR: flatbuffers::VOffsetT = 138;
-  pub const VT_HOBBY_JP: flatbuffers::VOffsetT = 140;
-  pub const VT_HOBBY_TH: flatbuffers::VOffsetT = 142;
-  pub const VT_HOBBY_TW: flatbuffers::VOffsetT = 144;
-  pub const VT_HOBBY_EN: flatbuffers::VOffsetT = 146;
-  pub const VT_WEAPON_NAME_KR: flatbuffers::VOffsetT = 148;
-  pub const VT_WEAPON_DESC_KR: flatbuffers::VOffsetT = 150;
-  pub const VT_WEAPON_NAME_JP: flatbuffers::VOffsetT = 152;
-  pub const VT_WEAPON_DESC_JP: flatbuffers::VOffsetT = 154;
-  pub const VT_WEAPON_NAME_TH: flatbuffers::VOffsetT = 156;
-  pub const VT_WEAPON_DESC_TH: flatbuffers::VOffsetT = 158;
-  pub const VT_WEAPON_NAME_TW: flatbuffers::VOffsetT = 160;
-  pub const VT_WEAPON_DESC_TW: flatbuffers::VOffsetT = 162;
-  pub const VT_WEAPON_NAME_EN: flatbuffers::VOffsetT = 164;
-  pub const VT_WEAPON_DESC_EN: flatbuffers::VOffsetT = 166;
-  pub const VT_PROFILE_INTRODUCTION_KR: flatbuffers::VOffsetT = 168;
-  pub const VT_PROFILE_INTRODUCTION_JP: flatbuffers::VOffsetT = 170;
-  pub const VT_PROFILE_INTRODUCTION_TH: flatbuffers::VOffsetT = 172;
-  pub const VT_PROFILE_INTRODUCTION_TW: flatbuffers::VOffsetT = 174;
-  pub const VT_PROFILE_INTRODUCTION_EN: flatbuffers::VOffsetT = 176;
-  pub const VT_CHARACTER_SSR_NEW_KR: flatbuffers::VOffsetT = 178;
-  pub const VT_CHARACTER_SSR_NEW_JP: flatbuffers::VOffsetT = 180;
-  pub const VT_CHARACTER_SSR_NEW_TH: flatbuffers::VOffsetT = 182;
-  pub const VT_CHARACTER_SSR_NEW_TW: flatbuffers::VOffsetT = 184;
-  pub const VT_CHARACTER_SSR_NEW_EN: flatbuffers::VOffsetT = 186;
+  pub const VT_KR_CHARACTER_VOICE_KR: flatbuffers::VOffsetT = 138;
+  pub const VT_KR_CHARACTER_VOICE_TH: flatbuffers::VOffsetT = 140;
+  pub const VT_KR_CHARACTER_VOICE_TW: flatbuffers::VOffsetT = 142;
+  pub const VT_KR_CHARACTER_VOICE_EN: flatbuffers::VOffsetT = 144;
+  pub const VT_HOBBY_KR: flatbuffers::VOffsetT = 146;
+  pub const VT_HOBBY_JP: flatbuffers::VOffsetT = 148;
+  pub const VT_HOBBY_TH: flatbuffers::VOffsetT = 150;
+  pub const VT_HOBBY_TW: flatbuffers::VOffsetT = 152;
+  pub const VT_HOBBY_EN: flatbuffers::VOffsetT = 154;
+  pub const VT_WEAPON_NAME_KR: flatbuffers::VOffsetT = 156;
+  pub const VT_WEAPON_DESC_KR: flatbuffers::VOffsetT = 158;
+  pub const VT_WEAPON_NAME_JP: flatbuffers::VOffsetT = 160;
+  pub const VT_WEAPON_DESC_JP: flatbuffers::VOffsetT = 162;
+  pub const VT_WEAPON_NAME_TH: flatbuffers::VOffsetT = 164;
+  pub const VT_WEAPON_DESC_TH: flatbuffers::VOffsetT = 166;
+  pub const VT_WEAPON_NAME_TW: flatbuffers::VOffsetT = 168;
+  pub const VT_WEAPON_DESC_TW: flatbuffers::VOffsetT = 170;
+  pub const VT_WEAPON_NAME_EN: flatbuffers::VOffsetT = 172;
+  pub const VT_WEAPON_DESC_EN: flatbuffers::VOffsetT = 174;
+  pub const VT_PROFILE_INTRODUCTION_KR: flatbuffers::VOffsetT = 176;
+  pub const VT_PROFILE_INTRODUCTION_JP: flatbuffers::VOffsetT = 178;
+  pub const VT_PROFILE_INTRODUCTION_TH: flatbuffers::VOffsetT = 180;
+  pub const VT_PROFILE_INTRODUCTION_TW: flatbuffers::VOffsetT = 182;
+  pub const VT_PROFILE_INTRODUCTION_EN: flatbuffers::VOffsetT = 184;
+  pub const VT_CHARACTER_SSR_NEW_KR: flatbuffers::VOffsetT = 186;
+  pub const VT_CHARACTER_SSR_NEW_JP: flatbuffers::VOffsetT = 188;
+  pub const VT_CHARACTER_SSR_NEW_TH: flatbuffers::VOffsetT = 190;
+  pub const VT_CHARACTER_SSR_NEW_TW: flatbuffers::VOffsetT = 192;
+  pub const VT_CHARACTER_SSR_NEW_EN: flatbuffers::VOffsetT = 194;
 
   #[inline]
   pub unsafe fn init_from_table(table: flatbuffers::Table<'a>) -> Self {
@@ -17376,6 +17479,10 @@ impl<'a> LocalizeCharProfileExcel<'a> {
     if let Some(x) = args.hobby_th { builder.add_hobby_th(x); }
     if let Some(x) = args.hobby_jp { builder.add_hobby_jp(x); }
     if let Some(x) = args.hobby_kr { builder.add_hobby_kr(x); }
+    if let Some(x) = args.kr_character_voice_en { builder.add_kr_character_voice_en(x); }
+    if let Some(x) = args.kr_character_voice_tw { builder.add_kr_character_voice_tw(x); }
+    if let Some(x) = args.kr_character_voice_th { builder.add_kr_character_voice_th(x); }
+    if let Some(x) = args.kr_character_voice_kr { builder.add_kr_character_voice_kr(x); }
     if let Some(x) = args.character_voice_en { builder.add_character_voice_en(x); }
     if let Some(x) = args.character_voice_tw { builder.add_character_voice_tw(x); }
     if let Some(x) = args.character_voice_th { builder.add_character_voice_th(x); }
@@ -17916,6 +18023,34 @@ impl<'a> LocalizeCharProfileExcel<'a> {
     unsafe { self._tab.get::<flatbuffers::ForwardsUOffset<&str>>(LocalizeCharProfileExcel::VT_CHARACTER_VOICE_EN, None)}
   }
   #[inline]
+  pub fn kr_character_voice_kr(&self) -> Option<&'a str> {
+    // Safety:
+    // Created from valid Table for this object
+    // which contains a valid value in this slot
+    unsafe { self._tab.get::<flatbuffers::ForwardsUOffset<&str>>(LocalizeCharProfileExcel::VT_KR_CHARACTER_VOICE_KR, None)}
+  }
+  #[inline]
+  pub fn kr_character_voice_th(&self) -> Option<&'a str> {
+    // Safety:
+    // Created from valid Table for this object
+    // which contains a valid value in this slot
+    unsafe { self._tab.get::<flatbuffers::ForwardsUOffset<&str>>(LocalizeCharProfileExcel::VT_KR_CHARACTER_VOICE_TH, None)}
+  }
+  #[inline]
+  pub fn kr_character_voice_tw(&self) -> Option<&'a str> {
+    // Safety:
+    // Created from valid Table for this object
+    // which contains a valid value in this slot
+    unsafe { self._tab.get::<flatbuffers::ForwardsUOffset<&str>>(LocalizeCharProfileExcel::VT_KR_CHARACTER_VOICE_TW, None)}
+  }
+  #[inline]
+  pub fn kr_character_voice_en(&self) -> Option<&'a str> {
+    // Safety:
+    // Created from valid Table for this object
+    // which contains a valid value in this slot
+    unsafe { self._tab.get::<flatbuffers::ForwardsUOffset<&str>>(LocalizeCharProfileExcel::VT_KR_CHARACTER_VOICE_EN, None)}
+  }
+  #[inline]
   pub fn hobby_kr(&self) -> Option<&'a str> {
     // Safety:
     // Created from valid Table for this object
@@ -18166,6 +18301,10 @@ impl flatbuffers::Verifiable for LocalizeCharProfileExcel<'_> {
      .visit_field::<flatbuffers::ForwardsUOffset<&str>>("character_voice_th", Self::VT_CHARACTER_VOICE_TH, false)?
      .visit_field::<flatbuffers::ForwardsUOffset<&str>>("character_voice_tw", Self::VT_CHARACTER_VOICE_TW, false)?
      .visit_field::<flatbuffers::ForwardsUOffset<&str>>("character_voice_en", Self::VT_CHARACTER_VOICE_EN, false)?
+     .visit_field::<flatbuffers::ForwardsUOffset<&str>>("kr_character_voice_kr", Self::VT_KR_CHARACTER_VOICE_KR, false)?
+     .visit_field::<flatbuffers::ForwardsUOffset<&str>>("kr_character_voice_th", Self::VT_KR_CHARACTER_VOICE_TH, false)?
+     .visit_field::<flatbuffers::ForwardsUOffset<&str>>("kr_character_voice_tw", Self::VT_KR_CHARACTER_VOICE_TW, false)?
+     .visit_field::<flatbuffers::ForwardsUOffset<&str>>("kr_character_voice_en", Self::VT_KR_CHARACTER_VOICE_EN, false)?
      .visit_field::<flatbuffers::ForwardsUOffset<&str>>("hobby_kr", Self::VT_HOBBY_KR, false)?
      .visit_field::<flatbuffers::ForwardsUOffset<&str>>("hobby_jp", Self::VT_HOBBY_JP, false)?
      .visit_field::<flatbuffers::ForwardsUOffset<&str>>("hobby_th", Self::VT_HOBBY_TH, false)?
@@ -18263,6 +18402,10 @@ pub struct LocalizeCharProfileExcelArgs<'a> {
     pub character_voice_th: Option<flatbuffers::WIPOffset<&'a str>>,
     pub character_voice_tw: Option<flatbuffers::WIPOffset<&'a str>>,
     pub character_voice_en: Option<flatbuffers::WIPOffset<&'a str>>,
+    pub kr_character_voice_kr: Option<flatbuffers::WIPOffset<&'a str>>,
+    pub kr_character_voice_th: Option<flatbuffers::WIPOffset<&'a str>>,
+    pub kr_character_voice_tw: Option<flatbuffers::WIPOffset<&'a str>>,
+    pub kr_character_voice_en: Option<flatbuffers::WIPOffset<&'a str>>,
     pub hobby_kr: Option<flatbuffers::WIPOffset<&'a str>>,
     pub hobby_jp: Option<flatbuffers::WIPOffset<&'a str>>,
     pub hobby_th: Option<flatbuffers::WIPOffset<&'a str>>,
@@ -18360,6 +18503,10 @@ impl<'a> Default for LocalizeCharProfileExcelArgs<'a> {
       character_voice_th: None,
       character_voice_tw: None,
       character_voice_en: None,
+      kr_character_voice_kr: None,
+      kr_character_voice_th: None,
+      kr_character_voice_tw: None,
+      kr_character_voice_en: None,
       hobby_kr: None,
       hobby_jp: None,
       hobby_th: None,
@@ -18663,6 +18810,22 @@ impl<'a: 'b, 'b, A: flatbuffers::Allocator + 'a> LocalizeCharProfileExcelBuilder
     self.fbb_.push_slot_always::<flatbuffers::WIPOffset<_>>(LocalizeCharProfileExcel::VT_CHARACTER_VOICE_EN, character_voice_en);
   }
   #[inline]
+  pub fn add_kr_character_voice_kr(&mut self, kr_character_voice_kr: flatbuffers::WIPOffset<&'b  str>) {
+    self.fbb_.push_slot_always::<flatbuffers::WIPOffset<_>>(LocalizeCharProfileExcel::VT_KR_CHARACTER_VOICE_KR, kr_character_voice_kr);
+  }
+  #[inline]
+  pub fn add_kr_character_voice_th(&mut self, kr_character_voice_th: flatbuffers::WIPOffset<&'b  str>) {
+    self.fbb_.push_slot_always::<flatbuffers::WIPOffset<_>>(LocalizeCharProfileExcel::VT_KR_CHARACTER_VOICE_TH, kr_character_voice_th);
+  }
+  #[inline]
+  pub fn add_kr_character_voice_tw(&mut self, kr_character_voice_tw: flatbuffers::WIPOffset<&'b  str>) {
+    self.fbb_.push_slot_always::<flatbuffers::WIPOffset<_>>(LocalizeCharProfileExcel::VT_KR_CHARACTER_VOICE_TW, kr_character_voice_tw);
+  }
+  #[inline]
+  pub fn add_kr_character_voice_en(&mut self, kr_character_voice_en: flatbuffers::WIPOffset<&'b  str>) {
+    self.fbb_.push_slot_always::<flatbuffers::WIPOffset<_>>(LocalizeCharProfileExcel::VT_KR_CHARACTER_VOICE_EN, kr_character_voice_en);
+  }
+  #[inline]
   pub fn add_hobby_kr(&mut self, hobby_kr: flatbuffers::WIPOffset<&'b  str>) {
     self.fbb_.push_slot_always::<flatbuffers::WIPOffset<_>>(LocalizeCharProfileExcel::VT_HOBBY_KR, hobby_kr);
   }
@@ -18847,6 +19010,10 @@ impl core::fmt::Debug for LocalizeCharProfileExcel<'_> {
       ds.field("character_voice_th", &self.character_voice_th());
       ds.field("character_voice_tw", &self.character_voice_tw());
       ds.field("character_voice_en", &self.character_voice_en());
+      ds.field("kr_character_voice_kr", &self.kr_character_voice_kr());
+      ds.field("kr_character_voice_th", &self.kr_character_voice_th());
+      ds.field("kr_character_voice_tw", &self.kr_character_voice_tw());
+      ds.field("kr_character_voice_en", &self.kr_character_voice_en());
       ds.field("hobby_kr", &self.hobby_kr());
       ds.field("hobby_jp", &self.hobby_jp());
       ds.field("hobby_th", &self.hobby_th());

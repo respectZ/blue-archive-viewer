@@ -100,7 +100,11 @@ enum DialogCategory: int{
     GlobalAttendance04 = 62,
     GlobalAttendance05 = 63,
     UIAttendanceEvent15 = 64,
-    UILobbySpecial2 = 65
+    UILobbySpecial2 = 65,
+    UIAttendanceEvent16 = 66,
+    UIEventTreasure = 67,
+    UIMultiFloorRaid = 68,
+    UIEventMiniGameDreamMaker = 69
 }
 
 enum DialogCondition: int{
@@ -124,7 +128,15 @@ enum DialogCondition: int{
     Luck5 = 17,
     StoryOpen = 18,
     CollectionOpen = 19,
-    BoxGachaFinish = 20
+    BoxGachaFinish = 20,
+    FindTreasure = 21,
+    GetTreasure = 22,
+    RoundRenewal = 23,
+    MiniGameDreamMakerEnough01 = 24,
+    MiniGameDreamMakerEnough02 = 25,
+    MiniGameDreamMakerEnough03 = 26,
+    MiniGameDreamMakerEnough04 = 27,
+    MiniGameDreamMakerDefault = 28
 }
 
 enum Anniversary: int{
@@ -3388,6 +3400,7 @@ table CharacterDialogExcel{
     dialog_type: DialogType;
     action_name: string;
     duration: long;
+    duration_kr: long;
     animation_name: string;
     localize_kr: string;
     localize_jp: string;
@@ -3432,7 +3445,7 @@ table CharacterExcel{
     weapon_type: WeaponType;
     tactic_range: TacticRange;
     bullet_type: BulletType;
-    armor_type:  ArmorType;
+    armor_type: ArmorType;
     aim_ik_type: AimIKType;
     school: School;
     club: Club;
@@ -3444,6 +3457,8 @@ table CharacterExcel{
     personality_id: long;
     character_ai_id: long;
     external_bt_id: long;
+    main_combat_style_id: long;
+    combat_style_index: int;
     scenario_character: string;
     spawn_template_id: uint;
     favor_levelup_type: int;
@@ -3547,6 +3562,10 @@ table LocalizeCharProfileExcel{
     character_voice_th: string;
     character_voice_tw: string;
     character_voice_en: string;
+    kr_character_voice_kr: string;
+    kr_character_voice_th: string;
+    kr_character_voice_tw: string;
+    kr_character_voice_en: string;
     hobby_kr: string;
     hobby_jp: string;
     hobby_th: string;

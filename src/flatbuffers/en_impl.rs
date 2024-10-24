@@ -524,6 +524,7 @@ impl<'a> DecryptAndDump for CharacterDialogExcelTable<'a> {
                         dialog_type: dialog_type,
                         action_name: action_name,
                         duration: convert_long(a.duration(), &key),
+                        duration_kr: convert_long(a.duration_kr(), &key),
                         animation_name: animation_name,
                         localize_kr: localize_kr,
                         localize_jp: localize_jp,
@@ -707,6 +708,8 @@ impl<'a> DecryptAndDump for CharacterExcelTable<'a> {
                         personality_id: convert_long(a.personality_id(), &key),
                         character_ai_id: convert_long(a.character_ai_id(), &key),
                         external_bt_id: convert_long(a.external_bt_id(), &key),
+                        main_combat_style_id: convert_long(a.main_combat_style_id(), &key),
+                        combat_style_index: convert_int(a.combat_style_index(), &key),
                         scenario_character: Some(scenario_character),
                         spawn_template_id: convert_uint(a.spawn_template_id(), &key),
                         favor_levelup_type: convert_int(a.favor_levelup_type(), &key),
@@ -834,6 +837,10 @@ impl<'a> DecryptAndDump for LocalizeCharProfileExcelTable<'a> {
                 let character_voice_th = create_string!(fbb, a.character_voice_th(), &key);
                 let character_voice_tw = create_string!(fbb, a.character_voice_tw(), &key);
                 let character_voice_en = create_string!(fbb, a.character_voice_en(), &key);
+                let kr_character_voice_kr = create_string!(fbb, a.kr_character_voice_kr(), &key);
+                let kr_character_voice_th = create_string!(fbb, a.kr_character_voice_th(), &key);
+                let kr_character_voice_tw = create_string!(fbb, a.kr_character_voice_tw(), &key);
+                let kr_character_voice_en = create_string!(fbb, a.kr_character_voice_en(), &key);
                 let hobby_kr = create_string!(fbb, a.hobby_kr(), &key);
                 let hobby_jp = create_string!(fbb, a.hobby_jp(), &key);
                 let hobby_th = create_string!(fbb, a.hobby_th(), &key);
@@ -935,6 +942,10 @@ impl<'a> DecryptAndDump for LocalizeCharProfileExcelTable<'a> {
                         character_voice_th,
                         character_voice_tw,
                         character_voice_en,
+                        kr_character_voice_kr,
+                        kr_character_voice_th,
+                        kr_character_voice_tw,
+                        kr_character_voice_en,
                         hobby_kr,
                         hobby_jp,
                         hobby_th,
