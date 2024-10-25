@@ -6,8 +6,8 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 interface MediaResource {
-  fileName: string;
-  path: string;
+  FileName: string;
+  Path: string;
 }
 
 interface MediaCatalog {
@@ -15,49 +15,56 @@ interface MediaCatalog {
 }
 
 export default function Home() {
-  const images: MediaResource[] = [];
+  const [images, setImages] = useState<MediaResource[]>([]);
   const [loadedImages, setLoadedImages] = useState<MediaResource[]>([]);
   const bottomRef = useRef<HTMLDivElement>(null);
   const [modalImage, setModalImage] = useState<string>("");
   const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (images.length === 0) {
-      const fetchData = async () => {
-        const response = await fetch("/data/jp/MediaResources/MediaCatalog.json");
-        const data = await response.json();
-        const imageList = Object.keys(data.Table).map((key) => {
-          const v = data.Table[key];
-          if (!v.path.endsWith(".jpg")) return null;
-          v.path = `/data/jp/MediaResources/${v.path}`;
-          return v;
-        }).filter((v) => v !== null) as MediaResource[];
-        images.push(...imageList);
-      };
-
-      fetchData();
-    }
-  });
+    if (images.length > 0) return;
+    const fetchData = async () => {
+      const response = await fetch("/data/jp/MediaResources/MediaCatalog.json");
+      const data: MediaCatalog = await response.json();
+      setImages(
+        Object.keys(data.Table)
+          .map((key) => {
+            const v = data.Table[key];
+            if (!v.Path.endsWith(".jpg")) return null;
+            v.Path = `/data/jp/MediaResources/${v.Path}`;
+            return v;
+          })
+          .filter((v) => v !== null) as MediaResource[]
+      );
+    };
+    fetchData();
+  }, [images]);
 
   useEffect(() => {
     const loadMore = () => {
-      const subset = images.slice(loadedImages.length, loadedImages.length + 20);
+      const subset = images.slice(
+        loadedImages.length,
+        loadedImages.length + 20
+      );
       setLoadedImages((prev) => [...prev, ...subset]);
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          loadMore();
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { root: null, rootMargin: "0px", threshold: 0.1 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            loadMore();
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { root: null, rootMargin: "0px", threshold: 0.1 }
+    );
 
     if (bottomRef.current) {
       observer.observe(bottomRef.current);
     }
-  });
+  }, [images, loadedImages]);
 
   return (
     <main className="h-full w-full flex flex-col">
@@ -72,11 +79,15 @@ export default function Home() {
       )}
 
       <div
-        className={"fixed h-full w-full z-10 transition-all duration-300 opacity-0"}
+        className={
+          "fixed h-full w-full z-10 transition-all duration-300 opacity-0 hidden"
+        }
         ref={modalRef}
       >
         <div
-          className={"absolute h-full w-full bg-black bg-opacity-60 flex items-center justify-center"}
+          className={
+            "absolute h-full w-full bg-black bg-opacity-60 flex items-center justify-center"
+          }
           onClick={() => {
             if (modalRef.current) {
               setTimeout(() => {
@@ -93,7 +104,7 @@ export default function Home() {
             alt={modalImage}
             fill
             style={{ objectFit: "contain" }}
-            className="p-24 flex items-end transition-all duration-500"
+            className="p-24 flex items-end transition-all duration-150 hover:scale-105 ease-out"
           />
         </div>
       </div>
@@ -103,10 +114,10 @@ export default function Home() {
           return (
             <ImageComponent
               key={i}
-              src={image.path}
-              alt={image.fileName}
+              src={image.Path}
+              alt={image.FileName}
               onClick={() => {
-                setModalImage(image.path);
+                setModalImage(image.Path);
                 if (modalRef.current) {
                   setTimeout(() => {
                     modalRef.current!.classList.add("opacity-100");
@@ -118,7 +129,9 @@ export default function Home() {
             />
           );
         })}
-        <div ref={bottomRef}>{loadedImages.length < images.length ? ("Loading more images...") : ("")}</div>
+        <div ref={bottomRef}>
+          {loadedImages.length < images.length ? "Loading more images..." : ""}
+        </div>
       </div>
     </main>
   );
