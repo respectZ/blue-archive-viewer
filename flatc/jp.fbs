@@ -78,7 +78,8 @@ enum DialogCategory: int{
     UIEventTreasure = 67,
     UIMultiFloorRaid = 68,
     UIEventMiniGameDreamMaker = 69,
-    UIAttendanceEvent17 = 70
+    UIAttendanceEvent17 = 70,
+    UIAttendanceEvent18 = 71
 }
 
 enum DialogCondition: int{
@@ -3432,7 +3433,7 @@ table CharacterExcel{
     weapon_type: WeaponType;
     tactic_range: TacticRange;
     bullet_type: BulletType;
-    armor_type:  ArmorType;
+    armor_type: ArmorType;
     aim_ik_type: AimIKType;
     school: School;
     club: Club;

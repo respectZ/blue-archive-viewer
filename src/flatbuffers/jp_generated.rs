@@ -114,10 +114,10 @@ impl flatbuffers::SimpleToVerifyInSlice for ProductionStep {}
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
 pub const ENUM_MIN_DIALOG_CATEGORY: i32 = 0;
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
-pub const ENUM_MAX_DIALOG_CATEGORY: i32 = 70;
+pub const ENUM_MAX_DIALOG_CATEGORY: i32 = 71;
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
 #[allow(non_camel_case_types)]
-pub const ENUM_VALUES_DIALOG_CATEGORY: [DialogCategory; 71] = [
+pub const ENUM_VALUES_DIALOG_CATEGORY: [DialogCategory; 72] = [
   DialogCategory::Cafe,
   DialogCategory::Echelon,
   DialogCategory::CharacterSSRNew,
@@ -189,6 +189,7 @@ pub const ENUM_VALUES_DIALOG_CATEGORY: [DialogCategory; 71] = [
   DialogCategory::UIMultiFloorRaid,
   DialogCategory::UIEventMiniGameDreamMaker,
   DialogCategory::UIAttendanceEvent17,
+  DialogCategory::UIAttendanceEvent18,
 ];
 
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Default)]
@@ -267,9 +268,10 @@ impl DialogCategory {
   pub const UIMultiFloorRaid: Self = Self(68);
   pub const UIEventMiniGameDreamMaker: Self = Self(69);
   pub const UIAttendanceEvent17: Self = Self(70);
+  pub const UIAttendanceEvent18: Self = Self(71);
 
   pub const ENUM_MIN: i32 = 0;
-  pub const ENUM_MAX: i32 = 70;
+  pub const ENUM_MAX: i32 = 71;
   pub const ENUM_VALUES: &'static [Self] = &[
     Self::Cafe,
     Self::Echelon,
@@ -342,6 +344,7 @@ impl DialogCategory {
     Self::UIMultiFloorRaid,
     Self::UIEventMiniGameDreamMaker,
     Self::UIAttendanceEvent17,
+    Self::UIAttendanceEvent18,
   ];
   /// Returns the variant's name or "" if unknown.
   pub fn variant_name(self) -> Option<&'static str> {
@@ -417,6 +420,7 @@ impl DialogCategory {
       Self::UIMultiFloorRaid => Some("UIMultiFloorRaid"),
       Self::UIEventMiniGameDreamMaker => Some("UIEventMiniGameDreamMaker"),
       Self::UIAttendanceEvent17 => Some("UIAttendanceEvent17"),
+      Self::UIAttendanceEvent18 => Some("UIAttendanceEvent18"),
       _ => None,
     }
   }
