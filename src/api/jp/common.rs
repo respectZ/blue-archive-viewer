@@ -52,7 +52,7 @@ impl AddressableCatalog {
     }
     pub async fn get_media_catalog(&self) -> Result<media_catalog::MediaCatalog> {
         let url = format!(
-            "{}/MediaResources/MediaCatalog.bytes",
+            "{}/MediaResources/Catalog/MediaCatalog.bytes",
             self.get_addressable_catalog_url_root()
         );
         let resp = reqwest::get(url).await?;

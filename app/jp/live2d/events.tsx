@@ -249,7 +249,7 @@ export const ReloadBGM = (elements: Elements) => {
     // Pad with 0
     const bgmIdStr = bgmId.toString().padStart(2, "0");
 
-    const bgmURL = `${AddressablesCatalogUrlRoot}/MediaResources/Audio/BGM/Theme_${bgmIdStr}.ogg`;
+    const bgmURL = `${AddressablesCatalogUrlRoot}/MediaResources/GameData/Audio/BGM/Theme_${bgmIdStr}.ogg`;
     audio.src = bgmURL;
     audio.hidden = false;
     audio.play().catch((e) => {

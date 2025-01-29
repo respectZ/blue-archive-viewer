@@ -29,4 +29,4 @@ trauma = "2.2.4"
 unity_rs = "0.1.0"
 walkdir = "2.5.0"
 xxhash-rust = { version = "0.8.10", features = ["xxh32"] }
-zip = "2.1.0"
+zip = { git = "https://github.com/respectZ/zip2", branch = "fix/cryptovalidator-msdos" }

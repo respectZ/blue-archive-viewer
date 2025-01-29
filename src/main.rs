@@ -8,6 +8,7 @@ mod live2d;
 mod mx;
 mod table_dumper;
 mod util;
+mod voice;
 
 #[macro_use]
 mod logger;
@@ -137,6 +138,7 @@ async fn jp(action: Action) {
                 cg::run_jp(&catalog).await.unwrap();
                 catalog::run_jp(&catalog).await.unwrap();
                 live2d::run_jp(&catalog).await.unwrap();
+                voice::run_jp(&catalog).await.unwrap();
                 table_dumper::jp::run(&catalog).await.unwrap();
             }
             Update::CG => {
@@ -147,6 +149,7 @@ async fn jp(action: Action) {
             }
             Update::Live2D => {
                 live2d::run_jp(&catalog).await.unwrap();
+                voice::run_jp(&catalog).await.unwrap();
             }
             Update::Table => {
                 table_dumper::jp::run(&catalog).await.unwrap();
