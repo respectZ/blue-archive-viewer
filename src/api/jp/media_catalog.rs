@@ -115,9 +115,16 @@ impl MediaCatalog {
             .iter()
             .filter(|(_, v)| filter(v))
             .map(|(_, v)| Download {
-                url: Url::parse(format!("{}/MediaResources/{}", self.base_url, v.path).as_str())
-                    .unwrap(),
-                filename: v.path.clone(),
+                url: Url::parse(
+                    format!(
+                        "{}/MediaResources/{}",
+                        self.base_url,
+                        v.path.replace("\\", "/")
+                    )
+                    .as_str(),
+                )
+                .unwrap(),
+                filename: v.path.clone().replace("\\", "/"),
             })
             .collect::<Vec<Download>>();
         downloader.download(&downloads).await;
