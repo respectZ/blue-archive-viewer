@@ -30,8 +30,17 @@ impl TableZipFile {
         file.read_to_end(&mut buf).unwrap();
         buf
     }
-    #[allow(dead_code)]
-    pub fn iter(&mut self) -> impl Iterator<Item = &str> {
-        self.archive.file_names()
+    pub fn extract_all(&mut self) -> Vec<(String, Vec<u8>)> {
+        let mut files = Vec::new();
+        for i in 0..self.archive.len() {
+            let mut file = self
+                .archive
+                .by_index_decrypt(i, self.password.as_bytes())
+                .unwrap();
+            let mut buf = Vec::new();
+            file.read_to_end(&mut buf).unwrap();
+            files.push((file.name().to_string(), buf));
+        }
+        files
     }
 }
