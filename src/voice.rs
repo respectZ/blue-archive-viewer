@@ -28,14 +28,13 @@ fn extract_jp_voices() -> Result<()> {
         let buf = fs::read(path.clone())?;
         let filename = path.file_name().unwrap().to_str().unwrap();
         let mut zip = TableZipFile::new(buf, filename.to_lowercase());
+        let dir = PathBuf::from("./public/data/")
+            .join(path.strip_prefix("./temp/")?.parent().unwrap())
+            .join(filename.trim_end_matches(".zip"));
+        info!("Extracting {} to {:?}", filename, dir);
+        fs::create_dir_all(&dir)?;
         for (name, buf) in zip.extract_all() {
-            let dir = filename.trim_end_matches(".zip");
-            let path = PathBuf::from(format!(
-                "./public/data/jp/MediaResources/GameData/Audio/VOC_JP/{}/{}",
-                dir, name
-            ));
-            fs::create_dir_all(path.parent().unwrap())?;
-            fs::write(path, buf)?;
+            fs::write(dir.join(name), buf)?;
         }
     }
     Ok(())
