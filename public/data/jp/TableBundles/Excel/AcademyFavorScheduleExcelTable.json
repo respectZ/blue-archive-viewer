@@ -2818,6 +2818,26 @@
         ]
     },
     {
+        "Id": 1600215,
+        "CharacterId": 16002,
+        "ScheduleGroupId": 16002,
+        "OrderInGroup": 5,
+        "Location": "샬레",
+        "LocalizeScenarioId": 3925290057,
+        "FavorRank": 15,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1600215,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            120
+        ]
+    },
+    {
         "Id": 200002,
         "CharacterId": 20000,
         "ScheduleGroupId": 20000,
@@ -4787,6 +4807,26 @@
         "FavorRank": 9,
         "SecretStoneAmount": 1,
         "ScenarioSriptGroupId": 2000309,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            120
+        ]
+    },
+    {
+        "Id": 2000315,
+        "CharacterId": 20003,
+        "ScheduleGroupId": 20003,
+        "OrderInGroup": 7,
+        "Location": "샬레",
+        "LocalizeScenarioId": 2024630372,
+        "FavorRank": 15,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 2000315,
         "RewardParcelType": [
             "Currency"
         ],
@@ -11993,6 +12033,26 @@
         ]
     },
     {
+        "Id": 1006215,
+        "CharacterId": 10062,
+        "ScheduleGroupId": 10062,
+        "OrderInGroup": 5,
+        "Location": "샬레",
+        "LocalizeScenarioId": 62419462,
+        "FavorRank": 15,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1006215,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            120
+        ]
+    },
+    {
         "Id": 200242,
         "CharacterId": 20024,
         "ScheduleGroupId": 20024,
@@ -17137,6 +17197,733 @@
         ],
         "RewardAmount": [
             80
+        ]
+    },
+    {
+        "Id": 200402,
+        "CharacterId": 20040,
+        "ScheduleGroupId": 20040,
+        "OrderInGroup": 1,
+        "Location": "샬레",
+        "LocalizeScenarioId": 2926157779,
+        "FavorRank": 2,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 2004002,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            20
+        ]
+    },
+    {
+        "Id": 200403,
+        "CharacterId": 20040,
+        "ScheduleGroupId": 20040,
+        "OrderInGroup": 2,
+        "Location": "샬레",
+        "LocalizeScenarioId": 2537055559,
+        "FavorRank": 3,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 2004003,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            40
+        ]
+    },
+    {
+        "Id": 200405,
+        "CharacterId": 20040,
+        "ScheduleGroupId": 20040,
+        "OrderInGroup": 3,
+        "Location": "샬레",
+        "LocalizeScenarioId": 281454214,
+        "FavorRank": 5,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 2004005,
+        "RewardParcelType": [
+            "Currency",
+            "MemoryLobby"
+        ],
+        "RewardParcelId": [
+            3,
+            20040
+        ],
+        "RewardAmount": [
+            60,
+            1
+        ]
+    },
+    {
+        "Id": 200406,
+        "CharacterId": 20040,
+        "ScheduleGroupId": 20040,
+        "OrderInGroup": 4,
+        "Location": "샬레",
+        "LocalizeScenarioId": 3009929652,
+        "FavorRank": 6,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 2004006,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            80
+        ]
+    },
+    {
+        "Id": 200408,
+        "CharacterId": 20040,
+        "ScheduleGroupId": 20040,
+        "OrderInGroup": 5,
+        "Location": "샬레",
+        "LocalizeScenarioId": 796751500,
+        "FavorRank": 8,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 2004008,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            100
+        ]
+    },
+    {
+        "Id": 101072,
+        "CharacterId": 10107,
+        "ScheduleGroupId": 10107,
+        "OrderInGroup": 1,
+        "Location": "샬레",
+        "LocalizeScenarioId": 1716752779,
+        "FavorRank": 2,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1010702,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            20
+        ]
+    },
+    {
+        "Id": 101073,
+        "CharacterId": 10107,
+        "ScheduleGroupId": 10107,
+        "OrderInGroup": 2,
+        "Location": "샬레",
+        "LocalizeScenarioId": 3705330933,
+        "FavorRank": 3,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1010703,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            40
+        ]
+    },
+    {
+        "Id": 101075,
+        "CharacterId": 10107,
+        "ScheduleGroupId": 10107,
+        "OrderInGroup": 3,
+        "Location": "샬레",
+        "LocalizeScenarioId": 2692250003,
+        "FavorRank": 5,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1010705,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            60
+        ]
+    },
+    {
+        "Id": 101076,
+        "CharacterId": 10107,
+        "ScheduleGroupId": 10107,
+        "OrderInGroup": 4,
+        "Location": "샬레",
+        "LocalizeScenarioId": 2097502551,
+        "FavorRank": 6,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1010706,
+        "RewardParcelType": [
+            "Currency",
+            "MemoryLobby"
+        ],
+        "RewardParcelId": [
+            3,
+            10107
+        ],
+        "RewardAmount": [
+            80,
+            1
+        ]
+    },
+    {
+        "Id": 101082,
+        "CharacterId": 10108,
+        "ScheduleGroupId": 10108,
+        "OrderInGroup": 1,
+        "Location": "샬레",
+        "LocalizeScenarioId": 828484028,
+        "FavorRank": 2,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1010802,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            20
+        ]
+    },
+    {
+        "Id": 101083,
+        "CharacterId": 10108,
+        "ScheduleGroupId": 10108,
+        "OrderInGroup": 2,
+        "Location": "샬레",
+        "LocalizeScenarioId": 1121151644,
+        "FavorRank": 3,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1010803,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            40
+        ]
+    },
+    {
+        "Id": 101085,
+        "CharacterId": 10108,
+        "ScheduleGroupId": 10108,
+        "OrderInGroup": 3,
+        "Location": "샬레",
+        "LocalizeScenarioId": 2025917852,
+        "FavorRank": 5,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1010805,
+        "RewardParcelType": [
+            "Currency",
+            "MemoryLobby"
+        ],
+        "RewardParcelId": [
+            3,
+            10108
+        ],
+        "RewardAmount": [
+            60,
+            1
+        ]
+    },
+    {
+        "Id": 101086,
+        "CharacterId": 10108,
+        "ScheduleGroupId": 10108,
+        "OrderInGroup": 4,
+        "Location": "샬레",
+        "LocalizeScenarioId": 2478727059,
+        "FavorRank": 6,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1010806,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            80
+        ]
+    },
+    {
+        "Id": 101092,
+        "CharacterId": 10109,
+        "ScheduleGroupId": 10109,
+        "OrderInGroup": 1,
+        "Location": "샬레",
+        "LocalizeScenarioId": 358780189,
+        "FavorRank": 2,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1010902,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            20
+        ]
+    },
+    {
+        "Id": 101093,
+        "CharacterId": 10109,
+        "ScheduleGroupId": 10109,
+        "OrderInGroup": 2,
+        "Location": "샬레",
+        "LocalizeScenarioId": 2069012399,
+        "FavorRank": 3,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1010903,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            40
+        ]
+    },
+    {
+        "Id": 101095,
+        "CharacterId": 10109,
+        "ScheduleGroupId": 10109,
+        "OrderInGroup": 3,
+        "Location": "샬레",
+        "LocalizeScenarioId": 208330771,
+        "FavorRank": 5,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1010905,
+        "RewardParcelType": [
+            "Currency",
+            "MemoryLobby"
+        ],
+        "RewardParcelId": [
+            3,
+            10109
+        ],
+        "RewardAmount": [
+            60,
+            1
+        ]
+    },
+    {
+        "Id": 101096,
+        "CharacterId": 10109,
+        "ScheduleGroupId": 10109,
+        "OrderInGroup": 4,
+        "Location": "샬레",
+        "LocalizeScenarioId": 4051060136,
+        "FavorRank": 6,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1010906,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            80
+        ]
+    },
+    {
+        "Id": 101102,
+        "CharacterId": 10110,
+        "ScheduleGroupId": 10110,
+        "OrderInGroup": 1,
+        "Location": "샬레",
+        "LocalizeScenarioId": 1475757512,
+        "FavorRank": 2,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1011002,
+        "RewardParcelType": [
+            "Currency",
+            "MemoryLobby"
+        ],
+        "RewardParcelId": [
+            3,
+            10110
+        ],
+        "RewardAmount": [
+            20,
+            1
+        ]
+    },
+    {
+        "Id": 101103,
+        "CharacterId": 10110,
+        "ScheduleGroupId": 10110,
+        "OrderInGroup": 2,
+        "Location": "샬레",
+        "LocalizeScenarioId": 1220649373,
+        "FavorRank": 3,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1011003,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            40
+        ]
+    },
+    {
+        "Id": 101105,
+        "CharacterId": 10110,
+        "ScheduleGroupId": 10110,
+        "OrderInGroup": 3,
+        "Location": "샬레",
+        "LocalizeScenarioId": 2126075441,
+        "FavorRank": 5,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1011005,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            60
+        ]
+    },
+    {
+        "Id": 101106,
+        "CharacterId": 10110,
+        "ScheduleGroupId": 10110,
+        "OrderInGroup": 4,
+        "Location": "샬레",
+        "LocalizeScenarioId": 2182579853,
+        "FavorRank": 6,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1011006,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            80
+        ]
+    },
+    {
+        "Id": 101122,
+        "CharacterId": 10112,
+        "ScheduleGroupId": 10112,
+        "OrderInGroup": 1,
+        "Location": "샬레",
+        "LocalizeScenarioId": 1595705631,
+        "FavorRank": 2,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1011202,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            20
+        ]
+    },
+    {
+        "Id": 101123,
+        "CharacterId": 10112,
+        "ScheduleGroupId": 10112,
+        "OrderInGroup": 2,
+        "Location": "샬레",
+        "LocalizeScenarioId": 2622331350,
+        "FavorRank": 3,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1011203,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            40
+        ]
+    },
+    {
+        "Id": 101125,
+        "CharacterId": 10112,
+        "ScheduleGroupId": 10112,
+        "OrderInGroup": 3,
+        "Location": "샬레",
+        "LocalizeScenarioId": 4288139285,
+        "FavorRank": 5,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1011205,
+        "RewardParcelType": [
+            "Currency",
+            "MemoryLobby"
+        ],
+        "RewardParcelId": [
+            3,
+            10112
+        ],
+        "RewardAmount": [
+            60,
+            1
+        ]
+    },
+    {
+        "Id": 101126,
+        "CharacterId": 10112,
+        "ScheduleGroupId": 10112,
+        "OrderInGroup": 4,
+        "Location": "샬레",
+        "LocalizeScenarioId": 312468336,
+        "FavorRank": 6,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1011206,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            80
+        ]
+    },
+    {
+        "Id": 260142,
+        "CharacterId": 26014,
+        "ScheduleGroupId": 26014,
+        "OrderInGroup": 1,
+        "Location": "샬레",
+        "LocalizeScenarioId": 486009611,
+        "FavorRank": 2,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 2601402,
+        "RewardParcelType": [
+            "Currency",
+            "MemoryLobby"
+        ],
+        "RewardParcelId": [
+            3,
+            26014
+        ],
+        "RewardAmount": [
+            20,
+            1
+        ]
+    },
+    {
+        "Id": 260143,
+        "CharacterId": 26014,
+        "ScheduleGroupId": 26014,
+        "OrderInGroup": 2,
+        "Location": "샬레",
+        "LocalizeScenarioId": 2155174399,
+        "FavorRank": 3,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 2601403,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            40
+        ]
+    },
+    {
+        "Id": 260145,
+        "CharacterId": 26014,
+        "ScheduleGroupId": 26014,
+        "OrderInGroup": 3,
+        "Location": "샬레",
+        "LocalizeScenarioId": 1196121695,
+        "FavorRank": 5,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 2601405,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            60
+        ]
+    },
+    {
+        "Id": 200412,
+        "CharacterId": 20041,
+        "ScheduleGroupId": 20041,
+        "OrderInGroup": 1,
+        "Location": "샬레",
+        "LocalizeScenarioId": 3828496540,
+        "FavorRank": 2,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 2004102,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            20
+        ]
+    },
+    {
+        "Id": 200413,
+        "CharacterId": 20041,
+        "ScheduleGroupId": 20041,
+        "OrderInGroup": 2,
+        "Location": "샬레",
+        "LocalizeScenarioId": 1657158848,
+        "FavorRank": 3,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 2004103,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            40
+        ]
+    },
+    {
+        "Id": 200415,
+        "CharacterId": 20041,
+        "ScheduleGroupId": 20041,
+        "OrderInGroup": 3,
+        "Location": "샬레",
+        "LocalizeScenarioId": 954826963,
+        "FavorRank": 5,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 2004105,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            60
+        ]
+    },
+    {
+        "Id": 200416,
+        "CharacterId": 20041,
+        "ScheduleGroupId": 20041,
+        "OrderInGroup": 4,
+        "Location": "샬레",
+        "LocalizeScenarioId": 1535992005,
+        "FavorRank": 6,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 2004106,
+        "RewardParcelType": [
+            "Currency",
+            "MemoryLobby"
+        ],
+        "RewardParcelId": [
+            3,
+            20041
+        ],
+        "RewardAmount": [
+            80,
+            1
+        ]
+    },
+    {
+        "Id": 101112,
+        "CharacterId": 10111,
+        "ScheduleGroupId": 10111,
+        "OrderInGroup": 1,
+        "Location": "샬레",
+        "LocalizeScenarioId": 3549899780,
+        "FavorRank": 2,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1011102,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            20
+        ]
+    },
+    {
+        "Id": 101113,
+        "CharacterId": 10111,
+        "ScheduleGroupId": 10111,
+        "OrderInGroup": 2,
+        "Location": "샬레",
+        "LocalizeScenarioId": 1124899584,
+        "FavorRank": 3,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1011103,
+        "RewardParcelType": [
+            "Currency"
+        ],
+        "RewardParcelId": [
+            3
+        ],
+        "RewardAmount": [
+            40
+        ]
+    },
+    {
+        "Id": 101115,
+        "CharacterId": 10111,
+        "ScheduleGroupId": 10111,
+        "OrderInGroup": 3,
+        "Location": "샬레",
+        "LocalizeScenarioId": 857743078,
+        "FavorRank": 5,
+        "SecretStoneAmount": 1,
+        "ScenarioSriptGroupId": 1011105,
+        "RewardParcelType": [
+            "Currency",
+            "MemoryLobby"
+        ],
+        "RewardParcelId": [
+            3,
+            10111
+        ],
+        "RewardAmount": [
+            60,
+            1
         ]
     }
 ]
