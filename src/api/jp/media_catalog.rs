@@ -24,7 +24,7 @@ pub struct Media {
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "PascalCase")]
 pub struct MediaCatalog {
-    table: HashMap<String, Media>,
+    pub table: HashMap<String, Media>,
 
     #[serde(skip)]
     base_url: String,
@@ -115,6 +115,27 @@ impl MediaCatalog {
             .iter()
             .filter(|(_, v)| filter(v))
             .map(|(_, v)| Download {
+                url: Url::parse(
+                    format!(
+                        "{}/MediaResources/{}",
+                        self.base_url,
+                        v.path.replace("\\", "/")
+                    )
+                    .as_str(),
+                )
+                .unwrap(),
+                filename: v.path.clone().replace("\\", "/"),
+            })
+            .collect::<Vec<Download>>();
+        downloader.download(&downloads).await;
+        Ok(())
+    }
+    pub async fn save_medias<P: AsRef<Path>>(&self, path: P, medias: Vec<&Media>) -> Result<()> {
+        let root_dir = path.as_ref().join("MediaResources");
+        let downloader = DownloaderBuilder::new().directory(root_dir).build();
+        let downloads = medias
+            .iter()
+            .map(|v| Download {
                 url: Url::parse(
                     format!(
                         "{}/MediaResources/{}",
