@@ -21,9 +21,11 @@ export default function RootLayout({
           <div className="fixed w-full h-full bg-black opacity-20 -z-10"></div>
           <div
             className="fixed w-full h-full bg-cover bg-center blur-sm -z-20"
-            style={{ backgroundImage: "url('/data/jp/MediaResources/UIs/03_Scenario/01_Background/BG_CS_PR_01.jpg')" }}
-          >
-          </div>
+            style={{
+              backgroundImage:
+                "url('/data/jp/MediaResources/Prologue/UIs/03_Scenario/01_Background/BG_CS_PR_01.jpg')",
+            }}
+          ></div>
           {children}
         </main>
       </body>
