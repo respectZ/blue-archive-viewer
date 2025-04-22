@@ -170,6 +170,7 @@ impl<'a> Serialize for CharacterExcel<'a> {
         state.serialize_field("CanFix", &self.can_fix())?;
         state.serialize_field("CanCrowdControl", &self.can_crowd_control())?;
         state.serialize_field("CanBattleItemMove", &self.can_battle_item_move())?;
+        state.serialize_field("IgnoreObstacle", &self.ignore_obstacle())?;
         state.serialize_field("IsAirUnit", &self.is_air_unit())?;
         state.serialize_field("AirUnitHeight", &self.air_unit_height())?;
         state.serialize_field("Tags", &self.tags())?;
@@ -548,6 +549,7 @@ impl<'a> DecryptAndDump for CharacterExcelTable<'a> {
                         can_fix: a.can_fix(),
                         can_crowd_control: a.can_crowd_control(),
                         can_battle_item_move: a.can_battle_item_move(),
+                        ignore_obstacle: a.ignore_obstacle(),
                         is_air_unit: a.is_air_unit(),
                         air_unit_height: convert_long(a.air_unit_height(), &key),
                         tags: Some(tags),

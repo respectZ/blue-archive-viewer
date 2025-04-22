@@ -315,7 +315,8 @@ enum School: int{
     SCHALE = 12,
     ETC = 13,
     Tokiwadai = 14,
-    Sakugawa = 15
+    Sakugawa = 15,
+	Highlander = 16
 }
 
 enum Club: int{
@@ -368,7 +369,9 @@ enum Club: int{
     KnowledgeLiberationFront = 46,
     Hyakkayouran = 47,
     ShinySparkleSociety = 48,
-    AbydosStudentCouncil = 49
+    AbydosStudentCouncil = 49,
+	CentralControlCenter = 50,
+	FreightLogisticsDepartment = 51
 }
 
 enum StatLevelUpType: int{
@@ -3468,6 +3471,7 @@ table CharacterExcel{
     can_fix: bool;
     can_crowd_control: bool;
     can_battle_item_move: bool;
+    ignore_obstacle: bool;
     is_air_unit: bool;
     air_unit_height: long;
     tags: [Tag];
