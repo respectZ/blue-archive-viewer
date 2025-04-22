@@ -1992,10 +1992,10 @@ impl flatbuffers::SimpleToVerifyInSlice for AimIKType {}
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
 pub const ENUM_MIN_SCHOOL: i32 = 0;
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
-pub const ENUM_MAX_SCHOOL: i32 = 15;
+pub const ENUM_MAX_SCHOOL: i32 = 16;
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
 #[allow(non_camel_case_types)]
-pub const ENUM_VALUES_SCHOOL: [School; 16] = [
+pub const ENUM_VALUES_SCHOOL: [School; 17] = [
   School::None,
   School::Hyakkiyako,
   School::RedWinter,
@@ -2012,6 +2012,7 @@ pub const ENUM_VALUES_SCHOOL: [School; 16] = [
   School::ETC,
   School::Tokiwadai,
   School::Sakugawa,
+  School::Highlander,
 ];
 
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Default)]
@@ -2035,9 +2036,10 @@ impl School {
   pub const ETC: Self = Self(13);
   pub const Tokiwadai: Self = Self(14);
   pub const Sakugawa: Self = Self(15);
+  pub const Highlander: Self = Self(16);
 
   pub const ENUM_MIN: i32 = 0;
-  pub const ENUM_MAX: i32 = 15;
+  pub const ENUM_MAX: i32 = 16;
   pub const ENUM_VALUES: &'static [Self] = &[
     Self::None,
     Self::Hyakkiyako,
@@ -2055,6 +2057,7 @@ impl School {
     Self::ETC,
     Self::Tokiwadai,
     Self::Sakugawa,
+    Self::Highlander,
   ];
   /// Returns the variant's name or "" if unknown.
   pub fn variant_name(self) -> Option<&'static str> {
@@ -2075,6 +2078,7 @@ impl School {
       Self::ETC => Some("ETC"),
       Self::Tokiwadai => Some("Tokiwadai"),
       Self::Sakugawa => Some("Sakugawa"),
+      Self::Highlander => Some("Highlander"),
       _ => None,
     }
   }
@@ -2133,10 +2137,10 @@ impl flatbuffers::SimpleToVerifyInSlice for School {}
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
 pub const ENUM_MIN_CLUB: i32 = 0;
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
-pub const ENUM_MAX_CLUB: i32 = 49;
+pub const ENUM_MAX_CLUB: i32 = 51;
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
 #[allow(non_camel_case_types)]
-pub const ENUM_VALUES_CLUB: [Club; 50] = [
+pub const ENUM_VALUES_CLUB: [Club; 52] = [
   Club::None,
   Club::Engineer,
   Club::CleanNClearing,
@@ -2187,6 +2191,8 @@ pub const ENUM_VALUES_CLUB: [Club; 50] = [
   Club::Hyakkayouran,
   Club::ShinySparkleSociety,
   Club::AbydosStudentCouncil,
+  Club::CentralControlCenter,
+  Club::FreightLogisticsDepartment,
 ];
 
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Default)]
@@ -2244,9 +2250,11 @@ impl Club {
   pub const Hyakkayouran: Self = Self(47);
   pub const ShinySparkleSociety: Self = Self(48);
   pub const AbydosStudentCouncil: Self = Self(49);
+  pub const CentralControlCenter: Self = Self(50);
+  pub const FreightLogisticsDepartment: Self = Self(51);
 
   pub const ENUM_MIN: i32 = 0;
-  pub const ENUM_MAX: i32 = 49;
+  pub const ENUM_MAX: i32 = 51;
   pub const ENUM_VALUES: &'static [Self] = &[
     Self::None,
     Self::Engineer,
@@ -2298,6 +2306,8 @@ impl Club {
     Self::Hyakkayouran,
     Self::ShinySparkleSociety,
     Self::AbydosStudentCouncil,
+    Self::CentralControlCenter,
+    Self::FreightLogisticsDepartment,
   ];
   /// Returns the variant's name or "" if unknown.
   pub fn variant_name(self) -> Option<&'static str> {
@@ -2352,6 +2362,8 @@ impl Club {
       Self::Hyakkayouran => Some("Hyakkayouran"),
       Self::ShinySparkleSociety => Some("ShinySparkleSociety"),
       Self::AbydosStudentCouncil => Some("AbydosStudentCouncil"),
+      Self::CentralControlCenter => Some("CentralControlCenter"),
+      Self::FreightLogisticsDepartment => Some("FreightLogisticsDepartment"),
       _ => None,
     }
   }
@@ -15971,14 +15983,15 @@ impl<'a> CharacterExcel<'a> {
   pub const VT_CAN_FIX: flatbuffers::VOffsetT = 110;
   pub const VT_CAN_CROWD_CONTROL: flatbuffers::VOffsetT = 112;
   pub const VT_CAN_BATTLE_ITEM_MOVE: flatbuffers::VOffsetT = 114;
-  pub const VT_IS_AIR_UNIT: flatbuffers::VOffsetT = 116;
-  pub const VT_AIR_UNIT_HEIGHT: flatbuffers::VOffsetT = 118;
-  pub const VT_TAGS: flatbuffers::VOffsetT = 120;
-  pub const VT_SECRET_STONE_ITEM_ID: flatbuffers::VOffsetT = 122;
-  pub const VT_SECRET_STONE_ITEM_AMOUNT: flatbuffers::VOffsetT = 124;
-  pub const VT_CHARACTER_PIECE_ITEM_ID: flatbuffers::VOffsetT = 126;
-  pub const VT_CHARACTER_PIECE_ITEM_AMOUNT: flatbuffers::VOffsetT = 128;
-  pub const VT_COMBINE_RECIPE_ID: flatbuffers::VOffsetT = 130;
+  pub const VT_IGNORE_OBSTACLE: flatbuffers::VOffsetT = 116;
+  pub const VT_IS_AIR_UNIT: flatbuffers::VOffsetT = 118;
+  pub const VT_AIR_UNIT_HEIGHT: flatbuffers::VOffsetT = 120;
+  pub const VT_TAGS: flatbuffers::VOffsetT = 122;
+  pub const VT_SECRET_STONE_ITEM_ID: flatbuffers::VOffsetT = 124;
+  pub const VT_SECRET_STONE_ITEM_AMOUNT: flatbuffers::VOffsetT = 126;
+  pub const VT_CHARACTER_PIECE_ITEM_ID: flatbuffers::VOffsetT = 128;
+  pub const VT_CHARACTER_PIECE_ITEM_AMOUNT: flatbuffers::VOffsetT = 130;
+  pub const VT_COMBINE_RECIPE_ID: flatbuffers::VOffsetT = 132;
 
   #[inline]
   pub unsafe fn init_from_table(table: flatbuffers::Table<'a>) -> Self {
@@ -16041,6 +16054,7 @@ impl<'a> CharacterExcel<'a> {
     builder.add_production_step(args.production_step);
     if let Some(x) = args.dev_name { builder.add_dev_name(x); }
     builder.add_is_air_unit(args.is_air_unit);
+    builder.add_ignore_obstacle(args.ignore_obstacle);
     builder.add_can_battle_item_move(args.can_battle_item_move);
     builder.add_can_crowd_control(args.can_crowd_control);
     builder.add_can_fix(args.can_fix);
@@ -16451,6 +16465,13 @@ impl<'a> CharacterExcel<'a> {
     unsafe { self._tab.get::<bool>(CharacterExcel::VT_CAN_BATTLE_ITEM_MOVE, Some(false)).unwrap()}
   }
   #[inline]
+  pub fn ignore_obstacle(&self) -> bool {
+    // Safety:
+    // Created from valid Table for this object
+    // which contains a valid value in this slot
+    unsafe { self._tab.get::<bool>(CharacterExcel::VT_IGNORE_OBSTACLE, Some(false)).unwrap()}
+  }
+  #[inline]
   pub fn is_air_unit(&self) -> bool {
     // Safety:
     // Created from valid Table for this object
@@ -16571,6 +16592,7 @@ impl flatbuffers::Verifiable for CharacterExcel<'_> {
      .visit_field::<bool>("can_fix", Self::VT_CAN_FIX, false)?
      .visit_field::<bool>("can_crowd_control", Self::VT_CAN_CROWD_CONTROL, false)?
      .visit_field::<bool>("can_battle_item_move", Self::VT_CAN_BATTLE_ITEM_MOVE, false)?
+     .visit_field::<bool>("ignore_obstacle", Self::VT_IGNORE_OBSTACLE, false)?
      .visit_field::<bool>("is_air_unit", Self::VT_IS_AIR_UNIT, false)?
      .visit_field::<i64>("air_unit_height", Self::VT_AIR_UNIT_HEIGHT, false)?
      .visit_field::<flatbuffers::ForwardsUOffset<flatbuffers::Vector<'_, Tag>>>("tags", Self::VT_TAGS, false)?
@@ -16640,6 +16662,7 @@ pub struct CharacterExcelArgs<'a> {
     pub can_fix: bool,
     pub can_crowd_control: bool,
     pub can_battle_item_move: bool,
+    pub ignore_obstacle: bool,
     pub is_air_unit: bool,
     pub air_unit_height: i64,
     pub tags: Option<flatbuffers::WIPOffset<flatbuffers::Vector<'a, Tag>>>,
@@ -16709,6 +16732,7 @@ impl<'a> Default for CharacterExcelArgs<'a> {
       can_fix: false,
       can_crowd_control: false,
       can_battle_item_move: false,
+      ignore_obstacle: false,
       is_air_unit: false,
       air_unit_height: 0,
       tags: None,
@@ -16951,6 +16975,10 @@ impl<'a: 'b, 'b, A: flatbuffers::Allocator + 'a> CharacterExcelBuilder<'a, 'b, A
     self.fbb_.push_slot::<bool>(CharacterExcel::VT_CAN_BATTLE_ITEM_MOVE, can_battle_item_move, false);
   }
   #[inline]
+  pub fn add_ignore_obstacle(&mut self, ignore_obstacle: bool) {
+    self.fbb_.push_slot::<bool>(CharacterExcel::VT_IGNORE_OBSTACLE, ignore_obstacle, false);
+  }
+  #[inline]
   pub fn add_is_air_unit(&mut self, is_air_unit: bool) {
     self.fbb_.push_slot::<bool>(CharacterExcel::VT_IS_AIR_UNIT, is_air_unit, false);
   }
@@ -17056,6 +17084,7 @@ impl core::fmt::Debug for CharacterExcel<'_> {
       ds.field("can_fix", &self.can_fix());
       ds.field("can_crowd_control", &self.can_crowd_control());
       ds.field("can_battle_item_move", &self.can_battle_item_move());
+      ds.field("ignore_obstacle", &self.ignore_obstacle());
       ds.field("is_air_unit", &self.is_air_unit());
       ds.field("air_unit_height", &self.air_unit_height());
       ds.field("tags", &self.tags());
