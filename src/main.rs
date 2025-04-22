@@ -13,6 +13,7 @@ mod voice;
 #[macro_use]
 mod logger;
 
+use anyhow::Result;
 use clap::{Parser, Subcommand};
 use std::path::PathBuf;
 use util::{save_file, save_json};
@@ -53,48 +54,35 @@ enum Update {
 #[tokio::main]
 async fn main() {
     let cli = Cli::parse();
-
     let region = cli.region;
 
     match region {
         Region::JP => {
             info!("Using JP region");
 
-            jp(cli.action).await;
+            if let Err(e) = jp(cli.action).await {
+                error!("An error occured: {}", e)
+            }
         }
         _ => {
             info!("Using EN region");
-            en(cli.action).await;
+            if let Err(e) = en(cli.action).await {
+                error!("An error occured: {}", e)
+            }
         }
     }
 }
 
-async fn jp(action: Action) {
-    if let Err(e) = app::jp::download().await {
-        error!("{}", e);
-    }
-    if let Err(e) = app::jp::extract() {
-        error!("{}", e);
-    }
+async fn jp(action: Action) -> Result<()> {
+    app::jp::download().await?;
+    app::jp::extract()?;
 
     info!("Finding GameMainConfig");
-    let game_main_config = match app::jp::get_game_main_config() {
-        Ok(bytes) => bytes,
-        Err(e) => {
-            error!("Failed to get GameMainConfig: {}", e);
-            return;
-        }
-    };
+    let game_main_config = app::jp::get_game_main_config()?;
 
     info!("Parsing GameMainConfig");
     let game_main_config =
-        match api::jp::game_main_config::GameMainConfig::from_bytes(&game_main_config) {
-            Ok(game_main_config) => game_main_config,
-            Err(e) => {
-                error!("Failed to parse GameMainConfig: {}", e);
-                return;
-            }
-        };
+        api::jp::game_main_config::GameMainConfig::from_bytes(&game_main_config)?;
 
     // Save GameMainConfig
     info!("Saving GameMainConfig");
@@ -102,24 +90,15 @@ async fn jp(action: Action) {
         PathBuf::from("public/data/jp/GameMainConfig.json"),
         &game_main_config,
     )
-    .await
-    .unwrap();
+    .await?;
 
     info!("Requesting AddressableCatalog");
-    let catalog =
-        match api::jp::get_addressable_catalog(&game_main_config.server_info_data_url).await {
-            Ok(catalog) => catalog,
-            Err(e) => {
-                error!("Failed to get AddressableCatalog: {}", e);
-                return;
-            }
-        };
+    let catalog = api::jp::get_addressable_catalog(&game_main_config.server_info_data_url).await?;
     save_json(
         PathBuf::from("public/data/jp/AddressableCatalog.json"),
         &catalog,
     )
-    .await
-    .unwrap();
+    .await?;
     // Update url
     info!("Updating URL");
 
@@ -130,74 +109,74 @@ async fn jp(action: Action) {
         "export const URL = \"{}\";\nexport const AddressablesCatalogUrlRoot = \"{}\";",
         url, addressable_catalog
     );
-    save_file(url_tsx_path, data.as_bytes()).await.unwrap();
+    save_file(url_tsx_path, data.as_bytes()).await?;
 
     match action {
         Action::Update { name } => match name {
             Update::All => {
-                cg::run_jp(&catalog).await.unwrap();
-                catalog::run_jp(&catalog).await.unwrap();
-                live2d::run_jp(&catalog).await.unwrap();
-                voice::run_jp(&catalog).await.unwrap();
-                table_dumper::jp::run(&catalog).await.unwrap();
+                cg::run_jp(&catalog).await?;
+                catalog::run_jp(&catalog).await?;
+                live2d::run_jp(&catalog).await?;
+                voice::run_jp(&catalog).await?;
+                table_dumper::jp::run(&catalog).await?;
             }
             Update::CG => {
-                cg::run_jp(&catalog).await.unwrap();
+                cg::run_jp(&catalog).await?;
             }
             Update::Catalog => {
-                catalog::run_jp(&catalog).await.unwrap();
+                catalog::run_jp(&catalog).await?;
             }
             Update::Live2D => {
-                live2d::run_jp(&catalog).await.unwrap();
-                voice::run_jp(&catalog).await.unwrap();
+                live2d::run_jp(&catalog).await?;
+                voice::run_jp(&catalog).await?;
             }
             Update::Table => {
-                table_dumper::jp::run(&catalog).await.unwrap();
+                table_dumper::jp::run(&catalog).await?;
             }
         },
     };
+    Ok(())
 }
 
-async fn en(action: Action) {
+async fn en(action: Action) -> Result<()> {
     info!("Requesting AddressableCatalog");
-    let addressable_catalog = api::en::common::get_addressable_catalog().await.unwrap();
+    let addressable_catalog = api::en::common::get_addressable_catalog().await?;
     save_json(
         "public/data/en/AddressableCatalog.json",
         &addressable_catalog,
     )
-    .await
-    .unwrap();
+    .await?;
     info!("Version: {}", addressable_catalog.latest_build_version);
     // Save version as txt
     save_file(
         "public/data/en/version.txt",
         addressable_catalog.latest_build_version.as_bytes(),
     )
-    .await
-    .unwrap();
+    .await?;
     info!("Requesting Catalog");
-    let catalog = addressable_catalog.get_catalog().await.unwrap();
-    catalog.save("public/data/en/").await.unwrap();
+    let catalog = addressable_catalog.get_catalog().await?;
+    catalog.save("public/data/en/").await?;
     match action {
         Action::Update { name } => match name {
             Update::All => {
-                cg::run_en(&catalog).await.unwrap();
-                catalog::run_en(&catalog).await.unwrap();
-                table_dumper::en::run(&catalog).await.unwrap();
-                live2d::run_en(catalog.clone()).await.unwrap();
+                cg::run_en(&catalog).await?;
+                catalog::run_en(&catalog).await?;
+                table_dumper::en::run(&catalog).await?;
+                live2d::run_en(catalog.clone()).await?;
             }
             Update::CG => {
-                cg::run_en(&catalog).await.unwrap();
+                cg::run_en(&catalog).await?;
             }
             Update::Catalog => {
-                catalog::run_en(&catalog).await.unwrap();
+                catalog::run_en(&catalog).await?;
             }
             Update::Live2D => {
-                live2d::run_en(catalog).await.unwrap();
+                live2d::run_en(catalog).await?;
             }
             Update::Table => {
-                table_dumper::en::run(&catalog).await.unwrap();
+                table_dumper::en::run(&catalog).await?;
             }
         },
     };
+    Ok(())
 }
