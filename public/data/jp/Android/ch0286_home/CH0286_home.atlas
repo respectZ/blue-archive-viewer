@@ -1,0 +1,596 @@
+CH0286_home.png
+	size: 2048, 2048
+	filter: Linear, Linear
+	scale: 0.55
+Apron
+	bounds: 1398, 726, 369, 288
+	offsets: 1, 2, 370, 291
+	rotate: 180
+B_Chest_Ribbon_01
+	bounds: 1861, 965, 100, 63
+	offsets: 3, 3, 106, 70
+B_Chest_Ribbon_02
+	bounds: 1914, 1549, 62, 53
+	offsets: 3, 4, 67, 58
+B_Hair_01
+	bounds: 1795, 535, 89, 112
+	offsets: 3, 2, 95, 117
+B_Hair_02
+	bounds: 1326, 719, 52, 100
+	offsets: 3, 3, 57, 106
+B_Hair_03
+	bounds: 1037, 1082, 41, 117
+	offsets: 4, 4, 52, 130
+B_Hair_04
+	bounds: 178, 99, 141, 268
+	offsets: 3, 2, 144, 273
+	rotate: 270
+B_Hair_Base
+	bounds: 1207, 479, 447, 250
+	offsets: 0, 3, 447, 280
+	rotate: 180
+B_Skirt_Bulr
+	bounds: 418, 449, 361, 142
+	offsets: 0, 5, 364, 149
+B_Skirt_Lace_Bulr
+	bounds: 1120, 1511, 228, 209
+	offsets: 0, 0, 231, 209
+	rotate: 270
+B_Strawberry_01
+	bounds: 2, 1722, 73, 79
+	offsets: 0, 5, 73, 85
+B_Strawberry_02
+	bounds: 171, 29, 71, 78
+	offsets: 0, 6, 72, 85
+Cherry
+	bounds: 887, 672, 51, 89
+	offsets: 3, 3, 58, 96
+Chest
+	bounds: 1505, 987, 380, 355
+	offsets: 2, 2, 382, 358
+Chest_Lace
+	bounds: 328, 326, 473, 281
+	offsets: 3, 0, 476, 281
+	rotate: 180
+Chest_Ribbon_Base
+	bounds: 247, 1685, 20, 21
+	offsets: 4, 3, 28, 27
+Choco
+	bounds: 1914, 1683, 133, 120
+	rotate: 90
+F_Hair_01
+	bounds: 838, 49, 169, 116
+	offsets: 2, 3, 173, 123
+	rotate: 180
+F_Hair_02
+	bounds: 1448, 33, 153, 184
+	offsets: 3, 4, 159, 193
+	rotate: 90
+F_Hair_03
+	bounds: 932, 1726, 90, 406
+	offsets: 3, 2, 97, 411
+	rotate: 270
+F_Hair_04
+	bounds: 681, 47, 159, 205
+	offsets: 5, 19, 167, 228
+	rotate: 90
+F_Hair_05
+	bounds: 979, 330, 139, 365
+	offsets: 2, 1, 142, 367
+	rotate: 90
+F_Hair_Base_01
+	bounds: 252, 1708, 69, 60
+	offsets: 3, 4, 74, 67
+F_Hair_Base_02
+	bounds: 1633, 105, 87, 154
+	offsets: 5, 5, 97, 164
+	rotate: 90
+F_Icecream
+	bounds: 66, 1770, 40, 24
+	offsets: 4, 3, 48, 31
+F_Parfait
+	bounds: 481, 145, 202, 110
+	offsets: 4, 10, 210, 123
+Face
+	bounds: 1072, 971, 383, 444
+	offsets: 1, 4, 387, 448
+	rotate: 90
+Face_Dot
+	bounds: 947, 1804, 11, 12
+	offsets: 2, 3, 15, 17
+Flush_01
+	bounds: 1186, 215, 289, 174
+	offsets: 3, 3, 292, 177
+Flush_02
+	bounds: 2, 475, 324, 221
+	offsets: 0, 0, 367, 221
+	rotate: 180
+Hair_Shadow_01
+	bounds: 1317, 1770, 46, 282
+	offsets: 2, 4, 51, 288
+	rotate: 90
+Hair_Shadow_02
+	bounds: 48, 989, 92, 115
+	offsets: 0, 3, 95, 122
+Hair_Shadow_03
+	bounds: 1307, 50, 85, 206
+	offsets: 3, 1, 92, 209
+	rotate: 90
+Halo
+	bounds: 2, 1171, 633, 581
+	offsets: 0, 47, 633, 628
+	rotate: 180
+Hir_Pin
+	bounds: 1079, 472, 80, 91
+	offsets: 2, 2, 83, 95
+Icecream
+	bounds: 1870, 185, 166, 176
+	offsets: 2, 4, 170, 182
+	rotate: 90
+L_Arm
+	bounds: 788, 1017, 212, 312
+	offsets: 1, 0, 216, 314
+	rotate: 90
+L_Arm_01
+	bounds: 2, 1628, 152, 250
+	offsets: 3, 5, 165, 273
+	rotate: 90
+L_Arm_02
+	bounds: 1309, 80, 123, 90
+	offsets: 3, 4, 129, 97
+L_Arm_03
+	bounds: 777, 460, 214, 338
+	offsets: 2, 0, 219, 338
+	rotate: 270
+L_Arm_04
+	bounds: 210, 174, 161, 183
+	offsets: 0, 3, 163, 190
+	rotate: 90
+L_Arm_05
+	bounds: 367, 1727, 30, 31
+	offsets: 3, 4, 34, 37
+L_Arm_Lace_01
+	bounds: 611, 48, 81, 133
+	offsets: 2, 2, 85, 136
+	rotate: 90
+L_Arm_Lace_02
+	bounds: 2, 1595, 48, 34
+	offsets: 4, 6, 55, 45
+L_Arm_Lace_03
+	bounds: 1143, 109, 121, 182
+	offsets: 3, 1, 127, 185
+	rotate: 90
+L_Arm_Lace_04
+	bounds: 16, 369, 112, 188
+	offsets: 3, 0, 118, 190
+	rotate: 90
+L_Arm_Lace_05
+	bounds: 961, 1156, 135, 130
+	offsets: 3, 4, 140, 136
+L_Chest
+	bounds: 91, 763, 280, 422
+	offsets: 3, 0, 285, 425
+	rotate: 180
+L_Chest_Ribbon_01
+	bounds: 1108, 1697, 38, 65
+	offsets: 5, 4, 47, 72
+L_Chest_Ribbon_02
+	bounds: 1314, 1515, 23, 80
+	offsets: 4, 2, 30, 85
+L_Ear
+	bounds: 1789, 62, 168, 144
+	offsets: 3, 2, 173, 148
+L_Eye_01
+	bounds: 549, 1724, 47, 24
+	offsets: 1, 3, 51, 32
+L_Eye_02
+	bounds: 914, 1725, 21, 29
+	offsets: 3, 2, 31, 33
+L_Eye_03
+	bounds: 749, 1153, 58, 56
+	offsets: 3, 4, 65, 63
+L_Eye_Cover_01
+	bounds: 1721, 908, 120, 88
+	offsets: 4, 3, 127, 95
+L_Eye_Cover_02
+	bounds: 870, 76, 136, 93
+	offsets: 4, 4, 143, 101
+L_Hair_01
+	bounds: 1301, 745, 102, 225
+	offsets: 2, 2, 107, 230
+L_Hair_02
+	bounds: 1985, 1600, 55, 81
+	offsets: 3, 4, 62, 87
+L_Hair_03
+	bounds: 209, 26, 113, 234
+	offsets: 3, 3, 120, 237
+	rotate: 90
+L_Hair_04
+	bounds: 1429, 244, 159, 348
+	offsets: 1, 1, 161, 350
+	rotate: 90
+L_Hair_05
+	bounds: 1780, 989, 266, 559
+L_Horn
+	bounds: 2, 961, 160, 332
+	offsets: 4, 1, 167, 334
+L_Horn_01
+	bounds: 2, 694, 157, 253
+	offsets: 1, 13, 161, 267
+	rotate: 270
+L_Horn_02
+	bounds: 525, 1586, 160, 197
+	offsets: 4, 1, 166, 201
+	rotate: 90
+L_Neck_01
+	bounds: 1969, 348, 77, 150
+	offsets: 5, 3, 85, 156
+L_Neck_02
+	bounds: 870, 1705, 40, 47
+	offsets: 4, 5, 48, 56
+L_Neck_Ribbon_01
+	bounds: 1867, 1159, 64, 98
+	offsets: 0, 3, 67, 103
+L_Neck_Ribbon_02
+	bounds: 2, 1417, 46, 60
+	offsets: 0, 3, 48, 65
+L_Shoulder
+	bounds: 1770, 107, 218, 237
+	offsets: 0, 2, 220, 239
+	rotate: 90
+L_T_Eyebrow_01
+	bounds: 382, 170, 113, 79
+	offsets: 4, 2, 119, 83
+L_T_Eyebrow_02
+	bounds: 1477, 1011, 106, 50
+	offsets: 2, 3, 111, 56
+L_eye_white
+	bounds: 1826, 1270, 106, 72
+	offsets: 3, 3, 112, 78
+L_eyeblow_01
+	bounds: 1751, 30, 123, 77
+	offsets: 1, 2, 125, 80
+L_eyeblow_01_1
+	bounds: 2, 1405, 45, 35
+	offsets: 10, 11, 64, 50
+L_eyeblow_02
+	bounds: 1162, 53, 124, 63
+	offsets: 0, 3, 127, 69
+L_eyeblow_02_1
+	bounds: 1220, 1403, 54, 39
+	offsets: 3, 4, 61, 45
+L_eyeblow_02_2
+	bounds: 276, 1171, 81, 37
+	offsets: 3, 4, 89, 45
+L_eyeblow_03
+	bounds: 1408, 531, 112, 57
+	offsets: 0, 3, 114, 64
+L_eyeblow_04
+	bounds: 541, 911, 116, 48
+	offsets: 3, 4, 122, 69
+Mouse_01
+	bounds: 1756, 1305, 66, 37
+	offsets: 3, 4, 72, 45
+Mouse_01_Open
+	bounds: 1267, 1359, 70, 57
+	offsets: 4, 4, 78, 63
+Mouse_02
+	bounds: 880, 1195, 80, 45
+	offsets: 6, 5, 89, 53
+Mouse_02_Open
+	bounds: 1710, 522, 89, 71
+	offsets: 1, 3, 93, 77
+Mouse_03
+	bounds: 28, 1601, 45, 27
+	offsets: 4, 5, 52, 35
+Mouse_03_Open
+	bounds: 1857, 1774, 53, 42
+	offsets: 4, 4, 61, 50
+Napkin_Back
+	bounds: 1914, 1508, 124, 173
+	offsets: 2, 5, 130, 178
+Napkin_Front
+	bounds: 2, 166, 154, 178
+	offsets: 3, 4, 161, 182
+	rotate: 90
+Neck
+	bounds: 1060, 177, 168, 182
+	offsets: 1, 0, 169, 185
+	rotate: 90
+Neck_Ribbon_Base
+	bounds: 839, 1711, 32, 39
+	offsets: 3, 3, 38, 46
+Neck_Ribbon_Base_02
+	bounds: 1096, 1730, 15, 34
+	offsets: 4, 4, 23, 41
+Nose
+	bounds: 999, 1804, 10, 12
+	offsets: 3, 3, 16, 19
+Nose_Shadow
+	bounds: 815, 1728, 26, 21
+	offsets: 2, 4, 31, 28
+Parfait
+	bounds: 1337, 354, 207, 356
+	offsets: 2, 3, 210, 362
+	rotate: 90
+Pocky_01
+	bounds: 679, 2, 130, 154
+	offsets: 0, 0, 130, 155
+	rotate: 180
+Pocky_02
+	bounds: 574, 1401, 70, 186
+	offsets: 0, 0, 71, 188
+R_Arm_01
+	bounds: 1810, 439, 236, 372
+	offsets: 16, 5, 252, 377
+	rotate: 180
+R_Arm_02
+	bounds: 1694, 308, 232, 267
+	offsets: 0, 2, 235, 269
+	rotate: 270
+R_Arm_Lace_01
+	bounds: 1252, 451, 90, 85
+	offsets: 4, 4, 96, 92
+R_Arm_Lace_02
+	bounds: 708, 1651, 141, 95
+	offsets: 4, 7, 149, 105
+R_Arm_Lace_03
+	bounds: 802, 168, 165, 120
+	offsets: 3, 4, 172, 127
+R_Arm_Lace_04
+	bounds: 347, 1162, 139, 102
+	offsets: 0, 2, 139, 105
+R_Chest
+	bounds: 383, 675, 284, 396
+	offsets: 3, 3, 287, 403
+	rotate: 270
+R_Chest_Ribbon_01
+	bounds: 1303, 1669, 35, 65
+	offsets: 4, 4, 43, 73
+R_Chest_Ribbon_02
+	bounds: 1513, 1797, 19, 79
+	offsets: 3, 4, 25, 86
+	rotate: 90
+R_Ear
+	bounds: 1024, 527, 182, 95
+	offsets: 2, 4, 185, 101
+R_Eye_01
+	bounds: 1185, 1496, 40, 37
+	offsets: 3, 2, 47, 43
+R_Eye_02
+	bounds: 1147, 1730, 20, 25
+	offsets: 4, 4, 28, 32
+R_Eye_03
+	bounds: 490, 1693, 62, 56
+	offsets: 4, 3, 69, 63
+R_Eye_Cover_01
+	bounds: 1216, 1414, 121, 97
+	offsets: 0, 3, 122, 103
+R_Eye_Cover_02
+	bounds: 2, 75, 116, 92
+	offsets: 2, 3, 120, 98
+R_Hair_01
+	bounds: 965, 87, 181, 197
+	offsets: 4, 3, 187, 204
+	rotate: 270
+R_Hair_02
+	bounds: 1159, 492, 70, 141
+	offsets: 2, 3, 74, 150
+R_Hair_03
+	bounds: 1357, 1280, 60, 62
+	offsets: 3, 4, 67, 70
+R_Hair_04
+	bounds: 1284, 120, 144, 253
+	offsets: 1, 4, 147, 257
+	rotate: 90
+R_Hair_05
+	bounds: 2, 399, 76, 111
+	offsets: 4, 5, 83, 119
+R_Hair_06
+	bounds: 1962, 951, 84, 214
+	offsets: 3, 6, 91, 225
+R_Hair_07
+	bounds: 1476, 186, 118, 323
+	offsets: 3, 2, 124, 327
+	rotate: 270
+R_Hair_08
+	bounds: 283, 570, 249, 610
+	offsets: 2, 1, 251, 611
+	rotate: 270
+R_Hair_09
+	bounds: 399, 72, 86, 291
+	offsets: 4, 4, 94, 296
+	rotate: 90
+R_Horn
+	bounds: 797, 228, 250, 250
+	offsets: 2, 0, 253, 251
+	rotate: 270
+R_Neck_01
+	bounds: 1500, 67, 102, 135
+	offsets: 5, 2, 111, 141
+R_Neck_02
+	bounds: 321, 1714, 49, 46
+	offsets: 3, 4, 56, 54
+R_Neck_Ribbon_01
+	bounds: 1409, 1791, 25, 105
+	offsets: 5, 3, 34, 112
+	rotate: 90
+R_Neck_Ribbon_02
+	bounds: 947, 1777, 54, 39
+	offsets: 2, 2, 56, 43
+R_Shoulder
+	bounds: 1599, 1774, 42, 257
+	offsets: 3, 5, 48, 262
+	rotate: 270
+R_Skirt
+	bounds: 653, 207, 197, 139
+	offsets: 1, 4, 202, 147
+	rotate: 180
+R_Skirt_Lace
+	bounds: 108, 68, 114, 97
+	offsets: 3, 4, 121, 105
+R_T_Eyebrow_01
+	bounds: 332, 1094, 99, 76
+	offsets: 2, 2, 103, 80
+R_T_Eyebrow_02
+	bounds: 213, 689, 88, 76
+	offsets: 3, 2, 95, 81
+R_eye_white
+	bounds: 1553, 648, 96, 77
+	offsets: 3, 3, 102, 80
+R_eyeblow_01
+	bounds: 528, 258, 112, 72
+	offsets: 3, 3, 117, 77
+R_eyeblow_01_1
+	bounds: 252, 1695, 59, 24
+	offsets: 2, 3, 65, 30
+R_eyeblow_02
+	bounds: 513, 415, 109, 65
+	offsets: 5, 4, 116, 73
+R_eyeblow_02_1
+	bounds: 1230, 1709, 69, 29
+	offsets: 3, 3, 75, 36
+R_eyeblow_02_2
+	bounds: 1259, 1350, 78, 39
+	offsets: 3, 3, 84, 46
+R_eyeblow_03
+	bounds: 749, 999, 99, 71
+	offsets: 2, 1, 105, 75
+R_eyeblow_04
+	bounds: 737, 797, 114, 67
+	offsets: 3, 1, 118, 69
+Skirt_01
+	bounds: 360, 959, 392, 393
+	offsets: 2, 2, 394, 396
+	rotate: 180
+Skirt_02
+	bounds: 1631, 581, 415, 415
+	offsets: 3, 0, 419, 416
+Skirt_03
+	bounds: 79, 316, 289, 225
+	offsets: 3, 0, 294, 227
+Skirt_Lace
+	bounds: 916, 615, 252, 410
+	offsets: 0, 1, 252, 421
+	rotate: 90
+Strawberry_01
+	bounds: 2, 866, 72, 93
+	offsets: 5, 5, 82, 103
+Strawberry_02
+	bounds: 312, 728, 69, 93
+	offsets: 5, 5, 79, 103
+Strawberry_03
+	bounds: 1430, 1260, 69, 82
+	offsets: 5, 5, 79, 92
+Strawberry_04
+	bounds: 2, 1296, 66, 86
+	offsets: 5, 5, 76, 96
+Table
+	bounds: 2, 1747, 943, 69
+Tray
+	bounds: 692, 829, 629, 185
+	offsets: 1, 3, 633, 188
+Waist
+	bounds: 336, 227, 192, 154
+	offsets: 2, 0, 195, 154
+bg
+	bounds: 1339, 1344, 573, 426
+halo_Light
+	bounds: 602, 1210, 639, 556
+	rotate: 180
+
+CH0286_home_2.png
+	size: 2048, 1024
+	filter: Linear, Linear
+	scale: 0.55
+Intro/Intro_B_Strawberry_01
+	bounds: 398, 318, 154, 177
+	offsets: 1, 8, 156, 185
+Intro/Intro_B_Strawberry_01_Blur
+	bounds: 1871, 342, 154, 182
+	offsets: 1, 3, 156, 185
+Intro/Intro_B_Strawberry_02
+	bounds: 1584, 353, 155, 175
+	offsets: 0, 8, 155, 183
+Intro/Intro_B_Strawberry_02_Blur
+	bounds: 1891, 508, 155, 179
+	offsets: 0, 4, 155, 183
+Intro/Intro_Cherry
+	bounds: 1782, 247, 114, 201
+	offsets: 3, 4, 120, 213
+Intro/Intro_Cherry_Blur
+	bounds: 552, 244, 120, 207
+	offsets: 0, 2, 120, 213
+Intro/Intro_Choco
+	bounds: 1128, 541, 296, 268
+	rotate: 90
+Intro/Intro_F_Icecream
+	bounds: 2, 788, 89, 49
+	offsets: 2, 3, 97, 58
+Intro/Intro_F_Parfait
+	bounds: 672, 363, 474, 263
+	offsets: 2, 2, 477, 276
+	rotate: 90
+Intro/Intro_Icecream
+	bounds: 318, 453, 384, 391
+	offsets: 0, 21, 384, 412
+	rotate: 90
+Intro/Intro_Icecream_Fx_01
+	bounds: 91, 825, 10, 12
+	offsets: 2, 2, 15, 17
+Intro/Intro_Icecream_Fx_02
+	bounds: 2, 831, 6, 6
+	offsets: 2, 2, 10, 10
+Intro/Intro_Parfait
+	bounds: 2, 2, 475, 835
+	offsets: 0, 0, 477, 835
+Intro/Intro_Pocky_01
+	bounds: 1546, 119, 292, 346
+	offsets: 1, 2, 293, 350
+Intro/Intro_Pocky_01_Blur
+	bounds: 987, 145, 292, 346
+	offsets: 1, 2, 293, 350
+Intro/Intro_Pocky_02
+	bounds: 954, 69, 152, 422
+	offsets: 0, 0, 152, 425
+Intro/Intro_Pocky_02_Blur
+	bounds: 922, 70, 152, 422
+	offsets: 0, 0, 152, 425
+Intro/Intro_Strawberry_01
+	bounds: 1571, 610, 178, 227
+	offsets: 0, 0, 178, 229
+	rotate: 180
+Intro/Intro_Strawberry_01_Blur
+	bounds: 1398, 608, 177, 229
+	offsets: 1, 0, 178, 229
+Intro/Intro_Strawberry_02
+	bounds: 1719, 448, 169, 225
+	offsets: 0, 3, 171, 228
+	rotate: 180
+Intro/Intro_Strawberry_02_Blur
+	bounds: 1742, 609, 169, 228
+	offsets: 0, 0, 171, 228
+Intro/Intro_Strawberry_03
+	bounds: 1465, 443, 168, 202
+	offsets: 2, 0, 170, 202
+Intro/Intro_Strawberry_03_Blur
+	bounds: 2, 552, 168, 202
+	offsets: 2, 0, 170, 202
+Intro/Intro_Strawberry_04
+	bounds: 1309, 333, 164, 213
+	rotate: 180
+Intro/Intro_Strawberry_04_Blur
+	bounds: 1093, 397, 164, 213
+	rotate: 90
+Intro/bg_011
+	bounds: 936, 493, 344, 190
+	rotate: 90
+
+CH0286_home_3.png
+	size: 1024, 1024
+	filter: Linear, Linear
+	scale: 0.55
+Light/shade
+	bounds: 2, 2, 955, 292
+Light/toplight
+	bounds: 2, 296, 955, 710
