@@ -19,7 +19,8 @@ use std::{fs, path::PathBuf};
 
 static PUBLIC_PATH: &str = "./public/data/jp/";
 static PUBLIC_EXCEL_PATH: &str = "./public/data/jp/TableBundles/Excel/";
-static PUBLIC_EXCEL_DB_PATH: &str = "./public/data/jp/TableBundles/ExcelDB.db";
+// Removed from public because it is too large. ([JP] 1.59.359309)
+static PUBLIC_EXCEL_DB_PATH: &str = "./temp/jp/TableBundles/ExcelDB.db";
 static TEMP_EXCEL_ZIP_PATH: &str = "./temp/jp/TableBundles/Excel.zip";
 static TEMP_PATH: &str = "./temp/jp/";
 
