@@ -1,0 +1,19 @@
+{
+  "versions": [
+    {
+      "version": "1.59.359309",
+      "date": "2025-07-22T19:00:00+09:00",
+      "changelogs": {
+        "live2d": [
+          "Added ch0291_home (羽川ハスミ) (Hanekawa Hasumi Swimsuit)",
+          "Added ch0292_home (仲正イチカ) (Nakamasa Ichika Swimsuit)",
+          "Added ch0293_home (桐藤ナギサ) (Kirifuji Nagisa Swimsuit)",
+          "Added ch0294_home (聖園ミカ) (Misono Mika Swimsuit)",
+          "Added ch0295_home (百合園セイア) (Yurizono Seia Swimsuit)",
+          "Added ch0301_home (勘解由小路ユカリ) (Kadenokouji Yukari Swimsuit)",
+          "Added ch0302_home (不破レンゲ) (Fuwa Renge Swimsuit)"
+        ]
+      }
+    }
+  ]
+}

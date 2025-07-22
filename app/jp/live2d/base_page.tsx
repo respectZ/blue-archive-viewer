@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import InputCheckbox from "@/app/component/input_chekcbox";
 import InputSelect from "@/app/component/input_select";
-import { createRef, useEffect, useRef } from "react";
+import { createRef, useEffect, useRef, useState } from "react";
 import { Live2DViewer } from "@/app/lib/live2d_viewer";
 import { fetchModels } from "./model";
 import * as Table from "@/app/lib/table";
@@ -23,6 +24,14 @@ interface HomeProps {
   region: "jp" | "en";
 }
 
+type Changelog = {
+  versions: {
+    version: string;
+    date: string;
+    changelogs: Record<string, string[]>;
+  }[];
+};
+
 export const Live2DPage: React.FC<HomeProps> = ({ region }) => {
   const jsonData = createRef<HTMLAnchorElement>();
   const settingPanel = createRef<HTMLDivElement>();
@@ -41,11 +50,14 @@ export const Live2DPage: React.FC<HomeProps> = ({ region }) => {
   const modal = createRef<HTMLDivElement>();
   const progressBar = createRef<HTMLDivElement>();
   const modalClose = createRef<HTMLButtonElement>();
+  const [changelog, setChangelog] = useState<Changelog>();
 
   useEffect(() => {
+    console.warn("ok");
     if (settingPanel.current) elements.settingPanel = settingPanel.current;
     if (subtitle.current) elements.subtitle = subtitle.current;
-    if (animationSelect.current) elements.animationSelect = animationSelect.current;
+    if (animationSelect.current)
+      elements.animationSelect = animationSelect.current;
     if (modelSelect.current) elements.modelSelect = modelSelect.current;
     if (loopAnimation.current) elements.loopAnimation = loopAnimation.current;
     if (playVoice.current) elements.playVoice = playVoice.current;
@@ -82,8 +94,24 @@ export const Live2DPage: React.FC<HomeProps> = ({ region }) => {
       });
     });
 
-    window.addEventListener("resize", (e) => events.OnResize(e, elements, live2d));
-  });
+    window.addEventListener("resize", (e) =>
+      events.OnResize(e, elements, live2d)
+    );
+  }, []);
+
+  useEffect(() => {
+    // TODO: En changelog
+    async function fetchChangelog() {
+      const data: Changelog = await (
+        await fetch(`/data/${region}/changelog.json`)
+      ).json();
+      return data;
+    }
+    if (region === "jp") {
+      // fetchChangelog().then((data) => setChangelog(data));
+      fetchChangelog().then((d) => setChangelog(d));
+    }
+  }, []);
 
   return (
     <main className="h-full w-full font-sans">
@@ -91,7 +119,12 @@ export const Live2DPage: React.FC<HomeProps> = ({ region }) => {
       <Modal reference={modal} className="hidden">
         <div className="flex flex-col w-full xl:w-96">
           <p className="text-2xl mb-4">Exporting...</p>
-          <ProgressBar className="grow mb-4" height={2} percent={0} reference={progressBar}></ProgressBar>
+          <ProgressBar
+            className="grow mb-4"
+            height={2}
+            percent={0}
+            reference={progressBar}
+          ></ProgressBar>
           <video controls className="mb-4"></video>
           <Button
             id="modal-close"
@@ -104,10 +137,18 @@ export const Live2DPage: React.FC<HomeProps> = ({ region }) => {
         </div>
       </Modal>
       {/* Loading */}
-      <div className="w-screen h-screen fixed flex items-center justify-center z-50 bg-neutral-800 bg-opacity-80 transition-all duration-1000 opacity-100" id="loading">
+      <div
+        className="w-screen h-screen fixed flex items-center justify-center z-50 bg-neutral-800 bg-opacity-80 transition-all duration-1000 opacity-100"
+        id="loading"
+      >
         <p className="text-2xl text-gray-100">Loading...</p>
       </div>
-      <a href="/data/jp/Android/info.json" className="hidden" id="jsonData" ref={jsonData}></a>
+      <a
+        href="/data/jp/Android/info.json"
+        className="hidden"
+        id="jsonData"
+        ref={jsonData}
+      ></a>
       {/* Settings button */}
       <div className="w-24 h-12 fixed">
         <button
@@ -122,14 +163,18 @@ export const Live2DPage: React.FC<HomeProps> = ({ region }) => {
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <circle fill="none" stroke="#fff" cx="9.997" cy="10" r="3.31">
-              </circle>
+              <circle
+                fill="none"
+                stroke="#fff"
+                cx="9.997"
+                cy="10"
+                r="3.31"
+              ></circle>
               <path
                 fill="none"
                 stroke="#fff"
                 d="M18.488,12.285 L16.205,16.237 C15.322,15.496 14.185,15.281 13.303,15.791 C12.428,16.289 12.047,17.373 12.246,18.5 L7.735,18.5 C7.938,17.374 7.553,16.299 6.684,15.791 C5.801,15.27 4.655,15.492 3.773,16.237 L1.5,12.285 C2.573,11.871 3.317,10.999 3.317,9.991 C3.305,8.98 2.573,8.121 1.5,7.716 L3.765,3.784 C4.645,4.516 5.794,4.738 6.687,4.232 C7.555,3.722 7.939,2.637 7.735,1.5 L12.263,1.5 C12.072,2.637 12.441,3.71 13.314,4.22 C14.206,4.73 15.343,4.516 16.225,3.794 L18.487,7.714 C17.404,8.117 16.661,8.988 16.67,10.009 C16.672,11.018 17.415,11.88 18.488,12.285 L18.488,12.285 Z"
-              >
-              </path>
+              ></path>
             </svg>
           </span>
         </button>
@@ -158,8 +203,7 @@ export const Live2DPage: React.FC<HomeProps> = ({ region }) => {
               y1="1"
               x2="13"
               y2="13"
-            >
-            </line>
+            ></line>
             <line
               fill="none"
               stroke="#fff"
@@ -168,8 +212,7 @@ export const Live2DPage: React.FC<HomeProps> = ({ region }) => {
               y1="1"
               x2="1"
               y2="13"
-            >
-            </line>
+            ></line>
           </svg>
         </div>
 
@@ -210,7 +253,9 @@ export const Live2DPage: React.FC<HomeProps> = ({ region }) => {
           <InputCheckbox
             id="play-voice"
             label="Play voice"
-            onChange={() => events.PlayVoiceOnChanged(playVoice.current!.checked, live2d)}
+            onChange={() =>
+              events.PlayVoiceOnChanged(playVoice.current!.checked, live2d)
+            }
             reference={playVoice}
           />
 
@@ -225,7 +270,14 @@ export const Live2DPage: React.FC<HomeProps> = ({ region }) => {
 
           <br />
 
-          <audio src="" preload="auto" ref={audioBGM} loop controls hidden></audio>
+          <audio
+            src=""
+            preload="auto"
+            ref={audioBGM}
+            loop
+            controls
+            hidden
+          ></audio>
 
           <br />
 
@@ -341,6 +393,30 @@ export const Live2DPage: React.FC<HomeProps> = ({ region }) => {
               onClick={async () => await events.ExportAs(elements, live2d)}
             />
           </Accordion>
+          <Accordion title="Changelog">
+            <div>
+              {changelog?.versions[0] &&
+                (() => {
+                  const { version, date, changelogs } = changelog.versions[0];
+                  const live2d = changelogs.live2d;
+                  return (
+                    <>
+                      <h1 className="mb-2 text-xl">{version}</h1>
+                      <p>{new Date(date).toLocaleDateString()}</p>
+                      {live2d && (
+                        <ul className="list-disc">
+                          {live2d.map((model, index) => (
+                            <li key={index}>
+                              <p className="break-keep">- {model}</p>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </>
+                  );
+                })()}
+            </div>
+          </Accordion>
         </div>
       </div>
 
@@ -348,15 +424,16 @@ export const Live2DPage: React.FC<HomeProps> = ({ region }) => {
         <canvas
           id="canvas"
           onClick={() => events.CloseSetting(elements.settingPanel!)}
-        >
-        </canvas>
+        ></canvas>
       </div>
       {/* Footer */}
       <div className="w-screen h-12 fixed bottom-0 flex justify-center items-center bg-neutral-800">
         <p className="text-gray-400">Live2D Viewer</p>
       </div>
-      <div className="sm:w-full xl:w-auto h-auto fixed bottom-24 flex flex-col xl:px-96" ref={subtitle}>
-      </div>
+      <div
+        className="sm:w-full xl:w-auto h-auto fixed bottom-24 flex flex-col xl:px-96"
+        ref={subtitle}
+      ></div>
     </main>
   );
 };
