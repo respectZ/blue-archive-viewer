@@ -9,51 +9,70 @@ use crate::{
 };
 use anyhow::{Ok, Result};
 use regex::Regex;
-use std::{collections::BTreeMap, path::PathBuf};
+use std::{collections::BTreeMap, fs::File, io::Read, path::PathBuf};
 use unity_rs::Env;
 use walkdir::WalkDir;
+use zip::ZipArchive;
 
 pub async fn run_jp(catalog: &AddressableCatalog) -> Result<()> {
     // assets-_mx-spinelobbies-(.*?)-_
     let regex = Regex::new(r"assets-_mx-spinelobbies-(.*?)-_")?;
     let out_dir = PathBuf::from("./public/data/jp");
     info!("Requesting BundleCatalog");
-    let bundle_catalog = catalog.get_bundle_catalog().await?;
+    let bundle_packing_info = catalog.get_bundle_packing_info().await?;
     info!("Saving BundleCatalog");
-    bundle_catalog.save(out_dir.clone()).await?;
+    bundle_packing_info.save(out_dir.clone()).await?;
     info!("Downloading Live2D bundles");
-    let downloaded = bundle_catalog
+    let downloaded = bundle_packing_info
         .save_bundle("./temp/jp/", |bundle| {
-            let char_id = match regex.captures(&bundle.name) {
-                Some(captures) => {
-                    // skip if it's "_mxcommon"
-                    if captures[1].to_string() == "_mxcommon" {
-                        return false;
+            bundle.bundle_files.iter().any(|bundle_file| {
+                let char_id = match regex.captures(&bundle_file.name) {
+                    Some(captures) => {
+                        // skip if it's "_mxcommon"
+                        if captures[1].to_string() == "_mxcommon" {
+                            return false;
+                        }
+                        captures[1].to_string()
                     }
-                    captures[1].to_string()
+                    None => return false,
+                };
+                // Check if folder exists
+                let folder = &out_dir.join("Android").join(&char_id);
+                match folder.exists() {
+                    true => {
+                        let is_empty = folder.read_dir().unwrap().next().is_none();
+                        is_empty
+                    }
+                    false => true,
                 }
-                None => return false,
-            };
-            // Check if folder exists
-            let folder = &out_dir.join("Android").join(&char_id);
-            match folder.exists() {
-                true => {
-                    let is_empty = folder.read_dir().unwrap().next().is_none();
-                    is_empty
-                }
-                false => true,
-            }
+            })
         })
         .await?;
 
     let mut handles = vec![];
 
-    downloaded.iter().for_each(|filename| {
-        info!("Extracting {}", filename);
-        let char_id = regex.captures(filename).unwrap()[1].to_string();
-        let env = unityfs::read_file(PathBuf::from("./temp/jp/Android").join(filename)).unwrap();
-        handles.push(tokio::spawn(jp_extract_assets(char_id.clone(), env)));
-    });
+    for filename in downloaded {
+        let filepath = PathBuf::from("./temp/jp/Android").join(filename);
+        let file = File::open(&filepath)?;
+        let mut archive = ZipArchive::new(file)?;
+        let filenames: Vec<String> = archive.file_names().map(|s| s.to_string()).collect();
+        for name in filenames {
+            if let Some(char_id) = regex.captures(&name).and_then(|f| Some(f[1].to_string())) {
+                // Check if dir exists
+                let dir = &out_dir.join("Android").join(&char_id);
+                if !dir.exists() {
+                    // Extract assets
+                    info!("Extracting {}", char_id);
+                    let mut file = archive.by_name(&name)?;
+                    let mut buffer = Vec::new();
+                    file.read_to_end(&mut buffer)?;
+                    let mut env = Env::new();
+                    env.load_from_slice(&buffer)?;
+                    handles.push(tokio::spawn(jp_extract_assets(char_id, env)));
+                }
+            }
+        }
+    }
 
     for handle in handles {
         match handle.await {
