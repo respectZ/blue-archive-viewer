@@ -1,11 +1,12 @@
+use crate::flatbuffers::en::AcademyFavorScheduleExcel;
 use crate::info;
 use crate::util::compare_crc;
 use crate::{
     api::jp::{table_catalog::TableCatalog, AddressableCatalog},
     flatbuffers::{
         jp::{
-            AcademyFavorScheduleExcelTable, CharacterDialogExcel, CharacterExcelTable,
-            LocalizeCharProfileExcelTable, MemoryLobbyExcel,
+            CharacterDialogExcel, CharacterExcelTable, LocalizeCharProfileExcelTable,
+            MemoryLobbyExcel,
         },
         DecryptAndDump,
     },
@@ -32,6 +33,20 @@ pub async fn run(catalog: &AddressableCatalog) -> Result<()> {
     extract_excel_zip().await?;
 
     let excel_path = PathBuf::from(PUBLIC_EXCEL_PATH);
+
+    info!("Dumping AcademyFavorScheduleExcelTable");
+    let academy_favor_schedule_excel_table = get_academy_favor_schedule_excel_table()?;
+    let academy_favor_schedule_excel_table = academy_favor_schedule_excel_table
+        .iter()
+        .map(|x| flatbuffers::root::<AcademyFavorScheduleExcel>(x).unwrap())
+        .collect::<Vec<AcademyFavorScheduleExcel>>();
+    save_json_pretty(
+        excel_path
+            .clone()
+            .join("AcademyFavorScheduleExcelTable.json"),
+        &academy_favor_schedule_excel_table,
+    )
+    .await?;
 
     info!("Dumping CharacterDialogExcelTable");
     let character_dialog_table = get_character_dialog_table()?;
@@ -74,6 +89,17 @@ fn get_character_dialog_table() -> Result<Vec<Vec<u8>>> {
 fn get_memory_lobby_excel_table() -> Result<Vec<Vec<u8>>> {
     let conn = sqlite::open(PUBLIC_EXCEL_DB_PATH)?;
     let mut stmt = conn.prepare("SELECT Bytes FROM MemoryLobbyDBSchema")?;
+    let mut data = Vec::new();
+    while let Ok(State::Row) = stmt.next() {
+        data.push(stmt.read::<Vec<u8>, _>(0)?);
+    }
+
+    Ok(data)
+}
+
+fn get_academy_favor_schedule_excel_table() -> Result<Vec<Vec<u8>>> {
+    let conn = sqlite::open(PUBLIC_EXCEL_DB_PATH)?;
+    let mut stmt = conn.prepare("SELECT Bytes FROM AcademyFavorScheduleDBSchema")?;
     let mut data = Vec::new();
     while let Ok(State::Row) = stmt.next() {
         data.push(stmt.read::<Vec<u8>, _>(0)?);
@@ -144,18 +170,6 @@ async fn extract_excel_zip() -> Result<()> {
         .unwrap()
         .to_string();
     let mut zip = TableZipFile::new(buf, filename);
-
-    info!("Decrypting and dumping AcademyFavorScheduleExcelTable");
-    let data = zip.get_by_name("academyfavorscheduleexceltable.bytes");
-    let data = xor("AcademyFavorScheduleExcelTable", &data);
-    let mut academy_favor = flatbuffers::root::<AcademyFavorScheduleExcelTable>(&data)?;
-    save_file(
-        excel_path
-            .clone()
-            .join("AcademyFavorScheduleExcelTable.json"),
-        academy_favor.decrypt_dump_json().as_bytes(),
-    )
-    .await?;
 
     info!("Decrypting and dumping CharacterExcelTable");
     let data = zip.get_by_name("characterexceltable.bytes");
