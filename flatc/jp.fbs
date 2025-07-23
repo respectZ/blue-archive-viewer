@@ -80,10 +80,9 @@ enum DialogCategory: int{
     UIEventMiniGameDreamMaker = 69,
     UIAttendanceEvent17 = 70,
     UIAttendanceEvent18 = 71,
-    // TODO: Resolve this
-    UNKNOWN1 = 72,
-    UNKNOWN2 = 73,
-    UNKNOWN3 = 74,
+	UIBattlePassLobby = 72,
+	UIBattlePassMission = 73,
+	UIAttendanceEvent19 = 74
 }
 
 enum DialogCondition: int{

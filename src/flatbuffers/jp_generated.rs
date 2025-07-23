@@ -190,9 +190,9 @@ pub const ENUM_VALUES_DIALOG_CATEGORY: [DialogCategory; 75] = [
   DialogCategory::UIEventMiniGameDreamMaker,
   DialogCategory::UIAttendanceEvent17,
   DialogCategory::UIAttendanceEvent18,
-  DialogCategory::UNKNOWN1,
-  DialogCategory::UNKNOWN2,
-  DialogCategory::UNKNOWN3,
+  DialogCategory::UIBattlePassLobby,
+  DialogCategory::UIBattlePassMission,
+  DialogCategory::UIAttendanceEvent19,
 ];
 
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Default)]
@@ -272,9 +272,9 @@ impl DialogCategory {
   pub const UIEventMiniGameDreamMaker: Self = Self(69);
   pub const UIAttendanceEvent17: Self = Self(70);
   pub const UIAttendanceEvent18: Self = Self(71);
-  pub const UNKNOWN1: Self = Self(72);
-  pub const UNKNOWN2: Self = Self(73);
-  pub const UNKNOWN3: Self = Self(74);
+  pub const UIBattlePassLobby: Self = Self(72);
+  pub const UIBattlePassMission: Self = Self(73);
+  pub const UIAttendanceEvent19: Self = Self(74);
 
   pub const ENUM_MIN: i32 = 0;
   pub const ENUM_MAX: i32 = 74;
@@ -351,9 +351,9 @@ impl DialogCategory {
     Self::UIEventMiniGameDreamMaker,
     Self::UIAttendanceEvent17,
     Self::UIAttendanceEvent18,
-    Self::UNKNOWN1,
-    Self::UNKNOWN2,
-    Self::UNKNOWN3,
+    Self::UIBattlePassLobby,
+    Self::UIBattlePassMission,
+    Self::UIAttendanceEvent19,
   ];
   /// Returns the variant's name or "" if unknown.
   pub fn variant_name(self) -> Option<&'static str> {
@@ -430,9 +430,9 @@ impl DialogCategory {
       Self::UIEventMiniGameDreamMaker => Some("UIEventMiniGameDreamMaker"),
       Self::UIAttendanceEvent17 => Some("UIAttendanceEvent17"),
       Self::UIAttendanceEvent18 => Some("UIAttendanceEvent18"),
-      Self::UNKNOWN1 => Some("UNKNOWN1"),
-      Self::UNKNOWN2 => Some("UNKNOWN2"),
-      Self::UNKNOWN3 => Some("UNKNOWN3"),
+      Self::UIBattlePassLobby => Some("UIBattlePassLobby"),
+      Self::UIBattlePassMission => Some("UIBattlePassMission"),
+      Self::UIAttendanceEvent19 => Some("UIAttendanceEvent19"),
       _ => None,
     }
   }
