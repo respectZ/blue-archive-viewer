@@ -17,7 +17,6 @@ use anyhow::Result;
 use sqlite::{self, State};
 use std::{fs, path::PathBuf};
 
-static PUBLIC_PATH: &str = "./public/data/jp/";
 static PUBLIC_EXCEL_PATH: &str = "./public/data/jp/TableBundles/Excel/";
 // Removed from public because it is too large. ([JP] 1.59.359309)
 static PUBLIC_EXCEL_DB_PATH: &str = "./temp/jp/TableBundles/ExcelDB.db";
@@ -128,9 +127,7 @@ async fn get_excel_db(table_catalog: &TableCatalog) -> Result<()> {
 
     info!("Downloading ExcelDB.db");
     table_catalog
-        .save_tables(PathBuf::from(PUBLIC_PATH), |table| {
-            table.name == "ExcelDB.db"
-        })
+        .save_tables(PathBuf::from(TEMP_PATH), |table| table.name == "ExcelDB.db")
         .await?;
     Ok(())
 }
