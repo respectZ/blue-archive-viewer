@@ -74,8 +74,11 @@ async fn main() {
 }
 
 async fn jp(action: Action) -> Result<()> {
-    app::jp::download().await?;
-    app::jp::extract()?;
+    // TODO: Fix or update jp app downloader.
+    // For now, you have to manually download the app, and extract the bin/Data into
+    // ./temp/app/com.YostarJP.BlueArchive/assets/bin/Data
+    // app::jp::download().await?;
+    // app::jp::extract()?;
 
     info!("Finding GameMainConfig");
     let game_main_config = app::jp::get_game_main_config()?;

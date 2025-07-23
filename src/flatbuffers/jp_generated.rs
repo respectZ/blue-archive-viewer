@@ -114,10 +114,10 @@ impl flatbuffers::SimpleToVerifyInSlice for ProductionStep {}
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
 pub const ENUM_MIN_DIALOG_CATEGORY: i32 = 0;
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
-pub const ENUM_MAX_DIALOG_CATEGORY: i32 = 71;
+pub const ENUM_MAX_DIALOG_CATEGORY: i32 = 74;
 #[deprecated(since = "2.0.0", note = "Use associated constants instead. This will no longer be generated in 2021.")]
 #[allow(non_camel_case_types)]
-pub const ENUM_VALUES_DIALOG_CATEGORY: [DialogCategory; 72] = [
+pub const ENUM_VALUES_DIALOG_CATEGORY: [DialogCategory; 75] = [
   DialogCategory::Cafe,
   DialogCategory::Echelon,
   DialogCategory::CharacterSSRNew,
@@ -190,6 +190,9 @@ pub const ENUM_VALUES_DIALOG_CATEGORY: [DialogCategory; 72] = [
   DialogCategory::UIEventMiniGameDreamMaker,
   DialogCategory::UIAttendanceEvent17,
   DialogCategory::UIAttendanceEvent18,
+  DialogCategory::UIBattlePassLobby,
+  DialogCategory::UIBattlePassMission,
+  DialogCategory::UIAttendanceEvent19,
 ];
 
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Default)]
@@ -269,9 +272,12 @@ impl DialogCategory {
   pub const UIEventMiniGameDreamMaker: Self = Self(69);
   pub const UIAttendanceEvent17: Self = Self(70);
   pub const UIAttendanceEvent18: Self = Self(71);
+  pub const UIBattlePassLobby: Self = Self(72);
+  pub const UIBattlePassMission: Self = Self(73);
+  pub const UIAttendanceEvent19: Self = Self(74);
 
   pub const ENUM_MIN: i32 = 0;
-  pub const ENUM_MAX: i32 = 71;
+  pub const ENUM_MAX: i32 = 74;
   pub const ENUM_VALUES: &'static [Self] = &[
     Self::Cafe,
     Self::Echelon,
@@ -345,6 +351,9 @@ impl DialogCategory {
     Self::UIEventMiniGameDreamMaker,
     Self::UIAttendanceEvent17,
     Self::UIAttendanceEvent18,
+    Self::UIBattlePassLobby,
+    Self::UIBattlePassMission,
+    Self::UIAttendanceEvent19,
   ];
   /// Returns the variant's name or "" if unknown.
   pub fn variant_name(self) -> Option<&'static str> {
@@ -421,6 +430,9 @@ impl DialogCategory {
       Self::UIEventMiniGameDreamMaker => Some("UIEventMiniGameDreamMaker"),
       Self::UIAttendanceEvent17 => Some("UIAttendanceEvent17"),
       Self::UIAttendanceEvent18 => Some("UIAttendanceEvent18"),
+      Self::UIBattlePassLobby => Some("UIBattlePassLobby"),
+      Self::UIBattlePassMission => Some("UIBattlePassMission"),
+      Self::UIAttendanceEvent19 => Some("UIAttendanceEvent19"),
       _ => None,
     }
   }

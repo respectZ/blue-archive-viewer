@@ -1,0 +1,430 @@
+CH0295_home.png
+	size: 2048, 2048
+	filter: Linear, Linear
+	scale: 0.6
+Body
+	bounds: 1545, 1471, 436, 575
+	offsets: 3, 2, 440, 578
+CarFront
+	bounds: 2, 971, 299, 683
+	rotate: 270
+Car_04
+	bounds: 1738, 775, 324, 308
+	offsets: 3, 3, 332, 314
+	rotate: 90
+Car_05
+	bounds: 1413, 507, 260, 206
+	offsets: 1, 1, 262, 209
+	rotate: 180
+Car_handle_B
+	bounds: 2, 367, 279, 527
+	offsets: 24, 3, 307, 530
+	rotate: 90
+Car_handle_F
+	bounds: 1321, 670, 295, 548
+	offsets: 1, 0, 296, 549
+	rotate: 270
+Car_handle_M
+	bounds: 841, 180, 150, 285
+	offsets: 4, 4, 158, 292
+	rotate: 90
+Car_shadow
+	bounds: 1795, 1688, 249, 358
+	offsets: 5, 4, 256, 362
+Ear
+	bounds: 1905, 1618, 78, 89
+	offsets: 5, 4, 87, 97
+Eye_01-01
+	bounds: 98, 1734, 33, 73
+	offsets: 5, 4, 43, 81
+Eye_01-02
+	bounds: 149, 2015, 9, 31
+	offsets: 4, 4, 17, 40
+Eye_01-03
+	bounds: 119, 2036, 11, 10
+	offsets: 4, 4, 19, 18
+Eye_02-01
+	bounds: 2, 1957, 45, 72
+	offsets: 5, 5, 54, 81
+Eye_02-02
+	bounds: 46, 1997, 11, 32
+	offsets: 4, 4, 20, 40
+Eye_02-03
+	bounds: 81, 2022, 14, 9
+	offsets: 4, 5, 23, 18
+Eye_cover_01
+	bounds: 1648, 823, 95, 84
+	offsets: 4, 4, 103, 93
+Eye_cover_02
+	bounds: 868, 628, 95, 85
+	offsets: 4, 4, 103, 93
+Eye_white
+	bounds: 1539, 1503, 98, 86
+	offsets: 2, 3, 103, 93
+FX_SunFlare_01
+	bounds: 1204, 1350, 696, 342
+	offsets: 1, 121, 699, 499
+	rotate: 90
+FX_SunFlare_02
+	bounds: 237, 518, 363, 157
+	offsets: 64, 0, 427, 157
+L_Arm_01
+	bounds: 1584, 200, 196, 151
+	offsets: 4, 1, 203, 154
+	rotate: 180
+L_Arm_02
+	bounds: 1078, 593, 187, 365
+	offsets: 3, 1, 191, 368
+	rotate: 90
+L_Arm_03
+	bounds: 526, 376, 191, 179
+	offsets: 3, 3, 195, 185
+L_Arm_04
+	bounds: 1341, 330, 240, 481
+	offsets: 2, 75, 247, 556
+	rotate: 90
+L_Arm_05
+	bounds: 392, 914, 355, 429
+	offsets: 3, 4, 360, 436
+	rotate: 90
+L_Arm_06
+	bounds: 1181, 781, 150, 95
+	offsets: 3, 4, 155, 103
+L_Ear_01
+	bounds: 857, 438, 173, 406
+	offsets: 3, 1, 179, 407
+	rotate: 90
+L_Ear_02
+	bounds: 687, 384, 173, 328
+	offsets: 2, 1, 175, 331
+	rotate: 90
+L_Ear_03
+	bounds: 147, 258, 209, 405
+	offsets: 3, 5, 215, 413
+	rotate: 90
+L_Reg
+	bounds: 907, 1151, 240, 118
+	offsets: 0, 4, 244, 123
+L_hair_01
+	bounds: 1963, 1857, 80, 61
+	offsets: 4, 4, 88, 68
+L_hair_02
+	bounds: 1973, 1537, 73, 129
+	offsets: 4, 4, 79, 134
+L_hair_03
+	bounds: 2, 1287, 158, 759
+	offsets: 2, 0, 161, 760
+L_hand_01
+	bounds: 2, 1698, 40, 41
+	offsets: 1, 3, 43, 44
+L_hand_02
+	bounds: 2, 1641, 49, 55
+	offsets: 0, 3, 49, 58
+L_hand_03
+	bounds: 109, 1701, 50, 65
+	offsets: 1, 0, 53, 65
+L_hand_04
+	bounds: 2, 1348, 48, 52
+	offsets: 2, 2, 50, 54
+Mouth_01
+	bounds: 1786, 2032, 11, 8
+	offsets: 4, 4, 19, 16
+Mouth_02
+	bounds: 1963, 2028, 18, 18
+	offsets: 4, 3, 26, 25
+Mouth_03
+	bounds: 1778, 2039, 12, 7
+	offsets: 4, 4, 20, 15
+Mouth_04
+	bounds: 40, 1963, 22, 31
+	offsets: 4, 3, 30, 37
+Mouth_05
+	bounds: 1990, 1917, 28, 26
+	offsets: 3, 4, 35, 34
+Mouth_06
+	bounds: 1810, 1848, 34, 17
+	offsets: 3, 5, 41, 25
+R_Arm_01
+	bounds: 1900, 1319, 146, 203
+	offsets: 2, 2, 152, 205
+	rotate: 180
+R_Arm_02
+	bounds: 586, 545, 283, 214
+	offsets: 0, 4, 284, 220
+R_Arm_03
+	bounds: 462, 735, 422, 323
+	offsets: 3, 3, 428, 326
+	rotate: 180
+R_Arm_04
+	bounds: 1538, 1091, 406, 386
+	offsets: 2, 1, 408, 387
+R_Arm_05
+	bounds: 208, 221, 214, 143
+	offsets: 4, 2, 220, 148
+	rotate: 180
+R_Arm_06
+	bounds: 1115, 167, 140, 306
+	offsets: 2, 5, 146, 314
+	rotate: 90
+R_Ear_01
+	bounds: 1757, 268, 289, 262
+	offsets: 5, 4, 296, 271
+	rotate: 180
+R_Ear_02
+	bounds: 2, 132, 206, 190
+	offsets: 3, 2, 223, 194
+	rotate: 90
+R_Ear_03
+	bounds: 1424, 213, 329, 245
+	offsets: 5, 3, 335, 252
+R_Reg
+	bounds: 800, 246, 337, 125
+	offsets: 3, 4, 344, 133
+R_hair_01
+	bounds: 1541, 1680, 39, 40
+	offsets: 1, 2, 43, 44
+R_hair_02
+	bounds: 2, 1387, 71, 121
+	offsets: 4, 1, 76, 122
+R_hair_03
+	bounds: 1297, 964, 142, 303
+	offsets: 2, 3, 148, 307
+	rotate: 90
+R_hair_04
+	bounds: 92, 1767, 67, 200
+	offsets: 3, 4, 72, 208
+R_hand_01
+	bounds: 1880, 2008, 85, 38
+	offsets: 2, 3, 89, 45
+R_hand_02
+	bounds: 1954, 1916, 87, 130
+	offsets: 3, 3, 91, 133
+R_hand_03
+	bounds: 2, 1601, 66, 44
+	offsets: 2, 4, 71, 52
+R_hand_04
+	bounds: 1540, 1594, 61, 49
+	offsets: 4, 1, 65, 53
+R_hand_05
+	bounds: 58, 1984, 26, 47
+	offsets: 4, 2, 34, 50
+R_hand_06
+	bounds: 151, 559, 100, 106
+	offsets: 4, 4, 106, 112
+R_hand_07
+	bounds: 1605, 1478, 70, 55
+	offsets: 2, 3, 73, 59
+SunCap_01
+	bounds: 478, 169, 376, 183
+	offsets: 1, 2, 377, 185
+SunCap_02
+	bounds: 30, 623, 610, 328
+	offsets: 3, 2, 616, 332
+SunCap_03
+	bounds: 2, 1508, 74, 78
+	offsets: 3, 0, 80, 79
+T_EyeBlow_01
+	bounds: 1280, 1322, 83, 33
+	offsets: 3, 4, 89, 40
+T_EyeBlow_02
+	bounds: 2, 2028, 85, 18
+	offsets: 4, 4, 93, 25
+TopLight
+	bounds: 160, 1271, 1042, 775
+belt
+	bounds: 983, 282, 242, 557
+	offsets: 2, 3, 245, 564
+	rotate: 270
+eyeblow_01
+	bounds: 440, 844, 119, 82
+	offsets: 4, 4, 127, 89
+eyeblow_01_1
+	bounds: 1770, 1186, 74, 38
+	offsets: 4, 5, 83, 47
+eyeblow_01_2
+	bounds: 2, 1937, 22, 19
+	offsets: 5, 5, 32, 28
+eyeblow_02
+	bounds: 1926, 748, 120, 82
+	offsets: 3, 5, 127, 90
+eyeblow_02_1
+	bounds: 1913, 1287, 58, 41
+	offsets: 5, 5, 68, 50
+eyeblow_02_2
+	bounds: 130, 1957, 22, 20
+	offsets: 5, 5, 32, 28
+eyeblow_03
+	bounds: 1204, 1296, 120, 61
+	offsets: 3, 5, 127, 70
+eyeblow_03_1
+	bounds: 1492, 1319, 62, 31
+	offsets: 5, 5, 71, 40
+eyeblow_03_2
+	bounds: 80, 2027, 20, 19
+	offsets: 5, 4, 30, 26
+eyeblow_04
+	bounds: 1909, 1072, 112, 58
+	offsets: 2, 4, 118, 65
+eyeblow_04_1
+	bounds: 2015, 2028, 24, 18
+	offsets: 2, 5, 31, 26
+eyeblow_05
+	bounds: 459, 1099, 108, 57
+	offsets: 5, 5, 118, 67
+eyeblow_05_1
+	bounds: 2024, 1841, 22, 19
+	offsets: 3, 5, 30, 26
+flash
+	bounds: 1794, 1894, 37, 44
+hair_01
+	bounds: 1852, 181, 247, 194
+	offsets: 4, 4, 254, 202
+	rotate: 270
+hair_02
+	bounds: 1962, 1127, 84, 245
+	offsets: 4, 1, 91, 250
+hair_03
+	bounds: 1288, 348, 92, 266
+	offsets: 4, 2, 98, 271
+hair_04
+	bounds: 1188, 163, 82, 248
+	offsets: 4, 3, 89, 256
+	rotate: 90
+hair_05
+	bounds: 397, 663, 90, 125
+	offsets: 3, 2, 95, 128
+hair_06
+	bounds: 9, 812, 262, 427
+	offsets: 3, 3, 268, 433
+	rotate: 270
+hair_07
+	bounds: 861, 709, 267, 342
+	offsets: 3, 1, 273, 348
+	rotate: 90
+hair_star_01
+	bounds: 1933, 1983, 34, 30
+	offsets: 3, 4, 40, 37
+hair_star_02
+	bounds: 2, 1746, 33, 35
+	offsets: 4, 3, 40, 41
+hair_star_03
+	bounds: 115, 1673, 35, 30
+	offsets: 3, 2, 41, 34
+hair_star_04
+	bounds: 1541, 1651, 34, 35
+	offsets: 2, 3, 39, 40
+hair_star_05
+	bounds: 1807, 1867, 28, 27
+	offsets: 3, 4, 33, 34
+halo
+	bounds: 1423, 860, 486, 313
+	offsets: 0, 0, 487, 313
+	rotate: 180
+head
+	bounds: 1149, 1020, 333, 407
+	offsets: 2, 3, 394, 410
+	rotate: 90
+neck
+	bounds: 2, 294, 212, 196
+	offsets: 2, 3, 216, 200
+	rotate: 180
+side_hair_01
+	bounds: 353, 1068, 222, 138
+	offsets: 2, 4, 226, 144
+side_hair_02
+	bounds: 588, 300, 186, 216
+	offsets: 0, 0, 187, 216
+	rotate: 90
+side_hair_03
+	bounds: 1675, 544, 147, 137
+	offsets: 3, 3, 152, 142
+side_hair_04
+	bounds: 823, 868, 401, 428
+	offsets: 2, 3, 403, 434
+	rotate: 270
+side_hair_05
+	bounds: 1737, 415, 309, 346
+	offsets: 1, 3, 313, 349
+	rotate: 180
+sunglasses_01
+	bounds: 131, 1978, 68, 16
+	offsets: 5, 6, 79, 28
+	rotate: 90
+sunglasses_02
+	bounds: 2018, 1899, 28, 96
+	offsets: 4, 1, 37, 100
+sunglasses_03
+	bounds: 2, 767, 294, 98
+	offsets: 4, 4, 300, 106
+
+CH0295_home_2.png
+	size: 2048, 2048
+	filter: Linear, Linear
+	scale: 0.6
+BG/Audio_Stick_01
+	bounds: 1918, 2027, 8, 19
+	offsets: 0, 1, 8, 22
+BG/Car_01
+	bounds: 838, 1657, 1042, 389
+	offsets: 0, 0, 1042, 390
+BG/Car_02
+	bounds: 2, 1070, 514, 555
+	offsets: 0, 0, 514, 557
+	rotate: 90
+BG/Car_03
+	bounds: 2, 453, 365, 501
+	rotate: 90
+BG/Car_dashboard_01
+	bounds: 1663, 1213, 361, 446
+	offsets: 1, 0, 362, 446
+	rotate: 180
+BG/Car_dashboard_02
+	bounds: 1904, 2023, 13, 23
+	offsets: 2, 2, 17, 27
+BG/Car_dashboard_03
+	bounds: 1929, 2035, 15, 11
+	offsets: 3, 3, 21, 17
+BG/Car_dashboard_04
+	bounds: 1882, 2019, 21, 27
+	offsets: 1, 0, 22, 28
+BG/Car_handle_01
+	bounds: 903, 302, 261, 261
+	offsets: 2, 0, 263, 264
+	rotate: 270
+BG/sea
+	bounds: 838, 1474, 834, 280
+BG/sea_bokeh_01
+	bounds: 1071, 905, 732, 340
+	rotate: 180
+BG/sea_bokeh_02
+	bounds: 116, 820, 755, 252
+BG/sea_bokeh_03
+	bounds: 504, 537, 484, 259
+	offsets: 0, 0, 484, 563
+BG/sky
+	bounds: 2, 1586, 834, 460
+BG/yazablur_01
+	bounds: 1351, 339, 237, 464
+	rotate: 270
+BG/yazablur_02
+	bounds: 1146, 450, 235, 527
+	offsets: 1, 0, 236, 527
+	rotate: 90
+BG/yazablur_03
+	bounds: 1805, 930, 196, 301
+	offsets: 0, 1, 196, 303
+BG/yazablur_04
+	bounds: 554, 983, 489, 962
+	offsets: 0, 0, 491, 963
+	rotate: 90
+BG/yazablur_05
+	bounds: 462, 308, 228, 456
+	offsets: 0, 0, 229, 456
+	rotate: 90
+BG/yazablur_06
+	bounds: 1399, 533, 380, 647
+	rotate: 270
+BG/yazablur_07
+	bounds: 873, 612, 414, 657
+	offsets: 0, 1, 414, 658
+	rotate: 90
