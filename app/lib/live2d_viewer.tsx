@@ -53,6 +53,7 @@ export class Live2DViewer {
   howl?: Howl;
   baseURL: string = AddressablesCatalogUrlRoot;
   private _loopAnimation: boolean = false;
+  private devName?: string;
 
   constructor(canvas: HTMLCanvasElement) {
     canvas.width = window.innerWidth;
@@ -86,6 +87,14 @@ export class Live2DViewer {
 
     const char = await this.addSpine(src, "char");
     this.char = char;
+    // /aru_newyear_home/Aru_newyear_home.skel => Aru_newyear_home
+    this.devName = src
+      .split("/")
+      .pop()
+      ?.split(".")[0]
+      .split("_")
+      .slice(0, -1)
+      .join("_");
 
     // Play default animation
     // Ignore case
@@ -109,19 +118,9 @@ export class Live2DViewer {
         const data = event as any as EventData;
 
         let fileName = (data.stringValue + ".ogg").toLowerCase();
-        let characterId = fileName.split("_")[0];
+        const characterId = this.devName || fileName.split("_")[0];
         const host = get_origin();
-
-        let src = `${host}/data/jp/MediaResources/GameData/Audio/VOC_JP/JP_${characterId}/${fileName}`;
-
-        // Try to fetch first, if not found, try title case characterId (error case: hinata_home, should be Hinata in fileName)
-        // Also disable cors
-        const res = await fetch(src, { mode: "no-cors" });
-        if (!res.ok) {
-          characterId = characterId[0].toUpperCase() + characterId.slice(1);
-          fileName = fileName[0].toUpperCase() + fileName.slice(1);
-          src = `${host}/data/jp/MediaResources/GameData/Audio/VOC_JP/JP_${characterId}/${fileName}`;
-        }
+        const src = `${host}/data/jp/MediaResources/GameData/Audio/VOC_JP/JP_${characterId}/${fileName}`;
 
         this.howl = new Howl({
           volume: this.voiceVolume,
