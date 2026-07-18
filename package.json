@@ -3,36 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "wpengine": "next build && python ./py/wallpaper_engine_public.py",
-    "prebuild": "ts-node ./scripts/runner.ts",
-    "start": "next start",
-    "lint": "next lint"
+    "model": "ts-node ./scripts/runner.ts"
   },
   "dependencies": {
-    "@esotericsoftware/spine-pixi": "^4.2.61",
-    "@types/adm-zip": "^0.5.5",
-    "adm-zip": "^0.5.12",
-    "howler": "^2.2.4",
-    "next": "14.0.1",
-    "pixi-spine": "^4.0.4",
-    "preline": "^1.9.0",
-    "react": "^18",
-    "react-dom": "^18",
+    "adm-zip": "^0.6.0",
     "ts-node": "^10.9.2"
   },
   "devDependencies": {
-    "@types/howler": "^2.2.10",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.1",
-    "pixi.js": "^7.4.2",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
     "typescript": "^5.3.2"
   }
 }
