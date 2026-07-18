@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --bg-base: #030711;
+  --bg-elevated: #0b1120;
+  --surface: #0f172a;
+  --surface-raised: #162032;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --border: #1e293b;
+  --border-subtle: rgba(56, 189, 248, 0.12);
+  --border-accent: rgba(56, 189, 248, 0.35);
+
+  --accent: #38bdf8;
+  --accent-soft: #7dd3fc;
+  --accent-glow: rgba(56, 189, 248, 0.35);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  html {
+    scrollbar-color: var(--border) var(--bg-base);
+    scrollbar-width: thin;
+  }
+
+  body {
+    margin: 0;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    color: var(--text-primary);
+    background-color: var(--bg-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--bg-base);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: var(--bg-base);
+  }
+
+  *:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--bg-base), 0 0 0 4px var(--accent);
+  }
+}
