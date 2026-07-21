@@ -9,8 +9,8 @@ use reqwest::Url;
 use std::fs;
 use std::fs::File;
 use std::io::{self, Cursor, Read};
-use std::path::PathBuf;
-use trauma::download::Download;
+use std::path::{Path, PathBuf};
+use trauma::download::{Download, Status};
 use trauma::downloader::DownloaderBuilder;
 use walkdir::WalkDir;
 use zip::ZipArchive;
@@ -54,7 +54,10 @@ pub async fn download() -> Result<()> {
 
     let body = versions_response.text().await?;
     let re_version = Regex::new(APKPURE_VERSION_REGEX).unwrap();
-    let new_version = re_version.find(body.as_str()).unwrap().as_str();
+    let new_version = re_version
+        .find(body.as_str())
+        .map(|m| m.as_str())
+        .ok_or_else(|| anyhow!("Version not found in response"))?;
 
     // Check version
     if new_version == get_version().await.unwrap() {
@@ -83,21 +86,42 @@ pub async fn download() -> Result<()> {
         .directory(PathBuf::from("./temp/app"))
         .build();
     let downloads = vec![Download {
-        url: Url::parse(download_url).unwrap(),
+        url: Url::parse(download_url).with_context(|| "Invalid download URL")?,
         filename: "com.YostarJP.BlueArchive.apk".to_string(),
     }];
-    downloader.download(&downloads).await;
+    let summaries = downloader.download(&downloads).await;
+    for summary in &summaries {
+        match summary.status() {
+            Status::Success => {}
+            Status::Fail(msg) => {
+                return Err(anyhow!("Download failed: {}", msg));
+            }
+            Status::Skipped(msg) => {
+                info!("Download skipped: {}", msg);
+            }
+            Status::NotStarted => {
+                return Err(anyhow!("Download did not start"));
+            }
+        }
+    }
     info!("Finished downloading app");
     save_file("./public/data/jp/version.txt", new_version.as_bytes()).await?;
     Ok(())
 }
 
+const ARCHIVE_PATH: &str = "./temp/app/com.YostarJP.BlueArchive.apk";
+
 pub fn extract() -> Result<()> {
+    extract_from(ARCHIVE_PATH)
+}
+
+pub fn extract_from<P: AsRef<Path>>(archive_path: P) -> Result<()> {
     info!("Extracting app");
 
+    let archive_path = archive_path.as_ref();
     let mut archive = ZipArchive::new(
-        File::open("./temp/app/com.YostarJP.BlueArchive.apk")
-            .with_context(|| "./temp/app/com.YostarJP.BlueArchive.apk not found")?,
+        File::open(archive_path)
+            .with_context(|| format!("{} not found", archive_path.display()))?,
     )
     .with_context(|| "Failed to open archive")?;
 

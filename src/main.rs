@@ -74,11 +74,13 @@ async fn main() {
 }
 
 async fn jp(action: Action) -> Result<()> {
-    // TODO: Fix or update jp app downloader.
-    // For now, you have to manually download the app, and extract the bin/Data into
-    // ./temp/app/com.YostarJP.BlueArchive/assets/bin/Data
-    // app::jp::download().await?;
-    // app::jp::extract()?;
+    let data_dir = PathBuf::from("./temp/app/com.YostarJP.BlueArchive/assets/bin/Data");
+    if !data_dir.exists() {
+        app::jp::download().await?;
+        app::jp::extract()?;
+    } else {
+        info!("Using manually placed Unity data at ./temp/app/com.YostarJP.BlueArchive/assets/bin/Data");
+    }
 
     info!("Finding GameMainConfig");
     let game_main_config = app::jp::get_game_main_config()?;
@@ -105,14 +107,14 @@ async fn jp(action: Action) -> Result<()> {
     // Update url
     info!("Updating URL");
 
-    let url_tsx_path = PathBuf::from("app/jp/url.tsx");
+    let urls_path = PathBuf::from("web/src/lib/urls.ts");
     let url = game_main_config.server_info_data_url;
     let addressable_catalog = catalog.get_addressable_catalog_url_root();
     let data = format!(
-        "export const URL = \"{}\";\nexport const AddressablesCatalogUrlRoot = \"{}\";",
+        "export const SERVER_INFO_URL =\n  \"{}\";\n\nexport const ADDRESSABLES_CATALOG_URL_ROOT =\n  \"{}\";\n",
         url, addressable_catalog
     );
-    save_file(url_tsx_path, data.as_bytes()).await?;
+    save_file(urls_path, data.as_bytes()).await?;
 
     match action {
         Action::Update { name } => match name {
