@@ -6,9 +6,9 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-export default defineConfig(({ command }) => ({
+export default defineConfig(() => ({
   plugins: [solidPlugin(), tailwindcss()],
-  publicDir: command === "serve" ? "../public" : false,
+  publicDir: "../public",
   resolve: {
     alias: {
       "~": path.resolve(__dirname, "src"),
